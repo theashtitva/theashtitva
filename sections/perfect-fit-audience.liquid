@@ -1,0 +1,1073 @@
+{%- comment -%}
+  Perfect Fit Audience
+  Collection cards for occasion-based shopping — each block links to a Shopify collection.
+{%- endcomment -%}
+
+{%- liquid
+  assign sid = section.id
+-%}
+
+{%- style -%}
+  #pfa-{{ sid }} {
+    --pfa-bg: {{ section.settings.color_background }};
+    --pfa-surface: {{ section.settings.color_surface }};
+    --pfa-heading: {{ section.settings.color_heading }};
+    --pfa-text: {{ section.settings.color_text }};
+    --pfa-accent: {{ section.settings.color_accent }};
+    --pfa-highlight-bg: {{ section.settings.color_highlight_bg }};
+    --pfa-highlight-text: {{ section.settings.color_highlight_text }};
+    --pfa-icon: {{ section.settings.color_icon }};
+    --pfa-icon-bg: {{ section.settings.color_icon_bg }};
+    --pfa-label: {{ section.settings.color_label }};
+    --pfa-container: {% if section.settings.full_width %}100%{% else %}{{ section.settings.container_width }}px{% endif %};
+    --pfa-pad-top-d: {{ section.settings.padding_top_desktop }}px;
+    --pfa-pad-bottom-d: {{ section.settings.padding_bottom_desktop }}px;
+    --pfa-pad-top-m: {{ section.settings.padding_top_mobile }}px;
+    --pfa-pad-bottom-m: {{ section.settings.padding_bottom_mobile }}px;
+    --pfa-heading-size-d: {{ section.settings.heading_size_desktop }}px;
+    --pfa-heading-size-m: {{ section.settings.heading_size_mobile }}px;
+    --pfa-subtext-size: {{ section.settings.subtext_size }}px;
+    --pfa-label-size-d: {{ section.settings.label_size_desktop }}px;
+    --pfa-label-size-m: {{ section.settings.label_size_mobile }}px;
+    --pfa-icon-size-d: {{ section.settings.icon_size_desktop }}px;
+    --pfa-icon-size-m: {{ section.settings.icon_size_mobile }}px;
+    --pfa-cols-d: {{ section.settings.columns_desktop }};
+    --pfa-cols-t: {{ section.settings.columns_tablet }};
+    --pfa-cols-m: {{ section.settings.columns_mobile }};
+    --pfa-gap: {{ section.settings.item_gap }}px;
+    --pfa-radius: {{ section.settings.item_radius }}px;
+    --pfa-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #pfa-{{ sid }} {
+    position: relative;
+    isolation: isolate;
+    padding-top: var(--pfa-pad-top-m);
+    padding-bottom: var(--pfa-pad-bottom-m);
+    color: var(--pfa-text);
+    background-color: #ffffff;
+    overflow: clip;
+  }
+
+  /* Bottom-only soft brand fade — seamless, no hard edge */
+  #pfa-{{ sid }}::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: min(48%, 22rem);
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      color-mix(in srgb, #f6f1f2 18%, transparent) 42%,
+      color-mix(in srgb, #f6f1f2 42%, transparent) 72%,
+      color-mix(in srgb, #ece4e6 28%, transparent) 100%
+    );
+  }
+
+  #pfa-{{ sid }}::after {
+    content: none;
+  }
+
+  {% if section.settings.pattern_image != blank %}
+    #pfa-{{ sid }} .pfa__bottom-pattern {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: min(38%, 16rem);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      background-image: url({{ section.settings.pattern_image | image_url: width: 800 }});
+      background-position: center bottom;
+      background-repeat: repeat;
+      background-size: {{ section.settings.pattern_size }}px;
+    }
+  {% elsif section.settings.use_default_pattern %}
+    #pfa-{{ sid }} .pfa__bottom-pattern {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: min(38%, 16rem);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.1;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
+      background-image: url(https://cdn.shopify.com/s/files/1/0955/5873/0040/files/dot-bg-v2.webp?v=1755518635);
+      background-position: center bottom;
+      background-repeat: repeat;
+    }
+  {% endif %}
+
+  #pfa-{{ sid }} .pfa__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--pfa-container);
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    box-sizing: border-box;
+  }
+
+  #pfa-{{ sid }} .pfa__header {
+    max-width: {{ section.settings.heading_max_width }}px;
+    margin: 0 auto {% if section.settings.subtext != blank %}1rem{% else %}3.6rem{% endif %};
+    text-align: {{ section.settings.heading_alignment }};
+  }
+
+  #pfa-{{ sid }} .pfa__heading {
+    margin: 0;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-style: var(--font-heading-style, normal);
+    font-weight: {{ section.settings.heading_weight }};
+    font-size: var(--pfa-heading-size-m);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--pfa-heading);
+    text-wrap: balance;
+  }
+
+  #pfa-{{ sid }} .pfa__highlight {
+    position: relative;
+    display: inline-block;
+    padding: 0.14em 0.5em 0.18em;
+    margin-inline: 0.15em;
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--pfa-highlight-bg) 92%, #fff) 0%,
+        var(--pfa-highlight-bg) 48%,
+        color-mix(in srgb, var(--pfa-highlight-bg) 82%, #1a0508) 100%
+      );
+    color: var(--pfa-highlight-text);
+    border-radius: 0.4em;
+    font-weight: inherit;
+    line-height: 1.2;
+    box-shadow:
+      0 8px 22px color-mix(in srgb, var(--pfa-highlight-bg) 28%, transparent),
+      inset 0 1px 0 color-mix(in srgb, #fff 22%, transparent);
+  }
+
+  #pfa-{{ sid }} .pfa__subtext {
+    max-width: min({{ section.settings.heading_max_width }}px, 34rem);
+    margin: 0 auto 1.85rem;
+    text-align: {{ section.settings.heading_alignment }};
+    font-size: var(--pfa-subtext-size);
+    line-height: 1.7;
+    color: var(--pfa-text);
+    opacity: 0.92;
+  }
+
+  #pfa-{{ sid }} .pfa__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--pfa-cols-m), minmax(0, 1fr));
+    gap: var(--pfa-gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  #pfa-{{ sid }} .pfa__item,
+  #pfa-{{ sid }} a.pfa__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    min-height: 9.5rem;
+    padding: {{ section.settings.item_padding_y }}px {{ section.settings.item_padding_x }}px;
+    border-radius: var(--pfa-radius);
+    background: var(--pfa-surface);
+    border: 1px solid color-mix(in srgb, var(--pfa-heading) 8%, transparent);
+    box-shadow: none;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition:
+      transform 0.45s var(--pfa-ease),
+      border-color 0.45s var(--pfa-ease),
+      background-color 0.45s var(--pfa-ease),
+      box-shadow 0.45s var(--pfa-ease);
+  }
+
+  #pfa-{{ sid }} .pfa__item--static {
+    cursor: default;
+  }
+
+  #pfa-{{ sid }} .pfa__item::after {
+    content: '';
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    bottom: 0;
+    height: 2px;
+    border-radius: 2px 2px 0 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--pfa-accent) 55%, transparent),
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.45s var(--pfa-ease);
+  }
+
+  {% if section.settings.enable_hover %}
+    @media (hover: hover) {
+      #pfa-{{ sid }} .pfa__item:hover {
+        transform: translateY(-3px);
+        border-color: color-mix(in srgb, var(--pfa-accent) 30%, transparent);
+        background: color-mix(in srgb, var(--pfa-surface) 88%, #fff);
+        box-shadow: 0 14px 32px rgba(28, 22, 16, 0.07);
+      }
+
+      #pfa-{{ sid }} .pfa__item:hover::after {
+        opacity: 1;
+      }
+
+      #pfa-{{ sid }} .pfa__item:hover .pfa__icon {
+        color: var(--pfa-accent);
+        background: color-mix(in srgb, var(--pfa-icon-bg) 70%, #fff);
+      }
+
+      #pfa-{{ sid }} .pfa__item:hover .pfa__label {
+        color: var(--pfa-heading);
+      }
+    }
+  {% endif %}
+
+  #pfa-{{ sid }} a.pfa__item:focus-visible {
+    outline: 2px solid var(--pfa-accent);
+    outline-offset: 3px;
+  }
+
+  #pfa-{{ sid }} .pfa__icon {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+    width: var(--pfa-icon-size-m);
+    height: var(--pfa-icon-size-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pfa-icon);
+    margin: 0 0 0.75rem;
+    border-radius: 50%;
+    background: var(--pfa-icon-bg);
+    transition:
+      color 0.45s var(--pfa-ease),
+      background-color 0.45s var(--pfa-ease);
+  }
+
+  #pfa-{{ sid }} .pfa__icon--framed {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pfa-heading) 6%, transparent);
+  }
+
+  #pfa-{{ sid }} .pfa__icon svg,
+  #pfa-{{ sid }} .pfa__icon img {
+    width: 52%;
+    height: 52%;
+    display: block;
+    object-fit: contain;
+  }
+
+  #pfa-{{ sid }} .pfa__icon--photo {
+    overflow: hidden;
+  }
+
+  #pfa-{{ sid }} .pfa__icon--photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  {% if section.settings.icon_style == 'plain' %}
+    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) svg,
+    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) img {
+      width: 78%;
+      height: 78%;
+    }
+  {% endif %}
+
+  #pfa-{{ sid }} .pfa__label {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    min-height: 2.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--pfa-label-size-m);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.015em;
+    color: var(--pfa-label);
+    transition: color 0.45s var(--pfa-ease);
+  }
+
+  #pfa-{{ sid }} .pfa-anim {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.7s var(--pfa-ease),
+      transform 0.7s var(--pfa-ease);
+  }
+
+  #pfa-{{ sid }} .pfa-anim.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  #pfa-{{ sid }} li.pfa-anim {
+    transition-delay: calc(var(--pfa-stagger, 0) * 45ms);
+    height: 100%;
+  }
+
+  #pfa-{{ sid }} li.pfa-anim .pfa__item {
+    height: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #pfa-{{ sid }} .pfa-anim {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    #pfa-{{ sid }} .pfa__item,
+    #pfa-{{ sid }} .pfa__icon,
+    #pfa-{{ sid }} .pfa__label {
+      transition: none;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #pfa-{{ sid }} {
+      padding-top: var(--pfa-pad-top-d);
+      padding-bottom: var(--pfa-pad-bottom-d);
+    }
+
+    #pfa-{{ sid }} .pfa__inner {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    #pfa-{{ sid }} .pfa__heading {
+      font-size: var(--pfa-heading-size-d);
+    }
+
+    #pfa-{{ sid }} .pfa__grid {
+      grid-template-columns: repeat(var(--pfa-cols-t), minmax(0, 1fr));
+    }
+
+    #pfa-{{ sid }} .pfa__item {
+      min-height: 10.5rem;
+    }
+
+    #pfa-{{ sid }} .pfa__icon {
+      width: var(--pfa-icon-size-d);
+      height: var(--pfa-icon-size-d);
+    }
+
+    #pfa-{{ sid }} .pfa__label {
+      font-size: var(--pfa-label-size-d);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    #pfa-{{ sid }} .pfa__inner {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+
+    #pfa-{{ sid }} .pfa__grid {
+      grid-template-columns: repeat(var(--pfa-cols-d), minmax(0, 1fr));
+    }
+
+    #pfa-{{ sid }} .pfa__header {
+      margin-bottom: {% if section.settings.subtext != blank %}1.2rem{% else %}3.6rem{% endif %};
+    }
+
+    #pfa-{{ sid }} .pfa__subtext {
+      margin-bottom: 3.6rem;
+    }
+
+    #pfa-{{ sid }} .pfa__item {
+      min-height: 11rem;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  id="pfa-{{ sid }}"
+  class="pfa"
+  {% if section.settings.heading != blank %}
+    aria-labelledby="pfa-heading-{{ sid }}"
+  {% else %}
+    aria-label="Perfect fit for you"
+  {% endif %}
+>
+  {%- if section.settings.pattern_image != blank or section.settings.use_default_pattern -%}
+    <div class="pfa__bottom-pattern" aria-hidden="true"></div>
+  {%- endif -%}
+  <div class="pfa__inner">
+    {%- if section.settings.heading != blank or section.settings.highlight_text != blank -%}
+      <div class="pfa__header pfa-anim" data-pfa-anim>
+        <h2 id="pfa-heading-{{ sid }}" class="pfa__heading">
+          {%- if section.settings.heading != blank -%}
+            {{ section.settings.heading | escape }}
+          {%- endif -%}
+          {%- if section.settings.highlight_text != blank -%}
+            <span class="pfa__highlight">{{ section.settings.highlight_text | escape }}</span>
+          {%- endif -%}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.subtext != blank -%}
+      <p class="pfa__subtext pfa-anim" data-pfa-anim>{{ section.settings.subtext | escape }}</p>
+    {%- endif -%}
+
+    <ul class="pfa__grid" role="list">
+      {%- assign item_index = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'audience' and block.settings.enabled -%}
+          {%- assign pfa_collection = block.settings.collection -%}
+          {%- assign pfa_title = block.settings.title -%}
+          {%- if pfa_title == blank and pfa_collection != blank -%}
+            {%- assign pfa_title = pfa_collection.title -%}
+          {%- endif -%}
+          {%- comment -%} Use only Perfect Fit custom image or built-in icon — never collection image {%- endcomment -%}
+          {%- assign pfa_image = block.settings.image -%}
+          {%- assign pfa_url = blank -%}
+          {%- if pfa_collection != blank -%}
+            {%- assign pfa_url = pfa_collection.url -%}
+          {%- endif -%}
+
+          {%- if pfa_title != blank or pfa_image != blank or pfa_collection != blank -%}
+            <li
+              class="pfa-anim"
+              data-pfa-anim
+              style="--pfa-stagger: {{ item_index }};"
+              {{ block.shopify_attributes }}
+            >
+              {%- if pfa_url != blank -%}
+                <a
+                  class="pfa__item"
+                  href="{{ pfa_url }}"
+                  {% if pfa_title != blank %}aria-label="Shop {{ pfa_title | escape }}"{% endif %}
+                >
+              {%- else -%}
+                <div class="pfa__item pfa__item--static">
+              {%- endif -%}
+                  <div class="pfa__icon{% if section.settings.icon_style == 'framed' %} pfa__icon--framed{% endif %}{% if pfa_image != blank %} pfa__icon--photo{% endif %}">
+                    {%- if pfa_image != blank -%}
+                      {%- assign icon_alt = pfa_title | default: 'Collection' -%}
+                      {{
+                        pfa_image
+                        | image_url: width: 300
+                        | image_tag:
+                          loading: 'lazy',
+                          decoding: 'async',
+                          widths: '80, 120, 160, 200, 300',
+                          sizes: '(min-width: 750px) 72px, 48px',
+                          alt: icon_alt
+                      }}
+                    {%- else -%}
+                      {%- case block.settings.icon -%}
+                        {%- when 'bride' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6c-3.2 0-5.8 2.8-5.8 6.2 0 2.4 1.2 4.5 3 5.6L18 28h12l-3.2-10.2c1.8-1.1 3-3.2 3-5.6C29.8 8.8 27.2 6 24 6Z"/><path d="M16 42c1.5-5 4.4-8 8-8s6.5 3 8 8"/><path d="M12 18c2.5 1.5 5 2.2 8 2.2M36 18c-2.5 1.5-5 2.2-8 2.2"/><circle cx="24" cy="11.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+                        {%- when 'bridesmaid' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="14" r="5.5"/><path d="M14 42c1.8-7.5 5.5-11.5 10-11.5S32.2 34.5 34 42"/><path d="M18 24.5c-3.2.8-5.8 3-7 6.5M30 24.5c3.2.8 5.8 3 7 6.5"/><path d="M24 8.5V6M20.5 10l-1.5-1.5M27.5 10l1.5-1.5"/></svg>
+                        {%- when 'guest' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 8 28 16h8l-6.5 5 2.5 8L24 24l-8 5 2.5-8L12 16h8z"/><path d="M12 40c2-5 6-8 12-8s10 3 12 8"/></svg>
+                        {%- when 'party' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 40 34 12l2 1-8 28z"/><path d="M16 14c2 1.5 3.5 4 3.5 6.5M12 22c2.2 0 4 1.8 4 4M28 10c1.5-2 4-3 6.5-2.5M34 8c1-2.2 3.2-3.5 5.5-3.5"/><circle cx="14" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="38" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg>
+                        {%- when 'birthday' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 22h28v16a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V22Z"/><path d="M10 28h28M24 10v8M24 10c0-2 1.5-3.5 1.5-3.5S27 10 24 10ZM16 14v6M32 14v6M16 14c0-1.5 1-2.8 1-2.8S18 14 16 14ZM32 14c0-1.5 1-2.8 1-2.8S34 14 32 14Z"/></svg>
+                        {%- when 'festive' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6v4M24 38v4M6 24h4M38 24h4M11.5 11.5l2.8 2.8M33.7 33.7l2.8 2.8M11.5 36.5l2.8-2.8M33.7 14.3l2.8-2.8"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/></svg>
+                        {%- when 'anniversary' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 40s-12-7.8-12-16.5A7.5 7.5 0 0 1 24 18a7.5 7.5 0 0 1 12 5.5C36 32.2 24 40 24 40Z"/><path d="M18 14c1-3 3.5-5 6-5M30 14c-1-3-3.5-5-6-5"/></svg>
+                        {%- when 'everyday' -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="10"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4"/><circle cx="24" cy="24" r="3"/></svg>
+                        {%- else -%}
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18c0-5.5 4.5-10 10-10s10 4.5 10 10c0 8-10 14-10 14S14 26 14 18Z"/><circle cx="24" cy="18" r="3"/><path d="M18 40h12"/></svg>
+                      {%- endcase -%}
+                    {%- endif -%}
+                  </div>
+                  {%- if pfa_title != blank -%}
+                    <p class="pfa__label">{{ pfa_title | escape }}</p>
+                  {%- endif -%}
+              {%- if pfa_url != blank -%}
+                </a>
+              {%- else -%}
+                </div>
+              {%- endif -%}
+            </li>
+            {%- assign item_index = item_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var root = document.getElementById('pfa-{{ sid }}');
+    if (!root) return;
+
+    var items = root.querySelectorAll('[data-pfa-anim]');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -24px 0px' }
+    );
+
+    items.forEach(function (el) { observer.observe(el); });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Perfect Fit Audience",
+  "tag": "section",
+  "class": "section-perfect-fit-audience",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Perfect Fit For You"
+    },
+    {
+      "type": "text",
+      "id": "highlight_text",
+      "label": "Highlighted text",
+      "default": "If You Are:"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Jewellery styled for every celebration — from your wedding day to everyday elegance."
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_max_width",
+      "min": 420,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "label": "Heading max width",
+      "default": 720
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "container_width",
+      "min": 900,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Container width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Columns (desktop)",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns (tablet)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Columns (mobile)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "min": 8,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Item gap",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "item_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Item corner radius",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "item_padding_y",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Item padding (vertical)",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "item_padding_x",
+      "min": 8,
+      "max": 28,
+      "step": 2,
+      "unit": "px",
+      "label": "Item padding (horizontal)",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "icon_style",
+      "label": "Icon style",
+      "options": [
+        { "value": "plain", "label": "Plain (no frame)" },
+        { "value": "framed", "label": "Soft circle frame" }
+      ],
+      "default": "framed"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover",
+      "label": "Enable hover lift",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Background pattern"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_default_pattern",
+      "label": "Use dotted pattern overlay",
+      "info": "Optional. Animated ambiance is always on; this adds a subtle pattern on top.",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "pattern_image",
+      "label": "Custom pattern image",
+      "info": "Optional overlay. Overrides the default dotted pattern when set."
+    },
+    {
+      "type": "range",
+      "id": "pattern_size",
+      "min": 80,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Custom pattern tile size",
+      "default": 180
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_surface",
+      "label": "Item surface",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Heading",
+      "default": "#202336"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Subtext",
+      "default": "#5C5660"
+    },
+    {
+      "type": "color",
+      "id": "color_accent",
+      "label": "Accent (glow)",
+      "default": "#6F4B53"
+    },
+    {
+      "type": "color",
+      "id": "color_highlight_bg",
+      "label": "Highlight background",
+      "default": "#6F4B53"
+    },
+    {
+      "type": "color",
+      "id": "color_highlight_text",
+      "label": "Highlight text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_icon",
+      "label": "Icon",
+      "default": "#8A6A4A"
+    },
+    {
+      "type": "color",
+      "id": "color_icon_bg",
+      "label": "Icon circle background",
+      "default": "#FBF8F4"
+    },
+    {
+      "type": "color",
+      "id": "color_label",
+      "label": "Item label",
+      "default": "#202336"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "min": 24,
+      "max": 56,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (desktop)",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_weight",
+      "min": 400,
+      "max": 700,
+      "step": 100,
+      "label": "Heading weight",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "subtext_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtext size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "label_size_desktop",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size (desktop)",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "label_size_mobile",
+      "min": 11,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size (mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "min": 40,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 32,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size (mobile)",
+      "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 20,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "audience",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enabled",
+          "label": "Enable",
+          "default": true
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection",
+          "info": "Card links to this collection. Leave title blank to use the collection name."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Optional. Leave blank to use the collection title."
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Shown when no custom image is set.",
+          "options": [
+            { "value": "bride", "label": "Bride" },
+            { "value": "bridesmaid", "label": "Bridesmaid" },
+            { "value": "guest", "label": "Function guest" },
+            { "value": "party", "label": "Party" },
+            { "value": "birthday", "label": "Birthday" },
+            { "value": "festive", "label": "Festive / celebration" },
+            { "value": "anniversary", "label": "Anniversary" },
+            { "value": "everyday", "label": "Everyday" },
+            { "value": "sparkle", "label": "Sparkle" }
+          ],
+          "default": "bride"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom image",
+          "info": "Optional. Replaces the icon when set. Collection images are never used."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Perfect Fit Audience",
+      "blocks": [
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "A Bride",
+            "icon": "bride"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "A Bridesmaid",
+            "icon": "bridesmaid"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Attending a Function",
+            "icon": "guest"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Going to a Party",
+            "icon": "party"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Celebrating Your Day",
+            "icon": "festive"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Birthday",
+            "icon": "birthday"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Anniversary",
+            "icon": "anniversary"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Everyday Elegance",
+            "icon": "everyday"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Festive Season",
+            "icon": "sparkle"
+          }
+        },
+        {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "title": "Wedding Guest",
+            "icon": "guest"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

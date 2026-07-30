@@ -1,0 +1,1126 @@
+{% doc %}
+  Premium About Us — Srivaya. Editorial layout, soft surfaces, homepage typography.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .sv-about-{{ ai_gen_id }} {
+    --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --sv-ink: #20181a;
+    --sv-body: #61474d;
+    --sv-accent: #6f4b53;
+    --sv-accent-deep: #513c40;
+    --sv-soft: #f6f1f2;
+    --sv-pale: #ece4e6;
+    --sv-line: #e3d6d9;
+    --sv-white: #ffffff;
+    display: block;
+    width: 100%;
+    color: var(--sv-body);
+    background: var(--sv-white);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s var(--sv-ease), transform 0.7s var(--sv-ease);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sv-about-{{ ai_gen_id }} .sv-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-wrap {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 16px;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow--solo::before,
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow--solo::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 45%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow--left {
+    justify-content: flex-start;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-eyebrow--left::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 45%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-heading {
+    margin: 0;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-style: var(--font-heading-style, normal);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    color: var(--sv-ink);
+    text-wrap: balance;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-heading {
+      font-size: 40px;
+    }
+  }
+
+  /* ——— Hero ——— */
+  .sv-about-{{ ai_gen_id }} .sv-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    text-align: center;
+    padding: 72px 24px 0;
+    background:
+      radial-gradient(ellipse 90% 80% at 50% -10%, color-mix(in srgb, var(--sv-soft) 95%, #fff) 0%, transparent 65%),
+      linear-gradient(180deg, var(--sv-soft) 0%, var(--sv-white) 78%);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-hero {
+      padding: 96px 48px 0;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-title {
+    margin: 0 0 18px;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -0.028em;
+    color: var(--sv-ink);
+    text-wrap: balance;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-hero-title {
+      font-size: 48px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-text {
+    margin: 0 auto;
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sv-body);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-hero-text {
+      font-size: 18px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 28px auto 40px;
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-rule span {
+    width: 48px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 35%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-hero-rule svg {
+    width: 10px;
+    height: 10px;
+    opacity: 0.75;
+  }
+
+  /* Trust strip under hero */
+  .sv-about-{{ ai_gen_id }} .sv-trust {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 28px 8px 36px;
+    border-top: 1px solid var(--sv-line);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-trust {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      padding: 32px 0 48px;
+      gap: 0;
+    }
+
+    .sv-about-{{ ai_gen_id }} .sv-trust-item:not(:last-child) {
+      border-right: 1px solid var(--sv-line);
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-trust-item {
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-trust-number {
+    margin: 0 0 6px;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--sv-ink);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-trust-number {
+      font-size: 32px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-trust-label {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--sv-body);
+  }
+
+  /* ——— Story (editorial split) ——— */
+  .sv-about-{{ ai_gen_id }} .sv-story {
+    padding: 56px 0 64px;
+    background: var(--sv-white);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-story {
+      padding: 72px 0 88px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-story-grid {
+    display: grid;
+    gap: 28px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-story-grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+      gap: 56px;
+      align-items: start;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-story-aside {
+    position: sticky;
+    top: 96px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-story .sv-heading {
+    margin-bottom: 0;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-story-lead {
+    margin: 16px 0 0;
+    max-width: 280px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-story-body {
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--sv-body);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-story-body p {
+    margin: 0 0 18px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-story-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ——— Why (4 features, no cards) ——— */
+  .sv-about-{{ ai_gen_id }} .sv-why {
+    padding: 64px 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, color-mix(in srgb, var(--sv-soft) 88%, #fff), transparent 70%),
+      var(--sv-soft);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-why {
+      padding: 80px 0;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-why-head {
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto 40px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-why-head .sv-eyebrow {
+    justify-content: center;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-why-head .sv-eyebrow::before,
+  .sv-about-{{ ai_gen_id }} .sv-why-head .sv-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 45%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-why-head .sv-heading {
+    margin-bottom: 12px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-why-intro {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--sv-body);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 880px;
+    margin: 0 auto;
+    border-top: 1px solid var(--sv-line);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-features {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-feature {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 28px 4px;
+    border-bottom: 1px solid var(--sv-line);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-feature {
+      padding: 32px 28px 32px 8px;
+    }
+
+    .sv-about-{{ ai_gen_id }} .sv-feature:nth-child(odd) {
+      border-right: 1px solid var(--sv-line);
+      padding-right: 36px;
+    }
+
+    .sv-about-{{ ai_gen_id }} .sv-feature:nth-child(even) {
+      padding-left: 36px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-feature-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-feature-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-feature-title {
+    margin: 0 0 6px;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--sv-ink);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-feature-text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--sv-body);
+  }
+
+  /* ——— Mission band ——— */
+  .sv-about-{{ ai_gen_id }} .sv-mission {
+    padding: 72px 24px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--sv-white) 0%, var(--sv-soft) 45%, var(--sv-white) 100%);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-mission {
+      padding: 96px 48px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-mission-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-mission .sv-eyebrow {
+    justify-content: center;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-mission .sv-eyebrow::before,
+  .sv-about-{{ ai_gen_id }} .sv-mission .sv-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 45%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-mission-quote {
+    margin: 0;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
+    font-size: 26px;
+    font-style: italic;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    color: var(--sv-ink);
+    text-wrap: balance;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-mission-quote {
+      font-size: 34px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-mission-body {
+    margin: 24px auto 0;
+    max-width: 560px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sv-body);
+  }
+
+  /* ——— Founder ——— */
+  .sv-about-{{ ai_gen_id }} .sv-founder {
+    padding: 24px 0 56px;
+    background: var(--sv-white);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-founder {
+      padding: 8px 0 72px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-founder-panel {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 28px 36px;
+    background: var(--sv-soft);
+    border-radius: 4px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-founder-panel {
+      padding: 48px 52px 44px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-founder-label {
+    margin: 0 0 20px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-founder-quote {
+    margin: 0 0 24px;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--sv-body);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-founder-quote {
+      font-size: 17px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-founder-attr {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--sv-accent-deep);
+  }
+
+  /* ——— Reassure (WhatsApp) ——— */
+  .sv-about-{{ ai_gen_id }} .sv-reassure {
+    padding: 64px 24px;
+    text-align: center;
+    background: var(--sv-soft);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-reassure {
+      padding: 80px 48px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-reassure-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-reassure .sv-eyebrow {
+    justify-content: center;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-reassure .sv-eyebrow::before,
+  .sv-about-{{ ai_gen_id }} .sv-reassure .sv-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 45%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-reassure-title {
+    margin: 0 0 16px;
+    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--sv-ink);
+    text-wrap: balance;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-reassure-title {
+      font-size: 36px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-reassure-text {
+    margin: 0 auto 28px;
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sv-body);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 14px 28px;
+    background: transparent;
+    color: var(--sv-accent);
+    border: 1px solid rgba(43, 43, 43, 0.28);
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-wa-btn svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+  }
+
+  @media (hover: hover) {
+    .sv-about-{{ ai_gen_id }} .sv-wa-btn:hover {
+      background: var(--sv-accent);
+      color: var(--sv-white);
+      border-color: #312426;
+    }
+  }
+
+  /* ——— Close: CTA + social ——— */
+  .sv-about-{{ ai_gen_id }} .sv-close {
+    text-align: center;
+    padding: 72px 24px 88px;
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 100%, color-mix(in srgb, var(--sv-soft) 90%, #fff) 0%, transparent 65%),
+      linear-gradient(180deg, var(--sv-white) 0%, var(--sv-white) 40%, var(--sv-soft) 100%);
+  }
+
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-close {
+      padding: 96px 48px 110px;
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close .sv-eyebrow {
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close .sv-eyebrow::before,
+  .sv-about-{{ ai_gen_id }} .sv-close .sv-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 45%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close .sv-heading {
+    margin-bottom: 14px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close-text {
+    max-width: 420px;
+    margin: 0 auto 32px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--sv-body);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 28px;
+    color: var(--sv-accent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close-rule span {
+    width: 40px;
+    height: 1px;
+    background: color-mix(in srgb, var(--sv-accent) 35%, transparent);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-close-rule svg {
+    width: 10px;
+    height: 10px;
+    opacity: 0.7;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    min-width: 220px;
+    padding: 16px 32px;
+    background: {{ block.settings.cta_button_bg | default: '#6f4b53' }};
+    color: {{ block.settings.cta_button_text | default: '#ffffff' }};
+    border: 1px solid rgba(43, 43, 43, 0.35);
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: var(--font-body-family, sans-serif);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-cta-btn svg {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+    transition: transform 0.3s var(--sv-ease);
+  }
+
+  @media (hover: hover) {
+    .sv-about-{{ ai_gen_id }} .sv-cta-btn:hover {
+      background: {{ block.settings.cta_button_hover | default: '#513c40' }};
+      border-color: #312426;
+    }
+
+    .sv-about-{{ ai_gen_id }} .sv-cta-btn:hover svg {
+      transform: translateX(3px);
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--sv-white);
+    border: 1px solid var(--sv-line);
+    box-shadow: 0 6px 18px rgba(49, 36, 38, 0.07);
+    color: var(--sv-accent);
+    text-decoration: none;
+    transition:
+      opacity 0.3s ease,
+      color 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s var(--sv-ease),
+      transform 0.3s var(--sv-ease);
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-social svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (hover: hover) {
+    .sv-about-{{ ai_gen_id }} .sv-social:hover {
+      color: var(--sv-white);
+      background: var(--sv-accent);
+      border-color: var(--sv-accent);
+      box-shadow: 0 10px 24px rgba(49, 36, 38, 0.12);
+      transform: translateY(-2px);
+    }
+  }
+
+  .sv-about-{{ ai_gen_id }} .sv-social-note {
+    margin: 12px 0 0;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: var(--sv-body);
+    opacity: 0.8;
+  }
+{% endstyle %}
+
+<about-srivaya-{{ ai_gen_id }} class="sv-about-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <section class="sv-hero">
+    <div class="sv-wrap">
+      <div class="sv-hero-inner sv-reveal" data-sv-reveal>
+        <p class="sv-eyebrow sv-eyebrow--solo">{{ block.settings.hero_eyebrow | default: 'About Us' }}</p>
+        <h1 class="sv-hero-title">{{ block.settings.hero_title | default: 'Crafted with Love, Worn with Pride.' }}</h1>
+        <p class="sv-hero-text">{{ block.settings.hero_text | default: 'At Srivaya, we believe every woman deserves to shine — every single day.' }}</p>
+        <div class="sv-hero-rule" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.8 7.2 4.8 11.2 6 7.2 7.2 6 11.2 4.8 7.2 0.8 6 4.8 4.8Z"/></svg>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="sv-trust sv-reveal" data-sv-reveal data-sv-stats>
+        <div class="sv-trust-item">
+          <p class="sv-trust-number" data-target="{{ block.settings.stat_1_value | default: 10000 }}" data-suffix="+">0</p>
+          <p class="sv-trust-label">{{ block.settings.stat_1_label | default: 'Orders Delivered' }}</p>
+        </div>
+        <div class="sv-trust-item">
+          <p class="sv-trust-number" data-target="{{ block.settings.stat_2_value | default: '4.8' }}" data-decimals="1">0</p>
+          <p class="sv-trust-label">{{ block.settings.stat_2_label | default: 'Average Rating' }}</p>
+        </div>
+        <div class="sv-trust-item">
+          <p class="sv-trust-number" data-target="{{ block.settings.stat_3_value | default: 500 }}" data-suffix="+">0</p>
+          <p class="sv-trust-label">{{ block.settings.stat_3_label | default: 'Unique Designs' }}</p>
+        </div>
+        <div class="sv-trust-item">
+          <p class="sv-trust-number" data-static="{{ block.settings.stat_4_value | default: 'Pan India' }}">{{ block.settings.stat_4_value | default: 'Pan India' }}</p>
+          <p class="sv-trust-label">{{ block.settings.stat_4_label | default: 'Shipping' }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-story">
+    <div class="sv-wrap">
+      <div class="sv-story-grid sv-reveal" data-sv-reveal>
+        <aside class="sv-story-aside">
+          <p class="sv-eyebrow sv-eyebrow--left">{{ block.settings.story_eyebrow | default: 'Our Story' }}</p>
+          <h2 class="sv-heading">{{ block.settings.story_title | default: 'Born from a simple belief' }}</h2>
+          <p class="sv-story-lead">{{ block.settings.story_lead | default: 'Stunning jewellery should never come with a stunning price tag.' }}</p>
+        </aside>
+        <div class="sv-story-body">
+          {% if block.settings.story_body != blank %}
+            {{ block.settings.story_body }}
+          {% else %}
+            <p>Srivaya was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p>
+            <p>We saw a gap where quality jewellery was either too expensive or too hard to find online. So we changed that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p>
+            <p>Every piece we curate is handpicked with love, care, and an eye for detail — because jewellery isn't just an accessory, it's an emotion.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-why">
+    <div class="sv-wrap">
+      <div class="sv-why-head sv-reveal" data-sv-reveal>
+        <p class="sv-eyebrow">{{ block.settings.why_eyebrow | default: 'Why Srivaya' }}</p>
+        <h2 class="sv-heading">{{ block.settings.why_title | default: 'Designed for the way you live' }}</h2>
+        <p class="sv-why-intro">{{ block.settings.why_intro | default: 'Beautiful pieces, thoughtful service, and everyday elegance — without compromise.' }}</p>
+      </div>
+      <div class="sv-features sv-reveal" data-sv-reveal>
+        <div class="sv-feature">
+          <div class="sv-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3 14.5 9.5 21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></svg>
+          </div>
+          <div>
+            <h3 class="sv-feature-title">{{ block.settings.why_1_title | default: 'Premium Quality' }}</h3>
+            <p class="sv-feature-text">{{ block.settings.why_1_text | default: 'Every piece is carefully quality-checked before it reaches you.' }}</p>
+          </div>
+        </div>
+        <div class="sv-feature">
+          <div class="sv-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M8 8h5.5a2.5 2.5 0 0 1 0 5H8h6a2.5 2.5 0 0 1 0 5H8"/></svg>
+          </div>
+          <div>
+            <h3 class="sv-feature-title">{{ block.settings.why_2_title | default: 'Affordable Luxury' }}</h3>
+            <p class="sv-feature-text">{{ block.settings.why_2_text | default: 'Designer looks without the designer price tag.' }}</p>
+          </div>
+        </div>
+        <div class="sv-feature">
+          <div class="sv-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7"/><circle cx="7" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg>
+          </div>
+          <div>
+            <h3 class="sv-feature-title">{{ block.settings.why_3_title | default: 'Pan India Delivery' }}</h3>
+            <p class="sv-feature-text">{{ block.settings.why_3_text | default: 'We deliver to every corner of India, quickly and safely.' }}</p>
+          </div>
+        </div>
+        <div class="sv-feature">
+          <div class="sv-feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/></svg>
+          </div>
+          <div>
+            <h3 class="sv-feature-title">{{ block.settings.why_4_title | default: 'Easy Returns' }}</h3>
+            <p class="sv-feature-text">{{ block.settings.why_4_text | default: 'Hassle-free return & exchange — shop with peace of mind.' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-mission">
+    <div class="sv-mission-inner sv-reveal" data-sv-reveal>
+      <p class="sv-eyebrow">{{ block.settings.mission_title | default: 'Our Mission' }}</p>
+      {% if block.settings.mission_quote != blank %}
+        <p class="sv-mission-quote">{{ block.settings.mission_quote }}</p>
+      {% else %}
+        <p class="sv-mission-quote">To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life.</p>
+      {% endif %}
+      {% if block.settings.mission_body != blank %}
+        <p class="sv-mission-body">{{ block.settings.mission_body }}</p>
+      {% else %}
+        <p class="sv-mission-body">We help you create memories — at weddings, celebrations, or just a regular Tuesday when you want to feel a little extra special.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="sv-founder">
+    <div class="sv-wrap">
+      <div class="sv-founder-panel sv-reveal" data-sv-reveal>
+        <p class="sv-founder-label">{{ block.settings.founder_title | default: 'A note from our founder' }}</p>
+        {% if block.settings.founder_quote != blank %}
+          <p class="sv-founder-quote">{{ block.settings.founder_quote }}</p>
+        {% else %}
+          <p class="sv-founder-quote">When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery — affordable enough that you don't think twice, and beautiful enough that you never forget it. Thank you for being part of our journey.</p>
+        {% endif %}
+        <p class="sv-founder-attr">{{ block.settings.founder_attr | default: '— Founder, Srivaya' }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sv-reassure">
+    <div class="sv-reassure-inner sv-reveal" data-sv-reveal>
+      <p class="sv-eyebrow">{{ block.settings.reassure_eyebrow | default: 'Still have questions?' }}</p>
+      <h2 class="sv-reassure-title">{{ block.settings.reassure_title | default: 'Unsure about quality or colour?' }}</h2>
+      <p class="sv-reassure-text">
+        {% if block.settings.reassure_text != blank %}
+          {{ block.settings.reassure_text }}
+        {% else %}
+          If you still have doubts about our jewellery quality, finish, or colour — message us on WhatsApp. We will hop on a quick call or meeting and clarify everything before you buy.
+        {% endif %}
+      </p>
+      <a
+        class="sv-wa-btn"
+        href="{{ block.settings.whatsapp_url | default: 'https://wa.me/917777877253' }}"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.1 4 4.1-1.1A10 10 0 1 0 12 2Zm5.6 14.3c-.2.7-1.3 1.2-1.8 1.3-.5.1-1 .2-3.4-.7-3-1.3-4.9-4.5-5-4.7-.2-.2-1.3-1.7-1.3-3.3 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.7c-.1.2-.3.4-.1.7.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.7-.1l.9-1.1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.4 0 .2 0 1.2-.5 1.8Z"/></svg>
+        {{ block.settings.reassure_btn | default: 'Chat on WhatsApp' }}
+      </a>
+    </div>
+  </section>
+
+  <section class="sv-close">
+    <div class="sv-close-inner sv-reveal" data-sv-reveal>
+      <p class="sv-eyebrow">{{ block.settings.cta_eyebrow | default: 'Explore the collection' }}</p>
+      <h2 class="sv-heading">{{ block.settings.cta_title | default: 'Find your next favourite piece' }}</h2>
+      <p class="sv-close-text">{{ block.settings.cta_text | default: 'Explore our curated collection of jewellery made to shine with you.' }}</p>
+      <div class="sv-close-rule" aria-hidden="true">
+        <span></span>
+        <svg viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.8 7.2 4.8 11.2 6 7.2 7.2 6 11.2 4.8 7.2 0.8 6 4.8 4.8Z"/></svg>
+        <span></span>
+      </div>
+      <a class="sv-cta-btn" href="{{ block.settings.cta_link | default: '/collections/all' }}">
+        {{ block.settings.cta_label | default: 'Shop the collection' }}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <div class="sv-socials">
+        {% if block.settings.instagram_url != blank %}
+          <a class="sv-social" href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.2-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-3.2 1.7-4.8 4.9-4.9C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-2.2.1-3.2 1.1-3.3 3.3-.1 1.2-.1 1.5-.1 4.6s0 3.5.1 4.6c.1 2.2 1.1 3.2 3.3 3.3 1.2.1 1.5.1 4.7.1s3.5 0 4.6-.1c2.2-.1 3.3-1.1 3.3-3.3.1-1.2.1-1.5.1-4.6s0-3.5-.1-4.6c-.1-2.2-1.1-3.2-3.3-3.3-1.1-.1-1.5-.1-4.6-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm5.1-8.4a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3Z"/></svg>
+          </a>
+        {% endif %}
+        {% if block.settings.facebook_url != blank %}
+          <a class="sv-social" href="{{ block.settings.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg>
+          </a>
+        {% endif %}
+        {% if block.settings.youtube_url != blank %}
+          <a class="sv-social" href="{{ block.settings.youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a3 3 0 0 0-2.1-2.1C18.6 4.6 12 4.6 12 4.6s-6.6 0-8.4.5A3 3 0 0 0 1.5 7.2 31.5 31.5 0 0 0 1 12a31.5 31.5 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 23 12a31.5 31.5 0 0 0-.5-4.8ZM9.8 15.5v-7L16 12l-6.2 3.5Z"/></svg>
+          </a>
+        {% endif %}
+        {% if block.settings.whatsapp_url != blank %}
+          <a class="sv-social" href="{{ block.settings.whatsapp_url }}" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.1 4 4.1-1.1A10 10 0 1 0 12 2Zm5.6 14.3c-.2.7-1.3 1.2-1.8 1.3-.5.1-1 .2-3.4-.7-3-1.3-4.9-4.5-5-4.7-.2-.2-1.3-1.7-1.3-3.3 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.7c-.1.2-.3.4-.1.7.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.7-.1l.9-1.1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.4 0 .2 0 1.2-.5 1.8Z"/></svg>
+          </a>
+        {% endif %}
+      </div>
+      <p class="sv-social-note">{{ block.settings.social_text | default: 'Follow along and tag us — we love seeing you shine.' }}</p>
+    </div>
+  </section>
+</about-srivaya-{{ ai_gen_id }}>
+
+<script>
+  (function () {
+    class AboutSrivaya{{ ai_gen_id }} extends HTMLElement {
+      connectedCallback() {
+        this.setupReveal();
+        this.setupStats();
+      }
+
+      setupReveal() {
+        var items = this.querySelectorAll('[data-sv-reveal]');
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+          items.forEach(function (el) { el.classList.add('is-visible'); });
+          return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+        items.forEach(function (el) { observer.observe(el); });
+      }
+
+      setupStats() {
+        var root = this.querySelector('[data-sv-stats]');
+        if (!root) return;
+        var numbers = root.querySelectorAll('.sv-trust-number[data-target]');
+        var done = false;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var run = function () {
+          if (done) return;
+          done = true;
+          numbers.forEach(function (el) {
+            if (reduce) {
+              AboutSrivaya{{ ai_gen_id }}.setFinal(el);
+              return;
+            }
+            AboutSrivaya{{ ai_gen_id }}.animate(el);
+          });
+        };
+
+        if (!('IntersectionObserver' in window)) {
+          run();
+          return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            run();
+            observer.disconnect();
+          });
+        }, { threshold: 0.35 });
+        observer.observe(root);
+      }
+
+      static setFinal(el) {
+        var target = parseFloat(el.getAttribute('data-target'));
+        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = (decimals ? target.toFixed(decimals) : Math.floor(target).toLocaleString()) + suffix;
+      }
+
+      static animate(el) {
+        var target = parseFloat(el.getAttribute('data-target'));
+        var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1600;
+        var start = null;
+
+        function frame(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = target * eased;
+          el.textContent = (decimals ? current.toFixed(decimals) : Math.floor(current).toLocaleString()) + suffix;
+          if (progress < 1) requestAnimationFrame(frame);
+          else AboutSrivaya{{ ai_gen_id }}.setFinal(el);
+        }
+        requestAnimationFrame(frame);
+      }
+    }
+
+    if (!customElements.get('about-srivaya-{{ ai_gen_id }}')) {
+      customElements.define('about-srivaya-{{ ai_gen_id }}', AboutSrivaya{{ ai_gen_id }});
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "About Us",
+  "settings": [
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "About Us" },
+    { "type": "text", "id": "hero_title", "label": "Headline", "default": "Crafted with Love, Worn with Pride." },
+    { "type": "textarea", "id": "hero_text", "label": "Subtext", "default": "At Srivaya, we believe every woman deserves to shine — every single day." },
+
+    { "type": "header", "content": "Trust stats" },
+    { "type": "number", "id": "stat_1_value", "label": "Stat 1 value", "default": 10000 },
+    { "type": "text", "id": "stat_1_label", "label": "Stat 1 label", "default": "Orders Delivered" },
+    { "type": "text", "id": "stat_2_value", "label": "Stat 2 value", "default": "4.8" },
+    { "type": "text", "id": "stat_2_label", "label": "Stat 2 label", "default": "Average Rating" },
+    { "type": "number", "id": "stat_3_value", "label": "Stat 3 value", "default": 500 },
+    { "type": "text", "id": "stat_3_label", "label": "Stat 3 label", "default": "Unique Designs" },
+    { "type": "text", "id": "stat_4_value", "label": "Stat 4 value (text)", "default": "Pan India" },
+    { "type": "text", "id": "stat_4_label", "label": "Stat 4 label", "default": "Shipping" },
+
+    { "type": "header", "content": "Our Story" },
+    { "type": "text", "id": "story_eyebrow", "label": "Eyebrow", "default": "Our Story" },
+    { "type": "text", "id": "story_title", "label": "Title", "default": "Born from a simple belief" },
+    { "type": "textarea", "id": "story_lead", "label": "Lead line", "default": "Stunning jewellery should never come with a stunning price tag." },
+    { "type": "richtext", "id": "story_body", "label": "Body", "default": "<p>Srivaya was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p><p>We saw a gap where quality jewellery was either too expensive or too hard to find online. So we changed that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p><p>Every piece we curate is handpicked with love, care, and an eye for detail — because jewellery isn't just an accessory, it's an emotion.</p>" },
+
+    { "type": "header", "content": "Why Srivaya" },
+    { "type": "text", "id": "why_eyebrow", "label": "Eyebrow", "default": "Why Srivaya" },
+    { "type": "text", "id": "why_title", "label": "Title", "default": "Designed for the way you live" },
+    { "type": "textarea", "id": "why_intro", "label": "Intro", "default": "Beautiful pieces, thoughtful service, and everyday elegance — without compromise." },
+    { "type": "text", "id": "why_1_title", "label": "Feature 1 title", "default": "Premium Quality" },
+    { "type": "text", "id": "why_1_text", "label": "Feature 1 text", "default": "Every piece is carefully quality-checked before it reaches you." },
+    { "type": "text", "id": "why_2_title", "label": "Feature 2 title", "default": "Affordable Luxury" },
+    { "type": "text", "id": "why_2_text", "label": "Feature 2 text", "default": "Designer looks without the designer price tag." },
+    { "type": "text", "id": "why_3_title", "label": "Feature 3 title", "default": "Pan India Delivery" },
+    { "type": "text", "id": "why_3_text", "label": "Feature 3 text", "default": "We deliver to every corner of India, quickly and safely." },
+    { "type": "text", "id": "why_4_title", "label": "Feature 4 title", "default": "Easy Returns" },
+    { "type": "text", "id": "why_4_text", "label": "Feature 4 text", "default": "Hassle-free return & exchange — shop with peace of mind." },
+
+    { "type": "header", "content": "Mission" },
+    { "type": "text", "id": "mission_title", "label": "Eyebrow", "default": "Our Mission" },
+    { "type": "textarea", "id": "mission_quote", "label": "Quote", "default": "To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life." },
+    { "type": "textarea", "id": "mission_body", "label": "Supporting text", "default": "We help you create memories — at weddings, celebrations, or just a regular Tuesday when you want to feel a little extra special." },
+
+    { "type": "header", "content": "Founder note" },
+    { "type": "text", "id": "founder_title", "label": "Label", "default": "A note from our founder" },
+    { "type": "textarea", "id": "founder_quote", "label": "Quote", "default": "When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery — affordable enough that you don't think twice, and beautiful enough that you never forget it. Thank you for being part of our journey." },
+    { "type": "text", "id": "founder_attr", "label": "Attribution", "default": "— Founder, Srivaya" },
+
+    { "type": "header", "content": "WhatsApp reassurance" },
+    { "type": "text", "id": "reassure_eyebrow", "label": "Eyebrow", "default": "Still have questions?" },
+    { "type": "text", "id": "reassure_title", "label": "Title", "default": "Unsure about quality or colour?" },
+    { "type": "textarea", "id": "reassure_text", "label": "Message", "default": "If you still have doubts about our jewellery quality, finish, or colour — message us on WhatsApp. We will hop on a quick call or meeting and clarify everything before you buy." },
+    { "type": "text", "id": "reassure_btn", "label": "WhatsApp button label", "default": "Chat on WhatsApp" },
+    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp URL" },
+
+    { "type": "header", "content": "Closing CTA" },
+    { "type": "text", "id": "cta_eyebrow", "label": "Eyebrow", "default": "Explore the collection" },
+    { "type": "text", "id": "cta_title", "label": "Title", "default": "Find your next favourite piece" },
+    { "type": "textarea", "id": "cta_text", "label": "Text", "default": "Explore our curated collection of jewellery made to shine with you." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop the collection" },
+    { "type": "url", "id": "cta_link", "label": "Button link" },
+    { "type": "color", "id": "cta_button_bg", "label": "Button background", "default": "#6F4B53" },
+    { "type": "color", "id": "cta_button_text", "label": "Button text", "default": "#FFFFFF" },
+    { "type": "color", "id": "cta_button_hover", "label": "Button hover", "default": "#513C40" },
+    { "type": "textarea", "id": "social_text", "label": "Social note", "default": "Follow along and tag us — we love seeing you shine." },
+    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+    { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
+    { "type": "url", "id": "youtube_url", "label": "YouTube URL" }
+  ],
+  "presets": [
+    { "name": "About Us" }
+  ]
+}
+{% endschema %}

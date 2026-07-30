@@ -1,0 +1,837 @@
+{% doc %}
+  @prompt
+    Create a hero section image component with the following features:
+    
+    - Background: full-width image with separate mobile and desktop image upload options
+    - Content layout: SubText (small label/eyebrow text) on top, then Heading, then CTA Button — stacked vertically
+    - Positioning controls: horizontal alignment (left / center / right) and vertical alignment (top / center / bottom) for the content block, configurable separately for mobile and desktop
+    - Full customization options:
+      - Section height: separate px/vh settings for desktop and mobile
+      - Heading: font size, font weight, color, line height — separate for desktop and mobile
+      - SubText: font size, font weight, color, letter spacing — separate for desktop and mobile
+      - CTA Button: label text, link URL, background color, text color, border radius, padding, font size
+      - Content max-width control
+      - Overlay color and opacity for readability
+      - Text shadow toggle
+    - All settings should be exposed as theme editor schema settings so they are fully editable in the Shopify theme customizer, add option to have padding as well to this text container where position is there
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ai-hero-background-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-hero-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-hero-content-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1;
+  }
+
+  .ai-hero-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: {{ block.settings.content_max_width }}px;
+    width: 100%;
+  }
+
+  .ai-hero-subtext-{{ ai_gen_id }} {
+    margin: 0;
+    {% if block.settings.text_shadow_enabled %}
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    {% endif %}
+  }
+
+  .ai-hero-heading-{{ ai_gen_id }} {
+    margin: 0;
+    {% if block.settings.text_shadow_enabled %}
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    {% endif %}
+  }
+
+  .ai-hero-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_text_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .ai-hero-button-{{ ai_gen_id }}:hover {
+    opacity: 0.9;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-hero-{{ ai_gen_id }} {
+      height: {{ block.settings.desktop_height }}{{ block.settings.desktop_height_unit }};
+    }
+
+    .ai-hero-background-desktop-{{ ai_gen_id }} {
+      display: block;
+    }
+
+    .ai-hero-background-mobile-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-hero-content-wrapper-{{ ai_gen_id }} {
+      justify-content: {{ block.settings.desktop_horizontal_align }};
+      align-items: {{ block.settings.desktop_vertical_align }};
+      padding: {{ block.settings.desktop_content_padding }}px;
+    }
+
+    .ai-hero-content-{{ ai_gen_id }} {
+      text-align: {{ block.settings.desktop_horizontal_align }};
+    }
+
+    .ai-hero-subtext-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_subtext_size }}px;
+      font-weight: {{ block.settings.desktop_subtext_weight }};
+      color: {{ block.settings.desktop_subtext_color }};
+      letter-spacing: {{ block.settings.desktop_subtext_letter_spacing }}px;
+    }
+
+    .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.desktop_heading_size }}px;
+      font-weight: {{ block.settings.desktop_heading_weight }};
+      color: {{ block.settings.desktop_heading_color }};
+      line-height: {{ block.settings.desktop_heading_line_height }};
+    }
+
+    .ai-hero-button-{{ ai_gen_id }} {
+      padding: {{ block.settings.desktop_button_padding_vertical }}px {{ block.settings.desktop_button_padding_horizontal }}px;
+      font-size: {{ block.settings.desktop_button_font_size }}px;
+    }
+
+    {% if block.settings.desktop_horizontal_align == 'center' %}
+      .ai-hero-button-{{ ai_gen_id }} {
+        align-self: center;
+      }
+    {% elsif block.settings.desktop_horizontal_align == 'flex-end' %}
+      .ai-hero-button-{{ ai_gen_id }} {
+        align-self: flex-end;
+      }
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-{{ ai_gen_id }} {
+      height: {{ block.settings.mobile_height }}{{ block.settings.mobile_height_unit }};
+    }
+
+    .ai-hero-background-desktop-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-hero-background-mobile-{{ ai_gen_id }} {
+      display: block;
+    }
+
+    .ai-hero-content-wrapper-{{ ai_gen_id }} {
+      justify-content: {{ block.settings.mobile_horizontal_align }};
+      align-items: {{ block.settings.mobile_vertical_align }};
+      padding: {{ block.settings.mobile_content_padding }}px;
+    }
+
+    .ai-hero-content-{{ ai_gen_id }} {
+      text-align: {{ block.settings.mobile_horizontal_align }};
+    }
+
+    .ai-hero-subtext-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_subtext_size }}px;
+      font-weight: {{ block.settings.mobile_subtext_weight }};
+      color: {{ block.settings.mobile_subtext_color }};
+      letter-spacing: {{ block.settings.mobile_subtext_letter_spacing }}px;
+    }
+
+    .ai-hero-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_heading_size }}px;
+      font-weight: {{ block.settings.mobile_heading_weight }};
+      color: {{ block.settings.mobile_heading_color }};
+      line-height: {{ block.settings.mobile_heading_line_height }};
+    }
+
+    .ai-hero-button-{{ ai_gen_id }} {
+      padding: {{ block.settings.mobile_button_padding_vertical }}px {{ block.settings.mobile_button_padding_horizontal }}px;
+      font-size: {{ block.settings.mobile_button_font_size }}px;
+    }
+
+    {% if block.settings.mobile_horizontal_align == 'center' %}
+      .ai-hero-button-{{ ai_gen_id }} {
+        align-self: center;
+      }
+    {% elsif block.settings.mobile_horizontal_align == 'flex-end' %}
+      .ai-hero-button-{{ ai_gen_id }} {
+        align-self: flex-end;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<div class="ai-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.desktop_image %}
+    <img
+      src="{{ block.settings.desktop_image | image_url: width: 2000 }}"
+      alt="{{ block.settings.desktop_image.alt | escape }}"
+      loading="lazy"
+      width="{{ block.settings.desktop_image.width }}"
+      height="{{ block.settings.desktop_image.height }}"
+      class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-desktop-{{ ai_gen_id }}"
+    >
+  {% endif %}
+
+  {% if block.settings.mobile_image %}
+    <img
+      src="{{ block.settings.mobile_image | image_url: width: 1000 }}"
+      alt="{{ block.settings.mobile_image.alt | escape }}"
+      loading="lazy"
+      width="{{ block.settings.mobile_image.width }}"
+      height="{{ block.settings.mobile_image.height }}"
+      class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-mobile-{{ ai_gen_id }}"
+    >
+  {% elsif block.settings.desktop_image %}
+    <img
+      src="{{ block.settings.desktop_image | image_url: width: 1000 }}"
+      alt="{{ block.settings.desktop_image.alt | escape }}"
+      loading="lazy"
+      width="{{ block.settings.desktop_image.width }}"
+      height="{{ block.settings.desktop_image.height }}"
+      class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-mobile-{{ ai_gen_id }}"
+    >
+  {% endif %}
+
+  <div class="ai-hero-overlay-{{ ai_gen_id }}"></div>
+
+  <div class="ai-hero-content-wrapper-{{ ai_gen_id }}">
+    <div class="ai-hero-content-{{ ai_gen_id }}">
+      {% if block.settings.subtext != blank %}
+        <p class="ai-hero-subtext-{{ ai_gen_id }}">{{ block.settings.subtext }}</p>
+      {% endif %}
+
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-hero-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
+
+      {% if block.settings.button_text != blank %}
+        <a
+          href="{{ block.settings.button_link }}"
+          class="ai-hero-button-{{ ai_gen_id }}"
+        >
+          {{ block.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero image",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image"
+    },
+    {
+      "type": "header",
+      "content": "Section height"
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "label": "Desktop height",
+      "min": 200,
+      "max": 1000,
+      "step": 50,
+      "default": 600
+    },
+    {
+      "type": "select",
+      "id": "desktop_height_unit",
+      "label": "Desktop height unit",
+      "options": [
+        {
+          "value": "px",
+          "label": "Pixels"
+        },
+        {
+          "value": "vh",
+          "label": "Viewport height"
+        }
+      ],
+      "default": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile height",
+      "min": 200,
+      "max": 800,
+      "step": 50,
+      "default": 500
+    },
+    {
+      "type": "select",
+      "id": "mobile_height_unit",
+      "label": "Mobile height unit",
+      "options": [
+        {
+          "value": "px",
+          "label": "Pixels"
+        },
+        {
+          "value": "vh",
+          "label": "Viewport height"
+        }
+      ],
+      "default": "px"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "New Collection"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Discover Luxury"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 300,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "header",
+      "content": "Desktop positioning"
+    },
+    {
+      "type": "select",
+      "id": "desktop_horizontal_align",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "desktop_vertical_align",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "desktop_content_padding",
+      "label": "Content padding",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Mobile positioning"
+    },
+    {
+      "type": "select",
+      "id": "mobile_horizontal_align",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_vertical_align",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "mobile_content_padding",
+      "label": "Content padding",
+      "min": 0,
+      "max": 80,
+      "step": 10,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Desktop subtext style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_subtext_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "desktop_subtext_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "color",
+      "id": "desktop_subtext_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_subtext_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Mobile subtext style"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtext_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "mobile_subtext_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "color",
+      "id": "mobile_subtext_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtext_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "Desktop heading style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_size",
+      "label": "Font size",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "desktop_heading_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "desktop_heading_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_heading_line_height",
+      "label": "Line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "header",
+      "content": "Mobile heading style"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "label": "Font size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "mobile_heading_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "mobile_heading_color",
+      "label": "Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_line_height",
+      "label": "Line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "header",
+      "content": "Desktop button style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desktop_button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 16,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "desktop_button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Mobile button style"
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding_vertical",
+      "label": "Vertical padding",
+      "min": 6,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 12,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Button colors"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background color",
+      "default": "#6f4b53"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Effects"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_shadow_enabled",
+      "label": "Enable text shadow",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero image"
+    }
+  ]
+}
+{% endschema %}

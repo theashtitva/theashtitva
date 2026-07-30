@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "1775040118e17c42a8": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_65325a0_D7ddxB": {
+          "type": "ai_gen_block_65325a0",
+          "settings": {
+            "hero_eyebrow": "About Us",
+            "hero_title": "Crafted with Love, Worn with Pride.",
+            "hero_text": "At Srivaya, we believe every woman deserves to shine — every single day.",
+            "stat_1_value": 10000,
+            "stat_1_label": "Orders Delivered",
+            "stat_2_value": "4.8",
+            "stat_2_label": "Average Rating",
+            "stat_3_value": 500,
+            "stat_3_label": "Unique Designs",
+            "stat_4_value": "Pan India",
+            "stat_4_label": "Shipping",
+            "story_eyebrow": "Our Story",
+            "story_title": "Born from a simple belief",
+            "story_lead": "Stunning jewellery should never come with a stunning price tag.",
+            "story_body": "<p>Srivaya was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p><p>We saw a gap where quality jewellery was either too expensive or too hard to find online. So we changed that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p><p>Every piece we curate is handpicked with love, care, and an eye for detail — because jewellery isn't just an accessory, it's an emotion.</p>",
+            "why_eyebrow": "Why Srivaya",
+            "why_title": "Designed for the way you live",
+            "why_intro": "Beautiful pieces, thoughtful service, and everyday elegance — without compromise.",
+            "why_1_title": "Premium Quality",
+            "why_1_text": "Every piece is carefully quality-checked before it reaches you.",
+            "why_2_title": "Affordable Luxury",
+            "why_2_text": "Designer looks without the designer price tag.",
+            "why_3_title": "Pan India Delivery",
+            "why_3_text": "We deliver to every corner of India, quickly and safely.",
+            "why_4_title": "Easy Returns",
+            "why_4_text": "Hassle-free return & exchange — shop with peace of mind.",
+            "mission_title": "Our Mission",
+            "mission_quote": "To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life.",
+            "mission_body": "We help you create memories — at weddings, celebrations, or just a regular Tuesday when you want to feel a little extra special.",
+            "founder_title": "A note from our founder",
+            "founder_quote": "When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery — affordable enough that you don't think twice, and beautiful enough that you never forget it. Thank you for being part of our journey.",
+            "founder_attr": "— Founder, Srivaya",
+            "reassure_eyebrow": "Still have questions?",
+            "reassure_title": "Unsure about quality or colour?",
+            "reassure_text": "If you still have doubts about our jewellery quality, finish, or colour — message us on WhatsApp. We will hop on a quick call or meeting and clarify everything before you buy.",
+            "reassure_btn": "Chat on WhatsApp",
+            "whatsapp_url": "https://wa.me/917777877253",
+            "cta_eyebrow": "Explore the collection",
+            "cta_title": "Find your next favourite piece",
+            "cta_text": "Explore our curated collection of jewellery made to shine with you.",
+            "cta_label": "Shop the collection",
+            "cta_link": "shopify://collections/all",
+            "cta_button_bg": "#6F4B53",
+            "cta_button_text": "#FFFFFF",
+            "cta_button_hover": "#513C40",
+            "social_text": "Follow along and tag us — we love seeing you shine.",
+            "instagram_url": "https://www.instagram.com/official_adhouse/",
+            "facebook_url": "https://www.facebook.com/profile.php?id=61574293116809",
+            "youtube_url": "https://www.youtube.com/@official_adhouse"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["ai_gen_block_65325a0_D7ddxB"],
+      "settings": {}
+    }
+  },
+  "order": ["main", "1775040118e17c42a8"]
+}
