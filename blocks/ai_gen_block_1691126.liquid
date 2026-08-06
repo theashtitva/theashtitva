@@ -302,7 +302,7 @@
     assign hero_desktop = block.settings.desktop_image
     assign hero_mobile = block.settings.mobile_image
     assign use_theme_hero = false
-    if block.settings.use_theme_hero_banner or hero_desktop == blank
+    if hero_desktop == blank
       assign use_theme_hero = true
     endif
   -%}
@@ -312,6 +312,7 @@
       src="{{ 'ashtitva-hero-banner-clean.png' | asset_url }}"
       alt="{{ block.settings.heading | default: 'Ashtitva jewellery' | escape }}"
       loading="eager"
+      fetchpriority="high"
       width="1920"
       height="1080"
       class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-desktop-{{ ai_gen_id }}"
@@ -320,6 +321,7 @@
       src="{{ 'ashtitva-hero-product.png' | asset_url }}"
       alt="{{ block.settings.heading | default: 'Ashtitva jewellery' | escape }}"
       loading="eager"
+      fetchpriority="high"
       width="1000"
       height="1250"
       class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-mobile-{{ ai_gen_id }}"
@@ -327,9 +329,12 @@
   {% else %}
     {% if hero_desktop %}
       <img
-        src="{{ hero_desktop | image_url: width: 2000 }}"
-        alt="{{ hero_desktop.alt | escape }}"
-        loading="lazy"
+        src="{{ hero_desktop | image_url: width: 2400 }}"
+        srcset="{{ hero_desktop | image_url: width: 800 }} 800w, {{ hero_desktop | image_url: width: 1200 }} 1200w, {{ hero_desktop | image_url: width: 1600 }} 1600w, {{ hero_desktop | image_url: width: 2000 }} 2000w, {{ hero_desktop | image_url: width: 2400 }} 2400w"
+        sizes="100vw"
+        alt="{{ hero_desktop.alt | default: block.settings.heading | default: 'Ashtitva jewellery' | escape }}"
+        loading="eager"
+        fetchpriority="high"
         width="{{ hero_desktop.width }}"
         height="{{ hero_desktop.height }}"
         class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-desktop-{{ ai_gen_id }}"
@@ -338,18 +343,24 @@
 
     {% if hero_mobile %}
       <img
-        src="{{ hero_mobile | image_url: width: 1000 }}"
-        alt="{{ hero_mobile.alt | escape }}"
-        loading="lazy"
+        src="{{ hero_mobile | image_url: width: 1200 }}"
+        srcset="{{ hero_mobile | image_url: width: 600 }} 600w, {{ hero_mobile | image_url: width: 900 }} 900w, {{ hero_mobile | image_url: width: 1200 }} 1200w"
+        sizes="100vw"
+        alt="{{ hero_mobile.alt | default: block.settings.heading | default: 'Ashtitva jewellery' | escape }}"
+        loading="eager"
+        fetchpriority="high"
         width="{{ hero_mobile.width }}"
         height="{{ hero_mobile.height }}"
         class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-mobile-{{ ai_gen_id }}"
       >
     {% elsif hero_desktop %}
       <img
-        src="{{ hero_desktop | image_url: width: 1000 }}"
-        alt="{{ hero_desktop.alt | escape }}"
-        loading="lazy"
+        src="{{ hero_desktop | image_url: width: 1200 }}"
+        srcset="{{ hero_desktop | image_url: width: 600 }} 600w, {{ hero_desktop | image_url: width: 900 }} 900w, {{ hero_desktop | image_url: width: 1200 }} 1200w"
+        sizes="100vw"
+        alt="{{ hero_desktop.alt | default: block.settings.heading | default: 'Ashtitva jewellery' | escape }}"
+        loading="eager"
+        fetchpriority="high"
         width="{{ hero_desktop.width }}"
         height="{{ hero_desktop.height }}"
         class="ai-hero-background-{{ ai_gen_id }} ai-hero-background-mobile-{{ ai_gen_id }}"
@@ -409,19 +420,20 @@
     {
       "type": "checkbox",
       "id": "use_theme_hero_banner",
-      "label": "Use Ashtitva theme hero banner",
-      "info": "Uses the jewel-tone product banner from theme assets (recommended).",
+      "label": "Use Ashtitva theme hero banner when no image is uploaded",
+      "info": "Fallback only. Uploaded desktop/mobile images always take priority.",
       "default": true
     },
     {
       "type": "image_picker",
       "id": "desktop_image",
-      "label": "Desktop image (optional override)"
+      "label": "Desktop image"
     },
     {
       "type": "image_picker",
       "id": "mobile_image",
-      "label": "Mobile image (optional override)"
+      "label": "Mobile image",
+      "info": "Optional. If empty, the desktop image is used on mobile."
     },
     {
       "type": "header",

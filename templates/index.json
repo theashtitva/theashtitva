@@ -61,7 +61,7 @@
             "overlay_color": "#071713",
             "overlay_opacity": 20,
             "text_shadow_enabled": true,
-            "use_theme_hero_banner": true
+            "use_theme_hero_banner": false
           },
           "blocks": {}
         }
