@@ -38,6 +38,7 @@
       {%- endif -%}
 
       <div class="cart__blocks">
+        {% render 'free-shipping-banner' %}
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -58,10 +59,7 @@
                   {%- endif -%}
                 </div>
 
-                <div class="totals">
-                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
-                </div>
+                {% render 'cart-estimated-total' %}
 
                 <small class="tax-note caption-large rte">
                   {%- if cart.duties_included and cart.taxes_included -%}

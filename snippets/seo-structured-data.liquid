@@ -1,0 +1,94 @@
+{%- comment -%}
+  Organization + WebSite JSON-LD for richer Google results.
+{%- endcomment -%}
+
+{%- liquid
+  assign org_description = settings.seo_default_description
+  if org_description == blank
+    assign org_description = 'Srivaya offers fashion jewellery online in India — necklaces, earrings, rings, kadas and jewellery sets with real product photography and pan-India shipping.'
+  endif
+
+  assign whatsapp_digits = settings.whatsapp_phone | default: '' | replace: '+', '' | replace: ' ', '' | replace: '-', ''
+-%}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": {{ request.origin | append: '/#organization' | json }},
+  "name": {{ shop.name | json }},
+  "url": {{ request.origin | json }},
+  "description": {{ org_description | json }},
+  {% if settings.logo %}
+  "logo": {
+    "@type": "ImageObject",
+    "url": {{ settings.logo | image_url: width: 500 | prepend: 'https:' | json }}
+  },
+  "image": {{ settings.logo | image_url: width: 1200 | prepend: 'https:' | json }},
+  {% endif %}
+  "sameAs": [
+    {%- assign same_as_first = true -%}
+    {%- if settings.social_instagram_link != blank -%}{%- unless same_as_first -%},{%- endunless -%}{{ settings.social_instagram_link | json }}{%- assign same_as_first = false -%}{%- endif -%}
+    {%- if settings.social_facebook_link != blank -%}{%- unless same_as_first -%},{%- endunless -%}{{ settings.social_facebook_link | json }}{%- assign same_as_first = false -%}{%- endif -%}
+    {%- if settings.social_twitter_link != blank -%}{%- unless same_as_first -%},{%- endunless -%}{{ settings.social_twitter_link | json }}{%- assign same_as_first = false -%}{%- endif -%}
+    {%- if settings.social_pinterest_link != blank -%}{%- unless same_as_first -%},{%- endunless -%}{{ settings.social_pinterest_link | json }}{%- assign same_as_first = false -%}{%- endif -%}
+    {%- if settings.social_tiktok_link != blank -%}{%- unless same_as_first -%},{%- endunless -%}{{ settings.social_tiktok_link | json }}{%- assign same_as_first = false -%}{%- endif -%}
+    {%- if settings.social_youtube_link != blank -%}{%- unless same_as_first -%},{%- endunless -%}{{ settings.social_youtube_link | json }}{%- assign same_as_first = false -%}{%- endif -%}
+  ]
+  {%- if whatsapp_digits != blank -%}
+  ,"contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": {{ settings.whatsapp_phone | json }},
+    "availableLanguage": ["English", "Hindi"],
+    "areaServed": "IN"
+  }
+  {%- endif -%}
+}
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {%- assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": {{ request.origin | append: '/#website' | json }},
+    "name": {{ shop.name | json }},
+    "url": {{ request.origin | json }},
+    "description": {{ org_description | json }},
+    "publisher": {
+      "@id": {{ request.origin | append: '/#organization' | json }}
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": {{ potential_action_target | json }}
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": {{ shop.name | json }},
+    "url": {{ request.origin | json }},
+    "description": {{ org_description | json }},
+    "image": {% if settings.logo %}{{ settings.logo | image_url: width: 1200 | prepend: 'https:' | json }}{% else %}{{ request.origin | json }}{% endif %},
+    "priceRange": "₹₹",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "UPI, Credit Card, Debit Card, Net Banking",
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    }
+    {%- if whatsapp_digits != blank -%}
+    ,"telephone": {{ settings.whatsapp_phone | json }}
+    {%- endif -%}
+  }
+  </script>
+{%- endif -%}

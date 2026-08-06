@@ -1,0 +1,74 @@
+{%- comment -%}
+  Builds SEO title + description with brand fallbacks.
+  Sets seo_og_title / seo_og_description for meta-tags.
+{%- endcomment -%}
+
+{%- liquid
+  assign seo_title = page_title | strip
+  assign seo_description = page_description | strip
+  assign default_home_title = 'Online Shopping For Fashion Jewellery, Necklaces & Earrings - Srivaya'
+  assign default_description = 'Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.'
+
+  if settings.seo_homepage_title != blank
+    assign default_home_title = settings.seo_homepage_title
+  endif
+  if settings.seo_default_description != blank
+    assign default_description = settings.seo_default_description
+  endif
+  if settings.seo_homepage_description != blank
+    assign homepage_description = settings.seo_homepage_description
+  else
+    assign homepage_description = default_description
+  endif
+
+  assign description_is_weak = false
+  if seo_description == blank or seo_description == 'Welcome to our store' or seo_description == 'Welcome to our store.'
+    assign description_is_weak = true
+  endif
+
+  if request.page_type == 'index'
+    if settings.seo_homepage_title != blank
+      assign seo_title = settings.seo_homepage_title
+    elsif seo_title == blank or seo_title == shop.name
+      assign seo_title = default_home_title
+    endif
+
+    if description_is_weak
+      assign seo_description = homepage_description
+      assign description_is_weak = false
+    endif
+  endif
+
+  if description_is_weak
+    if request.page_type == 'product' and product.description != blank
+      assign seo_description = product.description | strip_html | strip | truncate: 155
+    elsif request.page_type == 'collection' and collection.description != blank
+      assign seo_description = collection.description | strip_html | strip | truncate: 155
+    elsif request.page_type == 'article' and article.excerpt_or_content != blank
+      assign seo_description = article.excerpt_or_content | strip_html | strip | truncate: 155
+    elsif request.page_type == 'page' and page.content != blank
+      assign seo_description = page.content | strip_html | strip | truncate: 155
+    elsif shop.description != blank and shop.description != 'Welcome to our store' and shop.description != 'Welcome to our store.'
+      assign seo_description = shop.description | strip_html | strip | truncate: 155
+    else
+      assign seo_description = default_description
+    endif
+  endif
+
+  assign seo_og_title = seo_title
+  assign seo_og_description = seo_description
+-%}
+
+<title>
+  {{ seo_title | escape }}
+  {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+  {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+  {%- if request.page_type != 'index' -%}
+    {%- unless seo_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+  {%- endif -%}
+</title>
+<meta name="description" content="{{ seo_description | escape }}">
+
+{%- if request.page_type == 'cart' or request.page_type == 'search' or request.page_type == 'password' -%}
+  <meta name="robots" content="noindex, follow">
+{%- endif -%}

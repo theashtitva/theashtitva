@@ -148,7 +148,7 @@
     color: {{ block.settings.text_color }};
     margin: 0 0 12px;
     font-weight: 600;
-    font-family: {{ block.settings.heading_font.family }}, {{ block.settings.heading_font.fallback_families }};
+    font-family: var(--font-heading-family);
   }
 
   .ai-support-subheading-{{ ai_gen_id }} {
@@ -427,7 +427,7 @@
       "type": "textarea",
       "id": "channel_2_description",
       "label": "Description",
-      "default": "support@adhouse.in"
+      "default": "thesrivaya@gmail.com"
     },
     {
       "type": "text",

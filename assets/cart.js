@@ -56,16 +56,17 @@ class CartItems extends HTMLElement {
   }
 
   validateQuantity(event) {
-    const inputValue = parseInt(event.target.value);
+    const inputValue = parseInt(event.target.value, 10);
     const index = event.target.dataset.index;
+    const minQty = Math.max(parseInt(event.target.dataset.min || event.target.min || '1', 10) || 1, 1);
     let message = '';
 
-    if (inputValue < event.target.dataset.min) {
-      message = window.quickOrderListStrings.min_error.replace('[min]', event.target.dataset.min);
-    } else if (inputValue > parseInt(event.target.max)) {
+    if (!Number.isFinite(inputValue) || inputValue < minQty) {
+      message = window.quickOrderListStrings.min_error.replace('[min]', minQty);
+    } else if (event.target.max && inputValue > parseInt(event.target.max, 10)) {
       message = window.quickOrderListStrings.max_error.replace('[max]', event.target.max);
-    } else if (inputValue % parseInt(event.target.step) !== 0) {
-      message = window.quickOrderListStrings.step_error.replace('[step]', event.target.step);
+    } else if (inputValue % parseInt(event.target.step || '1', 10) !== 0) {
+      message = window.quickOrderListStrings.step_error.replace('[step]', event.target.step || 1);
     }
 
     if (message) {

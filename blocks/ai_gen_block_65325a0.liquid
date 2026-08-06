@@ -16,6 +16,8 @@
     --sv-white: #ffffff;
     display: block;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     color: var(--sv-body);
     background: var(--sv-white);
   }
@@ -243,20 +245,24 @@
 
   .sv-about-{{ ai_gen_id }} .sv-story-grid {
     display: grid;
-    gap: 28px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    align-items: start;
   }
 
   @media screen and (min-width: 750px) {
     .sv-about-{{ ai_gen_id }} .sv-story-grid {
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
       gap: 56px;
-      align-items: start;
     }
   }
 
   .sv-about-{{ ai_gen_id }} .sv-story-aside {
-    position: sticky;
-    top: 96px;
+    position: relative;
+    min-width: 0;
+    align-self: start;
   }
 
   .sv-about-{{ ai_gen_id }} .sv-story .sv-heading {
@@ -264,14 +270,25 @@
   }
 
   .sv-about-{{ ai_gen_id }} .sv-story-lead {
-    margin: 16px 0 0;
-    max-width: 280px;
+    margin: 12px 0 0;
+    max-width: 100%;
     font-size: 15px;
     line-height: 1.55;
     color: var(--sv-accent);
   }
 
+  @media screen and (min-width: 750px) {
+    .sv-about-{{ ai_gen_id }} .sv-story-lead {
+      margin-top: 16px;
+      max-width: 280px;
+    }
+  }
+
   .sv-about-{{ ai_gen_id }} .sv-story-body {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
     font-family: var(--font-body-family, sans-serif);
     font-size: 16px;
     line-height: 1.8;
@@ -707,48 +724,60 @@
     }
   }
 
-  .sv-about-{{ ai_gen_id }} .sv-socials {
+  .sv-about-{{ ai_gen_id }} .list-social.sv-socials {
+    --social-hit-size: 56px;
+    --social-icon-size: calc(56px * 0.42);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 18px;
-    margin-top: 40px;
+    align-items: center;
+    gap: 16px;
+    margin: 40px auto 0;
+    width: 100%;
   }
 
+  .sv-about-{{ ai_gen_id }} .list-social.sv-socials .list-social__link,
   .sv-about-{{ ai_gen_id }} .sv-social {
-    display: inline-flex;
+    width: var(--social-hit-size);
+    height: var(--social-hit-size);
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    padding: 0;
+    background-color: #ffffff;
+    border: none;
     border-radius: 50%;
-    background: var(--sv-white);
-    border: 1px solid var(--sv-line);
-    box-shadow: 0 6px 18px rgba(49, 36, 38, 0.07);
-    color: var(--sv-accent);
+    color: #6f4b53;
     text-decoration: none;
+    box-shadow: 0 8px 20px rgba(49, 36, 38, 0.06);
     transition:
-      opacity 0.3s ease,
-      color 0.3s ease,
-      background-color 0.3s ease,
-      border-color 0.3s ease,
-      box-shadow 0.3s var(--sv-ease),
-      transform 0.3s var(--sv-ease);
+      transform 0.4s var(--sv-ease),
+      background-color 0.4s var(--sv-ease),
+      color 0.4s var(--sv-ease),
+      box-shadow 0.4s var(--sv-ease);
   }
 
+  .sv-about-{{ ai_gen_id }} .list-social.sv-socials .list-social__link .svg-wrapper,
+  .sv-about-{{ ai_gen_id }} .list-social.sv-socials .list-social__link svg,
   .sv-about-{{ ai_gen_id }} .sv-social svg {
-    width: 22px;
-    height: 22px;
+    width: var(--social-icon-size);
+    height: var(--social-icon-size);
   }
 
   @media (hover: hover) {
+    .sv-about-{{ ai_gen_id }} .list-social.sv-socials .list-social__link:hover,
     .sv-about-{{ ai_gen_id }} .sv-social:hover {
-      color: var(--sv-white);
-      background: var(--sv-accent);
-      border-color: var(--sv-accent);
-      box-shadow: 0 10px 24px rgba(49, 36, 38, 0.12);
       transform: translateY(-2px);
+      background-color: #ece4e6;
+      color: #513c40;
+      box-shadow: 0 12px 26px rgba(49, 36, 38, 0.09);
     }
+  }
+
+  .sv-about-{{ ai_gen_id }} .list-social.sv-socials .list-social__link:focus-visible,
+  .sv-about-{{ ai_gen_id }} .sv-social:focus-visible {
+    outline: 2px solid #6f4b53;
+    outline-offset: 3px;
   }
 
   .sv-about-{{ ai_gen_id }} .sv-social-note {
@@ -766,7 +795,7 @@
       <div class="sv-hero-inner sv-reveal" data-sv-reveal>
         <p class="sv-eyebrow sv-eyebrow--solo">{{ block.settings.hero_eyebrow | default: 'About Us' }}</p>
         <h1 class="sv-hero-title">{{ block.settings.hero_title | default: 'Crafted with Love, Worn with Pride.' }}</h1>
-        <p class="sv-hero-text">{{ block.settings.hero_text | default: 'At Srivaya, we believe every woman deserves to shine — every single day.' }}</p>
+        <p class="sv-hero-text">{{ block.settings.hero_text | default: 'At Srivaya, we believe every woman deserves to shine, every single day.' }}</p>
         <div class="sv-hero-rule" aria-hidden="true">
           <span></span>
           <svg viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.8 7.2 4.8 11.2 6 7.2 7.2 6 11.2 4.8 7.2 0.8 6 4.8 4.8Z"/></svg>
@@ -807,9 +836,9 @@
           {% if block.settings.story_body != blank %}
             {{ block.settings.story_body }}
           {% else %}
-            <p>Srivaya was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p>
+            <p>Srivaya was born in the heart of India, founded by people who deeply believe that every woman, regardless of her budget, deserves to feel beautiful, confident, and celebrated.</p>
             <p>We saw a gap where quality jewellery was either too expensive or too hard to find online. So we changed that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p>
-            <p>Every piece we curate is handpicked with love, care, and an eye for detail — because jewellery isn't just an accessory, it's an emotion.</p>
+            <p>Every piece is chosen with care and attention to detail, because jewellery should feel personal.</p>
           {% endif %}
         </div>
       </div>
@@ -821,7 +850,7 @@
       <div class="sv-why-head sv-reveal" data-sv-reveal>
         <p class="sv-eyebrow">{{ block.settings.why_eyebrow | default: 'Why Srivaya' }}</p>
         <h2 class="sv-heading">{{ block.settings.why_title | default: 'Designed for the way you live' }}</h2>
-        <p class="sv-why-intro">{{ block.settings.why_intro | default: 'Beautiful pieces, thoughtful service, and everyday elegance — without compromise.' }}</p>
+        <p class="sv-why-intro">{{ block.settings.why_intro | default: 'Beautiful pieces, thoughtful service, and everyday elegance.' }}</p>
       </div>
       <div class="sv-features sv-reveal" data-sv-reveal>
         <div class="sv-feature">
@@ -830,7 +859,7 @@
           </div>
           <div>
             <h3 class="sv-feature-title">{{ block.settings.why_1_title | default: 'Premium Quality' }}</h3>
-            <p class="sv-feature-text">{{ block.settings.why_1_text | default: 'Every piece is carefully quality-checked before it reaches you.' }}</p>
+            <p class="sv-feature-text">{{ block.settings.why_1_text | default: 'Every piece is checked for quality before it reaches you.' }}</p>
           </div>
         </div>
         <div class="sv-feature">
@@ -857,7 +886,7 @@
           </div>
           <div>
             <h3 class="sv-feature-title">{{ block.settings.why_4_title | default: 'Easy Returns' }}</h3>
-            <p class="sv-feature-text">{{ block.settings.why_4_text | default: 'Hassle-free return & exchange — shop with peace of mind.' }}</p>
+            <p class="sv-feature-text">{{ block.settings.why_4_text | default: 'Easy returns and exchanges if something is not right.' }}</p>
           </div>
         </div>
       </div>
@@ -870,12 +899,12 @@
       {% if block.settings.mission_quote != blank %}
         <p class="sv-mission-quote">{{ block.settings.mission_quote }}</p>
       {% else %}
-        <p class="sv-mission-quote">To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life.</p>
+        <p class="sv-mission-quote">To make every woman feel like the most elegant version of herself, through jewellery that is beautiful, accessible, and made for real life.</p>
       {% endif %}
       {% if block.settings.mission_body != blank %}
         <p class="sv-mission-body">{{ block.settings.mission_body }}</p>
       {% else %}
-        <p class="sv-mission-body">We help you create memories — at weddings, celebrations, or just a regular Tuesday when you want to feel a little extra special.</p>
+        <p class="sv-mission-body">We help you create memories at weddings, celebrations, or just a regular Tuesday when you want to feel a little extra special.</p>
       {% endif %}
     </div>
   </section>
@@ -887,9 +916,9 @@
         {% if block.settings.founder_quote != blank %}
           <p class="sv-founder-quote">{{ block.settings.founder_quote }}</p>
         {% else %}
-          <p class="sv-founder-quote">When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery — affordable enough that you don't think twice, and beautiful enough that you never forget it. Thank you for being part of our journey.</p>
+          <p class="sv-founder-quote">When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery, affordable enough that you don't think twice, and beautiful enough that you never forget it. Thank you for being part of Srivaya.</p>
         {% endif %}
-        <p class="sv-founder-attr">{{ block.settings.founder_attr | default: '— Founder, Srivaya' }}</p>
+        <p class="sv-founder-attr">{{ block.settings.founder_attr | default: 'Founder, Srivaya' }}</p>
       </div>
     </div>
   </section>
@@ -902,12 +931,19 @@
         {% if block.settings.reassure_text != blank %}
           {{ block.settings.reassure_text }}
         {% else %}
-          If you still have doubts about our jewellery quality, finish, or colour — message us on WhatsApp. We will hop on a quick call or meeting and clarify everything before you buy.
+          If you still have doubts about our jewellery quality, finish, or colour, message us on WhatsApp. We will hop on a quick call or meeting and clarify everything before you buy.
         {% endif %}
       </p>
+      {%- liquid
+        assign about_wa_phone = settings.whatsapp_phone | default: '' | replace: ' ', '' | replace: '-', '' | replace: '+', '' | replace: '(', '' | replace: ')', ''
+        assign about_wa_url = 'https://wa.me/' | append: about_wa_phone
+        if about_wa_phone == blank
+          assign about_wa_url = 'https://wa.me/917067762371'
+        endif
+      -%}
       <a
         class="sv-wa-btn"
-        href="{{ block.settings.whatsapp_url | default: 'https://wa.me/917777877253' }}"
+        href="{{ about_wa_url }}"
         target="_blank"
         rel="noopener"
       >
@@ -921,7 +957,7 @@
     <div class="sv-close-inner sv-reveal" data-sv-reveal>
       <p class="sv-eyebrow">{{ block.settings.cta_eyebrow | default: 'Explore the collection' }}</p>
       <h2 class="sv-heading">{{ block.settings.cta_title | default: 'Find your next favourite piece' }}</h2>
-      <p class="sv-close-text">{{ block.settings.cta_text | default: 'Explore our curated collection of jewellery made to shine with you.' }}</p>
+      <p class="sv-close-text">{{ block.settings.cta_text | default: 'Browse our jewellery collection and find a piece you love.' }}</p>
       <div class="sv-close-rule" aria-hidden="true">
         <span></span>
         <svg viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6 0.8 7.2 4.8 11.2 6 7.2 7.2 6 11.2 4.8 7.2 0.8 6 4.8 4.8Z"/></svg>
@@ -932,29 +968,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
 
-      <div class="sv-socials">
-        {% if block.settings.instagram_url != blank %}
-          <a class="sv-social" href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.2-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-3.2 1.7-4.8 4.9-4.9C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-2.2.1-3.2 1.1-3.3 3.3-.1 1.2-.1 1.5-.1 4.6s0 3.5.1 4.6c.1 2.2 1.1 3.2 3.3 3.3 1.2.1 1.5.1 4.7.1s3.5 0 4.6-.1c2.2-.1 3.3-1.1 3.3-3.3.1-1.2.1-1.5.1-4.6s0-3.5-.1-4.6c-.1-2.2-1.1-3.2-3.3-3.3-1.1-.1-1.5-.1-4.6-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm5.1-8.4a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3Z"/></svg>
-          </a>
-        {% endif %}
-        {% if block.settings.facebook_url != blank %}
-          <a class="sv-social" href="{{ block.settings.facebook_url }}" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4v-2c0-.6.4-1 1-1Z"/></svg>
-          </a>
-        {% endif %}
-        {% if block.settings.youtube_url != blank %}
-          <a class="sv-social" href="{{ block.settings.youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.5 7.2a3 3 0 0 0-2.1-2.1C18.6 4.6 12 4.6 12 4.6s-6.6 0-8.4.5A3 3 0 0 0 1.5 7.2 31.5 31.5 0 0 0 1 12a31.5 31.5 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.8.5 8.4.5 8.4.5s6.6 0 8.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 23 12a31.5 31.5 0 0 0-.5-4.8ZM9.8 15.5v-7L16 12l-6.2 3.5Z"/></svg>
-          </a>
-        {% endif %}
-        {% if block.settings.whatsapp_url != blank %}
-          <a class="sv-social" href="{{ block.settings.whatsapp_url }}" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.1 4 4.1-1.1A10 10 0 1 0 12 2Zm5.6 14.3c-.2.7-1.3 1.2-1.8 1.3-.5.1-1 .2-3.4-.7-3-1.3-4.9-4.5-5-4.7-.2-.2-1.3-1.7-1.3-3.3 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.7c-.1.2-.3.4-.1.7.2.3.7 1.2 1.6 1.9 1.1.9 2 1.2 2.3 1.3.3.1.5.1.7-.1l.9-1.1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.4 0 .2 0 1.2-.5 1.8Z"/></svg>
-          </a>
-        {% endif %}
-      </div>
-      <p class="sv-social-note">{{ block.settings.social_text | default: 'Follow along and tag us — we love seeing you shine.' }}</p>
+      {%- capture about_social_class -%}sv-socials{%- endcapture -%}
+      {%- capture about_social_link_class -%}sv-social{%- endcapture -%}
+      {% render 'social-icons', class: about_social_class, link_class: about_social_link_class %}
+      <p class="sv-social-note">{{ block.settings.social_text | default: 'Follow along and tag us. We love seeing you shine.' }}</p>
     </div>
   </section>
 </about-srivaya-{{ ai_gen_id }}>
@@ -1057,7 +1074,7 @@
     { "type": "header", "content": "Hero" },
     { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "About Us" },
     { "type": "text", "id": "hero_title", "label": "Headline", "default": "Crafted with Love, Worn with Pride." },
-    { "type": "textarea", "id": "hero_text", "label": "Subtext", "default": "At Srivaya, we believe every woman deserves to shine — every single day." },
+    { "type": "textarea", "id": "hero_text", "label": "Subtext", "default": "At Srivaya, we believe every woman deserves to shine, every single day." },
 
     { "type": "header", "content": "Trust stats" },
     { "type": "number", "id": "stat_1_value", "label": "Stat 1 value", "default": 10000 },
@@ -1073,51 +1090,49 @@
     { "type": "text", "id": "story_eyebrow", "label": "Eyebrow", "default": "Our Story" },
     { "type": "text", "id": "story_title", "label": "Title", "default": "Born from a simple belief" },
     { "type": "textarea", "id": "story_lead", "label": "Lead line", "default": "Stunning jewellery should never come with a stunning price tag." },
-    { "type": "richtext", "id": "story_body", "label": "Body", "default": "<p>Srivaya was born in the heart of India, founded by people who deeply believe that every woman — regardless of her budget — deserves to feel beautiful, confident, and celebrated.</p><p>We saw a gap where quality jewellery was either too expensive or too hard to find online. So we changed that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p><p>Every piece we curate is handpicked with love, care, and an eye for detail — because jewellery isn't just an accessory, it's an emotion.</p>" },
+    { "type": "richtext", "id": "story_body", "label": "Body", "default": "<p>Srivaya was born in the heart of India, founded by people who deeply believe that every woman, regardless of her budget, deserves to feel beautiful, confident, and celebrated.</p><p>We saw a gap where quality jewellery was either too expensive or too hard to find online. So we changed that. What began as a small passion project has grown into a brand trusted by thousands of happy customers across India.</p><p>Every piece is chosen with care and attention to detail, because jewellery should feel personal.</p>" },
 
     { "type": "header", "content": "Why Srivaya" },
     { "type": "text", "id": "why_eyebrow", "label": "Eyebrow", "default": "Why Srivaya" },
     { "type": "text", "id": "why_title", "label": "Title", "default": "Designed for the way you live" },
-    { "type": "textarea", "id": "why_intro", "label": "Intro", "default": "Beautiful pieces, thoughtful service, and everyday elegance — without compromise." },
+    { "type": "textarea", "id": "why_intro", "label": "Intro", "default": "Beautiful pieces, thoughtful service, and everyday elegance." },
     { "type": "text", "id": "why_1_title", "label": "Feature 1 title", "default": "Premium Quality" },
-    { "type": "text", "id": "why_1_text", "label": "Feature 1 text", "default": "Every piece is carefully quality-checked before it reaches you." },
+    { "type": "text", "id": "why_1_text", "label": "Feature 1 text", "default": "Every piece is checked for quality before it reaches you." },
     { "type": "text", "id": "why_2_title", "label": "Feature 2 title", "default": "Affordable Luxury" },
     { "type": "text", "id": "why_2_text", "label": "Feature 2 text", "default": "Designer looks without the designer price tag." },
     { "type": "text", "id": "why_3_title", "label": "Feature 3 title", "default": "Pan India Delivery" },
     { "type": "text", "id": "why_3_text", "label": "Feature 3 text", "default": "We deliver to every corner of India, quickly and safely." },
     { "type": "text", "id": "why_4_title", "label": "Feature 4 title", "default": "Easy Returns" },
-    { "type": "text", "id": "why_4_text", "label": "Feature 4 text", "default": "Hassle-free return & exchange — shop with peace of mind." },
+    { "type": "text", "id": "why_4_text", "label": "Feature 4 text", "default": "Easy returns and exchanges if something is not right." },
 
     { "type": "header", "content": "Mission" },
     { "type": "text", "id": "mission_title", "label": "Eyebrow", "default": "Our Mission" },
-    { "type": "textarea", "id": "mission_quote", "label": "Quote", "default": "To make every woman feel like the most elegant version of herself — through jewellery that is beautiful, accessible, and made for real life." },
-    { "type": "textarea", "id": "mission_body", "label": "Supporting text", "default": "We help you create memories — at weddings, celebrations, or just a regular Tuesday when you want to feel a little extra special." },
+    { "type": "textarea", "id": "mission_quote", "label": "Quote", "default": "To make every woman feel like the most elegant version of herself, through jewellery that is beautiful, accessible, and made for real life." },
+    { "type": "textarea", "id": "mission_body", "label": "Supporting text", "default": "We help you create memories at weddings, celebrations, or just a regular Tuesday when you want to feel a little extra special." },
 
     { "type": "header", "content": "Founder note" },
     { "type": "text", "id": "founder_title", "label": "Label", "default": "A note from our founder" },
-    { "type": "textarea", "id": "founder_quote", "label": "Quote", "default": "When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery — affordable enough that you don't think twice, and beautiful enough that you never forget it. Thank you for being part of our journey." },
-    { "type": "text", "id": "founder_attr", "label": "Attribution", "default": "— Founder, Srivaya" },
+    { "type": "textarea", "id": "founder_quote", "label": "Quote", "default": "When I started Srivaya, I wanted every customer to feel the same excitement I feel when I discover a truly stunning piece of jewellery, affordable enough that you don't think twice, and beautiful enough that you never forget it. Thank you for being part of Srivaya." },
+    { "type": "text", "id": "founder_attr", "label": "Attribution", "default": "Founder, Srivaya" },
 
     { "type": "header", "content": "WhatsApp reassurance" },
     { "type": "text", "id": "reassure_eyebrow", "label": "Eyebrow", "default": "Still have questions?" },
     { "type": "text", "id": "reassure_title", "label": "Title", "default": "Unsure about quality or colour?" },
-    { "type": "textarea", "id": "reassure_text", "label": "Message", "default": "If you still have doubts about our jewellery quality, finish, or colour — message us on WhatsApp. We will hop on a quick call or meeting and clarify everything before you buy." },
+    { "type": "textarea", "id": "reassure_text", "label": "Message", "default": "If you still have doubts about our jewellery quality, finish, or colour, message us on WhatsApp. We will hop on a quick call or meeting and clarify everything before you buy." },
     { "type": "text", "id": "reassure_btn", "label": "WhatsApp button label", "default": "Chat on WhatsApp" },
-    { "type": "url", "id": "whatsapp_url", "label": "WhatsApp URL" },
+    { "type": "paragraph", "content": "WhatsApp number comes from Theme settings → Contact & WhatsApp." },
 
     { "type": "header", "content": "Closing CTA" },
     { "type": "text", "id": "cta_eyebrow", "label": "Eyebrow", "default": "Explore the collection" },
     { "type": "text", "id": "cta_title", "label": "Title", "default": "Find your next favourite piece" },
-    { "type": "textarea", "id": "cta_text", "label": "Text", "default": "Explore our curated collection of jewellery made to shine with you." },
+    { "type": "textarea", "id": "cta_text", "label": "Text", "default": "Browse our jewellery collection and find a piece you love." },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop the collection" },
     { "type": "url", "id": "cta_link", "label": "Button link" },
     { "type": "color", "id": "cta_button_bg", "label": "Button background", "default": "#6F4B53" },
     { "type": "color", "id": "cta_button_text", "label": "Button text", "default": "#FFFFFF" },
     { "type": "color", "id": "cta_button_hover", "label": "Button hover", "default": "#513C40" },
-    { "type": "textarea", "id": "social_text", "label": "Social note", "default": "Follow along and tag us — we love seeing you shine." },
-    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
-    { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
-    { "type": "url", "id": "youtube_url", "label": "YouTube URL" }
+    { "type": "textarea", "id": "social_text", "label": "Social note", "default": "Follow along and tag us. We love seeing you shine." },
+    { "type": "paragraph", "content": "Social profile links are managed in Theme settings → Social media. Update them once to apply site-wide." }
   ],
   "presets": [
     { "name": "About Us" }

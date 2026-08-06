@@ -245,6 +245,7 @@ class QuantityInput extends HTMLElement {
   onButtonClick(event) {
     event.preventDefault();
     const previousValue = this.input.value;
+    const minQty = Math.max(parseInt(this.input.min || this.input.dataset.min || '1', 10) || 1, 0);
 
     if (event.target.name === 'plus') {
       if (parseInt(this.input.dataset.min) > parseInt(this.input.step) && this.input.value == 0) {
@@ -253,14 +254,14 @@ class QuantityInput extends HTMLElement {
         this.input.stepUp();
       }
     } else {
-      this.input.stepDown();
+      if (parseInt(this.input.value, 10) <= minQty) {
+        this.input.value = minQty;
+      } else {
+        this.input.stepDown();
+      }
     }
 
     if (previousValue !== this.input.value) this.input.dispatchEvent(this.changeEvent);
-
-    if (this.input.dataset.min === previousValue && event.target.name === 'minus') {
-      this.input.value = parseInt(this.input.min);
-    }
   }
 
   validateQtyRules() {

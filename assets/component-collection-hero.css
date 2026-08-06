@@ -37,6 +37,10 @@
 
 .collection-hero__title {
   margin: 2.5rem 0;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: -0.6rem;
+  color: #6f4b53;
 }
 
 .collection-hero__title + .collection-hero__description {

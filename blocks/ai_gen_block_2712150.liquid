@@ -499,19 +499,26 @@
     color: {{ block.settings.card_text_color }};
   }
 
-  .ai-contact-social-icons-{{ ai_gen_id }} {
+  .ai-contact-social-{{ ai_gen_id }} .list-social.ai-contact-social-icons-{{ ai_gen_id }} {
+    --social-hit-size: 56px;
+    --social-icon-size: calc(56px * 0.42);
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
   }
 
-  .ai-contact-social-link-{{ ai_gen_id }} {
-    width: {{ block.settings.social_icon_size }}px;
-    height: {{ block.settings.social_icon_size }}px;
+  .ai-contact-social-{{ ai_gen_id }} .list-social.ai-contact-social-icons-{{ ai_gen_id }} .list-social__link,
+  .ai-contact-social-{{ ai_gen_id }} .ai-contact-social-link-{{ ai_gen_id }} {
+    width: var(--social-hit-size);
+    height: var(--social-hit-size);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
     background-color: {{ block.settings.social_icon_bg_color }};
     border: none;
     border-radius: 50%;
@@ -526,7 +533,8 @@
   }
 
   @media (hover: hover) {
-    .ai-contact-social-link-{{ ai_gen_id }}:hover {
+    .ai-contact-social-{{ ai_gen_id }} .list-social.ai-contact-social-icons-{{ ai_gen_id }} .list-social__link:hover,
+    .ai-contact-social-{{ ai_gen_id }} .ai-contact-social-link-{{ ai_gen_id }}:hover {
       transform: translateY(-2px);
       background-color: {{ block.settings.social_icon_hover_bg }};
       color: #513c40;
@@ -534,14 +542,17 @@
     }
   }
 
-  .ai-contact-social-link-{{ ai_gen_id }}:focus-visible {
+  .ai-contact-social-{{ ai_gen_id }} .list-social.ai-contact-social-icons-{{ ai_gen_id }} .list-social__link:focus-visible,
+  .ai-contact-social-{{ ai_gen_id }} .ai-contact-social-link-{{ ai_gen_id }}:focus-visible {
     outline: 2px solid #6f4b53;
     outline-offset: 3px;
   }
 
-  .ai-contact-social-link-{{ ai_gen_id }} svg {
-    width: calc({{ block.settings.social_icon_size }}px * 0.42);
-    height: calc({{ block.settings.social_icon_size }}px * 0.42);
+  .ai-contact-social-{{ ai_gen_id }} .list-social.ai-contact-social-icons-{{ ai_gen_id }} .list-social__link .svg-wrapper,
+  .ai-contact-social-{{ ai_gen_id }} .list-social.ai-contact-social-icons-{{ ai_gen_id }} .list-social__link svg,
+  .ai-contact-social-{{ ai_gen_id }} .ai-contact-social-link-{{ ai_gen_id }} svg {
+    width: var(--social-icon-size);
+    height: var(--social-icon-size);
   }
 
   .ai-contact-reveal-{{ ai_gen_id }} {
@@ -631,8 +642,10 @@
 
   @media screen and (min-width: 990px) {
     .ai-contact-cards-grid-{{ ai_gen_id }} {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 28px;
+      max-width: 760px;
+      margin: 0 auto;
     }
   }
 {% endstyle %}
@@ -657,16 +670,25 @@
 
   <div class="ai-contact-details-{{ ai_gen_id }}">
     <div class="ai-contact-details-container-{{ ai_gen_id }}">
+      {%- liquid
+        assign cu_phone = settings.whatsapp_phone
+        assign cu_phone_display = settings.contact_phone_display
+        if cu_phone_display == blank
+          assign cu_phone_display = cu_phone
+        endif
+        assign cu_phone_digits = cu_phone | default: '' | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' | replace: '+', ''
+        assign cu_email = settings.contact_email
+      -%}
       <div class="ai-contact-cards-grid-{{ ai_gen_id }}">
         {% assign cu_card_index = 0 %}
         {% if block.settings.show_phone %}
-          {% if block.settings.phone_number != blank %}
+          {% if cu_phone != blank %}
             <a
               class="ai-contact-card-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}"
               data-cu-reveal
               style="--cu-stagger: {{ cu_card_index }};"
-              href="tel:{{ block.settings.phone_number | replace: ' ', '' | replace: '-', '' }}"
-              aria-label="Call {{ block.settings.phone_number | escape }}"
+              href="tel:{{ cu_phone | replace: ' ', '' | replace: '-', '' }}"
+              aria-label="Call {{ cu_phone_display | escape }}"
             >
           {% else %}
             <div class="ai-contact-card-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}" data-cu-reveal style="--cu-stagger: {{ cu_card_index }};">
@@ -675,18 +697,18 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             </div>
             <h3 class="ai-contact-card-title-{{ ai_gen_id }}">{{ block.settings.phone_title }}</h3>
-            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if block.settings.phone_number != blank %}{{ block.settings.phone_number }}{% else %}+91-XXXXXXXXXX{% endif %}</p>
-          {% if block.settings.phone_number != blank %}</a>{% else %}</div>{% endif %}
+            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if cu_phone_display != blank %}{{ cu_phone_display }}{% else %}+91-XXXXXXXXXX{% endif %}</p>
+          {% if cu_phone != blank %}</a>{% else %}</div>{% endif %}
           {% assign cu_card_index = cu_card_index | plus: 1 %}
         {% endif %}
 
         {% if block.settings.show_whatsapp %}
-          {% if block.settings.whatsapp_number != blank %}
+          {% if cu_phone_digits != blank %}
             <a
               class="ai-contact-card-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}"
               data-cu-reveal
               style="--cu-stagger: {{ cu_card_index }};"
-              href="https://wa.me/{{ block.settings.whatsapp_number | replace: ' ', '' | replace: '-', '' | replace: '+', '' }}"
+              href="https://wa.me/{{ cu_phone_digits }}"
               target="_blank"
               rel="noopener"
               aria-label="Chat on WhatsApp"
@@ -698,19 +720,19 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             </div>
             <h3 class="ai-contact-card-title-{{ ai_gen_id }}">{{ block.settings.whatsapp_title }}</h3>
-            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if block.settings.whatsapp_number != blank %}{{ block.settings.whatsapp_text }}{% else %}Tap to chat instantly{% endif %}</p>
-          {% if block.settings.whatsapp_number != blank %}</a>{% else %}</div>{% endif %}
+            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if cu_phone_display != blank %}{{ cu_phone_display }}{% else %}Chat with us instantly{% endif %}</p>
+          {% if cu_phone_digits != blank %}</a>{% else %}</div>{% endif %}
           {% assign cu_card_index = cu_card_index | plus: 1 %}
         {% endif %}
 
         {% if block.settings.show_email %}
-          {% if block.settings.email_address != blank %}
+          {% if cu_email != blank %}
             <a
               class="ai-contact-card-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}"
               data-cu-reveal
               style="--cu-stagger: {{ cu_card_index }};"
-              href="mailto:{{ block.settings.email_address }}"
-              aria-label="Email {{ block.settings.email_address | escape }}"
+              href="mailto:{{ cu_email }}"
+              aria-label="Email {{ cu_email | escape }}"
             >
           {% else %}
             <div class="ai-contact-card-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}" data-cu-reveal style="--cu-stagger: {{ cu_card_index }};">
@@ -719,8 +741,8 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </div>
             <h3 class="ai-contact-card-title-{{ ai_gen_id }}">{{ block.settings.email_title }}</h3>
-            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if block.settings.email_address != blank %}{{ block.settings.email_address }}{% else %}support@adhouse.in{% endif %}</p>
-          {% if block.settings.email_address != blank %}</a>{% else %}</div>{% endif %}
+            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if cu_email != blank %}{{ cu_email }}{% else %}thesrivaya@gmail.com{% endif %}</p>
+          {% if cu_email != blank %}</a>{% else %}</div>{% endif %}
           {% assign cu_card_index = cu_card_index | plus: 1 %}
         {% endif %}
 
@@ -733,16 +755,6 @@
             <p class="ai-contact-card-text-{{ ai_gen_id }} ai-contact-card-text-{{ ai_gen_id }}--multiline">{{ block.settings.hours_text }}</p>
           </div>
           {% assign cu_card_index = cu_card_index | plus: 1 %}
-        {% endif %}
-
-        {% if block.settings.show_address %}
-          <div class="ai-contact-card-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}" data-cu-reveal style="--cu-stagger: {{ cu_card_index }};">
-            <div class="ai-contact-card-icon-{{ ai_gen_id }}">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
-            <h3 class="ai-contact-card-title-{{ ai_gen_id }}">{{ block.settings.address_title }}</h3>
-            <p class="ai-contact-card-text-{{ ai_gen_id }} ai-contact-card-text-{{ ai_gen_id }}--multiline">{{ block.settings.address_text }}</p>
-          </div>
         {% endif %}
       </div>
     </div>
@@ -868,28 +880,9 @@
         <h2 class="ai-contact-social-title-{{ ai_gen_id }}">{{ block.settings.social_title }}</h2>
       {% endif %}
       <p class="ai-contact-social-note-{{ ai_gen_id }}">Join our world of craftsmanship, new drops, and quiet luxury.</p>
-      <div class="ai-contact-social-icons-{{ ai_gen_id }}">
-        {% if block.settings.instagram_url != blank %}
-          <a href="{{ block.settings.instagram_url }}" target="_blank" rel="noopener" class="ai-contact-social-link-{{ ai_gen_id }}" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073-4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-        {% endif %}
-        {% if block.settings.facebook_url != blank %}
-          <a href="{{ block.settings.facebook_url }}" target="_blank" rel="noopener" class="ai-contact-social-link-{{ ai_gen_id }}" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-        {% endif %}
-        {% if block.settings.pinterest_url != blank %}
-          <a href="{{ block.settings.pinterest_url }}" target="_blank" rel="noopener" class="ai-contact-social-link-{{ ai_gen_id }}" aria-label="Pinterest">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
-          </a>
-        {% endif %}
-        {% if block.settings.youtube_url != blank %}
-          <a href="{{ block.settings.youtube_url }}" target="_blank" rel="noopener" class="ai-contact-social-link-{{ ai_gen_id }}" aria-label="YouTube">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-        {% endif %}
-      </div>
+      {%- capture contact_social_class -%}ai-contact-social-icons-{{ ai_gen_id }}{%- endcapture -%}
+      {%- capture contact_social_link_class -%}ai-contact-social-link-{{ ai_gen_id }}{%- endcapture -%}
+      {% render 'social-icons', class: contact_social_class, link_class: contact_social_link_class %}
     </div>
   </div>
 </contact-us-section-{{ ai_gen_id }}>
@@ -939,7 +932,7 @@
       "type": "richtext",
       "id": "hero_subtext",
       "label": "Subtext",
-      "default": "<p>Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you.</p>"
+      "default": "<p>Whether you have a question about our jewellery, need help with your order, or just want to say hello, we're always here for you.</p>"
     },
     {
       "type": "color",
@@ -1136,9 +1129,8 @@
       "default": "Phone"
     },
     {
-      "type": "text",
-      "id": "phone_number",
-      "label": "Phone number"
+      "type": "paragraph",
+      "content": "Phone, WhatsApp, and email come from Theme settings → Contact & WhatsApp."
     },
     {
       "type": "header",
@@ -1157,17 +1149,6 @@
       "default": "WhatsApp"
     },
     {
-      "type": "text",
-      "id": "whatsapp_number",
-      "label": "WhatsApp number"
-    },
-    {
-      "type": "text",
-      "id": "whatsapp_text",
-      "label": "Link text",
-      "default": "Chat with us instantly"
-    },
-    {
       "type": "header",
       "content": "Email"
     },
@@ -1182,11 +1163,6 @@
       "id": "email_title",
       "label": "Title",
       "default": "Email"
-    },
-    {
-      "type": "text",
-      "id": "email_address",
-      "label": "Email address"
     },
     {
       "type": "header",
@@ -1208,28 +1184,7 @@
       "type": "textarea",
       "id": "hours_text",
       "label": "Hours text",
-      "default": "Monday to Saturday\n10:00 AM - 7:00 PM IST"
-    },
-    {
-      "type": "header",
-      "content": "Address"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_address",
-      "label": "Show address",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "address_title",
-      "label": "Title",
-      "default": "Visit Us"
-    },
-    {
-      "type": "textarea",
-      "id": "address_text",
-      "label": "Address"
+      "default": "Monday to Saturday\n10:00 AM to 7:00 PM IST"
     },
 
     {
@@ -1252,7 +1207,7 @@
       "type": "text",
       "id": "form_subtitle",
       "label": "Form subtitle",
-      "default": "Share your question or request — our team typically replies within 24 hours."
+      "default": "Share your question or request, and our team typically replies within 24 hours."
     },
     {
       "type": "text",
@@ -1264,13 +1219,13 @@
       "type": "textarea",
       "id": "form_success_message",
       "label": "Success message",
-      "default": "Thank you. Your message has been received — we will respond within 24 hours."
+      "default": "Thank you. Your message has been received, and we will respond within 24 hours."
     },
     {
       "type": "textarea",
       "id": "trust_line",
       "label": "Trust line",
-      "default": "Your trust means everything to us — just like every piece of jewellery we craft."
+      "default": "Your trust means everything to us, just like every piece of jewellery we craft."
     },
     {
       "type": "color",
@@ -1465,24 +1420,8 @@
       "default": "#6f4b53"
     },
     {
-      "type": "url",
-      "id": "instagram_url",
-      "label": "Instagram URL"
-    },
-    {
-      "type": "url",
-      "id": "facebook_url",
-      "label": "Facebook URL"
-    },
-    {
-      "type": "url",
-      "id": "pinterest_url",
-      "label": "Pinterest URL"
-    },
-    {
-      "type": "url",
-      "id": "youtube_url",
-      "label": "YouTube URL"
+      "type": "paragraph",
+      "content": "Social profile links are managed in Theme settings → Social media. Update them once to apply site-wide."
     }
   ],
   "presets": [

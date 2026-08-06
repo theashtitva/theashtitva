@@ -190,6 +190,27 @@ cart-items {
 
 .cart__checkout-button {
   max-width: 36rem;
+  min-height: 5.2rem;
+  padding: 1.6rem 2rem;
+  border-radius: 6px;
+  background: #6f4b53 !important;
+  color: #f6f1f2 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cart__checkout-button:before,
+.cart__checkout-button:after {
+  display: none !important;
+}
+
+.cart__checkout-button:hover:not([disabled]) {
+  background: #513c40 !important;
+  box-shadow: none !important;
 }
 
 .cart__ctas {

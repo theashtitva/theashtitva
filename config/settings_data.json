@@ -11,7 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/srivayafinal.png",
     "logo_width": 160,
-    "favicon": "shopify://shop_images/srivayalogo.png",
+    "favicon": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_10_23_23_PM.png",
     "type_header_font": "plus_jakarta_sans_n4",
     "heading_scale": 100,
     "type_body_font": "plus_jakarta_sans_n4",
@@ -24,7 +24,7 @@
     "animations_hover_elements": "none",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
-    "buttons_radius": 8,
+    "buttons_radius": 6,
     "buttons_shadow_opacity": 0,
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 4,
@@ -44,12 +44,12 @@
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
     "card_style": "card",
-    "card_image_padding": 16,
+    "card_image_padding": 0,
     "card_text_alignment": "center",
     "card_color_scheme": "scheme-1",
-    "card_border_thickness": 1,
+    "card_border_thickness": 0,
     "card_border_opacity": 100,
-    "card_corner_radius": 18,
+    "card_corner_radius": 10,
     "card_shadow_opacity": 0,
     "card_shadow_horizontal_offset": 0,
     "card_shadow_vertical_offset": 4,
@@ -110,15 +110,24 @@
     "brand_headline": "",
     "brand_description": "<p></p>",
     "brand_image_width": 100,
-    "social_facebook_link": "https://www.instagram.com/adhouse_official/",
-    "social_instagram_link": "https://www.instagram.com/srivaya.in/",
-    "social_youtube_link": "https://www.instagram.com/adhouse_official/",
+    "social_facebook_link": "",
+    "social_instagram_link": "https://www.instagram.com/thesrivaya/",
+    "social_youtube_link": "https://www.youtube.com/@thesrivaya",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "",
+    "social_pinterest_link": "https://in.pinterest.com/thesrivaya/",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
+    "seo_homepage_title": "Online Shopping For Fashion Jewellery, Necklaces & Earrings - Srivaya",
+    "seo_homepage_description": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+    "seo_default_description": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+    "track_package_enable": true,
+    "whatsapp_phone": "+917067762371",
+    "contact_phone_display": "+91 70677 62371",
+    "contact_email": "thesrivaya@gmail.com",
+    "track_package_label": "Track Order",
+    "track_package_message": "Hi! I would like to track my order. Please share your order details (order number and registered phone or email) so we can update you on your order status.",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
@@ -128,6 +137,9 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+    "free_shipping_enable": true,
+    "free_shipping_threshold": 499,
+    "delivery_fee": 99,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -143,6 +155,33 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "9717370649079274736": {
+        "type": "shopify://apps/otp-login-notify/blocks/app-embed-block/c26b7b17-273d-4800-af62-8ec88ba18251",
+        "disabled": false,
+        "settings": {}
+      },
+      "2166187066657961218": {
+        "type": "shopify://apps/razorpay-cod-magic-checkout/blocks/review-widget-embed/c13c688d-5c45-4054-b95f-1edd63faa705",
+        "disabled": true,
+        "settings": {
+          "enable_reviews": true,
+          "enable_star_rating": true,
+          "primary_color": "",
+          "star_color": ""
+        }
+      },
+      "3557650678667880288": {
+        "type": "shopify://apps/razorpay-cod-magic-checkout/blocks/magicx-script/c13c688d-5c45-4054-b95f-1edd63faa705",
+        "disabled": true,
+        "settings": {}
+      },
+      "17844675666580048712": {
+        "type": "shopify://apps/razorpay-cod-magic-checkout/blocks/sso-script/c13c688d-5c45-4054-b95f-1edd63faa705",
+        "disabled": true,
+        "settings": {}
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {

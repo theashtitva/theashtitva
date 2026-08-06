@@ -260,8 +260,14 @@
                                 value="{{ item.quantity }}"
                                 {% # theme-check-disable %}
                                 data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
-                                min="0"
-                                data-min="{{ item.variant.quantity_rule.min }}"
+                                {% liquid
+                                  assign qty_min = item.variant.quantity_rule.min | default: 1
+                                  if qty_min < 1
+                                    assign qty_min = 1
+                                  endif
+                                %}
+                                min="{{ qty_min }}"
+                                data-min="{{ qty_min }}"
                                 {% if item.variant.quantity_rule.max != null %}
                                   max="{{ item.variant.quantity_rule.max }}"
                                 {% endif %}

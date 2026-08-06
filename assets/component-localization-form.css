@@ -429,9 +429,15 @@
 }
 
 .menu-drawer__localization .localization-form__select {
-  background-color: initial;
+  background-color: #fff;
   margin-top: 0;
-  padding: 1rem 3.6rem 1rem 0rem;
+  padding: 1rem 3.6rem 1rem 1.2rem;
+  border: 1px solid #e3d6d9;
+  border-radius: 8px;
+  color: #6f4b53;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .menu-drawer__localization .localization-form {
@@ -442,8 +448,8 @@
   margin: 0;
 }
 
-.menu-drawer__localization + .list-social {
-  margin-top: 1rem;
+.menu-drawer__localization + .menu-drawer__social {
+  margin-top: 0.2rem;
 }
 
 .language-selector .disclosure__list {

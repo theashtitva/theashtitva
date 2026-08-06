@@ -21,7 +21,7 @@
   <div id="CartDrawer" class="cart-drawer">
     <div id="CartDrawer-Overlay" class="cart-drawer__overlay"></div>
     <div
-      class="drawer__inner gradient color-{{ settings.cart_color_scheme }}"
+      class="drawer__inner cart-drawer__panel gradient color-{{ settings.cart_color_scheme }}"
       role="dialog"
       aria-modal="true"
       aria-label="{{ 'sections.cart.title' | t }}"
@@ -31,7 +31,6 @@
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
             <div class="cart-drawer__empty-content">
-              <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
               <button
                 class="drawer__close"
                 type="button"
@@ -42,7 +41,20 @@
                   {{- 'icon-close.svg' | inline_asset_content -}}
                 </span>
               </button>
-              <a href="{{ routes.all_products_collection_url }}" class="button">
+              <div class="cart-drawer__empty-art" aria-hidden="true">
+                <img
+                  src="{{ 'sv-empty-jewelry.svg' | asset_url }}"
+                  alt=""
+                  width="140"
+                  height="140"
+                  loading="lazy"
+                  class="cart-drawer__empty-img"
+                >
+              </div>
+              <p class="cart-drawer__eyebrow">Srivaya</p>
+              <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
+              <p class="cart-drawer__empty-sub">Discover pieces made to be worn and kept.</p>
+              <a href="{{ routes.all_products_collection_url }}" class="cart-drawer__continue button">
                 {{ 'general.continue_shopping' | t }}
               </a>
 
@@ -62,7 +74,15 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+        <div class="drawer__heading-group">
+          <p class="cart-drawer__eyebrow">Srivaya</p>
+          <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+          {%- unless cart == empty -%}
+            <p class="drawer__count">
+              {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+            </p>
+          {%- endunless -%}
+        </div>
         <button
           class="drawer__close"
           type="button"
@@ -309,8 +329,14 @@
                                     value="{{ item.quantity }}"
                                     {% # theme-check-disable %}
                                     data-cart-quantity="{{ cart | item_count_for_variant: item.variant.id }}"
-                                    min="0"
-                                    data-min="{{ item.variant.quantity_rule.min }}"
+                                    {% liquid
+                                      assign qty_min = item.variant.quantity_rule.min | default: 1
+                                      if qty_min < 1
+                                        assign qty_min = 1
+                                      endif
+                                    %}
+                                    min="{{ qty_min }}"
+                                    data-min="{{ qty_min }}"
                                     {% if item.variant.quantity_rule.max != null %}
                                       max="{{ item.variant.quantity_rule.max }}"
                                     {% endif %}
@@ -499,6 +525,7 @@
         <!-- Subtotals -->
 
         <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
+          {% render 'free-shipping-banner' %}
           <div>
             {%- if cart.cart_level_discount_applications.size > 0 -%}
               <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
@@ -513,10 +540,7 @@
             {%- endif -%}
           </div>
 
-          <div class="totals" role="status">
-            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
-          </div>
+          {% render 'cart-estimated-total' %}
 
           <small class="tax-note caption-large rte">
             {%- if cart.duties_included and cart.taxes_included -%}
@@ -574,6 +598,7 @@
           >
             {{ 'sections.cart.checkout' | t }}
           </button>
+          <p class="cart-drawer__assurance">Secure checkout · Easy returns</p>
         </div>
       </div>
     </div>

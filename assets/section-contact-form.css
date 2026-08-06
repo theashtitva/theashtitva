@@ -39,15 +39,29 @@
 }
 
 .contact__button .button {
-  background-color: #6f4b53;
-  color: #ffffff;
-  border-color: #6f4b53;
+  min-height: 5.2rem;
+  padding: 1.6rem 2rem;
+  border-radius: 6px;
+  background-color: #6f4b53 !important;
+  color: #f6f1f2 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact__button .button:before,
+.contact__button .button:after {
+  display: none !important;
 }
 
 .contact__button .button:hover {
-  background-color: #513c40;
-  border-color: #513c40;
-  color: #ffffff;
+  background-color: #513c40 !important;
+  border: none !important;
+  color: #f6f1f2 !important;
+  box-shadow: none !important;
 }
 
 @media screen and (min-width: 750px) {

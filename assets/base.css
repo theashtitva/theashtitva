@@ -1993,6 +1993,115 @@ input[type='checkbox'] {
   -moz-appearance: textfield;
 }
 
+/* Srivaya — shared underline quantity (product + cart) */
+.product-info-luxury quantity-input.quantity,
+quantity-input.cart-quantity {
+  --sv-qty-ink: #312426;
+  --sv-qty-cta: #6f4b53;
+  --sv-qty-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sv-qty-duration: 250ms;
+  width: auto;
+  max-width: none;
+  height: 4rem;
+  min-height: 4rem;
+  border: none;
+  border-bottom: 1px solid rgba(43, 43, 43, 0.28);
+  border-radius: 0;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: border-color var(--sv-qty-duration) var(--sv-qty-ease);
+}
+
+.product-info-luxury quantity-input.quantity:before,
+.product-info-luxury quantity-input.quantity:after,
+quantity-input.cart-quantity:before,
+quantity-input.cart-quantity:after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.product-info-luxury quantity-input.quantity:hover,
+quantity-input.cart-quantity:hover {
+  transform: none;
+  box-shadow: none !important;
+  border-color: var(--sv-qty-ink);
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.product-info-luxury .quantity__button,
+quantity-input.cart-quantity .quantity__button {
+  width: 3.6rem;
+  height: 3.6rem;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  margin: 0;
+  color: var(--sv-qty-ink);
+  opacity: 0.7;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.product-info-luxury .quantity__button:hover,
+quantity-input.cart-quantity .quantity__button:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 1;
+  color: var(--sv-qty-cta);
+}
+
+.product-info-luxury .quantity__button:focus,
+.product-info-luxury .quantity__button:focus-visible,
+.product-info-luxury .quantity__input:focus,
+.product-info-luxury .quantity__input:focus-visible,
+quantity-input.cart-quantity .quantity__button:focus,
+quantity-input.cart-quantity .quantity__button:focus-visible,
+quantity-input.cart-quantity .quantity__input:focus,
+quantity-input.cart-quantity .quantity__input:focus-visible,
+.product-info-luxury .quantity__button:not(:focus-visible):not(.focused),
+.product-info-luxury .quantity__input:not(:focus-visible):not(.focused),
+quantity-input.cart-quantity .quantity__button:not(:focus-visible):not(.focused),
+quantity-input.cart-quantity .quantity__input:not(:focus-visible):not(.focused) {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.product-info-luxury .quantity__input,
+quantity-input.cart-quantity .quantity__input {
+  width: 4rem;
+  flex-grow: 0;
+  height: 3.6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 1;
+  color: var(--sv-qty-ink);
+  border: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  text-align: center;
+  padding: 0;
+}
+
+.product-info-luxury .quantity__input:-webkit-autofill,
+.product-info-luxury .quantity__input:-webkit-autofill:hover,
+.product-info-luxury .quantity__input:-webkit-autofill:active,
+quantity-input.cart-quantity .quantity__input:-webkit-autofill,
+quantity-input.cart-quantity .quantity__input:-webkit-autofill:hover,
+quantity-input.cart-quantity .quantity__input:-webkit-autofill:active {
+  box-shadow: 0 0 0 10rem transparent inset !important;
+  -webkit-box-shadow: 0 0 0 10rem transparent inset !important;
+  background-color: transparent !important;
+}
+
 .quantity__rules {
   margin-top: 0.5rem;
   position: relative;
@@ -2524,7 +2633,7 @@ input[type='checkbox'] {
 }
 
 .header__icon {
-  color: rgb(var(--color-foreground));
+  color: #6f4b53;
 }
 
 .header__icon span {
@@ -2794,12 +2903,14 @@ details[open] > .header__submenu {
 .header__menu-item {
   padding: 1.2rem;
   text-decoration: none;
-  font-weight: 500;
-  color: rgba(var(--color-foreground));
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #6f4b53;
 }
 
 .header__menu-item:hover {
-  color: rgb(var(--color-foreground));
+  color: #513c40;
 }
 
 .header__menu-item span {
@@ -2824,7 +2935,7 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
+  color: #6f4b53;
 }
 
 .header__submenu {
@@ -4098,4 +4209,156 @@ details-disclosure > details {
     margin: 0 0 1em 0;
     display: block;
   }
+}
+
+/* =========================================================
+   Srivaya — Primary buttons (match cart drawer checkout)
+   ========================================================= */
+:root {
+  --sv-btn-cta: #6f4b53;
+  --sv-btn-cta-hover: #513c40;
+  --sv-btn-label: #f6f1f2;
+  --sv-btn-radius: 6px;
+  --sv-btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sv-btn-duration: 280ms;
+}
+
+.button:not(.button--tertiary):not(.button--secondary):not(.product-form__submit):not(.quantity__button):not(.cart-remove-button):not(.password-link):not(.shopify-cleanslate),
+.button--primary:not(.product-form__submit),
+.shopify-challenge__button,
+.customer .button,
+.customer button:not([name='dismiss']),
+.cart__checkout-button,
+button.shopify-payment-button__button--unbranded,
+.shopify-payment-button__button--unbranded {
+  min-height: 5.2rem;
+  min-width: 0;
+  padding: 1.6rem 2rem;
+  border-radius: var(--sv-btn-radius) !important;
+  background: var(--sv-btn-cta) !important;
+  background-color: var(--sv-btn-cta) !important;
+  color: var(--sv-btn-label) !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  transition: background var(--sv-btn-duration) var(--sv-btn-ease),
+    color var(--sv-btn-duration) var(--sv-btn-ease),
+    border-color var(--sv-btn-duration) var(--sv-btn-ease);
+}
+
+.button:not(.button--tertiary):not(.button--secondary):not(.product-form__submit):not(.quantity__button):not(.cart-remove-button):before,
+.button:not(.button--tertiary):not(.button--secondary):not(.product-form__submit):not(.quantity__button):not(.cart-remove-button):after,
+.button--primary:not(.product-form__submit):before,
+.button--primary:not(.product-form__submit):after,
+.shopify-challenge__button:before,
+.shopify-challenge__button:after,
+.customer button:before,
+.customer button:after,
+.cart__checkout-button:before,
+.cart__checkout-button:after,
+.shopify-payment-button__button--unbranded:before,
+.shopify-payment-button__button--unbranded:after {
+  display: none !important;
+  content: none !important;
+  box-shadow: none !important;
+}
+
+.button:not(.button--tertiary):not(.button--secondary):not(.product-form__submit):not(.quantity__button):not(.cart-remove-button):hover:not([disabled]),
+.button--primary:not(.product-form__submit):hover:not([disabled]),
+.shopify-challenge__button:hover:not([disabled]),
+.customer button:hover:not([disabled]),
+.cart__checkout-button:hover:not([disabled]),
+.shopify-payment-button__button--unbranded:hover:not([disabled]) {
+  background: var(--sv-btn-cta-hover) !important;
+  background-color: var(--sv-btn-cta-hover) !important;
+  color: var(--sv-btn-label) !important;
+  box-shadow: none !important;
+}
+
+.button:not(.button--tertiary):not(.button--secondary):not(.product-form__submit):focus-visible,
+.button--primary:not(.product-form__submit):focus-visible,
+.cart__checkout-button:focus-visible,
+.shopify-payment-button__button--unbranded:focus-visible {
+  outline: 2px solid #a27780;
+  outline-offset: 3px;
+}
+
+.button[disabled]:not(.button--tertiary):not(.button--secondary):not(.product-form__submit),
+.button--primary:not(.product-form__submit)[disabled],
+.cart__checkout-button[disabled],
+.shopify-payment-button__button--unbranded[disabled] {
+  opacity: 0.45;
+}
+
+/* Secondary + PDP Add to cart — outline */
+.button--secondary:not(.quick-add__submit),
+.product-form__submit,
+.product-form__submit.button,
+.product-form__submit.button--primary,
+.product-form__submit.button--secondary {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--sv-btn-cta) !important;
+  border: 1px solid color-mix(in srgb, var(--sv-btn-cta) 40%, transparent) !important;
+  box-shadow: none !important;
+  min-height: 5.2rem;
+  padding: 1.6rem 2rem;
+  border-radius: var(--sv-btn-radius) !important;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.button--secondary:not(.quick-add__submit):before,
+.button--secondary:not(.quick-add__submit):after,
+.product-form__submit:before,
+.product-form__submit:after {
+  display: none !important;
+  content: none !important;
+}
+
+.button--secondary:not(.quick-add__submit):hover:not([disabled]),
+.product-form__submit:hover:not([disabled]),
+.product-form__submit.button--primary:hover:not([disabled]) {
+  background: color-mix(in srgb, var(--sv-btn-cta) 6%, transparent) !important;
+  background-color: color-mix(in srgb, var(--sv-btn-cta) 6%, transparent) !important;
+  border-color: var(--sv-btn-cta) !important;
+  color: var(--sv-btn-cta) !important;
+  box-shadow: none !important;
+}
+
+/* Collection / card quick-add — filled theme CTA */
+.quick-add__submit.button,
+.quick-add__submit.button--secondary {
+  background: var(--sv-btn-cta) !important;
+  background-color: var(--sv-btn-cta) !important;
+  color: var(--sv-btn-label) !important;
+  border: none !important;
+  box-shadow: none !important;
+  min-height: 4.4rem;
+  padding: 1.1rem 1.4rem;
+  border-radius: var(--sv-btn-radius) !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.quick-add__submit:before,
+.quick-add__submit:after {
+  display: none !important;
+  content: none !important;
+}
+
+.quick-add__submit:hover:not([disabled]) {
+  background: var(--sv-btn-cta-hover) !important;
+  background-color: var(--sv-btn-cta-hover) !important;
+  color: var(--sv-btn-label) !important;
+  border: none !important;
+  box-shadow: none !important;
 }
