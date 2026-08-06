@@ -42,12 +42,13 @@
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 240px;
+    transition: transform 0.35s ease;
+    max-width: none;
+    width: 100%;
   }
 
   .ai-collection-grid__card-{{ ai_gen_id }}:hover {
-    transform: translateY(-{{ block.settings.hover_lift }}px);
+    transform: none;
   }
 
   .ai-collection-grid__image-wrapper-{{ ai_gen_id }} {
@@ -63,12 +64,13 @@
     overflow: hidden;
     background-color: {{ block.settings.card_background }};
     border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
-    box-shadow: 0 {{ block.settings.shadow_offset }}px {{ block.settings.shadow_blur }}px rgba(0, 0, 0, {{ block.settings.shadow_opacity }});
-    transition: box-shadow 0.3s ease;
+    box-shadow: none;
+    transition: border-color 0.35s ease;
   }
 
   .ai-collection-grid__card-{{ ai_gen_id }}:hover .ai-collection-grid__image-wrapper-{{ ai_gen_id }} {
-    box-shadow: 0 {{ block.settings.hover_shadow_offset }}px {{ block.settings.hover_shadow_blur }}px rgba(0, 0, 0, {{ block.settings.hover_shadow_opacity }});
+    box-shadow: none;
+    border-color: color-mix(in srgb, {{ block.settings.card_border_color }} 70%, #123c32);
   }
 
   .ai-collection-grid__image-{{ ai_gen_id }} {
@@ -82,7 +84,7 @@
   }
 
   .ai-collection-grid__card-{{ ai_gen_id }}:hover .ai-collection-grid__image-{{ ai_gen_id }} {
-    transform: scale({{ block.settings.image_zoom_scale }});
+    transform: scale(1.03);
   }
 
   .ai-collection-grid__image-placeholder-{{ ai_gen_id }} {

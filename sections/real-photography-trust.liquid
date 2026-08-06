@@ -79,18 +79,32 @@
   }
 
   #rpt-{{ sid }} {
-    background:
-      linear-gradient(
-        165deg,
-        color-mix(in srgb, var(--rpt-blush) 55%, var(--rpt-bg)) 0%,
-        var(--rpt-bg) 42%,
-        color-mix(in srgb, var(--rpt-accent) 6%, var(--rpt-bg)) 100%
-      );
+    background: var(--rpt-bg);
     padding-top: var(--rpt-pad-top-m);
     padding-bottom: var(--rpt-pad-bottom-m);
     color: var(--rpt-desc);
     overflow-x: clip;
     overflow-y: visible;
+  }
+
+  #rpt-{{ sid }}.rpt--on-dark .rpt__benefit {
+    border-bottom-color: color-mix(in srgb, var(--rpt-accent) 28%, transparent);
+  }
+
+  #rpt-{{ sid }}.rpt--on-dark .rpt__benefits {
+    border-top-color: color-mix(in srgb, var(--rpt-accent) 32%, transparent);
+  }
+
+  #rpt-{{ sid }}.rpt--on-dark .rpt__card {
+    border-color: color-mix(in srgb, var(--rpt-accent) 35%, transparent);
+    box-shadow:
+      0 2px 6px rgba(7, 23, 19, 0.2),
+      0 16px 36px rgba(7, 23, 19, 0.28);
+  }
+
+  #rpt-{{ sid }}.rpt--on-dark .rpt__card--front::after {
+    background:
+      linear-gradient(160deg, rgba(247, 243, 233, 0.08) 0%, transparent 40%, rgba(7, 23, 19, 0.18) 100%);
   }
 
   #rpt-{{ sid }} .rpt__inner {
@@ -776,7 +790,7 @@
 
 <section
   id="rpt-{{ sid }}"
-  class="rpt"
+  class="rpt rpt--on-dark"
   {% if section.settings.heading != blank %}
     aria-labelledby="rpt-heading-{{ sid }}"
   {% else %}

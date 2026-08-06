@@ -5,6 +5,7 @@
 
 {%- liquid
   assign sid = section.id
+  assign pfa_layout = section.settings.layout_style | default: 'editorial'
 -%}
 
 {%- style -%}
@@ -45,29 +46,11 @@
     padding-top: var(--pfa-pad-top-m);
     padding-bottom: var(--pfa-pad-bottom-m);
     color: var(--pfa-text);
-    background-color: #ffffff;
+    background-color: var(--pfa-bg);
     overflow: clip;
   }
 
-  /* Bottom-only soft brand fade — seamless, no hard edge */
-  #pfa-{{ sid }}::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: min(48%, 22rem);
-    z-index: 0;
-    pointer-events: none;
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      color-mix(in srgb, #fdf9f2 18%, transparent) 42%,
-      color-mix(in srgb, #fdf9f2 42%, transparent) 72%,
-      color-mix(in srgb, #f3ebd8 28%, transparent) 100%
-    );
-  }
-
+  #pfa-{{ sid }}::before,
   #pfa-{{ sid }}::after {
     content: none;
   }
@@ -81,7 +64,7 @@
       height: min(38%, 16rem);
       z-index: 0;
       pointer-events: none;
-      opacity: 0.12;
+      opacity: 0.08;
       mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
       -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
       background-image: url({{ section.settings.pattern_image | image_url: width: 800 }});
@@ -91,19 +74,7 @@
     }
   {% elsif section.settings.use_default_pattern %}
     #pfa-{{ sid }} .pfa__bottom-pattern {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: min(38%, 16rem);
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.1;
-      mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
-      -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 55%, #000 100%);
-      background-image: url(https://cdn.shopify.com/s/files/1/0955/5873/0040/files/dot-bg-v2.webp?v=1755518635);
-      background-position: center bottom;
-      background-repeat: repeat;
+      display: none;
     }
   {% endif %}
 
@@ -120,8 +91,17 @@
 
   #pfa-{{ sid }} .pfa__header {
     max-width: {{ section.settings.heading_max_width }}px;
-    margin: 0 auto {% if section.settings.subtext != blank %}1rem{% else %}3.6rem{% endif %};
+    margin: 0 auto {% if section.settings.subtext != blank %}1.2rem{% else %}3rem{% endif %};
     text-align: {{ section.settings.heading_alignment }};
+  }
+
+  #pfa-{{ sid }} .pfa__eyebrow {
+    margin: 0 0 0.85rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--pfa-accent);
   }
 
   #pfa-{{ sid }} .pfa__heading {
@@ -137,34 +117,22 @@
   }
 
   #pfa-{{ sid }} .pfa__highlight {
-    position: relative;
-    display: inline-block;
-    padding: 0.14em 0.5em 0.18em;
-    margin-inline: 0.15em;
-    background:
-      linear-gradient(
-        135deg,
-        color-mix(in srgb, var(--pfa-highlight-bg) 92%, #fff) 0%,
-        var(--pfa-highlight-bg) 48%,
-        color-mix(in srgb, var(--pfa-highlight-bg) 82%, #1a0508) 100%
-      );
-    color: var(--pfa-highlight-text);
-    border-radius: 0.4em;
+    color: inherit;
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
     font-weight: inherit;
-    line-height: 1.2;
-    box-shadow:
-      0 8px 22px color-mix(in srgb, var(--pfa-highlight-bg) 28%, transparent),
-      inset 0 1px 0 color-mix(in srgb, #fff 22%, transparent);
   }
 
   #pfa-{{ sid }} .pfa__subtext {
-    max-width: min({{ section.settings.heading_max_width }}px, 34rem);
-    margin: 0 auto 1.85rem;
+    max-width: min({{ section.settings.heading_max_width }}px, 36rem);
+    margin: 0 auto 2.4rem;
     text-align: {{ section.settings.heading_alignment }};
     font-size: var(--pfa-subtext-size);
     line-height: 1.7;
     color: var(--pfa-text);
-    opacity: 0.92;
   }
 
   #pfa-{{ sid }} .pfa__grid {
@@ -177,8 +145,9 @@
     align-items: stretch;
   }
 
-  #pfa-{{ sid }} .pfa__item,
-  #pfa-{{ sid }} a.pfa__item {
+  /* —— Icon layout (legacy) —— */
+  #pfa-{{ sid }}:not(.pfa--editorial) .pfa__item,
+  #pfa-{{ sid }}:not(.pfa--editorial) a.pfa__item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -196,64 +165,15 @@
     color: inherit;
     cursor: pointer;
     transition:
-      transform 0.45s var(--pfa-ease),
-      border-color 0.45s var(--pfa-ease),
-      background-color 0.45s var(--pfa-ease),
-      box-shadow 0.45s var(--pfa-ease);
+      transform 0.4s var(--pfa-ease),
+      border-color 0.4s var(--pfa-ease);
   }
 
   #pfa-{{ sid }} .pfa__item--static {
     cursor: default;
   }
 
-  #pfa-{{ sid }} .pfa__item::after {
-    content: '';
-    position: absolute;
-    left: 18%;
-    right: 18%;
-    bottom: 0;
-    height: 2px;
-    border-radius: 2px 2px 0 0;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      color-mix(in srgb, var(--pfa-accent) 55%, transparent),
-      transparent
-    );
-    opacity: 0;
-    transition: opacity 0.45s var(--pfa-ease);
-  }
-
-  {% if section.settings.enable_hover %}
-    @media (hover: hover) {
-      #pfa-{{ sid }} .pfa__item:hover {
-        transform: translateY(-3px);
-        border-color: color-mix(in srgb, var(--pfa-accent) 30%, transparent);
-        background: color-mix(in srgb, var(--pfa-surface) 88%, #fff);
-        box-shadow: 0 14px 32px rgba(28, 22, 16, 0.07);
-      }
-
-      #pfa-{{ sid }} .pfa__item:hover::after {
-        opacity: 1;
-      }
-
-      #pfa-{{ sid }} .pfa__item:hover .pfa__icon {
-        color: var(--pfa-accent);
-        background: color-mix(in srgb, var(--pfa-icon-bg) 70%, #fff);
-      }
-
-      #pfa-{{ sid }} .pfa__item:hover .pfa__label {
-        color: var(--pfa-heading);
-      }
-    }
-  {% endif %}
-
-  #pfa-{{ sid }} a.pfa__item:focus-visible {
-    outline: 2px solid var(--pfa-accent);
-    outline-offset: 3px;
-  }
-
-  #pfa-{{ sid }} .pfa__icon {
+  #pfa-{{ sid }}:not(.pfa--editorial) .pfa__icon {
     position: relative;
     z-index: 1;
     flex: 0 0 auto;
@@ -266,49 +186,23 @@
     margin: 0 0 0.75rem;
     border-radius: 50%;
     background: var(--pfa-icon-bg);
-    transition:
-      color 0.45s var(--pfa-ease),
-      background-color 0.45s var(--pfa-ease);
   }
 
-  #pfa-{{ sid }} .pfa__icon--framed {
-    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pfa-heading) 6%, transparent);
-  }
-
-  #pfa-{{ sid }} .pfa__icon svg,
-  #pfa-{{ sid }} .pfa__icon img {
+  #pfa-{{ sid }}:not(.pfa--editorial) .pfa__icon svg,
+  #pfa-{{ sid }}:not(.pfa--editorial) .pfa__icon img {
     width: 52%;
     height: 52%;
     display: block;
     object-fit: contain;
   }
 
-  #pfa-{{ sid }} .pfa__icon--photo {
-    overflow: hidden;
-  }
-
-  #pfa-{{ sid }} .pfa__icon--photo img {
+  #pfa-{{ sid }}:not(.pfa--editorial) .pfa__icon--photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  {% if section.settings.icon_style == 'plain' %}
-    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) {
-      background: transparent;
-      box-shadow: none;
-    }
-
-    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) svg,
-    #pfa-{{ sid }} .pfa__icon:not(.pfa__icon--photo) img {
-      width: 78%;
-      height: 78%;
-    }
-  {% endif %}
-
-  #pfa-{{ sid }} .pfa__label {
-    position: relative;
-    z-index: 1;
+  #pfa-{{ sid }}:not(.pfa--editorial) .pfa__label {
     margin: 0;
     min-height: 2.7em;
     display: flex;
@@ -317,17 +211,117 @@
     font-size: var(--pfa-label-size-m);
     font-weight: 600;
     line-height: 1.35;
-    letter-spacing: 0.015em;
     color: var(--pfa-label);
-    transition: color 0.45s var(--pfa-ease);
+  }
+
+  /* —— Editorial layout —— */
+  #pfa-{{ sid }}.pfa--editorial .pfa__item,
+  #pfa-{{ sid }}.pfa--editorial a.pfa__item {
+    position: relative;
+    display: block;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+    border-radius: var(--pfa-radius);
+    overflow: hidden;
+    background: var(--ashtitva-green, #123c32);
+    border: none;
+    text-decoration: none;
+    color: #f7f3e9;
+    aspect-ratio: 3 / 4;
+  }
+
+  #pfa-{{ sid }}.pfa--editorial .pfa__media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  #pfa-{{ sid }}.pfa--editorial .pfa__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.45s var(--pfa-ease);
+  }
+
+  #pfa-{{ sid }}.pfa--editorial .pfa__media-fallback {
+    width: 100%;
+    height: 100%;
+    background:
+      linear-gradient(165deg, #123c32 0%, #0b2924 100%);
+  }
+
+  #pfa-{{ sid }}.pfa--editorial .pfa__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(7, 23, 19, 0.55) 72%,
+      rgba(7, 23, 19, 0.82) 100%
+    );
+    pointer-events: none;
+  }
+
+  #pfa-{{ sid }}.pfa--editorial .pfa__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 1.4rem 1.2rem 1.5rem;
+    text-align: left;
+  }
+
+  #pfa-{{ sid }}.pfa--editorial .pfa__label {
+    margin: 0;
+    min-height: 0;
+    display: block;
+    font-size: var(--pfa-label-size-m);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: #f7f3e9;
+    transition: color 0.35s var(--pfa-ease);
+  }
+
+  #pfa-{{ sid }}.pfa--editorial .pfa__support {
+    margin: 0.45rem 0 0;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: color-mix(in srgb, #f7f3e9 78%, transparent);
+  }
+
+  {% if section.settings.enable_hover %}
+    @media (hover: hover) {
+      #pfa-{{ sid }}.pfa--editorial a.pfa__item:hover .pfa__media img {
+        transform: scale(1.03);
+      }
+
+      #pfa-{{ sid }}.pfa--editorial a.pfa__item:hover .pfa__label {
+        color: var(--pfa-accent);
+      }
+
+      #pfa-{{ sid }}:not(.pfa--editorial) .pfa__item:hover {
+        border-color: color-mix(in srgb, var(--pfa-accent) 35%, transparent);
+      }
+    }
+  {% endif %}
+
+  #pfa-{{ sid }} a.pfa__item:focus-visible {
+    outline: 2px solid var(--pfa-accent);
+    outline-offset: 3px;
   }
 
   #pfa-{{ sid }} .pfa-anim {
     opacity: 0;
     transform: translateY(12px);
     transition:
-      opacity 0.7s var(--pfa-ease),
-      transform 0.7s var(--pfa-ease);
+      opacity 0.5s var(--pfa-ease),
+      transform 0.5s var(--pfa-ease);
   }
 
   #pfa-{{ sid }} .pfa-anim.is-visible {
@@ -336,11 +330,7 @@
   }
 
   #pfa-{{ sid }} li.pfa-anim {
-    transition-delay: calc(var(--pfa-stagger, 0) * 45ms);
-    height: 100%;
-  }
-
-  #pfa-{{ sid }} li.pfa-anim .pfa__item {
+    transition-delay: calc(var(--pfa-stagger, 0) * 40ms);
     height: 100%;
   }
 
@@ -351,9 +341,7 @@
       transition: none;
     }
 
-    #pfa-{{ sid }} .pfa__item,
-    #pfa-{{ sid }} .pfa__icon,
-    #pfa-{{ sid }} .pfa__label {
+    #pfa-{{ sid }}.pfa--editorial .pfa__media img {
       transition: none;
     }
   }
@@ -377,11 +365,7 @@
       grid-template-columns: repeat(var(--pfa-cols-t), minmax(0, 1fr));
     }
 
-    #pfa-{{ sid }} .pfa__item {
-      min-height: 10.5rem;
-    }
-
-    #pfa-{{ sid }} .pfa__icon {
+    #pfa-{{ sid }}:not(.pfa--editorial) .pfa__icon {
       width: var(--pfa-icon-size-d);
       height: var(--pfa-icon-size-d);
     }
@@ -400,28 +384,16 @@
     #pfa-{{ sid }} .pfa__grid {
       grid-template-columns: repeat(var(--pfa-cols-d), minmax(0, 1fr));
     }
-
-    #pfa-{{ sid }} .pfa__header {
-      margin-bottom: {% if section.settings.subtext != blank %}1.2rem{% else %}3.6rem{% endif %};
-    }
-
-    #pfa-{{ sid }} .pfa__subtext {
-      margin-bottom: 3.6rem;
-    }
-
-    #pfa-{{ sid }} .pfa__item {
-      min-height: 11rem;
-    }
   }
 {%- endstyle -%}
 
 <section
   id="pfa-{{ sid }}"
-  class="pfa"
+  class="pfa{% if pfa_layout == 'editorial' %} pfa--editorial{% endif %}"
   {% if section.settings.heading != blank %}
     aria-labelledby="pfa-heading-{{ sid }}"
   {% else %}
-    aria-label="Perfect fit for you"
+    aria-label="Celebrate every moment"
   {% endif %}
 >
   {%- if section.settings.pattern_image != blank or section.settings.use_default_pattern -%}
@@ -430,11 +402,14 @@
   <div class="pfa__inner">
     {%- if section.settings.heading != blank or section.settings.highlight_text != blank -%}
       <div class="pfa__header pfa-anim" data-pfa-anim>
+        {%- if section.settings.highlight_text != blank and pfa_layout == 'editorial' -%}
+          <p class="pfa__eyebrow">{{ section.settings.highlight_text | escape }}</p>
+        {%- endif -%}
         <h2 id="pfa-heading-{{ sid }}" class="pfa__heading">
           {%- if section.settings.heading != blank -%}
             {{ section.settings.heading | escape }}
           {%- endif -%}
-          {%- if section.settings.highlight_text != blank -%}
+          {%- if section.settings.highlight_text != blank and pfa_layout != 'editorial' -%}
             <span class="pfa__highlight">{{ section.settings.highlight_text | escape }}</span>
           {%- endif -%}
         </h2>
@@ -454,12 +429,15 @@
           {%- if pfa_title == blank and pfa_collection != blank -%}
             {%- assign pfa_title = pfa_collection.title -%}
           {%- endif -%}
-          {%- comment -%} Use only Perfect Fit custom image or built-in icon — never collection image {%- endcomment -%}
           {%- assign pfa_image = block.settings.image -%}
+          {%- if pfa_image == blank and pfa_collection != blank and pfa_collection.featured_image != blank -%}
+            {%- assign pfa_image = pfa_collection.featured_image -%}
+          {%- endif -%}
           {%- assign pfa_url = blank -%}
           {%- if pfa_collection != blank -%}
             {%- assign pfa_url = pfa_collection.url -%}
           {%- endif -%}
+          {%- assign pfa_support = block.settings.support_text -%}
 
           {%- if pfa_title != blank or pfa_image != blank or pfa_collection != blank -%}
             <li
@@ -477,6 +455,35 @@
               {%- else -%}
                 <div class="pfa__item pfa__item--static">
               {%- endif -%}
+
+              {%- if pfa_layout == 'editorial' -%}
+                  <div class="pfa__media">
+                    {%- if pfa_image != blank -%}
+                      {%- assign media_alt = pfa_title | default: 'Collection' -%}
+                      {{
+                        pfa_image
+                        | image_url: width: 900
+                        | image_tag:
+                          loading: 'lazy',
+                          decoding: 'async',
+                          widths: '320, 480, 640, 800, 900',
+                          sizes: '(min-width: 990px) 20vw, (min-width: 750px) 30vw, 45vw',
+                          alt: media_alt
+                      }}
+                    {%- else -%}
+                      <div class="pfa__media-fallback" aria-hidden="true"></div>
+                    {%- endif -%}
+                  </div>
+                  <div class="pfa__overlay" aria-hidden="true"></div>
+                  <div class="pfa__content">
+                    {%- if pfa_title != blank -%}
+                      <p class="pfa__label">{{ pfa_title | escape }}</p>
+                    {%- endif -%}
+                    {%- if pfa_support != blank -%}
+                      <p class="pfa__support">{{ pfa_support | escape }}</p>
+                    {%- endif -%}
+                  </div>
+              {%- else -%}
                   <div class="pfa__icon{% if section.settings.icon_style == 'framed' %} pfa__icon--framed{% endif %}{% if pfa_image != blank %} pfa__icon--photo{% endif %}">
                     {%- if pfa_image != blank -%}
                       {%- assign icon_alt = pfa_title | default: 'Collection' -%}
@@ -524,6 +531,8 @@
                   {%- if pfa_title != blank -%}
                     <p class="pfa__label">{{ pfa_title | escape }}</p>
                   {%- endif -%}
+              {%- endif -%}
+
               {%- if pfa_url != blank -%}
                 </a>
               {%- else -%}
@@ -580,16 +589,26 @@
       "content": "Content"
     },
     {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout style",
+      "options": [
+        { "value": "editorial", "label": "Editorial imagery" },
+        { "value": "icons", "label": "Icon cards" }
+      ],
+      "default": "editorial"
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Perfect Fit For You"
+      "default": "Celebrate Every Moment"
     },
     {
       "type": "text",
       "id": "highlight_text",
-      "label": "Highlighted text",
-      "default": "If You Are:"
+      "label": "Eyebrow / highlighted text",
+      "default": "Shop by moment"
     },
     {
       "type": "textarea",
@@ -962,6 +981,12 @@
           "id": "title",
           "label": "Title",
           "info": "Optional. Leave blank to use the collection title."
+        },
+        {
+          "type": "text",
+          "id": "support_text",
+          "label": "Supporting text",
+          "info": "Optional short line under the title in editorial layout."
         },
         {
           "type": "select",

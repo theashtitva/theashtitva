@@ -1,81 +1,92 @@
 /* =========================================================
-   Ashtitva — Brand Color System (exact mockup tokens)
-   ---------------------------------------------------------
-   From Ashtitva homepage mock — exact:
-     Cream / Ivory     #FDF9F2
-     Dark Forest Green #0E2C20
-     Gold              #C5A059
-   Supporting tones derived only for hover / washes.
+   Ashtitva — Brand Color System
+   Modern premium · warm · emotional · authentic
+   Visual rhythm: ~70% ivory · 20% forest · 7% gold · 3% deep
    ========================================================= */
 
 :root {
-  /* Exact neutrals */
-  --ash-ivory: #fdf9f2;
-  --ash-cream: #ffffff;
-  --ash-sand: #f3ebd8;
-  --ash-surface: #ffffff;
-  --ash-blush: #f3ebd8;
-  --ash-mist: #faf6ef;
+  /* Core palette */
+  --ashtitva-green: #123c32;
+  --ashtitva-green-dark: #0b2924;
+  --ashtitva-deep: #071713;
+  --ashtitva-ivory: #f7f3e9;
+  --ashtitva-ivory-soft: #fcfaf4;
+  --ashtitva-gold: #b89a5a;
+  --ashtitva-gold-light: #d8c38f;
+  --ashtitva-text: #18302a;
 
-  /* Exact gold + soft supports */
-  --ash-gold: #c5a059;
-  --ash-gold-light: #d4b56e;
-  --ash-gold-soft: #f3ebd8;
-  --ash-gold-antique: #a8843f;
-  --ash-gold-deep: #8f6f32;
+  /* Aliases used across theme (backward compatible) */
+  --ash-ivory: var(--ashtitva-ivory);
+  --ash-cream: var(--ashtitva-ivory-soft);
+  --ash-sand: #efe8d8;
+  --ash-surface: var(--ashtitva-ivory-soft);
+  --ash-blush: #efe8d8;
+  --ash-mist: var(--ashtitva-ivory-soft);
 
-  /* Exact forest + soft supports */
-  --ash-forest: #0e2c20;
-  --ash-forest-soft: #164a36;
-  --ash-forest-deep: #0a2018;
+  --ash-gold: var(--ashtitva-gold);
+  --ash-gold-light: var(--ashtitva-gold-light);
+  --ash-gold-soft: #efe8d8;
+  --ash-gold-antique: #9a7f48;
+  --ash-gold-deep: #8a7040;
 
-  /* Compat aliases (older token names) */
-  --ash-rose: #c5a059;
-  --ash-rose-deep: #a8843f;
-  --ash-rose-soft: #f3ebd8;
-  --ash-rose-wash: #fdf9f2;
-  --ash-burgundy: #0e2c20;
-  --ash-burgundy-soft: #164a36;
-  --ash-burgundy-deep: #0a2018;
+  --ash-forest: var(--ashtitva-green);
+  --ash-forest-soft: #1a4a3e;
+  --ash-forest-deep: var(--ashtitva-green-dark);
 
-  /* Type */
-  --ash-ink: #0e2c20;
-  --ash-body: #3d3d3d;
-  --ash-muted: #6b6b6b;
-  --ash-on-dark: #fdf9f2;
-  --ash-on-forest: #ffffff;
+  --ash-rose: var(--ashtitva-gold);
+  --ash-rose-deep: #9a7f48;
+  --ash-rose-soft: #efe8d8;
+  --ash-rose-wash: var(--ashtitva-ivory);
+  --ash-burgundy: var(--ashtitva-green);
+  --ash-burgundy-soft: #1a4a3e;
+  --ash-burgundy-deep: var(--ashtitva-green-dark);
 
-  /* Borders */
-  --ash-border: #e8dfd0;
-  --ash-border-card: #efe6d8;
-  --ash-border-input: #ddd3c4;
-  --ash-border-accent: #c5a059;
-  --ash-border-luxury: #c5a059;
+  --ash-ink: var(--ashtitva-text);
+  --ash-body: #3a4f48;
+  --ash-muted: #5c6e67;
+  --ash-on-dark: var(--ashtitva-ivory);
+  --ash-on-forest: var(--ashtitva-ivory);
 
-  --ash-shadow-sm: 0 2px 8px rgba(14, 44, 32, 0.06);
-  --ash-shadow-md: 0 8px 24px rgba(14, 44, 32, 0.08);
-  --ash-shadow-lg: 0 20px 60px rgba(14, 44, 32, 0.12);
+  --ash-border: #e6dfd0;
+  --ash-border-card: #ebe4d6;
+  --ash-border-input: #ddd5c6;
+  --ash-border-accent: var(--ashtitva-gold);
+  --ash-border-luxury: var(--ashtitva-gold);
 
-  --ash-gradient-brand: linear-gradient(135deg, #fdf9f2 0%, #faf6ef 50%, #f3ebd8 100%);
-  --ash-gradient-hero: linear-gradient(120deg, #fdf9f2, #ffffff, #f3ebd8);
-  --ash-gradient-section: linear-gradient(180deg, #ffffff, #fdf9f2);
-  --ash-gradient-media: linear-gradient(165deg, #ffffff 0%, #fdf9f2 60%, #f3ebd8 140%);
-  --ash-gradient-dark: linear-gradient(160deg, #164a36 0%, #0e2c20 100%);
-  --ash-gradient-gold: linear-gradient(90deg, #d4b56e, #c5a059, #a8843f);
+  --ash-shadow-sm: 0 2px 8px rgba(7, 23, 19, 0.05);
+  --ash-shadow-md: 0 8px 24px rgba(7, 23, 19, 0.07);
+  --ash-shadow-lg: 0 18px 48px rgba(7, 23, 19, 0.1);
+
+  --ash-gradient-brand: linear-gradient(180deg, #fcfaf4 0%, #f7f3e9 100%);
+  --ash-gradient-hero: linear-gradient(120deg, #f7f3e9, #fcfaf4, #efe8d8);
+  --ash-gradient-section: linear-gradient(180deg, #fcfaf4, #f7f3e9);
+  --ash-gradient-media: linear-gradient(165deg, #fcfaf4 0%, #f7f3e9 70%, #efe8d8 140%);
+  --ash-gradient-dark: linear-gradient(160deg, #123c32 0%, #0b2924 100%);
+  --ash-gradient-gold: linear-gradient(90deg, #d8c38f, #b89a5a, #9a7f48);
   --ash-gradient-rose: var(--ash-gradient-gold);
-  --ash-gradient-cta: linear-gradient(180deg, #164a36, #0e2c20);
+  --ash-gradient-cta: linear-gradient(180deg, #123c32, #0b2924);
 
-  /* CTAs — exact forest */
-  --sv-btn-cta: #0e2c20;
-  --sv-btn-cta-hover: #164a36;
-  --sv-btn-label: #ffffff;
-  --sv-btn-gold: #c5a059;
-  --sv-btn-radius: 2px;
+  --sv-btn-cta: var(--ashtitva-green);
+  --sv-btn-cta-hover: var(--ashtitva-green-dark);
+  --sv-btn-label: var(--ashtitva-ivory);
+  --sv-btn-gold: var(--ashtitva-gold);
+  --sv-btn-radius: 4px;
   --sv-btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --sv-btn-duration: 280ms;
 
-  --sv-qty-ink: #0e2c20;
-  --sv-qty-cta: #0e2c20;
+  --sv-qty-ink: var(--ashtitva-text);
+  --sv-qty-cta: var(--ashtitva-green);
+}
+
+/* —— Base surfaces —— */
+body {
+  background-color: var(--ashtitva-ivory);
+  color: var(--ashtitva-text);
+}
+
+.global-media-settings,
+.contains-media .media {
+  background-color: var(--ashtitva-green);
 }
 
 .ash-gold-rule,
@@ -83,14 +94,369 @@
   height: 1px;
   border: 0;
   background: var(--ash-gradient-gold);
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
-.global-media-settings,
-.contains-media .media {
-  background-color: #fdf9f2;
+/* —— Buttons —— */
+.button,
+.shopify-challenge__button,
+.customer button,
+button.shopify-payment-button__button--unbranded {
+  min-height: 4.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 4px !important;
+  transition:
+    background-color var(--sv-btn-duration) var(--sv-btn-ease),
+    color var(--sv-btn-duration) var(--sv-btn-ease),
+    border-color var(--sv-btn-duration) var(--sv-btn-ease),
+    opacity var(--sv-btn-duration) var(--sv-btn-ease);
 }
 
-body {
-  background-color: #fdf9f2;
+.button:not(.button--secondary):not(.button--tertiary),
+.customer button {
+  background-color: var(--ashtitva-green) !important;
+  color: var(--ashtitva-ivory) !important;
+}
+
+.button:not(.button--secondary):not(.button--tertiary):hover,
+.customer button:hover {
+  background-color: var(--ashtitva-green-dark) !important;
+  color: var(--ashtitva-ivory) !important;
+}
+
+.button--secondary {
+  background-color: transparent !important;
+  color: var(--ashtitva-text) !important;
+  border: 1px solid var(--ashtitva-gold) !important;
+}
+
+.button--secondary:hover {
+  background-color: var(--ashtitva-green) !important;
+  color: var(--ashtitva-ivory) !important;
+  border-color: var(--ashtitva-green) !important;
+}
+
+.button:before,
+.button:after,
+.shopify-challenge__button:before,
+.shopify-challenge__button:after,
+.customer button:before,
+.customer button:after {
+  display: none !important;
+  box-shadow: none !important;
+}
+
+/* —— Header —— */
+.section-header .announcement-bar,
+.announcement-bar,
+.utility-bar {
+  background-color: var(--ashtitva-green-dark) !important;
+  color: var(--ashtitva-ivory) !important;
+}
+
+.announcement-bar__message,
+.announcement-bar a,
+.utility-bar * {
+  color: var(--ashtitva-ivory) !important;
+}
+
+.header-wrapper,
+.section-header .header-wrapper {
+  background-color: var(--ashtitva-ivory) !important;
+}
+
+.header {
+  min-height: 6.4rem;
+}
+
+.header__heading-link,
+.header__heading-link .h2,
+.header__heading {
+  color: var(--ashtitva-green) !important;
+  letter-spacing: 0.06em;
+}
+
+.header__menu-item,
+.header__icon,
+.header__icon .svg-wrapper,
+.header__icon .icon,
+.menu-drawer__menu-item,
+.list-menu__item {
+  color: var(--ashtitva-text) !important;
+}
+
+.header__menu-item:hover,
+.header__menu-item:focus,
+.header__menu-item span:hover,
+.header__icon:hover,
+.list-menu__item:hover {
+  color: var(--ashtitva-gold) !important;
+}
+
+.header__active-menu-item,
+.header__menu-item[aria-current='page'] {
+  color: var(--ashtitva-green) !important;
+}
+
+.header__icon {
+  min-width: 4.4rem;
+  min-height: 4.4rem;
+}
+
+.header-wrapper--border-bottom {
+  border-bottom: 1px solid color-mix(in srgb, var(--ashtitva-text) 8%, transparent);
+}
+
+/* —— Footer —— */
+.footer,
+.shopify-section-group-footer-group {
+  background-color: var(--ashtitva-green-dark) !important;
+}
+
+.footer,
+.footer * {
+  color: var(--ashtitva-ivory);
+}
+
+.footer .footer-block__heading,
+.footer h2,
+.footer .h4,
+.footer .footer-block__details-content .list-menu__item--link,
+.footer .copyright__content a {
+  color: var(--ashtitva-gold-light) !important;
+}
+
+.footer a,
+.footer .link,
+.footer .list-menu__item--link,
+.footer .footer-block__details-content a {
+  color: var(--ashtitva-ivory) !important;
+  transition: color var(--sv-btn-duration) var(--sv-btn-ease);
+}
+
+.footer a:hover,
+.footer .link:hover,
+.footer .list-menu__item--link:hover {
+  color: var(--ashtitva-gold-light) !important;
+}
+
+.footer__content-bottom {
+  border-top-color: color-mix(in srgb, var(--ashtitva-ivory) 14%, transparent) !important;
+}
+
+.footer .list-social__link {
+  color: var(--ashtitva-ivory) !important;
+}
+
+.footer .list-social__link:hover {
+  color: var(--ashtitva-gold-light) !important;
+}
+
+/* —— Typography helpers —— */
+.ash-eyebrow {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ashtitva-gold);
+}
+
+.ash-heading {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ashtitva-text);
+  text-wrap: balance;
+}
+
+.ash-body {
+  margin: 0;
+  font-size: 1.55rem;
+  line-height: 1.7;
+  color: var(--ash-body);
+}
+
+/* —— Emotional / CTA sections —— */
+.ash-emotional {
+  background: var(--ashtitva-ivory);
+  padding: 5.6rem 1.5rem;
+  text-align: center;
+}
+
+.ash-emotional__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.ash-emotional__heading {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  font-size: clamp(2.8rem, 4vw, 4.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ashtitva-text);
+  text-wrap: balance;
+}
+
+.ash-emotional__body {
+  margin: 0 auto 1.4rem;
+  max-width: 36rem;
+  font-size: 1.55rem;
+  line-height: 1.7;
+  color: var(--ash-body);
+}
+
+.ash-emotional__line {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ashtitva-gold);
+}
+
+.ash-final-cta {
+  background: var(--ashtitva-ivory-soft);
+  padding: 6.4rem 1.5rem 7.2rem;
+  text-align: center;
+}
+
+.ash-final-cta__inner {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.ash-final-cta__heading {
+  margin: 0 0 2rem;
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 3.6vw, 3.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ashtitva-text);
+  text-wrap: balance;
+}
+
+.ash-final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.ash-final-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.8rem;
+  padding: 1.2rem 2.4rem;
+  background: var(--ashtitva-green);
+  color: var(--ashtitva-ivory);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid var(--ashtitva-green);
+  transition:
+    background-color var(--sv-btn-duration) var(--sv-btn-ease),
+    color var(--sv-btn-duration) var(--sv-btn-ease);
+}
+
+.ash-final-cta__btn:hover {
+  background: var(--ashtitva-green-dark);
+  color: var(--ashtitva-ivory);
+}
+
+.ash-final-cta__btn--secondary {
+  background: transparent;
+  color: var(--ashtitva-text);
+  border-color: var(--ashtitva-gold);
+}
+
+.ash-final-cta__btn--secondary:hover {
+  background: var(--ashtitva-green);
+  color: var(--ashtitva-ivory);
+  border-color: var(--ashtitva-green);
+}
+
+/* Soft ivory band behind brand intro blocks on homepage */
+.shopify-section:has([class*="ai-section-heading__"]) {
+  background-color: var(--ashtitva-ivory-soft);
+}
+
+[class*="ai-section-heading__subtext"] {
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+[class*="ai-section-heading__container"] {
+  max-width: 48rem;
+}
+
+@media screen and (min-width: 750px) {
+  .ash-emotional {
+    padding: 8rem 2rem;
+  }
+
+  .ash-final-cta {
+    padding: 9rem 2rem 10rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .ash-final-cta__btn,
+  .header__menu-item,
+  .footer a {
+    transition: none !important;
+  }
+}
+
+/* Featured collection headings — homepage product discovery */
+.featured-collection .title.inline-richtext,
+.collection .title.inline-richtext {
+  text-align: center;
+  font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+  font-weight: 400;
+  font-size: 2.8rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ashtitva-text);
+}
+
+@media screen and (min-width: 750px) {
+  .featured-collection .title.inline-richtext,
+  .collection .title.inline-richtext {
+    font-size: 4rem;
+  }
+}
+
+.featured-collection .collection__description,
+.collection .collection__description {
+  text-align: center;
+  color: var(--ash-body);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featured-collection .title-wrapper,
+.collection .title-wrapper {
+  margin-bottom: 2.4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .featured-collection .title-wrapper,
+  .collection .title-wrapper {
+    margin-bottom: 3.2rem;
+  }
 }
