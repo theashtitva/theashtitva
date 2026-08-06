@@ -29,19 +29,20 @@
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
 {%- style -%}
-  /* —— Srivaya product cards — one soft unit (image + info + CTA) —— */
+  /* —— Ashtitva cards — cream frame for dark-green product photos —— */
   .custom-product-card-design {
-    --sv-card-ink: #20181a;
-    --sv-card-body: #61474d;
-    --sv-card-muted: #926b73;
-    --sv-card-cta: #6f4b53;
-    --sv-card-cta-hover: #513c40;
+    --sv-card-ink: #0e2c20;
+    --sv-card-body: #3d3d3d;
+    --sv-card-muted: #6b6b6b;
+    --sv-card-cta: #0e2c20;
+    --sv-card-cta-hover: #164a36;
+    --sv-card-gold: #c5a059;
     --sv-card-surface: #ffffff;
-    --sv-card-soft: #f6f1f2;
+    --sv-card-soft: #0e2c20;
     --sv-card-radius: 12px;
     --sv-card-ease: cubic-bezier(0.22, 1, 0.36, 1);
-    --sv-card-shadow: 0 4px 24px rgba(28, 22, 16, 0.05), 0 1px 3px rgba(28, 22, 16, 0.03);
-    --sv-card-shadow-hover: 0 12px 40px rgba(28, 22, 16, 0.08), 0 2px 8px rgba(28, 22, 16, 0.04);
+    --sv-card-shadow: 0 4px 24px rgba(42, 36, 28, 0.05), 0 1px 3px rgba(42, 36, 28, 0.03);
+    --sv-card-shadow-hover: 0 12px 40px rgba(42, 36, 28, 0.08), 0 2px 8px rgba(200, 164, 90, 0.14);
   }
 
   .custom-product-card-design .card--card {
@@ -96,7 +97,7 @@
   }
 
   .custom-product-card-design .media {
-    background: linear-gradient(165deg, #faf7f6 0%, var(--sv-card-soft) 100%);
+    background: #0e2c20;
   }
 
   .custom-product-card-design .media img {
@@ -157,7 +158,7 @@
   }
 
   .custom-product-card-design .card__heading a:hover {
-    color: var(--sv-card-cta);
+    color: var(--sv-card-gold);
   }
 
   .custom-product-card-design .card-information {
@@ -172,7 +173,7 @@
     font-size: 1.35rem;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: var(--sv-card-body);
+    color: var(--sv-card-ink);
   }
 
   .custom-product-card-design .price--on-sale .price-item--regular {
@@ -203,7 +204,7 @@
     border-radius: 6px !important;
     background: var(--sv-card-cta) !important;
     background-color: var(--sv-card-cta) !important;
-    color: #f6f1f2 !important;
+    color: #ffffff !important;
     border: none !important;
     box-shadow: none !important;
     font-size: 1.1rem !important;
@@ -224,7 +225,7 @@
   .custom-product-card-design .quick-add__submit:hover:not([disabled]) {
     background: var(--sv-card-cta-hover) !important;
     background-color: var(--sv-card-cta-hover) !important;
-    color: #f6f1f2 !important;
+    color: #ffffff !important;
     border: none !important;
     box-shadow: none !important;
   }
@@ -242,7 +243,7 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: var(--sv-card-ink);
-    box-shadow: 0 4px 14px rgba(49, 36, 38, 0.08);
+    box-shadow: 0 4px 14px rgba(42, 42, 42, 0.08);
   }
 
   .collection__view-all {

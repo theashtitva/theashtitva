@@ -1,25 +1,19 @@
 /* =========================================================
-   Srivaya — Brand palette (aligned with Real Photography Trust)
-   ---------------------------------------------------------
-   Heading ink     #20181A
-   Body            #61474D
-   Label / accent  #6F4B53
-   Soft bg         #F6F1F2
-   Blush           #E3D6D9
-   White           #FFFFFF
+   Ashtitva — Product luxury
+   Warm ivory / soft-gold UI around dark-green product photos.
    ========================================================= */
 
 .product-info-luxury {
-  --sv-bg: #f6f1f2;
-  --sv-ink: #20181a;
-  --sv-body: #61474d;
-  --sv-muted: #926b73;
-  --sv-label: #6f4b53;
-  --sv-line: color-mix(in srgb, #6f4b53 22%, transparent);
-  --sv-line-strong: color-mix(in srgb, #6f4b53 28%, transparent);
-  --sv-cta: #6f4b53;
-  --sv-cta-hover: #513c40;
-  --sv-sage: #a27780;
+  --sv-bg: #fdf9f2;
+  --sv-ink: #0e2c20;
+  --sv-body: #3d3d3d;
+  --sv-muted: #6b6b6b;
+  --sv-label: #c5a059;
+  --sv-line: color-mix(in srgb, #c5a059 32%, transparent);
+  --sv-line-strong: color-mix(in srgb, #c5a059 48%, transparent);
+  --sv-cta: #0e2c20;
+  --sv-cta-hover: #164a36;
+  --sv-sage: #c5a059;
   --sv-radius: 2px;
   --sv-img-radius: 10px;
   --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -213,7 +207,7 @@
   padding: 1.6rem 2rem !important;
   border-radius: 6px !important;
   background: var(--sv-cta) !important;
-  color: #f6f1f2 !important;
+  color: #fdf9f2 !important;
   border: none !important;
   box-shadow: none !important;
   font-size: 1.15rem !important;
@@ -281,7 +275,7 @@
   display: block;
   width: 1.75rem;
   height: 1px;
-  background: linear-gradient(90deg, var(--sv-cta), color-mix(in srgb, var(--sv-cta) 20%, transparent));
+  background: linear-gradient(90deg, #d4b56e, #c5a059, color-mix(in srgb, #a8843f 40%, transparent));
 }
 
 /* Body copy — RPT description (15px / 1.75) */
@@ -406,11 +400,11 @@
   opacity: 1;
   background:
     radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.9), transparent 55%),
-    #f6f1f2;
-  border: 1px solid rgba(111, 75, 83, 0.18);
+    #fdf9f2;
+  border: 1px solid rgba(200, 164, 90, 0.18);
   box-shadow:
     inset 0 0 0 3px rgba(255, 255, 255, 0.55),
-    0 5px 14px rgba(49, 36, 38, 0.07);
+    0 5px 14px rgba(42, 42, 42, 0.07);
   overflow: visible;
   transition: transform 0.65s var(--sv-ease), box-shadow 0.65s var(--sv-ease), border-color 0.65s var(--sv-ease);
 }
@@ -419,10 +413,10 @@
   .sv-trust__item:hover .sv-trust__icon,
   .sv-trust__item-link:hover .sv-trust__icon {
     transform: translateY(-3px);
-    border-color: rgba(111, 75, 83, 0.4);
+    border-color: rgba(200, 164, 90, 0.4);
     box-shadow:
       inset 0 0 0 3px rgba(255, 255, 255, 0.7),
-      0 10px 22px rgba(49, 36, 38, 0.12);
+      0 10px 22px rgba(42, 42, 42, 0.12);
   }
 }
 
@@ -653,14 +647,7 @@
 }
 
 .product-hero-surface {
-  /* Lighter wash of Real Photography Trust atmosphere */
-  background:
-    linear-gradient(
-      165deg,
-      color-mix(in srgb, #e3d6d9 28%, #f6f1f2) 0%,
-      #f8f4f5 45%,
-      color-mix(in srgb, #6f4b53 3%, #f6f1f2) 100%
-    );
+  background: #fdf9f2;
   padding-top: 48px !important;
   padding-bottom: 48px !important;
 }
@@ -670,15 +657,15 @@
    ========================================================= */
 
 .product-hero-shell {
-  --sv-bg: #f6f1f2;
+  --sv-bg: #fdf9f2;
   --sv-card: #ffffff;
-  --sv-primary: #6f4b53;
-  --sv-primary-hover: #513c40;
-  --sv-text: #20181a;
-  --sv-text-secondary: #61474d;
-  --sv-border: color-mix(in srgb, #6f4b53 18%, #fff);
-  --sv-divider: color-mix(in srgb, #6f4b53 22%, transparent);
-  --sv-shadow: 0 8px 28px rgba(28, 22, 16, 0.08);
+  --sv-primary: #0e2c20;
+  --sv-primary-hover: #164a36;
+  --sv-text: #0e2c20;
+  --sv-text-secondary: #5a4e44;
+  --sv-border: color-mix(in srgb, #c5a059 22%, #fff);
+  --sv-divider: color-mix(in srgb, #c5a059 36%, transparent);
+  --sv-shadow: 0 8px 28px rgba(42, 42, 42, 0.08);
   --sv-radius: 2px;
   --sv-img-radius: 10px;
   --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -887,7 +874,7 @@
     display: block;
     width: 100%;
     aspect-ratio: var(--sv-gallery-ratio, 1);
-    background: #f7f3f0;
+    background: #ffffff;
     border-radius: var(--sv-img-radius, 1rem);
     overflow: hidden;
   }
@@ -956,7 +943,7 @@
   border-radius: var(--sv-img-radius, 1rem);
   border: none;
   box-shadow: none;
-  background: #f7f3f0;
+  background: #ffffff;
   overflow: hidden;
 }
 

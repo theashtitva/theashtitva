@@ -180,7 +180,7 @@
     flex-direction: column;
     height: 100%;
     border: 1px solid #EFE7E4;
-    box-shadow: 0 2px 8px rgba(111, 75, 83, 0.03);
+    box-shadow: 0 2px 8px rgba(200, 164, 90, 0.03);
     {% if block.settings.card_shadow_opacity > 0 %}
       box-shadow: 0 {{ block.settings.card_shadow_vertical }}px {{ block.settings.card_shadow_blur }}px rgba(0, 0, 0, {{ block.settings.card_shadow_opacity | divided_by: 100.0 }});
     {% endif %}
@@ -278,17 +278,17 @@
   }
 
   .ai-product-collection__badge--sale-{{ ai_gen_id }} {
-    background-color: #a27780;
+    background-color: #c5a059;
     color: #ffffff;
   }
 
   .ai-product-collection__badge--new-{{ ai_gen_id }} {
-    background-color: #6f4b53;
+    background-color: #c5a059;
     color: #ffffff;
   }
 
   .ai-product-collection__badge--sold-out-{{ ai_gen_id }} {
-    background-color: #6f4b53;
+    background-color: #c5a059;
     color: #ffffff;
   }
 
@@ -331,7 +331,7 @@
   .ai-product-collection__price-{{ ai_gen_id }} {
     font-size: {{ block.settings.price_size }}px;
     font-weight: 600;
-    color: #6f4b53;
+    color: #c5a059;
     margin-bottom: 0;
     min-height: calc({{ block.settings.price_size }}px * 1.4);
   }
@@ -422,7 +422,7 @@
   }
 
   .ai-product-collection__dot-{{ ai_gen_id }}.active {
-    background-color: #6f4b53;
+    background-color: #c5a059;
   }
 
   .ai-product-collection__empty-{{ ai_gen_id }} {
@@ -1038,7 +1038,7 @@
       "type": "color",
       "id": "arrow_color",
       "label": "Arrow color",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "header",
@@ -1097,7 +1097,7 @@
       "type": "color",
       "id": "heading_color",
       "label": "Heading color",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "select",
@@ -1188,7 +1188,7 @@
       "type": "color",
       "id": "subheading_color",
       "label": "Subheading color",
-      "default": "#666666"
+      "default": "#5a4e44"
     },
     {
       "type": "header",
@@ -1320,13 +1320,13 @@
       "type": "color",
       "id": "button_bg_color",
       "label": "Button background",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "color",
       "id": "button_hover_bg_color",
       "label": "Button hover background",
-      "default": "#926b73"
+      "default": "#8a7d72"
     },
     {
       "type": "color",
@@ -1442,7 +1442,7 @@
       "type": "color",
       "id": "section_bg_color",
       "label": "Background",
-      "default": "#f6f1f2"
+      "default": "#fdf9f2"
     },
     {
       "type": "range",

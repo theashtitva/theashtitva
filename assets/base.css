@@ -1996,8 +1996,8 @@ input[type='checkbox'] {
 /* Srivaya — shared underline quantity (product + cart) */
 .product-info-luxury quantity-input.quantity,
 quantity-input.cart-quantity {
-  --sv-qty-ink: #312426;
-  --sv-qty-cta: #6f4b53;
+  --sv-qty-ink: #a8843f;
+  --sv-qty-cta: #c5a059;
   --sv-qty-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --sv-qty-duration: 250ms;
   width: auto;
@@ -2633,7 +2633,11 @@ quantity-input.cart-quantity .quantity__input:-webkit-autofill:active {
 }
 
 .header__icon {
-  color: #6f4b53;
+  color: #0e2c20;
+}
+
+.header__icon:hover {
+  color: #c5a059;
 }
 
 .header__icon span {
@@ -2900,17 +2904,25 @@ details[open] > .header__submenu {
   padding: 0 1rem;
 }
 
-.header__menu-item {
+.header__menu-item,
+.header__menu-item.link,
+.header__menu-item.link--text,
+.header__inline-menu .list-menu__item {
   padding: 1.2rem;
   text-decoration: none;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
-  color: #6f4b53;
+  color: #0e2c20 !important;
+  opacity: 1 !important;
 }
 
-.header__menu-item:hover {
-  color: #513c40;
+.header__menu-item:hover,
+.header__menu-item.link:hover,
+.header__menu-item.link--text:hover,
+.header__inline-menu .list-menu__item:hover {
+  color: #c5a059 !important;
+  opacity: 1 !important;
 }
 
 .header__menu-item span {
@@ -2935,7 +2947,14 @@ details[open] > .header__menu-item .icon-caret {
 
 .header__active-menu-item {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: #6f4b53;
+  color: #0e2c20 !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+.header__menu-item:hover .header__active-menu-item,
+.header__menu-item:hover span {
+  color: #c5a059 !important;
 }
 
 .header__submenu {
@@ -3712,7 +3731,7 @@ details-disclosure > details {
   --rte-font-family: inherit;
   --rte-font-size: 1.4625rem;      /* 17px base */
   --rte-line-height: 1.8;
-  --rte-color-text: #1a1a1a;
+  --rte-color-text: #0e2c20;
   --rte-color-heading: #111111;
   --rte-color-link: #0066cc;
   --rte-color-link-hover: #004499;
@@ -4212,15 +4231,16 @@ details-disclosure > details {
 }
 
 /* =========================================================
-   Srivaya — Primary buttons (match cart drawer checkout)
+   Ashtitva — Primary buttons (bright gold CTA)
    ========================================================= */
 :root {
-  --sv-btn-cta: #6f4b53;
-  --sv-btn-cta-hover: #513c40;
-  --sv-btn-label: #f6f1f2;
+  --sv-btn-cta: #0e2c20;
+  --sv-btn-cta-hover: #164a36;
+  --sv-btn-label: #ffffff;
   --sv-btn-radius: 6px;
   --sv-btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --sv-btn-duration: 280ms;
+  --sv-btn-gold: #c5a059;
 }
 
 .button:not(.button--tertiary):not(.button--secondary):not(.product-form__submit):not(.quantity__button):not(.cart-remove-button):not(.password-link):not(.shopify-cleanslate),
@@ -4283,7 +4303,7 @@ button.shopify-payment-button__button--unbranded,
 .button--primary:not(.product-form__submit):focus-visible,
 .cart__checkout-button:focus-visible,
 .shopify-payment-button__button--unbranded:focus-visible {
-  outline: 2px solid #a27780;
+  outline: 2px solid #c5a059;
   outline-offset: 3px;
 }
 
@@ -4294,7 +4314,7 @@ button.shopify-payment-button__button--unbranded,
   opacity: 0.45;
 }
 
-/* Secondary + PDP Add to cart — outline */
+/* Secondary + PDP Add to cart — champagne gold outline */
 .button--secondary:not(.quick-add__submit),
 .product-form__submit,
 .product-form__submit.button,
@@ -4303,7 +4323,7 @@ button.shopify-payment-button__button--unbranded,
   background: transparent !important;
   background-color: transparent !important;
   color: var(--sv-btn-cta) !important;
-  border: 1px solid color-mix(in srgb, var(--sv-btn-cta) 40%, transparent) !important;
+  border: 1px solid var(--sv-btn-gold, #c5a059) !important;
   box-shadow: none !important;
   min-height: 5.2rem;
   padding: 1.6rem 2rem;
@@ -4325,10 +4345,10 @@ button.shopify-payment-button__button--unbranded,
 .button--secondary:not(.quick-add__submit):hover:not([disabled]),
 .product-form__submit:hover:not([disabled]),
 .product-form__submit.button--primary:hover:not([disabled]) {
-  background: color-mix(in srgb, var(--sv-btn-cta) 6%, transparent) !important;
-  background-color: color-mix(in srgb, var(--sv-btn-cta) 6%, transparent) !important;
-  border-color: var(--sv-btn-cta) !important;
-  color: var(--sv-btn-cta) !important;
+  background: #fdf9f2 !important;
+  background-color: #fdf9f2 !important;
+  border-color: #c5a059 !important;
+  color: #c5a059 !important;
   box-shadow: none !important;
 }
 

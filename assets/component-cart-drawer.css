@@ -1,21 +1,21 @@
 /* =========================================================
-   Srivaya — Premium cart drawer
-   Palette aligned with product luxury styles
+   Ashtitva — Premium cart drawer
+   Cream panels, champagne accents, antique-gold CTAs
    ========================================================= */
 
 .drawer {
   --sv-bg: #ffffff;
   --sv-panel: #ffffff;
-  --sv-ink: #312426;
-  --sv-body: #61474d;
-  --sv-muted: #926b73;
-  --sv-line: rgba(49, 36, 38, 0.1);
-  --sv-line-soft: rgba(49, 36, 38, 0.06);
-  --sv-cta: #6f4b53;
-  --sv-cta-hover: #513c40;
-  --sv-sage: #a27780;
-  --sv-soft: #f6f1f2;
-  --sv-pale: #ece4e6;
+  --sv-ink: #0e2c20;
+  --sv-body: #5a4e44;
+  --sv-muted: #8a7d72;
+  --sv-line: rgba(200, 164, 90, 0.28);
+  --sv-line-soft: rgba(42, 36, 28, 0.06);
+  --sv-cta: #0e2c20;
+  --sv-cta-hover: #164a36;
+  --sv-sage: #c5a059;
+  --sv-soft: #fdf9f2;
+  --sv-pale: #f3ebd8;
   --sv-radius: 6px;
   --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --sv-duration: 280ms;
@@ -28,7 +28,7 @@
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  background-color: rgba(49, 36, 38, 0.42);
+  background-color: rgba(42, 42, 42, 0.42);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   transition: visibility var(--sv-duration) var(--sv-ease),
@@ -53,7 +53,7 @@
   background: var(--sv-bg) !important;
   background-attachment: scroll !important;
   color: var(--sv-body);
-  box-shadow: -24px 0 60px rgba(49, 36, 38, 0.12);
+  box-shadow: -24px 0 60px rgba(42, 42, 42, 0.12);
   transform: translateX(100%);
   transition: transform 0.45s var(--sv-ease);
 }
@@ -232,7 +232,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   padding: 1.4rem 2.4rem;
   border-radius: var(--sv-radius);
   background: var(--sv-cta) !important;
-  color: #f6f1f2 !important;
+  color: #fdf9f2 !important;
   border: none !important;
   box-shadow: none !important;
   font-size: 1.15rem;
@@ -641,7 +641,7 @@ cart-drawer-items {
   padding: 1.6rem 2rem;
   border-radius: var(--sv-radius);
   background: var(--sv-cta) !important;
-  color: #f6f1f2 !important;
+  color: #fdf9f2 !important;
   border: none !important;
   box-shadow: none !important;
   font-size: 1.15rem;
@@ -719,7 +719,7 @@ cart-drawer-items::-webkit-scrollbar {
 }
 
 cart-drawer-items::-webkit-scrollbar-thumb {
-  background-color: rgba(162, 119, 128, 0.55);
+  background-color: rgba(200, 164, 90, 0.55);
   border-radius: 100px;
 }
 
@@ -766,8 +766,8 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   margin: 0 0 0.4rem;
   padding: 1.2rem 1.4rem;
   border-radius: var(--sv-radius);
-  background: rgba(162, 119, 128, 0.08);
-  border: 1px solid rgba(162, 119, 128, 0.2);
+  background: rgba(200, 164, 90, 0.08);
+  border: 1px solid rgba(200, 164, 90, 0.2);
 }
 
 .cart-drawer .free-shipping-banner__text {
@@ -784,7 +784,7 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
 .cart-drawer .free-shipping-banner__bar {
   height: 4px;
   border-radius: 999px;
-  background: rgba(49, 36, 38, 0.08);
+  background: rgba(42, 42, 42, 0.08);
 }
 
 .cart-drawer .free-shipping-banner__progress {

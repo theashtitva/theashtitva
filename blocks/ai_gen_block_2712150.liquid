@@ -32,7 +32,7 @@
     height: 55%;
     z-index: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, color-mix(in srgb, #6f4b53 8%, transparent), transparent 70%);
+    background: radial-gradient(ellipse at center, color-mix(in srgb, #c5a059 8%, transparent), transparent 70%);
   }
 
   .ai-contact-hero-content-{{ ai_gen_id }} {
@@ -52,7 +52,7 @@
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #6f4b53;
+    color: #c5a059;
   }
 
   .ai-contact-hero-eyebrow-{{ ai_gen_id }}::before,
@@ -60,7 +60,7 @@
     content: '';
     width: 28px;
     height: 1px;
-    background: color-mix(in srgb, #6f4b53 45%, transparent);
+    background: color-mix(in srgb, #c5a059 45%, transparent);
   }
 
   .ai-contact-hero-title-{{ ai_gen_id }} {
@@ -97,13 +97,13 @@
     justify-content: center;
     gap: 12px;
     margin: 28px auto 0;
-    color: #6f4b53;
+    color: #c5a059;
   }
 
   .ai-contact-hero-rule-{{ ai_gen_id }} span {
     width: 40px;
     height: 1px;
-    background: color-mix(in srgb, #6f4b53 35%, transparent);
+    background: color-mix(in srgb, #c5a059 35%, transparent);
   }
 
   .ai-contact-hero-rule-{{ ai_gen_id }} svg {
@@ -116,7 +116,7 @@
     position: relative;
     padding: {{ block.settings.details_padding_mobile }}px 24px;
     background:
-      linear-gradient(180deg, #ffffff 0%, #f6f1f2 35%, #f6f1f2 100%);
+      linear-gradient(180deg, #ffffff 0%, #fdf9f2 35%, #fdf9f2 100%);
     width: 100%;
   }
 
@@ -146,7 +146,7 @@
     text-align: center;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 10px 30px rgba(49, 36, 38, 0.05);
+    box-shadow: 0 10px 30px rgba(42, 42, 42, 0.05);
     cursor: default;
     transition:
       transform 0.45s var(--cu-ease),
@@ -159,7 +159,7 @@
   }
 
   a.ai-contact-card-{{ ai_gen_id }}:focus-visible {
-    outline: 2px solid #6f4b53;
+    outline: 2px solid #c5a059;
     outline-offset: 3px;
   }
 
@@ -175,7 +175,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      color-mix(in srgb, #6f4b53 40%, transparent),
+      color-mix(in srgb, #c5a059 40%, transparent),
       transparent
     );
     opacity: 0;
@@ -186,8 +186,8 @@
     .ai-contact-card-{{ ai_gen_id }}:hover,
     a.ai-contact-card-{{ ai_gen_id }}:hover {
       transform: translateY(-3px);
-      background: color-mix(in srgb, {{ block.settings.card_bg_color }} 94%, #f6f1f2);
-      box-shadow: 0 18px 40px rgba(49, 36, 38, 0.08);
+      background: color-mix(in srgb, {{ block.settings.card_bg_color }} 94%, #fdf9f2);
+      box-shadow: 0 18px 40px rgba(42, 42, 42, 0.08);
     }
 
     .ai-contact-card-{{ ai_gen_id }}:hover::after,
@@ -200,7 +200,7 @@
     .ai-contact-card-{{ ai_gen_id }}:hover .ai-contact-card-icon-{{ ai_gen_id }},
     a.ai-contact-card-{{ ai_gen_id }}:hover .ai-contact-card-icon-{{ ai_gen_id }} {
       background: color-mix(in srgb, {{ block.settings.icon_bg_color }} 55%, #fff);
-      color: #513c40;
+      color: #c5a059;
     }
 
     a.ai-contact-card-{{ ai_gen_id }}:hover .ai-contact-card-text-{{ ai_gen_id }} {
@@ -265,8 +265,8 @@
     position: relative;
     padding: {{ block.settings.form_padding_mobile }}px 24px;
     background:
-      radial-gradient(ellipse 70% 60% at 50% 0%, color-mix(in srgb, #f6f1f2 90%, #fff), transparent 70%),
-      linear-gradient(180deg, #ffffff 0%, #f6f1f2 55%, #ffffff 100%);
+      radial-gradient(ellipse 70% 60% at 50% 0%, color-mix(in srgb, #fdf9f2 90%, #fff), transparent 70%),
+      linear-gradient(180deg, #ffffff 0%, #fdf9f2 55%, #ffffff 100%);
     width: 100%;
   }
 
@@ -290,7 +290,7 @@
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #6f4b53;
+    color: #c5a059;
   }
 
   .ai-contact-form-eyebrow-{{ ai_gen_id }}::before,
@@ -298,7 +298,7 @@
     content: '';
     width: 24px;
     height: 1px;
-    background: color-mix(in srgb, #6f4b53 45%, transparent);
+    background: color-mix(in srgb, #c5a059 45%, transparent);
   }
 
   .ai-contact-form-title-{{ ai_gen_id }} {
@@ -327,7 +327,7 @@
     border: none;
     border-radius: {{ block.settings.form_border_radius }}px;
     padding: 36px 28px 40px;
-    box-shadow: 0 16px 48px rgba(49, 36, 38, 0.07);
+    box-shadow: 0 16px 48px rgba(42, 42, 42, 0.07);
   }
 
   .ai-contact-form-grid-{{ ai_gen_id }} {
@@ -422,7 +422,7 @@
   @media (hover: hover) {
     .ai-contact-form-button-{{ ai_gen_id }}:hover {
       background: {{ block.settings.form_button_hover_background }};
-      border-color: #312426;
+      border-color: #a8843f;
       color: {{ block.settings.form_button_text_color }};
       transform: none;
       box-shadow: none;
@@ -430,7 +430,7 @@
   }
 
   .ai-contact-form-button-{{ ai_gen_id }}:focus-visible {
-    outline: 2px solid #6f4b53;
+    outline: 2px solid #c5a059;
     outline-offset: 3px;
   }
 
@@ -445,7 +445,7 @@
   }
 
   .ai-contact-form-success-{{ ai_gen_id }} {
-    background: color-mix(in srgb, #f6f1f2 70%, #dce9df);
+    background: color-mix(in srgb, #fdf9f2 70%, #dce9df);
     color: #2f4a38;
     border: none;
   }
@@ -524,7 +524,7 @@
     border-radius: 50%;
     color: {{ block.settings.social_icon_color }};
     text-decoration: none;
-    box-shadow: 0 8px 20px rgba(49, 36, 38, 0.06);
+    box-shadow: 0 8px 20px rgba(42, 42, 42, 0.06);
     transition:
       transform 0.4s var(--cu-ease),
       background-color 0.4s var(--cu-ease),
@@ -537,14 +537,14 @@
     .ai-contact-social-{{ ai_gen_id }} .ai-contact-social-link-{{ ai_gen_id }}:hover {
       transform: translateY(-2px);
       background-color: {{ block.settings.social_icon_hover_bg }};
-      color: #513c40;
-      box-shadow: 0 12px 26px rgba(49, 36, 38, 0.09);
+      color: #c5a059;
+      box-shadow: 0 12px 26px rgba(42, 42, 42, 0.09);
     }
   }
 
   .ai-contact-social-{{ ai_gen_id }} .list-social.ai-contact-social-icons-{{ ai_gen_id }} .list-social__link:focus-visible,
   .ai-contact-social-{{ ai_gen_id }} .ai-contact-social-link-{{ ai_gen_id }}:focus-visible {
-    outline: 2px solid #6f4b53;
+    outline: 2px solid #c5a059;
     outline-offset: 3px;
   }
 
@@ -938,13 +938,13 @@
       "type": "color",
       "id": "hero_bg_color",
       "label": "Background color",
-      "default": "#f6f1f2"
+      "default": "#fdf9f2"
     },
     {
       "type": "color",
       "id": "hero_text_color",
       "label": "Text color",
-      "default": "#20181a"
+      "default": "#0e2c20"
     },
     {
       "type": "range",
@@ -1014,7 +1014,7 @@
       "type": "color",
       "id": "details_bg_color",
       "label": "Background color",
-      "default": "#f6f1f2"
+      "default": "#fdf9f2"
     },
     {
       "type": "range",
@@ -1050,7 +1050,7 @@
       "type": "color",
       "id": "card_border_color",
       "label": "Border color",
-      "default": "#e3d6d9"
+      "default": "#f3ebd8"
     },
     {
       "type": "range",
@@ -1076,19 +1076,19 @@
       "type": "color",
       "id": "card_title_color",
       "label": "Title color",
-      "default": "#20181a"
+      "default": "#0e2c20"
     },
     {
       "type": "color",
       "id": "card_text_color",
       "label": "Text color",
-      "default": "#61474d"
+      "default": "#5a4e44"
     },
     {
       "type": "color",
       "id": "card_link_color",
       "label": "Link color",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "range",
@@ -1104,13 +1104,13 @@
       "type": "color",
       "id": "icon_bg_color",
       "label": "Icon background",
-      "default": "#f6f1f2"
+      "default": "#fdf9f2"
     },
     {
       "type": "color",
       "id": "icon_color",
       "label": "Icon color",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "header",
@@ -1237,7 +1237,7 @@
       "type": "color",
       "id": "form_border_color",
       "label": "Form panel border",
-      "default": "#e3d6d9"
+      "default": "#f3ebd8"
     },
     {
       "type": "range",
@@ -1253,43 +1253,43 @@
       "type": "color",
       "id": "form_title_color",
       "label": "Form title color",
-      "default": "#20181a"
+      "default": "#0e2c20"
     },
     {
       "type": "color",
       "id": "form_label_color",
       "label": "Label color",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "color",
       "id": "form_input_text",
       "label": "Input text color",
-      "default": "#20181a"
+      "default": "#0e2c20"
     },
     {
       "type": "color",
       "id": "form_input_background",
       "label": "Input background",
-      "default": "#f6f1f2"
+      "default": "#fdf9f2"
     },
     {
       "type": "color",
       "id": "form_input_border",
       "label": "Input border",
-      "default": "#e3d6d9"
+      "default": "#f3ebd8"
     },
     {
       "type": "color",
       "id": "form_input_focus_border",
       "label": "Input focus border",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "color",
       "id": "form_button_background",
       "label": "Button background",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "color",
@@ -1301,13 +1301,13 @@
       "type": "color",
       "id": "form_button_hover_background",
       "label": "Button hover background",
-      "default": "#513c40"
+      "default": "#c5a059"
     },
     {
       "type": "color",
       "id": "trust_text_color",
       "label": "Trust line color",
-      "default": "#61474d"
+      "default": "#5a4e44"
     },
     {
       "type": "range",
@@ -1343,13 +1343,13 @@
       "type": "color",
       "id": "social_bg_color",
       "label": "Background color",
-      "default": "#f6f1f2"
+      "default": "#fdf9f2"
     },
     {
       "type": "color",
       "id": "social_text_color",
       "label": "Text color",
-      "default": "#20181a"
+      "default": "#0e2c20"
     },
     {
       "type": "range",
@@ -1411,13 +1411,13 @@
       "type": "color",
       "id": "social_icon_color",
       "label": "Icon color",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "color",
       "id": "social_icon_hover_bg",
       "label": "Icon hover background",
-      "default": "#6f4b53"
+      "default": "#c5a059"
     },
     {
       "type": "paragraph",

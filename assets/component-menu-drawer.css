@@ -103,9 +103,10 @@ details[open].menu-opening > .menu-drawer__submenu {
   padding: 1.1rem 3rem;
   text-decoration: none;
   font-size: 1.8rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.02em;
-  color: #6f4b53;
+  color: #0e2c20;
+  opacity: 1;
 }
 
 .menu-drawer summary.menu-drawer__menu-item {
@@ -119,12 +120,13 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__close-button:focus,
 .menu-drawer__menu-item:hover,
 .menu-drawer__close-button:hover {
-  color: #513c40;
-  background-color: rgba(111, 75, 83, 0.06);
+  color: #c5a059;
+  background-color: rgba(14, 44, 32, 0.04);
+  opacity: 1;
 }
 
 .menu-drawer__menu-item--active:hover {
-  background-color: rgba(111, 75, 83, 0.1);
+  background-color: rgba(197, 160, 89, 0.1);
 }
 
 .js .menu-drawer__menu-item .icon-caret {
@@ -164,7 +166,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.02em;
-  color: #6f4b53;
+  color: #0e2c20;
   width: 100%;
   background-color: transparent;
   font-family: var(--font-body-family);
@@ -179,19 +181,19 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__utility-links {
-  --sv-ink: #312426;
-  --sv-body: #61474d;
-  --sv-cta: #6f4b53;
-  --sv-cta-hover: #513c40;
-  --sv-soft: #f6f1f2;
-  --sv-line: #e3d6d9;
+  --sv-ink: #0e2c20;
+  --sv-body: #5a4e44;
+  --sv-cta: #0e2c20;
+  --sv-cta-hover: #164a36;
+  --sv-soft: #fdf9f2;
+  --sv-line: #c5a059;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
   padding: 2rem 2.4rem 2.8rem;
   background:
-    linear-gradient(180deg, rgba(246, 241, 242, 0.55) 0%, #f6f1f2 100%);
+    linear-gradient(180deg, rgba(248, 244, 238, 0.55) 0%, #fdf9f2 100%);
   border-top: 1px solid var(--sv-line);
 }
 
@@ -206,7 +208,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   border: 1px solid var(--sv-line);
   border-radius: 10px;
   background: #fff;
-  box-shadow: 0 1px 0 rgba(49, 36, 38, 0.03);
+  box-shadow: 0 1px 0 rgba(42, 42, 42, 0.03);
   text-decoration: none;
   color: var(--sv-cta);
   font-size: 1.45rem;
@@ -220,7 +222,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   color: var(--sv-cta-hover);
   border-color: color-mix(in srgb, var(--sv-cta) 35%, var(--sv-line));
   background: #fff;
-  box-shadow: 0 4px 14px rgba(111, 75, 83, 0.08);
+  box-shadow: 0 4px 14px rgba(200, 164, 90, 0.08);
 }
 
 .menu-drawer__account > .svg-wrapper,

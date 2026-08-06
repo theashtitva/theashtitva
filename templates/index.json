@@ -1,1 +1,1017 @@
-{"sections":{"1779598554163c0064":{"type":"_blocks","blocks":{"ai_gen_block_1691126_JJgkjq":{"type":"ai_gen_block_1691126","settings":{"desktop_image":"shopify:\/\/shop_images\/95ed6daff20e88d4e74432006482b3cb89951746069dbc491ac911d6a8e46002.png","mobile_image":"shopify:\/\/shop_images\/95ed6daff20e88d4e74432006482b3cb89951746069dbc491ac911d6a8e46002.png","desktop_height":700,"desktop_height_unit":"px","mobile_height":300,"mobile_height_unit":"px","subtext":"New Collection","heading":"Discover Luxury","button_text":"Shop Now","button_link":"shopify:\/\/collections\/all","content_max_width":600,"desktop_horizontal_align":"flex-start","desktop_vertical_align":"center","desktop_content_padding":60,"mobile_horizontal_align":"center","mobile_vertical_align":"center","mobile_content_padding":20,"desktop_subtext_size":14,"desktop_subtext_weight":"400","desktop_subtext_color":"#ffffff","desktop_subtext_letter_spacing":1,"mobile_subtext_size":12,"mobile_subtext_weight":"400","mobile_subtext_color":"#ffffff","mobile_subtext_letter_spacing":0.5,"desktop_heading_size":48,"desktop_heading_weight":"700","desktop_heading_color":"#ffffff","desktop_heading_line_height":1.2,"mobile_heading_size":32,"mobile_heading_weight":"700","mobile_heading_color":"#ffffff","mobile_heading_line_height":1.2,"desktop_button_padding_vertical":14,"desktop_button_padding_horizontal":32,"desktop_button_font_size":16,"mobile_button_padding_vertical":12,"mobile_button_padding_horizontal":24,"mobile_button_font_size":14,"button_bg_color":"#6f4b53","button_text_color":"#ffffff","button_border_radius":8,"overlay_color":"#000000","overlay_opacity":30,"text_shadow_enabled":true},"blocks":{}}},"block_order":["ai_gen_block_1691126_JJgkjq"],"settings":{}},"17754835371621cc6e":{"type":"_blocks","blocks":{"ai_gen_block_fe4687d_LeHqCg":{"type":"ai_gen_block_fe4687d","name":"Section heading","settings":{"eyebrow_text":"","heading_text":"Explore Our Collections","subtext":"","desktop_width_percent":100,"text_alignment_desktop":"center","text_alignment_mobile":"center","heading_font_size_desktop":40,"heading_font_size_mobile":32,"heading_font_weight":"400","heading_letter_spacing":-1,"heading_line_height":1.1,"heading_text_transform":"none","eyebrow_font_size_desktop":14,"eyebrow_font_size_mobile":12,"eyebrow_font_weight":"500","eyebrow_letter_spacing":1,"eyebrow_text_transform":"uppercase","subtext_font_size_desktop":16,"subtext_font_size_mobile":14,"subtext_font_weight":"400","heading_color":"#20181a","eyebrow_color":"#6f4b53","subtext_color":"#6f4b53","underline_color":"#6f4b53","show_underline":false,"underline_animated":false,"underline_width":"auto","underline_width_px":60,"underline_thickness":3,"underline_spacing":8,"padding_top_desktop":72,"padding_bottom_desktop":36,"padding_top_mobile":48,"padding_bottom_mobile":28,"gap_heading_subtext":16},"blocks":{}},"ai_gen_block_5826ff4_f3DQTM":{"type":"ai_gen_block_5826ff4","settings":{"collection_list":["necklace","braclets","rings","earrings"],"show_collection_title":true,"show_product_count":false,"show_description":false,"heading":"","heading_size":28,"heading_color":"#20181a","heading_alignment":"center","heading_spacing":60,"min_card_width":200,"min_card_width_mobile":140,"grid_gap":45,"grid_gap_mobile":30,"container_width":1000,"horizontal_padding":20,"circular_image":true,"card_background":"#ffffff","card_border_width":1,"card_border_color":"#e3d6d9","image_border_radius":18,"image_aspect_ratio":100,"image_zoom_scale":1.1,"shadow_offset":4,"shadow_blur":10,"shadow_opacity":0.1,"hover_lift":4,"hover_shadow_offset":10,"hover_shadow_blur":20,"hover_shadow_opacity":0.2,"collection_title_size":16,"collection_title_color":"#20181a","title_font_weight":"500","title_position":"center","content_padding_top":15,"content_gap":8,"product_count_size":14,"product_count_color":"#61474d","description_size":14,"description_color":"#61474d","section_padding_top":0,"section_padding_bottom":50},"blocks":{}}},"block_order":["ai_gen_block_fe4687d_LeHqCg","ai_gen_block_5826ff4_f3DQTM"],"settings":{}},"featured_collection_3QH7cy":{"type":"featured-collection","custom_css":[".title.inline-richtext {text-align: center; font-family: var( --font-heading-family, Georgia, \"Times New Roman\", serif ) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #20181a !important;}","@media screen and (min-width: 750px) {.title.inline-richtext {font-size: 40px !important; }}",".title-wrapper {margin-bottom: 2.4rem !important;}","@media screen and (min-width: 750px) {.title-wrapper {margin-bottom: 3.6rem !important; }}"],"name":"t:sections.featured-collection.presets.name","settings":{"collection":"best-sellers","products_to_show":8,"title":"Best Sellers","heading_size":"h1","description":"","show_description":false,"description_style":"subtitle","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"solid","color_scheme":"","image_ratio":"portrait","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"standard","columns_mobile":"2","swipe_on_mobile":false,"padding_top":72,"padding_bottom":64}},"real_photography_trust_Nif7jn":{"type":"real-photography-trust","blocks":{"benefit_xphrNy":{"type":"benefit","settings":{"enabled":true,"icon":"camera","title":"What You See Is What You Get"}},"benefit_wfXHHn":{"type":"benefit","settings":{"enabled":true,"icon":"diamond","title":"True Product Detail"}},"benefit_wxMy76":{"type":"benefit","settings":{"enabled":true,"icon":"shield","title":"Builds Trust"}},"benefit_KLLeg8":{"type":"benefit","settings":{"enabled":true,"icon":"sparkle","title":"No AI Images"}},"benefit_3hQVL4":{"type":"benefit","settings":{"enabled":true,"icon":"heart","title":"Shop With Confidence"}},"benefit_gNgkHW":{"type":"benefit","settings":{"enabled":true,"icon":"trophy","title":"Studio Photographed"}}},"block_order":["benefit_xphrNy","benefit_wfXHHn","benefit_wxMy76","benefit_KLLeg8","benefit_3hQVL4","benefit_gNgkHW"],"name":"Real Photography Trust","settings":{"label":"Authenticity","heading":"Why Real Photography Matters","description":"We photograph every piece in our studio from the actual product, not with AI, so the colour, craft, and detail match what you receive.","benefits_aria_label":"Reasons real photography matters","image_desktop":"shopify:\/\/shop_images\/Real_Photography.jpg","image_stack_2":"shopify:\/\/shop_images\/Myra_Gold-Plated_AD_Floral_Necklace_Set1.4.jpg","image_stack_3":"shopify:\/\/shop_images\/MyraGold-PlatedADFloralNecklaceSet.jpg","image_alt":"Studio photograph of real jewellery","image_height":620,"image_aspect":"portrait","image_border_radius":10,"hover_zoom":true,"enable_stack_effect":true,"stack_spread":"medium","badge_enable":true,"badge_line_1":"Real Shoot","badge_line_2":"No AI","badge_line_3":"No Filters","badge_bg":"#f6f1f2","badge_border":"#dac9cc","badge_text":"#20181a","badge_position":"bottom-right","badge_size":"medium","image_position":"right","full_width":false,"container_width":1200,"column_gap":72,"content_max_width":480,"padding_top_desktop":80,"padding_bottom_desktop":80,"padding_top_mobile":56,"padding_bottom_mobile":56,"color_background":"#f6f1f2","color_heading":"#20181a","color_description":"#61474d","color_label":"#6f4b53","color_accent":"#6f4b53","color_blush":"#e3d6d9","color_icon_bg":"#f6f1f2","color_icon":"#6f4b53","color_benefit":"#20181a","border_radius":2,"shadow_strength":"soft","heading_size_desktop":40,"heading_size_mobile":32,"description_size":15,"benefit_text_size":14,"label_size":11,"font_weight":"400","letter_spacing":-3,"text_alignment":"left"}},"perfect_fit_audience_GJxzHh":{"type":"perfect-fit-audience","blocks":{"audience_wrapped":{"type":"audience","settings":{"enabled":true,"collection":"birthday-collection","title":"Wrapped for Her","icon":"gift"}},"audience_sister":{"type":"audience","settings":{"enabled":true,"collection":"","title":"Sisters Love","icon":"sisters"}},"audience_gift":{"type":"audience","settings":{"enabled":true,"collection":"","title":"Gift Ready","icon":"anniversary"}},"audience_family":{"type":"audience","settings":{"enabled":true,"collection":"","title":"Family Gatherings","icon":"family"}},"audience_party":{"type":"audience","settings":{"enabled":true,"collection":"","title":"Party Looks","icon":"party"}},"audience_festive":{"type":"audience","settings":{"enabled":true,"collection":"","title":"Festive Nights","icon":"festive"}}},"block_order":["audience_wrapped","audience_sister","audience_gift","audience_family","audience_party","audience_festive"],"name":"Perfect Fit Audience","settings":{"heading":"Find your moment","highlight_text":"Srivaya picks","subtext":"Jewellery made for love, sisters, family, celebrations, and every festive night.","heading_alignment":"center","heading_max_width":720,"full_width":false,"container_width":1200,"columns_desktop":3,"columns_tablet":3,"columns_mobile":2,"item_gap":16,"item_radius":14,"item_padding_y":22,"item_padding_x":14,"icon_style":"framed","enable_hover":true,"use_default_pattern":false,"pattern_size":180,"color_background":"#ffffff","color_surface":"#f6f1f2","color_heading":"#20181a","color_text":"#61474d","color_accent":"#6f4b53","color_highlight_bg":"#6f4b53","color_highlight_text":"#ffffff","color_icon":"#6f4b53","color_icon_bg":"#f6f1f2","color_label":"#20181a","heading_size_desktop":40,"heading_size_mobile":32,"heading_weight":400,"subtext_size":15,"label_size_desktop":15,"label_size_mobile":12,"icon_size_desktop":64,"icon_size_mobile":48,"padding_top_desktop":72,"padding_bottom_desktop":72,"padding_top_mobile":48,"padding_bottom_mobile":48}},"store_metrics_Azz743":{"type":"store-metrics","blocks":{"metric_cdQwLt":{"type":"metric","settings":{"enabled":true,"stat":"0","prefix":"","suffix":"","count_value":"0","count_decimals":0,"caption":"Jewellery orders yesterday","subtext":"From last day’s closing"}},"metric_G7PVgL":{"type":"metric","settings":{"enabled":true,"stat":"0","prefix":"","suffix":"","count_value":"0","count_decimals":0,"caption":"Pieces on their way","subtext":"Carefully packed & shipped"}},"metric_BVRzKc":{"type":"metric","settings":{"enabled":true,"stat":"0","prefix":"","suffix":"","count_value":"0","count_decimals":0,"caption":"Orders till last closing","subtext":"Every order counted, transparently"}},"metric_xBGkhP":{"type":"metric","settings":{"enabled":true,"stat":"0","prefix":"","suffix":"","count_value":"0","count_decimals":0,"caption":"Repeat buyers yesterday","subtext":"Love that brings them back"}}},"block_order":["metric_cdQwLt","metric_G7PVgL","metric_BVRzKc","metric_xBGkhP"],"name":"Store Metrics","settings":{"label":"Our quiet proof","heading":"Truth, told in numbers.","description":"After every closing day, we share a simple snapshot of Srivaya with honest figures and no filters, so you can shop with complete confidence.","text_alignment":"center","metrics_alignment":"center","show_index":true,"show_stat_accent":true,"divider_length":"medium","full_width":false,"container_width":1200,"header_max_width":720,"header_spacing":36,"columns_desktop":4,"columns_tablet":"2","column_gap":0,"card_radius":0,"card_padding_y":40,"card_padding_x":24,"padding_top_desktop":80,"padding_bottom_desktop":80,"padding_top_mobile":56,"padding_bottom_mobile":56,"color_background":"#f6f1f2","color_surface":"#e3d6d9","color_border":"#dac9cc","color_label":"#6f4b53","color_heading":"#20181a","color_stat":"#20181a","color_text":"#61474d","color_accent":"#6f4b53","heading_size_desktop":40,"heading_size_mobile":32,"heading_weight":"400","stat_size_desktop":48,"stat_size_mobile":36,"stat_weight":"300","label_size":11,"text_size":14,"enable_count_up":true}},"featured_collection_aBabXt":{"type":"featured-collection","custom_css":[".title.inline-richtext {text-align: center; font-family: var( --font-heading-family, Georgia, \"Times New Roman\", serif ) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #20181a !important;}","@media screen and (min-width: 750px) {.title.inline-richtext {font-size: 40px !important; }}",".title-wrapper {margin-bottom: 2.4rem !important;}","@media screen and (min-width: 750px) {.title-wrapper {margin-bottom: 3.6rem !important; }}"],"name":"t:sections.featured-collection.presets.name","settings":{"collection":"curated-by-srivaya","products_to_show":8,"title":"Curated for You","heading_size":"h0","description":"","show_description":false,"description_style":"subtitle","columns_desktop":4,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"solid","color_scheme":"","image_ratio":"portrait","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"standard","columns_mobile":"2","swipe_on_mobile":false,"padding_top":72,"padding_bottom":64}},"creator_reviews_marquee_LP6jgD":{"type":"creator-reviews-marquee","blocks":{"creator_review_yXVWTN":{"type":"creator_review","settings":{"creator_name":"Aditi Sharma","social_handle":"@aditi_style","creator_type":"Fashion Creator","followers":"145K","review":"The sparkle is unreal. I've received compliments every single time I wear it.","platform":"instagram","verified":true,"platform_url":""}},"creator_review_6dm4a6":{"type":"creator_review","settings":{"creator_name":"Meera Kapoor","social_handle":"@meerakapoor","creator_type":"Lifestyle Creator","followers":"89K","review":"Elegant enough for weddings, light enough for everyday. Absolute favourite piece.","platform":"instagram","verified":true,"platform_url":""}},"creator_review_Xr6Nix":{"type":"creator_review","settings":{"creator_name":"Riya Patel","social_handle":"@riyastyles","creator_type":"Bride","followers":"62K","review":"Wore these on my wedding week, and they caught every camera flash beautifully.","platform":"youtube","verified":true,"platform_url":""}},"creator_review_9VKgFT":{"type":"creator_review","settings":{"creator_name":"Ananya Desai","social_handle":"@ananyad","creator_type":"Content Creator","followers":"210K","review":"Looks expensive, feels delicate, photographs like a dream. Obsessed.","platform":"instagram","verified":true,"platform_url":""}},"creator_review_JEyNTn":{"type":"creator_review","settings":{"creator_name":"Sana Khan","social_handle":"@sanakhan","creator_type":"Customer","followers":"","review":"Gifted myself these earrings and I get asked about them constantly.","platform":"instagram","verified":false,"platform_url":""}},"creator_review_PTUwED":{"type":"creator_review","settings":{"creator_name":"Priya Nair","social_handle":"@priyanair","creator_type":"Fashion Creator","followers":"178K","review":"The craftsmanship is quiet luxury at its best: refined, radiant, timeless.","platform":"pinterest","verified":true,"platform_url":""}}},"block_order":["creator_review_yXVWTN","creator_review_6dm4a6","creator_review_Xr6Nix","creator_review_9VKgFT","creator_review_JEyNTn","creator_review_PTUwED"],"disabled":true,"name":"Creator Reviews Marquee","settings":{"title":"Loved by creators","subtitle":"Authentic moments from creators who style our pieces every day.","background_color":"#ffffff","card_background":"#ffffff","card_border_color":"#ece4e6","title_color":"#20181a","subtitle_color":"#61474d","text_color":"#20181a","muted_color":"#6f4b53","accent_color":"#6f4b53","card_width":340,"card_gap":24,"desktop_card_count":4,"mobile_card_count":13,"padding_top":72,"padding_bottom":72,"animation_speed":50,"pause_on_hover":true,"enable_fade_edges":true,"enable_hover_effect":true}},"customer_reviews_marquee_9Q6UDy":{"type":"customer-reviews-marquee","blocks":{"review_Q7dDMN":{"type":"review","settings":{"customer_name":"Priya Sharma","review_text":"Absolutely loved the quality. Looks exactly like real diamonds."}},"review_JzHFxt":{"type":"review","settings":{"customer_name":"Ananya Mehta","review_text":"The craftsmanship is exquisite. I get compliments every time I wear it."}},"review_Bp9X8d":{"type":"review","settings":{"customer_name":"Rohan Kapoor","review_text":"Gifted this to my wife, and she was speechless. Packaging felt so premium."}},"review_zmFCni":{"type":"review","settings":{"customer_name":"Meera Iyer","review_text":"Elegant, lightweight, and sparkles beautifully in natural light."}},"review_bC6tyX":{"type":"review","settings":{"customer_name":"Sarah Chen","review_text":"Feels luxurious without being flashy. Perfect everyday piece."}},"review_iNrMBQ":{"type":"review","settings":{"customer_name":"Aisha Khan","review_text":"Arrived faster than expected and looked even better in person."}},"review_LiNGhP":{"type":"review","settings":{"customer_name":"Vikram Shah","review_text":"Bought the necklace for our anniversary. Flawless finish and shine."}},"review_pkNzbU":{"type":"review","settings":{"customer_name":"Emily Foster","review_text":"Soft gold tones that match everything. Truly elevated my collection."}}},"block_order":["review_Q7dDMN","review_JzHFxt","review_Bp9X8d","review_zmFCni","review_bC6tyX","review_iNrMBQ","review_LiNGhP","review_pkNzbU"],"disabled":true,"name":"Customer Reviews Marquee","settings":{"heading":"Loved by our customers","description":"Real stories from people who chose pieces they love to wear every day.","background_color":"#ffffff","heading_color":"#20181a","description_color":"#61474d","pill_background":"#ffffff","pill_border":"#e3d6d9","name_color":"#20181a","review_text_color":"#61474d","avatar_background":"#6f4b53","avatar_text_color":"#ffffff","gold_accent":"#6f4b53","show_gold_border":true,"padding_top":72,"padding_bottom":72,"border_radius":100,"show_shadow":true,"desktop_speed":55,"mobile_speed":70,"pause_on_hover":true}},"brand_promise_ipNWDk":{"type":"brand-promise","blocks":{"icon_gst":{"type":"icon","settings":{"enabled":true,"icon_style":"gst","title":"GST Registered"}},"icon_whatsapp":{"type":"icon","settings":{"enabled":true,"icon_style":"whatsapp","title":"WhatsApp Support"}},"icon_packaging":{"type":"icon","settings":{"enabled":true,"icon_style":"packaging","title":"Secure Packaging"}},"icon_returns":{"type":"icon","settings":{"enabled":true,"icon_style":"returns","title":"Easy Returns"}},"icon_shipping":{"type":"icon","settings":{"enabled":true,"icon_style":"shipping","title":"Free Shipping ₹499+"}},"icon_photos":{"type":"icon","settings":{"enabled":true,"icon_style":"photos","title":"Real Product Photos"}}},"block_order":["icon_gst","icon_whatsapp","icon_packaging","icon_returns","icon_shipping","icon_photos"],"name":"Brand Promise","settings":{"label":"Shop with confidence","heading":"Our Promise","text":"<p>Packed with care, sent with love, and always here for you if you need us.<\/p>","copy_alignment":"center","show_promise_icon":true,"promise_icon":"check","promise_icon_size":64,"media_mode":"icons","image_alt":"Our brand promise","image_aspect":"portrait","image_fit":"cover","media_radius":16,"hover_zoom":true,"enable_media_depth":true,"shadow_strength":"soft","icon_size":96,"icon_gap":28,"icons_per_row_desktop":"3","icons_per_row_mobile":"2","icon_shape":"circle","icon_radius":12,"media_position":"left","full_width":false,"container_width":1200,"column_gap":48,"media_max_width":560,"copy_max_width":480,"padding_top_desktop":80,"padding_bottom_desktop":80,"padding_top_mobile":48,"padding_bottom_mobile":48,"color_background":"#ffffff","color_surface":"#f6f1f2","color_heading":"#20181a","color_text":"#61474d","color_label":"#6f4b53","color_accent":"#6f4b53","color_icon_title":"#20181a","color_icon_bg":"#f6f1f2","color_promise_icon":"#6f4b53","heading_size_desktop":40,"heading_size_mobile":32,"heading_weight":"400","text_size":15,"label_size":12,"icon_title_size":14}},"faq_home":{"type":"faq","blocks":{"faq_1":{"type":"faq_item","settings":{"question":"Are these product photos real?","answer":"<p>Yes. All images on our website are real photographs of the actual products. We do not use AI for product images. Slight colour differences can happen because of screen settings or lighting.<\/p>"}},"faq_2":{"type":"faq_item","settings":{"question":"Do you offer Cash on Delivery (COD)?","answer":"<p>At the moment, Cash on Delivery (COD) is not available. We currently accept prepaid orders only through secure payment methods such as UPI, credit\/debit cards, net banking, and digital wallets. This helps us process orders faster and keep payments secure.<\/p>"}},"faq_3":{"type":"faq_item","settings":{"question":"What are the shipping charges?","answer":"<p>We offer FREE shipping across India on all prepaid orders above ₹499.<\/p><p>For orders below ₹499, a standard shipping charge will be applied at checkout.<\/p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase. There are no hidden charges.<\/p>"}},"faq_4":{"type":"faq_item","settings":{"question":"How long will it take to receive my order?","answer":"<p>Orders are usually processed within 1–2 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3–7 business days across India.<\/p><p>Once your order is shipped, tracking details will be shared via SMS and Email.<\/p>"}},"faq_5":{"type":"faq_item","settings":{"question":"Can I return my order?","answer":"<p>Yes. You can request a return within 3 days of receiving your order, provided the jewellery is unused, unworn, and returned in its original condition with all original packaging and tags intact.<\/p><p>To initiate a return, simply contact us on WhatsApp with your Order ID.<\/p>"}},"faq_6":{"type":"faq_item","settings":{"question":"What if I don’t like the design or want a different product?","answer":"<p>We understand that choosing jewellery online can sometimes be difficult. If the design does not meet your expectations or you’d prefer a different style, we’re here to help.<\/p><p>You can request a return or exchange within 3 days of delivery, provided the jewellery is unused, unworn, and returned in its original condition with all tags and packaging intact.<\/p><p><strong>For Exchanges<\/strong><\/p><ul><li>You may exchange your product for another design (subject to availability).<\/li><li>Any price difference will be adjusted accordingly.<\/li><li>No shipping charges will be deducted for approved exchanges.<\/li><\/ul><p><strong>For Returns<\/strong><\/p><ul><li>If you choose a refund instead of an exchange, a flat ₹99 shipping and handling charge will be deducted from your refund amount, even if your original order qualified for free shipping (orders above ₹499).<\/li><li>This charge covers the logistics and return handling costs involved in processing your return.<\/li><\/ul><p>To get started, contact us on WhatsApp with your Order ID, and our team will guide you through the process.<\/p>"}},"faq_7":{"type":"faq_item","settings":{"question":"What if I receive a damaged or incorrect product?","answer":"<p>If you receive a damaged, defective, or incorrect item, please contact us within 24 hours of delivery.<\/p><p>Kindly share clear photographs and, if possible, an uninterrupted unboxing video to help us verify the issue quickly. Once approved, we’ll arrange a replacement or suitable resolution at no additional cost.<\/p>"}},"faq_8":{"type":"faq_item","settings":{"question":"When will I receive my refund?","answer":"<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5–10 business days.<\/p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.<\/p>"}},"faq_9":{"type":"faq_item","settings":{"question":"How do I start a return or exchange?","answer":"<p>Simply contact us on WhatsApp within 3 days of delivery with your Order ID and the reason for your request.<\/p><p>Our support team will review your concern and guide you through the return or exchange process. Please do not send the product back until you receive confirmation from our team.<\/p>"}},"faq_10":{"type":"faq_item","settings":{"question":"How can I contact Srivaya for support?","answer":"<p>We’re always happy to help!<\/p><p><strong>WhatsApp:<\/strong> <a href=\"https:\/\/wa.me\/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371<\/a><\/p><p><strong>Email:<\/strong> <a href=\"mailto:thesrivaya@gmail.com\">thesrivaya@gmail.com<\/a><\/p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.<\/p>"}}},"block_order":["faq_1","faq_2","faq_3","faq_4","faq_5","faq_6","faq_7","faq_8","faq_9","faq_10"],"settings":{"eyebrow":"Support","heading":"Frequently Asked Questions","subheading":"Quick answers about our products, shipping, returns, and support.","heading_alignment":"center","heading_size_desktop":40,"heading_size_mobile":28,"content_width":780,"open_first":false,"items_limit":6,"show_button":true,"button_label":"View all FAQs","button_link":"\/pages\/faq","button_bg":"#6f4b53","button_text":"#ffffff","button_hover":"#513c40","color_background":"#ffffff","color_surface":"#f6f1f2","color_heading":"#20181a","color_text":"#61474d","color_muted":"#926b73","color_accent":"#6f4b53","color_border":"#e3d6d9","padding_top_desktop":72,"padding_bottom_desktop":72,"padding_top_mobile":48,"padding_bottom_mobile":48}}},"order":["1779598554163c0064","17754835371621cc6e","featured_collection_3QH7cy","real_photography_trust_Nif7jn","perfect_fit_audience_GJxzHh","store_metrics_Azz743","featured_collection_aBabXt","creator_reviews_marquee_LP6jgD","customer_reviews_marquee_9Q6UDy","brand_promise_ipNWDk","faq_home"]}
+{
+  "sections": {
+    "1779598554163c0064": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_1691126_JJgkjq": {
+          "type": "ai_gen_block_1691126",
+          "settings": {
+            "desktop_image": "shopify://shop_images/95ed6daff20e88d4e74432006482b3cb89951746069dbc491ac911d6a8e46002.png",
+            "mobile_image": "shopify://shop_images/95ed6daff20e88d4e74432006482b3cb89951746069dbc491ac911d6a8e46002.png",
+            "desktop_height": 700,
+            "desktop_height_unit": "px",
+            "mobile_height": 300,
+            "mobile_height_unit": "px",
+            "subtext": "Jewellery That",
+            "heading": "Celebrates You",
+            "button_text": "Explore New Arrivals",
+            "button_link": "shopify://collections/all",
+            "content_max_width": 600,
+            "desktop_horizontal_align": "flex-start",
+            "desktop_vertical_align": "center",
+            "desktop_content_padding": 60,
+            "mobile_horizontal_align": "center",
+            "mobile_vertical_align": "center",
+            "mobile_content_padding": 20,
+            "desktop_subtext_size": 14,
+            "desktop_subtext_weight": "400",
+            "desktop_subtext_color": "#0e2c20",
+            "desktop_subtext_letter_spacing": 1,
+            "mobile_subtext_size": 12,
+            "mobile_subtext_weight": "400",
+            "mobile_subtext_color": "#0e2c20",
+            "mobile_subtext_letter_spacing": 0.5,
+            "desktop_heading_size": 48,
+            "desktop_heading_weight": "700",
+            "desktop_heading_color": "#c5a059",
+            "desktop_heading_line_height": 1.2,
+            "mobile_heading_size": 32,
+            "mobile_heading_weight": "700",
+            "mobile_heading_color": "#c5a059",
+            "mobile_heading_line_height": 1.2,
+            "desktop_button_padding_vertical": 14,
+            "desktop_button_padding_horizontal": 32,
+            "desktop_button_font_size": 16,
+            "mobile_button_padding_vertical": 12,
+            "mobile_button_padding_horizontal": 24,
+            "mobile_button_font_size": 14,
+            "button_bg_color": "#0e2c20",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 8,
+            "overlay_color": "#0e2c20",
+            "overlay_opacity": 25,
+            "text_shadow_enabled": true,
+            "use_theme_hero_banner": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_1691126_JJgkjq"
+      ],
+      "settings": {}
+    },
+    "17754835371621cc6e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_fe4687d_LeHqCg": {
+          "type": "ai_gen_block_fe4687d",
+          "name": "Section heading",
+          "settings": {
+            "eyebrow_text": "Thoughtfully curated",
+            "heading_text": "Collections made for beautiful moments",
+            "subtext": "",
+            "desktop_width_percent": 100,
+            "text_alignment_desktop": "center",
+            "text_alignment_mobile": "center",
+            "heading_font_size_desktop": 40,
+            "heading_font_size_mobile": 32,
+            "heading_font_weight": "400",
+            "heading_letter_spacing": -1,
+            "heading_line_height": 1.1,
+            "heading_text_transform": "none",
+            "eyebrow_font_size_desktop": 14,
+            "eyebrow_font_size_mobile": 12,
+            "eyebrow_font_weight": "500",
+            "eyebrow_letter_spacing": 1,
+            "eyebrow_text_transform": "uppercase",
+            "subtext_font_size_desktop": 16,
+            "subtext_font_size_mobile": 14,
+            "subtext_font_weight": "400",
+            "heading_color": "#0e2c20",
+            "eyebrow_color": "#c5a059",
+            "subtext_color": "#3d3d3d",
+            "underline_color": "#c5a059",
+            "show_underline": false,
+            "underline_animated": false,
+            "underline_width": "auto",
+            "underline_width_px": 60,
+            "underline_thickness": 3,
+            "underline_spacing": 8,
+            "padding_top_desktop": 72,
+            "padding_bottom_desktop": 36,
+            "padding_top_mobile": 48,
+            "padding_bottom_mobile": 28,
+            "gap_heading_subtext": 16
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_5826ff4_f3DQTM": {
+          "type": "ai_gen_block_5826ff4",
+          "settings": {
+            "collection_list": [
+              "necklace",
+              "braclets",
+              "rings",
+              "earrings"
+            ],
+            "show_collection_title": true,
+            "show_product_count": false,
+            "show_description": false,
+            "heading": "",
+            "heading_size": 28,
+            "heading_color": "#0e2c20",
+            "heading_alignment": "center",
+            "heading_spacing": 60,
+            "min_card_width": 200,
+            "min_card_width_mobile": 140,
+            "grid_gap": 45,
+            "grid_gap_mobile": 30,
+            "container_width": 1000,
+            "horizontal_padding": 20,
+            "circular_image": true,
+            "card_background": "#fdf9f2",
+            "card_border_width": 1,
+            "card_border_color": "#c5a059",
+            "image_border_radius": 18,
+            "image_aspect_ratio": 100,
+            "image_zoom_scale": 1.1,
+            "shadow_offset": 4,
+            "shadow_blur": 10,
+            "shadow_opacity": 0.1,
+            "hover_lift": 4,
+            "hover_shadow_offset": 10,
+            "hover_shadow_blur": 20,
+            "hover_shadow_opacity": 0.2,
+            "collection_title_size": 16,
+            "collection_title_color": "#0e2c20",
+            "title_font_weight": "500",
+            "title_position": "center",
+            "content_padding_top": 15,
+            "content_gap": 8,
+            "product_count_size": 14,
+            "product_count_color": "#6b6b6b",
+            "description_size": 14,
+            "description_color": "#3d3d3d",
+            "section_padding_top": 0,
+            "section_padding_bottom": 50
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_fe4687d_LeHqCg",
+        "ai_gen_block_5826ff4_f3DQTM"
+      ],
+      "settings": {}
+    },
+    "featured_collection_3QH7cy": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title.inline-richtext {text-align: center; font-family: var( --font-heading-family, Georgia, \"Times New Roman\", serif ) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #0e2c20 !important;}",
+        "@media screen and (min-width: 750px) {.title.inline-richtext {font-size: 40px !important; }}",
+        ".title-wrapper {margin-bottom: 2.4rem !important;}",
+        "@media screen and (min-width: 750px) {.title-wrapper {margin-bottom: 3.6rem !important; }}"
+      ],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "best-sellers",
+        "products_to_show": 8,
+        "title": "Pieces you’ll love",
+        "heading_size": "h1",
+        "description": "<p>Our most-loved jewellery — chosen for confidence, compliments, and everyday celebration.</p>",
+        "show_description": true,
+        "description_style": "subtitle",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 72,
+        "padding_bottom": 64
+      }
+    },
+    "real_photography_trust_Nif7jn": {
+      "type": "real-photography-trust",
+      "blocks": {
+        "benefit_xphrNy": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "camera",
+            "title": "What you see is what you get"
+          }
+        },
+        "benefit_wfXHHn": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "diamond",
+            "title": "True product detail"
+          }
+        },
+        "benefit_wxMy76": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "shield",
+            "title": "Trust you can feel"
+          }
+        },
+        "benefit_KLLeg8": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "sparkle",
+            "title": "No AI product images"
+          }
+        },
+        "benefit_3hQVL4": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "heart",
+            "title": "Shop with confidence"
+          }
+        },
+        "benefit_gNgkHW": {
+          "type": "benefit",
+          "settings": {
+            "enabled": true,
+            "icon": "trophy",
+            "title": "Studio photographed"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_xphrNy",
+        "benefit_wfXHHn",
+        "benefit_wxMy76",
+        "benefit_KLLeg8",
+        "benefit_3hQVL4",
+        "benefit_gNgkHW"
+      ],
+      "name": "Real Photography Trust",
+      "settings": {
+        "label": "Authenticity",
+        "heading": "Why real photography matters",
+        "description": "Every piece is photographed in our studio from the real product — not AI — so colour, craft, and detail match what arrives at your door.",
+        "benefits_aria_label": "Reasons real photography matters",
+        "image_desktop": "shopify://shop_images/Real_Photography.jpg",
+        "image_stack_2": "shopify://shop_images/Myra_Gold-Plated_AD_Floral_Necklace_Set1.4.jpg",
+        "image_stack_3": "shopify://shop_images/MyraGold-PlatedADFloralNecklaceSet.jpg",
+        "image_alt": "Studio photograph of real jewellery",
+        "image_height": 620,
+        "image_aspect": "portrait",
+        "image_border_radius": 10,
+        "hover_zoom": true,
+        "enable_stack_effect": true,
+        "stack_spread": "medium",
+        "badge_enable": true,
+        "badge_line_1": "Real Shoot",
+        "badge_line_2": "No AI",
+        "badge_line_3": "No Filters",
+        "badge_bg": "#0e2c20",
+        "badge_border": "#c5a059",
+        "badge_text": "#c5a059",
+        "badge_position": "bottom-right",
+        "badge_size": "medium",
+        "image_position": "right",
+        "full_width": false,
+        "container_width": 1200,
+        "column_gap": 72,
+        "content_max_width": 480,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "color_background": "#fdf9f2",
+        "color_heading": "#0e2c20",
+        "color_description": "#3d3d3d",
+        "color_label": "#c5a059",
+        "color_accent": "#c5a059",
+        "color_blush": "#f3ebd8",
+        "color_icon_bg": "#ffffff",
+        "color_icon": "#c5a059",
+        "color_benefit": "#0e2c20",
+        "border_radius": 2,
+        "shadow_strength": "soft",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "description_size": 15,
+        "benefit_text_size": 14,
+        "label_size": 11,
+        "font_weight": "400",
+        "letter_spacing": -3,
+        "text_alignment": "left"
+      }
+    },
+    "perfect_fit_audience_GJxzHh": {
+      "type": "perfect-fit-audience",
+      "blocks": {
+        "audience_wrapped": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "birthday-collection",
+            "title": "Gifts she’ll love",
+            "icon": "gift"
+          }
+        },
+        "audience_sister": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "For sisters",
+            "icon": "sisters"
+          }
+        },
+        "audience_gift": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "Ready to gift",
+            "icon": "anniversary"
+          }
+        },
+        "audience_family": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "Family gatherings",
+            "icon": "family"
+          }
+        },
+        "audience_party": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "Party nights",
+            "icon": "party"
+          }
+        },
+        "audience_festive": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "Festive celebrations",
+            "icon": "festive"
+          }
+        }
+      },
+      "block_order": [
+        "audience_wrapped",
+        "audience_sister",
+        "audience_gift",
+        "audience_family",
+        "audience_party",
+        "audience_festive"
+      ],
+      "name": "Perfect Fit Audience",
+      "settings": {
+        "heading": "Celebrate every moment",
+        "highlight_text": "Ashtitva picks",
+        "subtext": "Jewellery for love, sisters, family, festivals, date nights, and the everyday moments that deserve to feel special.",
+        "heading_alignment": "center",
+        "heading_max_width": 720,
+        "full_width": false,
+        "container_width": 1200,
+        "columns_desktop": 3,
+        "columns_tablet": 3,
+        "columns_mobile": 2,
+        "item_gap": 16,
+        "item_radius": 14,
+        "item_padding_y": 22,
+        "item_padding_x": 14,
+        "icon_style": "framed",
+        "enable_hover": true,
+        "use_default_pattern": false,
+        "pattern_size": 180,
+        "color_background": "#fdf9f2",
+        "color_surface": "#ffffff",
+        "color_heading": "#0e2c20",
+        "color_text": "#3d3d3d",
+        "color_accent": "#c5a059",
+        "color_highlight_bg": "#f3ebd8",
+        "color_highlight_text": "#0e2c20",
+        "color_icon": "#c5a059",
+        "color_icon_bg": "#fdf9f2",
+        "color_label": "#0e2c20",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "heading_weight": 400,
+        "subtext_size": 15,
+        "label_size_desktop": 15,
+        "label_size_mobile": 12,
+        "icon_size_desktop": 64,
+        "icon_size_mobile": 48,
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    },
+    "store_metrics_Azz743": {
+      "type": "store-metrics",
+      "blocks": {
+        "metric_cdQwLt": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Jewellery orders yesterday",
+            "subtext": "From last day’s closing"
+          }
+        },
+        "metric_G7PVgL": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Pieces on their way",
+            "subtext": "Packed with care"
+          }
+        },
+        "metric_BVRzKc": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Orders till last closing",
+            "subtext": "Counted transparently"
+          }
+        },
+        "metric_xBGkhP": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Customers who returned",
+            "subtext": "Love that brings them back"
+          }
+        }
+      },
+      "block_order": [
+        "metric_cdQwLt",
+        "metric_G7PVgL",
+        "metric_BVRzKc",
+        "metric_xBGkhP"
+      ],
+      "name": "Store Metrics",
+      "settings": {
+        "label": "Honesty, every day",
+        "heading": "Trust, told in numbers",
+        "description": "After every closing day, we share a simple snapshot of Ashtitva — honest figures, no filters — so you can shop with clarity and confidence.",
+        "text_alignment": "center",
+        "metrics_alignment": "center",
+        "show_index": true,
+        "show_stat_accent": true,
+        "divider_length": "medium",
+        "full_width": false,
+        "container_width": 1200,
+        "header_max_width": 720,
+        "header_spacing": 36,
+        "columns_desktop": 4,
+        "columns_tablet": "2",
+        "column_gap": 0,
+        "card_radius": 0,
+        "card_padding_y": 40,
+        "card_padding_x": 24,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "color_background": "#fdf9f2",
+        "color_surface": "#ffffff",
+        "color_border": "#e8dfd0",
+        "color_label": "#c5a059",
+        "color_heading": "#0e2c20",
+        "color_stat": "#0e2c20",
+        "color_text": "#3d3d3d",
+        "color_accent": "#c5a059",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "heading_weight": "400",
+        "stat_size_desktop": 48,
+        "stat_size_mobile": 36,
+        "stat_weight": "300",
+        "label_size": 11,
+        "text_size": 14,
+        "enable_count_up": true
+      }
+    },
+    "featured_collection_aBabXt": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".title.inline-richtext {text-align: center; font-family: var( --font-heading-family, Georgia, \"Times New Roman\", serif ) !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.12 !important; letter-spacing: -0.025em !important; color: #0e2c20 !important;}",
+        "@media screen and (min-width: 750px) {.title.inline-richtext {font-size: 40px !important; }}",
+        ".title-wrapper {margin-bottom: 2.4rem !important;}",
+        "@media screen and (min-width: 750px) {.title-wrapper {margin-bottom: 3.6rem !important; }}"
+      ],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "curated-by-srivaya",
+        "products_to_show": 8,
+        "title": "Thoughtfully curated for you",
+        "heading_size": "h0",
+        "description": "<p>Designs selected to help you celebrate yourself and the people you love.</p>",
+        "show_description": true,
+        "description_style": "subtitle",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 72,
+        "padding_bottom": 64
+      }
+    },
+    "creator_reviews_marquee_LP6jgD": {
+      "type": "creator-reviews-marquee",
+      "blocks": {
+        "creator_review_yXVWTN": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Aditi Sharma",
+            "social_handle": "@aditi_style",
+            "creator_type": "Fashion Creator",
+            "followers": "145K",
+            "review": "I feel more confident every time I wear it — the compliments never stop.",
+            "platform": "instagram",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_6dm4a6": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Meera Kapoor",
+            "social_handle": "@meerakapoor",
+            "creator_type": "Lifestyle Creator",
+            "followers": "89K",
+            "review": "Elegant for weddings, light enough for everyday. A piece that celebrates me.",
+            "platform": "instagram",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_Xr6Nix": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Riya Patel",
+            "social_handle": "@riyastyles",
+            "creator_type": "Bride",
+            "followers": "62K",
+            "review": "Wore these through my wedding week. They felt special in every photo.",
+            "platform": "youtube",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_9VKgFT": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Ananya Desai",
+            "social_handle": "@ananyad",
+            "creator_type": "Content Creator",
+            "followers": "210K",
+            "review": "Looks thoughtful, feels delicate, photographs like a dream.",
+            "platform": "instagram",
+            "verified": true,
+            "platform_url": ""
+          }
+        },
+        "creator_review_JEyNTn": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Sana Khan",
+            "social_handle": "@sanakhan",
+            "creator_type": "Customer",
+            "followers": "",
+            "review": "Gifted myself these earrings — a little celebration of me.",
+            "platform": "instagram",
+            "verified": false,
+            "platform_url": ""
+          }
+        },
+        "creator_review_PTUwED": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Priya Nair",
+            "social_handle": "@priyanair",
+            "creator_type": "Fashion Creator",
+            "followers": "178K",
+            "review": "Refined, radiant, and honest. Quiet confidence, not flashy luxury.",
+            "platform": "pinterest",
+            "verified": true,
+            "platform_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "creator_review_yXVWTN",
+        "creator_review_6dm4a6",
+        "creator_review_Xr6Nix",
+        "creator_review_9VKgFT",
+        "creator_review_JEyNTn",
+        "creator_review_PTUwED"
+      ],
+      "disabled": true,
+      "name": "Creator Reviews Marquee",
+      "settings": {
+        "title": "Styled with confidence",
+        "subtitle": "Real moments from creators who wear Ashtitva and feel beautiful doing it.",
+        "background_color": "#fdf9f2",
+        "card_background": "#ffffff",
+        "card_border_color": "#e8dfd0",
+        "title_color": "#0e2c20",
+        "subtitle_color": "#3d3d3d",
+        "text_color": "#0e2c20",
+        "muted_color": "#c5a059",
+        "accent_color": "#c5a059",
+        "card_width": 340,
+        "card_gap": 24,
+        "desktop_card_count": 4,
+        "mobile_card_count": 13,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "animation_speed": 50,
+        "pause_on_hover": true,
+        "enable_fade_edges": true,
+        "enable_hover_effect": true
+      }
+    },
+    "customer_reviews_marquee_9Q6UDy": {
+      "type": "customer-reviews-marquee",
+      "blocks": {
+        "review_Q7dDMN": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Priya Sharma",
+            "review_text": "The quality made me feel so confident. Exactly as beautiful as the photos."
+          }
+        },
+        "review_JzHFxt": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Ananya Mehta",
+            "review_text": "I get compliments every time. It feels personal, not just pretty."
+          }
+        },
+        "review_Bp9X8d": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Rohan Kapoor",
+            "review_text": "Gifted this to my wife — she felt celebrated. Packaging was so thoughtful."
+          }
+        },
+        "review_zmFCni": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Meera Iyer",
+            "review_text": "Elegant, lightweight, and glowing in real light. Trusted the photos completely."
+          }
+        },
+        "review_bC6tyX": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Sarah Chen",
+            "review_text": "Feels special without being flashy. Perfect for everyday confidence."
+          }
+        },
+        "review_iNrMBQ": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Aisha Khan",
+            "review_text": "Arrived quickly and looked even more beautiful in person."
+          }
+        },
+        "review_LiNGhP": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Vikram Shah",
+            "review_text": "Bought the necklace for our anniversary. A memory we’ll keep forever."
+          }
+        },
+        "review_pkNzbU": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Emily Foster",
+            "review_text": "Warm gold tones that feel like me. Elevated every outfit."
+          }
+        }
+      },
+      "block_order": [
+        "review_Q7dDMN",
+        "review_JzHFxt",
+        "review_Bp9X8d",
+        "review_zmFCni",
+        "review_bC6tyX",
+        "review_iNrMBQ",
+        "review_LiNGhP",
+        "review_pkNzbU"
+      ],
+      "disabled": true,
+      "name": "Customer Reviews Marquee",
+      "settings": {
+        "heading": "Loved by people like you",
+        "description": "Real stories from customers who chose pieces to celebrate themselves and the people they love.",
+        "background_color": "#fdf9f2",
+        "heading_color": "#0e2c20",
+        "description_color": "#3d3d3d",
+        "pill_background": "#ffffff",
+        "pill_border": "#c5a059",
+        "name_color": "#0e2c20",
+        "review_text_color": "#3d3d3d",
+        "avatar_background": "#0e2c20",
+        "avatar_text_color": "#ffffff",
+        "gold_accent": "#c5a059",
+        "show_gold_border": true,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "border_radius": 100,
+        "show_shadow": true,
+        "desktop_speed": 55,
+        "mobile_speed": 70,
+        "pause_on_hover": true
+      }
+    },
+    "brand_promise_ipNWDk": {
+      "type": "brand-promise",
+      "blocks": {
+        "icon_gst": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "gst",
+            "title": "GST Registered"
+          }
+        },
+        "icon_whatsapp": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "whatsapp",
+            "title": "WhatsApp Support"
+          }
+        },
+        "icon_packaging": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "packaging",
+            "title": "Secure Packaging"
+          }
+        },
+        "icon_returns": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "returns",
+            "title": "Easy Returns"
+          }
+        },
+        "icon_shipping": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "shipping",
+            "title": "Free Shipping ₹499+"
+          }
+        },
+        "icon_photos": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "photos",
+            "title": "Real Product Photos"
+          }
+        }
+      },
+      "block_order": [
+        "icon_gst",
+        "icon_whatsapp",
+        "icon_packaging",
+        "icon_returns",
+        "icon_shipping",
+        "icon_photos"
+      ],
+      "name": "Brand Promise",
+      "settings": {
+        "label": "Our promise",
+        "heading": "Feel loved in every interaction",
+        "text": "<p>Packed with care, sent with love, and always here for you — because jewellery should help you feel confident, beautiful, and celebrated.</p>",
+        "copy_alignment": "center",
+        "show_promise_icon": true,
+        "promise_icon": "check",
+        "promise_icon_size": 64,
+        "media_mode": "icons",
+        "image_alt": "Our brand promise",
+        "image_aspect": "portrait",
+        "image_fit": "cover",
+        "media_radius": 16,
+        "hover_zoom": true,
+        "enable_media_depth": true,
+        "shadow_strength": "soft",
+        "icon_size": 96,
+        "icon_gap": 28,
+        "icons_per_row_desktop": "3",
+        "icons_per_row_mobile": "2",
+        "icon_shape": "circle",
+        "icon_radius": 12,
+        "media_position": "left",
+        "full_width": false,
+        "container_width": 1200,
+        "column_gap": 48,
+        "media_max_width": 560,
+        "copy_max_width": 480,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "color_background": "#fdf9f2",
+        "color_surface": "#ffffff",
+        "color_heading": "#0e2c20",
+        "color_text": "#3d3d3d",
+        "color_label": "#c5a059",
+        "color_accent": "#c5a059",
+        "color_icon_title": "#0e2c20",
+        "color_icon_bg": "#fdf9f2",
+        "color_promise_icon": "#c5a059",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "heading_weight": "400",
+        "text_size": 15,
+        "label_size": 12,
+        "icon_title_size": 14
+      }
+    },
+    "faq_home": {
+      "type": "faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are these product photos real?",
+            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background — not AI. Slight colour differences can still happen because of screen settings or lighting, and we’re always honest about that.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer Cash on Delivery (COD)?",
+            "answer": "<p>At the moment, Cash on Delivery (COD) is not available. We currently accept prepaid orders only through secure payment methods such as UPI, credit/debit cards, net banking, and digital wallets. This helps us process orders faster and keep payments secure.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What are the shipping charges?",
+            "answer": "<p>We offer FREE shipping across India on all prepaid orders above ₹499.</p><p>For orders below ₹499, a standard shipping charge will be applied at checkout.</p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase. There are no hidden charges.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How long will it take to receive my order?",
+            "answer": "<p>Orders are usually processed within 1–2 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3–7 business days across India.</p><p>Once your order is shipped, tracking details will be shared via SMS and Email.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I return my order?",
+            "answer": "<p>Yes. You can request a return within 3 days of receiving your order, provided the jewellery is unused, unworn, and returned in its original condition with all original packaging and tags intact.</p><p>To initiate a return, simply contact us on WhatsApp with your Order ID.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I don’t like the design or want a different product?",
+            "answer": "<p>We understand that choosing jewellery online can sometimes be difficult. If the design does not meet your expectations or you’d prefer a different style, we’re here to help.</p><p>You can request a return or exchange within 3 days of delivery, provided the jewellery is unused, unworn, and returned in its original condition with all tags and packaging intact.</p><p><strong>For Exchanges</strong></p><ul><li>You may exchange your product for another design (subject to availability).</li><li>Any price difference will be adjusted accordingly.</li><li>No shipping charges will be deducted for approved exchanges.</li></ul><p><strong>For Returns</strong></p><ul><li>If you choose a refund instead of an exchange, a flat ₹99 shipping and handling charge will be deducted from your refund amount, even if your original order qualified for free shipping (orders above ₹499).</li><li>This charge covers the logistics and return handling costs involved in processing your return.</li></ul><p>To get started, contact us on WhatsApp with your Order ID, and our team will guide you through the process.</p>"
+          }
+        },
+        "faq_7": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I receive a damaged or incorrect product?",
+            "answer": "<p>If you receive a damaged, defective, or incorrect item, please contact us within 24 hours of delivery.</p><p>Kindly share clear photographs and, if possible, an uninterrupted unboxing video to help us verify the issue quickly. Once approved, we’ll arrange a replacement or suitable resolution at no additional cost.</p>"
+          }
+        },
+        "faq_8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "When will I receive my refund?",
+            "answer": "<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5–10 business days.</p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.</p>"
+          }
+        },
+        "faq_9": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I start a return or exchange?",
+            "answer": "<p>Simply contact us on WhatsApp within 3 days of delivery with your Order ID and the reason for your request.</p><p>Our support team will review your concern and guide you through the return or exchange process. Please do not send the product back until you receive confirmation from our team.</p>"
+          }
+        },
+        "faq_10": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How can I contact Ashtitva for support?",
+            "answer": "<p>We’re always happy to help.</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:hello@theashtitva.com\">hello@theashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products — our team is here with warmth and honesty.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7",
+        "faq_8",
+        "faq_9",
+        "faq_10"
+      ],
+      "settings": {
+        "eyebrow": "We’re here for you",
+        "heading": "Questions, answered with care",
+        "subheading": "Honest answers about our jewellery, photography, shipping, returns, and support.",
+        "heading_alignment": "center",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 28,
+        "content_width": 780,
+        "open_first": false,
+        "items_limit": 6,
+        "show_button": true,
+        "button_label": "See all answers",
+        "button_link": "/pages/faq",
+        "button_bg": "#0e2c20",
+        "button_text": "#ffffff",
+        "button_hover": "#164a36",
+        "color_background": "#fdf9f2",
+        "color_surface": "#ffffff",
+        "color_heading": "#0e2c20",
+        "color_text": "#3d3d3d",
+        "color_muted": "#6b6b6b",
+        "color_accent": "#c5a059",
+        "color_border": "#e8dfd0",
+        "padding_top_desktop": 72,
+        "padding_bottom_desktop": 72,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48
+      }
+    }
+  },
+  "order": [
+    "1779598554163c0064",
+    "17754835371621cc6e",
+    "featured_collection_3QH7cy",
+    "real_photography_trust_Nif7jn",
+    "perfect_fit_audience_GJxzHh",
+    "store_metrics_Azz743",
+    "featured_collection_aBabXt",
+    "creator_reviews_marquee_LP6jgD",
+    "customer_reviews_marquee_9Q6UDy",
+    "brand_promise_ipNWDk",
+    "faq_home"
+  ]
+}

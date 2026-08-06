@@ -1,0 +1,96 @@
+/* =========================================================
+   Ashtitva — Brand Color System (exact mockup tokens)
+   ---------------------------------------------------------
+   From Ashtitva homepage mock — exact:
+     Cream / Ivory     #FDF9F2
+     Dark Forest Green #0E2C20
+     Gold              #C5A059
+   Supporting tones derived only for hover / washes.
+   ========================================================= */
+
+:root {
+  /* Exact neutrals */
+  --ash-ivory: #fdf9f2;
+  --ash-cream: #ffffff;
+  --ash-sand: #f3ebd8;
+  --ash-surface: #ffffff;
+  --ash-blush: #f3ebd8;
+  --ash-mist: #faf6ef;
+
+  /* Exact gold + soft supports */
+  --ash-gold: #c5a059;
+  --ash-gold-light: #d4b56e;
+  --ash-gold-soft: #f3ebd8;
+  --ash-gold-antique: #a8843f;
+  --ash-gold-deep: #8f6f32;
+
+  /* Exact forest + soft supports */
+  --ash-forest: #0e2c20;
+  --ash-forest-soft: #164a36;
+  --ash-forest-deep: #0a2018;
+
+  /* Compat aliases (older token names) */
+  --ash-rose: #c5a059;
+  --ash-rose-deep: #a8843f;
+  --ash-rose-soft: #f3ebd8;
+  --ash-rose-wash: #fdf9f2;
+  --ash-burgundy: #0e2c20;
+  --ash-burgundy-soft: #164a36;
+  --ash-burgundy-deep: #0a2018;
+
+  /* Type */
+  --ash-ink: #0e2c20;
+  --ash-body: #3d3d3d;
+  --ash-muted: #6b6b6b;
+  --ash-on-dark: #fdf9f2;
+  --ash-on-forest: #ffffff;
+
+  /* Borders */
+  --ash-border: #e8dfd0;
+  --ash-border-card: #efe6d8;
+  --ash-border-input: #ddd3c4;
+  --ash-border-accent: #c5a059;
+  --ash-border-luxury: #c5a059;
+
+  --ash-shadow-sm: 0 2px 8px rgba(14, 44, 32, 0.06);
+  --ash-shadow-md: 0 8px 24px rgba(14, 44, 32, 0.08);
+  --ash-shadow-lg: 0 20px 60px rgba(14, 44, 32, 0.12);
+
+  --ash-gradient-brand: linear-gradient(135deg, #fdf9f2 0%, #faf6ef 50%, #f3ebd8 100%);
+  --ash-gradient-hero: linear-gradient(120deg, #fdf9f2, #ffffff, #f3ebd8);
+  --ash-gradient-section: linear-gradient(180deg, #ffffff, #fdf9f2);
+  --ash-gradient-media: linear-gradient(165deg, #ffffff 0%, #fdf9f2 60%, #f3ebd8 140%);
+  --ash-gradient-dark: linear-gradient(160deg, #164a36 0%, #0e2c20 100%);
+  --ash-gradient-gold: linear-gradient(90deg, #d4b56e, #c5a059, #a8843f);
+  --ash-gradient-rose: var(--ash-gradient-gold);
+  --ash-gradient-cta: linear-gradient(180deg, #164a36, #0e2c20);
+
+  /* CTAs — exact forest */
+  --sv-btn-cta: #0e2c20;
+  --sv-btn-cta-hover: #164a36;
+  --sv-btn-label: #ffffff;
+  --sv-btn-gold: #c5a059;
+  --sv-btn-radius: 2px;
+  --sv-btn-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sv-btn-duration: 280ms;
+
+  --sv-qty-ink: #0e2c20;
+  --sv-qty-cta: #0e2c20;
+}
+
+.ash-gold-rule,
+.ash-accent-rule {
+  height: 1px;
+  border: 0;
+  background: var(--ash-gradient-gold);
+  opacity: 0.9;
+}
+
+.global-media-settings,
+.contains-media .media {
+  background-color: #fdf9f2;
+}
+
+body {
+  background-color: #fdf9f2;
+}

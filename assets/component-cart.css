@@ -193,8 +193,8 @@ cart-items {
   min-height: 5.2rem;
   padding: 1.6rem 2rem;
   border-radius: 6px;
-  background: #6f4b53 !important;
-  color: #f6f1f2 !important;
+  background: #c5a059 !important;
+  color: #fdf9f2 !important;
   border: none !important;
   box-shadow: none !important;
   font-size: 1.15rem;
@@ -209,7 +209,7 @@ cart-items {
 }
 
 .cart__checkout-button:hover:not([disabled]) {
-  background: #513c40 !important;
+  background: #c5a059 !important;
   box-shadow: none !important;
 }
 

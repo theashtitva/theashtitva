@@ -3,7 +3,7 @@
 }
 
 .contact .title {
-  color: #20181a;
+  color: #0e2c20;
   font-weight: 400;
   letter-spacing: -0.025em;
 }
@@ -22,28 +22,28 @@
 
 .contact .field__input,
 .contact .text-area {
-  background-color: #f6f1f2;
-  border-color: #e3d6d9;
-  color: #20181a;
+  background-color: #fdf9f2;
+  border-color: #f3ebd8;
+  color: #0e2c20;
 }
 
 .contact .field__input:focus,
 .contact .text-area:focus {
-  border-color: #6f4b53;
-  box-shadow: 0 0 0 0.1rem color-mix(in srgb, #6f4b53 25%, transparent);
+  border-color: #c5a059;
+  box-shadow: 0 0 0 0.1rem color-mix(in srgb, #c5a059 25%, transparent);
 }
 
 .contact .field__label,
 .contact .form__label {
-  color: #61474d;
+  color: #5a4e44;
 }
 
 .contact__button .button {
   min-height: 5.2rem;
   padding: 1.6rem 2rem;
   border-radius: 6px;
-  background-color: #6f4b53 !important;
-  color: #f6f1f2 !important;
+  background-color: #c5a059 !important;
+  color: #fdf9f2 !important;
   border: none !important;
   box-shadow: none !important;
   font-size: 1.15rem;
@@ -58,9 +58,9 @@
 }
 
 .contact__button .button:hover {
-  background-color: #513c40 !important;
+  background-color: #c5a059 !important;
   border: none !important;
-  color: #f6f1f2 !important;
+  color: #fdf9f2 !important;
   box-shadow: none !important;
 }
 

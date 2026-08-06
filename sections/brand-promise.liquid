@@ -57,9 +57,9 @@
     --bpp-shadow:
       {% case section.settings.shadow_strength %}
         {% when 'none' %}none
-        {% when 'soft' %}0 8px 28px rgba(49, 36, 38, 0.04)
-        {% when 'medium' %}0 12px 32px rgba(49, 36, 38, 0.06)
-        {% when 'strong' %}0 18px 44px rgba(49, 36, 38, 0.09)
+        {% when 'soft' %}0 8px 28px rgba(42, 42, 42, 0.04)
+        {% when 'medium' %}0 12px 32px rgba(42, 42, 42, 0.06)
+        {% when 'strong' %}0 18px 44px rgba(42, 42, 42, 0.09)
       {% endcase %};
   }
 
@@ -84,14 +84,14 @@
     background:
       linear-gradient(
         180deg,
-        color-mix(in srgb, #f6f1f2 35%, transparent) 0%,
+        color-mix(in srgb, #fdf9f2 35%, transparent) 0%,
         transparent 28%,
         transparent 58%,
-        color-mix(in srgb, #f6f1f2 28%, transparent) 100%
+        color-mix(in srgb, #fdf9f2 28%, transparent) 100%
       ),
       radial-gradient(
         ellipse 70% 50% at 50% 100%,
-        color-mix(in srgb, #ece4e6 40%, transparent),
+        color-mix(in srgb, #f3ebd8 40%, transparent),
         transparent 70%
       );
   }
@@ -189,7 +189,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: {{ section.settings.color_promise_icon | default: '#6F4B53' }};
+    color: {{ section.settings.color_promise_icon | default: '#C5A059' }};
   }
 
   #bpp-{{ sid }} .bpp__promise-mark-inner svg,
@@ -375,11 +375,11 @@
     color: var(--bpp-accent);
     background:
       radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.9), transparent 55%),
-      {{ section.settings.color_icon_bg | default: '#F6F1F2' }};
-    border: 1px solid rgba(111, 75, 83, 0.18);
+      {{ section.settings.color_icon_bg | default: '#FDF9F2' }};
+    border: 1px solid rgba(200, 164, 90, 0.18);
     box-shadow:
       inset 0 0 0 4px rgba(255, 255, 255, 0.55),
-      0 6px 18px rgba(49, 36, 38, 0.07);
+      0 6px 18px rgba(42, 42, 42, 0.07);
     overflow: visible;
     transition: transform 0.65s var(--bpp-ease), box-shadow 0.65s var(--bpp-ease), border-color 0.65s var(--bpp-ease);
   }
@@ -414,10 +414,10 @@
     @media (hover: hover) {
       #bpp-{{ sid }} .bpp__icon:hover .bpp__icon-media {
         transform: translateY(-4px);
-        border-color: rgba(111, 75, 83, 0.4);
+        border-color: rgba(200, 164, 90, 0.4);
         box-shadow:
           inset 0 0 0 4px rgba(255, 255, 255, 0.7),
-          0 12px 28px rgba(49, 36, 38, 0.12);
+          0 12px 28px rgba(42, 42, 42, 0.12);
       }
     }
   {% endif %}
@@ -1131,49 +1131,49 @@
       "type": "color",
       "id": "color_surface",
       "label": "Surface tint",
-      "default": "#EFE7DD"
+      "default": "#F3EBD8"
     },
     {
       "type": "color",
       "id": "color_heading",
       "label": "Heading",
-      "default": "#1F1A14"
+      "default": "#0E2C20"
     },
     {
       "type": "color",
       "id": "color_text",
       "label": "Body text",
-      "default": "#4A433C"
+      "default": "#5a4e44"
     },
     {
       "type": "color",
       "id": "color_label",
       "label": "Label",
-      "default": "#9A7B4F"
+      "default": "#C5A059"
     },
     {
       "type": "color",
       "id": "color_accent",
       "label": "Accent",
-      "default": "#A27780"
+      "default": "#C5A059"
     },
     {
       "type": "color",
       "id": "color_icon_title",
       "label": "Icon title",
-      "default": "#2A241C"
+      "default": "#0E2C20"
     },
     {
       "type": "color",
       "id": "color_icon_bg",
       "label": "Icon background",
-      "default": "#FBF8F4"
+      "default": "#FFFFFF"
     },
     {
       "type": "color",
       "id": "color_promise_icon",
       "label": "Promise icon color",
-      "default": "#8A6A4A"
+      "default": "#C5A059"
     },
     {
       "type": "header",

@@ -6,13 +6,13 @@
 {% style %}
   .sv-about-{{ ai_gen_id }} {
     --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
-    --sv-ink: #20181a;
-    --sv-body: #61474d;
-    --sv-accent: #6f4b53;
-    --sv-accent-deep: #513c40;
-    --sv-soft: #f6f1f2;
-    --sv-pale: #ece4e6;
-    --sv-line: #e3d6d9;
+    --sv-ink: #0e2c20;
+    --sv-body: #5a4e44;
+    --sv-accent: #c5a059;
+    --sv-accent-deep: #c5a059;
+    --sv-soft: #fdf9f2;
+    --sv-pale: #f3ebd8;
+    --sv-line: #f3ebd8;
     --sv-white: #ffffff;
     display: block;
     width: 100%;
@@ -615,7 +615,7 @@
     .sv-about-{{ ai_gen_id }} .sv-wa-btn:hover {
       background: var(--sv-accent);
       color: var(--sv-white);
-      border-color: #312426;
+      border-color: #a8843f;
     }
   }
 
@@ -693,7 +693,7 @@
     min-height: 52px;
     min-width: 220px;
     padding: 16px 32px;
-    background: {{ block.settings.cta_button_bg | default: '#6f4b53' }};
+    background: {{ block.settings.cta_button_bg | default: '#c5a059' }};
     color: {{ block.settings.cta_button_text | default: '#ffffff' }};
     border: 1px solid rgba(43, 43, 43, 0.35);
     border-radius: 6px;
@@ -715,8 +715,8 @@
 
   @media (hover: hover) {
     .sv-about-{{ ai_gen_id }} .sv-cta-btn:hover {
-      background: {{ block.settings.cta_button_hover | default: '#513c40' }};
-      border-color: #312426;
+      background: {{ block.settings.cta_button_hover | default: '#c5a059' }};
+      border-color: #a8843f;
     }
 
     .sv-about-{{ ai_gen_id }} .sv-cta-btn:hover svg {
@@ -747,9 +747,9 @@
     background-color: #ffffff;
     border: none;
     border-radius: 50%;
-    color: #6f4b53;
+    color: #c5a059;
     text-decoration: none;
-    box-shadow: 0 8px 20px rgba(49, 36, 38, 0.06);
+    box-shadow: 0 8px 20px rgba(42, 42, 42, 0.06);
     transition:
       transform 0.4s var(--sv-ease),
       background-color 0.4s var(--sv-ease),
@@ -768,15 +768,15 @@
     .sv-about-{{ ai_gen_id }} .list-social.sv-socials .list-social__link:hover,
     .sv-about-{{ ai_gen_id }} .sv-social:hover {
       transform: translateY(-2px);
-      background-color: #ece4e6;
-      color: #513c40;
-      box-shadow: 0 12px 26px rgba(49, 36, 38, 0.09);
+      background-color: #f3ebd8;
+      color: #c5a059;
+      box-shadow: 0 12px 26px rgba(42, 42, 42, 0.09);
     }
   }
 
   .sv-about-{{ ai_gen_id }} .list-social.sv-socials .list-social__link:focus-visible,
   .sv-about-{{ ai_gen_id }} .sv-social:focus-visible {
-    outline: 2px solid #6f4b53;
+    outline: 2px solid #c5a059;
     outline-offset: 3px;
   }
 
@@ -1128,9 +1128,9 @@
     { "type": "textarea", "id": "cta_text", "label": "Text", "default": "Browse our jewellery collection and find a piece you love." },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop the collection" },
     { "type": "url", "id": "cta_link", "label": "Button link" },
-    { "type": "color", "id": "cta_button_bg", "label": "Button background", "default": "#6F4B53" },
+    { "type": "color", "id": "cta_button_bg", "label": "Button background", "default": "#C5A059" },
     { "type": "color", "id": "cta_button_text", "label": "Button text", "default": "#FFFFFF" },
-    { "type": "color", "id": "cta_button_hover", "label": "Button hover", "default": "#513C40" },
+    { "type": "color", "id": "cta_button_hover", "label": "Button hover", "default": "#C5A059" },
     { "type": "textarea", "id": "social_text", "label": "Social note", "default": "Follow along and tag us. We love seeing you shine." },
     { "type": "paragraph", "content": "Social profile links are managed in Theme settings → Social media. Update them once to apply site-wide." }
   ],

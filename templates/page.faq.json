@@ -24,7 +24,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Are these product photos real?",
-            "answer": "<p>Yes. All images on our website are real photographs of the actual products. We do not use AI for product images. Slight colour differences can happen because of screen settings or lighting.</p>"
+            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background — not AI. Slight colour differences can still happen because of screen settings or lighting, and we’re always honest about that.</p>"
           }
         },
         "faq_2": {
@@ -86,8 +86,8 @@
         "faq_10": {
           "type": "faq_item",
           "settings": {
-            "question": "How can I contact Srivaya for support?",
-            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:thesrivaya@gmail.com\">thesrivaya@gmail.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
+            "question": "How can I contact Ashtitva for support?",
+            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:hello@theashtitva.com\">hello@theashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
           }
         }
       },
@@ -104,9 +104,9 @@
         "faq_10"
       ],
       "settings": {
-        "eyebrow": "Support",
-        "heading": "Frequently Asked Questions",
-        "subheading": "Quick answers about our products, shipping, returns, and support.",
+        "eyebrow": "We’re here for you",
+        "heading": "Questions, answered with care",
+        "subheading": "Honest answers about our jewellery, photography, shipping, returns, and support.",
         "heading_alignment": "center",
         "heading_size_desktop": 40,
         "heading_size_mobile": 28,
@@ -116,16 +116,16 @@
         "show_button": false,
         "button_label": "View all FAQs",
         "button_link": "",
-        "button_bg": "#6f4b53",
+        "button_bg": "#c5a059",
         "button_text": "#ffffff",
-        "button_hover": "#513c40",
+        "button_hover": "#a8843f",
         "color_background": "#ffffff",
-        "color_surface": "#f6f1f2",
-        "color_heading": "#20181a",
-        "color_text": "#61474d",
-        "color_muted": "#926b73",
-        "color_accent": "#6f4b53",
-        "color_border": "#e3d6d9",
+        "color_surface": "#fdf9f2",
+        "color_heading": "#0e2c20",
+        "color_text": "#5a4e44",
+        "color_muted": "#8a7d72",
+        "color_accent": "#c5a059",
+        "color_border": "#f3ebd8",
         "padding_top_desktop": 72,
         "padding_bottom_desktop": 88,
         "padding_top_mobile": 48,

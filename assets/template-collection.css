@@ -66,12 +66,12 @@
 
 /* Empty collection artwork state */
 .sv-empty {
-  --sv-ink: #312426;
-  --sv-body: #61474d;
-  --sv-muted: #926b73;
-  --sv-cta: #6f4b53;
-  --sv-cta-hover: #513c40;
-  --sv-soft: #f6f1f2;
+  --sv-ink: #a8843f;
+  --sv-body: #5a4e44;
+  --sv-muted: #8a7d72;
+  --sv-cta: #c5a059;
+  --sv-cta-hover: #c5a059;
+  --sv-soft: #fdf9f2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,7 +144,7 @@
   padding: 1.6rem 2rem;
   border-radius: 6px;
   background: var(--sv-cta);
-  color: #f6f1f2;
+  color: #fdf9f2;
   font-size: 1.15rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -155,7 +155,7 @@
 
 .sv-empty__btn:hover {
   background: var(--sv-cta-hover);
-  color: #f6f1f2;
+  color: #fdf9f2;
 }
 
 @media screen and (max-width: 989px) {

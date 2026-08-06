@@ -26,8 +26,8 @@
     --crvm-pad-bottom: {{ section.settings.padding_bottom }}px;
     --crvm-desktop-visible: {{ section.settings.desktop_card_count }};
     --crvm-mobile-visible: {{ section.settings.mobile_card_count | times: 0.1 }};
-    --crvm-shadow: 0 2px 10px rgba(49, 36, 38, 0.04);
-    --crvm-shadow-hover: 0 8px 24px rgba(49, 36, 38, 0.08);
+    --crvm-shadow: 0 2px 10px rgba(42, 42, 42, 0.04);
+    --crvm-shadow-hover: 0 8px 24px rgba(42, 42, 42, 0.08);
   }
 
   #crvm-{{ sid }} {
@@ -170,7 +170,7 @@
     width: 100%;
     aspect-ratio: 4 / 5;
     overflow: hidden;
-    background: color-mix(in srgb, var(--crvm-accent) 8%, #f6f1f2);
+    background: color-mix(in srgb, var(--crvm-accent) 8%, #fdf9f2);
   }
 
   #crvm-{{ sid }} .crvm__media img {
@@ -927,7 +927,7 @@
       "type": "color",
       "id": "card_border_color",
       "label": "Card border color",
-      "default": "#EDE6DC"
+      "default": "#F3EBD8"
     },
     {
       "type": "color",
@@ -957,7 +957,7 @@
       "type": "color",
       "id": "accent_color",
       "label": "Accent color",
-      "default": "#A27780"
+      "default": "#C5A059"
     },
     {
       "type": "header",
