@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "1779598554163c0064": {
@@ -6,14 +15,15 @@
         "ai_gen_block_1691126_JJgkjq": {
           "type": "ai_gen_block_1691126",
           "settings": {
-            "desktop_image": "shopify://shop_images/95ed6daff20e88d4e74432006482b3cb89951746069dbc491ac911d6a8e46002.png",
-            "mobile_image": "shopify://shop_images/95ed6daff20e88d4e74432006482b3cb89951746069dbc491ac911d6a8e46002.png",
+            "use_theme_hero_banner": true,
+            "desktop_image": "shopify://shop_images/7f9aea333133e1e559b0427972959e054dd906bcdb6f90b128bc6dcf93a6f5db.png",
+            "mobile_image": "shopify://shop_images/7f9aea333133e1e559b0427972959e054dd906bcdb6f90b128bc6dcf93a6f5db.png",
             "desktop_height": 750,
             "desktop_height_unit": "px",
             "mobile_height": 550,
             "mobile_height_unit": "px",
             "subtext": "Jewellery That Celebrates You",
-            "heading": "Feel beautiful.\nFeel confident.\nFeel you.",
+            "heading": "Feel beautiful.Feel confident.Feel you.",
             "description": "Thoughtfully curated jewellery for the moments you celebrate, the people you love, and the person you are.",
             "button_text": "Find your piece",
             "button_link": "shopify://collections/all",
@@ -42,10 +52,6 @@
             "mobile_heading_weight": "400",
             "mobile_heading_color": "#f7f3e9",
             "mobile_heading_line_height": 1.1,
-            "desktop_description_size": 16,
-            "desktop_description_color": "#f7f3e9",
-            "mobile_description_size": 14,
-            "mobile_description_color": "#f7f3e9",
             "desktop_button_padding_vertical": 14,
             "desktop_button_padding_horizontal": 28,
             "desktop_button_font_size": 13,
@@ -58,10 +64,13 @@
             "secondary_button_border_color": "#b89a5a",
             "secondary_button_text_color": "#f7f3e9",
             "button_border_radius": 4,
+            "desktop_description_color": "#f7f3e9",
+            "desktop_description_size": 16,
+            "mobile_description_color": "#f7f3e9",
+            "mobile_description_size": 14,
             "overlay_color": "#071713",
             "overlay_opacity": 20,
-            "text_shadow_enabled": true,
-            "use_theme_hero_banner": true
+            "text_shadow_enabled": true
           },
           "blocks": {}
         }
@@ -378,9 +387,6 @@
         "heading": "See it. Love it. Trust it.",
         "description": "Every Ashtitva piece is photographed from the real product, so what catches your eye is what arrives at your door.",
         "benefits_aria_label": "Why real photography matters",
-        "image_desktop": "shopify://shop_images/Real_Photography.jpg",
-        "image_stack_2": "shopify://shop_images/Myra_Gold-Plated_AD_Floral_Necklace_Set1.4.jpg",
-        "image_stack_3": "shopify://shop_images/MyraGold-PlatedADFloralNecklaceSet.jpg",
         "image_alt": "Studio photograph of real jewellery",
         "image_height": 620,
         "image_aspect": "portrait",
@@ -412,7 +418,7 @@
         "color_label": "#d8c38f",
         "color_accent": "#d8c38f",
         "color_blush": "#0b2924",
-        "color_icon_bg": "transparent",
+        "color_icon_bg": "rgba(0,0,0,0)",
         "color_icon": "#d8c38f",
         "color_benefit": "#f7f3e9",
         "border_radius": 2,
@@ -476,196 +482,6 @@
         "padding_bottom": 0
       }
     },
-    "store_metrics_Azz743": {
-      "type": "store-metrics",
-      "disabled": true,
-      "blocks": {
-        "metric_cdQwLt": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Jewellery orders yesterday",
-            "subtext": "From last day\u2019s closing"
-          }
-        },
-        "metric_G7PVgL": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Pieces on their way",
-            "subtext": "Packed with care"
-          }
-        },
-        "metric_BVRzKc": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Orders till last closing",
-            "subtext": "Counted transparently"
-          }
-        },
-        "metric_xBGkhP": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Customers who returned",
-            "subtext": "Love that brings them back"
-          }
-        }
-      },
-      "block_order": [
-        "metric_cdQwLt",
-        "metric_G7PVgL",
-        "metric_BVRzKc",
-        "metric_xBGkhP"
-      ],
-      "name": "Store Metrics",
-      "settings": {
-        "label": "Honesty, every day",
-        "heading": "Trust, told in numbers",
-        "description": "After every closing day, we share a simple snapshot of Ashtitva \u2014 honest figures, no filters \u2014 so you can shop with clarity and confidence.",
-        "text_alignment": "center",
-        "metrics_alignment": "center",
-        "show_index": true,
-        "show_stat_accent": true,
-        "divider_length": "medium",
-        "full_width": false,
-        "container_width": 1200,
-        "header_max_width": 720,
-        "header_spacing": 36,
-        "columns_desktop": 4,
-        "columns_tablet": "2",
-        "column_gap": 0,
-        "card_radius": 0,
-        "card_padding_y": 40,
-        "card_padding_x": 24,
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 56,
-        "padding_bottom_mobile": 56,
-        "color_background": "#fcfaf4",
-        "color_surface": "#ffffff",
-        "color_border": "#e6dfd0",
-        "color_label": "#b89a5a",
-        "color_heading": "#18302a",
-        "color_stat": "#18302a",
-        "color_text": "#3a4f48",
-        "color_accent": "#b89a5a",
-        "heading_size_desktop": 40,
-        "heading_size_mobile": 32,
-        "heading_weight": "400",
-        "stat_size_desktop": 48,
-        "stat_size_mobile": 36,
-        "stat_weight": "300",
-        "label_size": 11,
-        "text_size": 14,
-        "enable_count_up": true
-      }
-    },
-    "creator_reviews_marquee_LP6jgD": {
-      "type": "creator-reviews-marquee",
-      "disabled": true,
-      "blocks": {
-        "creator_review_yXVWTN": {
-          "type": "creator_review",
-          "settings": {
-            "creator_name": "Aditi Sharma",
-            "social_handle": "@aditi_style",
-            "creator_type": "Fashion Creator",
-            "followers": "145K",
-            "review": "I feel more confident every time I wear it \u2014 the compliments never stop.",
-            "platform": "instagram",
-            "verified": true,
-            "platform_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "creator_review_yXVWTN"
-      ],
-      "name": "Creator Reviews Marquee",
-      "settings": {
-        "title": "Styled with confidence",
-        "subtitle": "Real moments from creators who wear Ashtitva and feel beautiful doing it.",
-        "background_color": "#f7f3e9",
-        "card_background": "#fcfaf4",
-        "card_border_color": "#e6dfd0",
-        "title_color": "#18302a",
-        "subtitle_color": "#3a4f48",
-        "text_color": "#18302a",
-        "muted_color": "#b89a5a",
-        "accent_color": "#b89a5a",
-        "card_width": 340,
-        "card_gap": 24,
-        "desktop_card_count": 4,
-        "mobile_card_count": 13,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "animation_speed": 50,
-        "pause_on_hover": true,
-        "enable_fade_edges": true,
-        "enable_hover_effect": true
-      }
-    },
-    "customer_reviews_marquee_9Q6UDy": {
-      "type": "customer-reviews-marquee",
-      "disabled": true,
-      "blocks": {
-        "review_Q7dDMN": {
-          "type": "review",
-          "settings": {
-            "customer_name": "Priya Sharma",
-            "review_text": "The quality made me feel so confident. Exactly as beautiful as the photos."
-          }
-        }
-      },
-      "block_order": [
-        "review_Q7dDMN"
-      ],
-      "name": "Customer Reviews Marquee",
-      "settings": {
-        "heading": "Loved by people like you",
-        "description": "Real stories from customers who chose pieces to celebrate themselves and the people they love.",
-        "background_color": "#f7f3e9",
-        "heading_color": "#18302a",
-        "description_color": "#3a4f48",
-        "pill_background": "#fcfaf4",
-        "pill_border": "#b89a5a",
-        "name_color": "#18302a",
-        "review_text_color": "#3a4f48",
-        "avatar_background": "#123c32",
-        "avatar_text_color": "#f7f3e9",
-        "gold_accent": "#b89a5a",
-        "show_gold_border": true,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "border_radius": 100,
-        "show_shadow": false,
-        "desktop_speed": 55,
-        "mobile_speed": 70,
-        "pause_on_hover": true
-      }
-    },
     "brand_promise_ipNWDk": {
       "type": "brand-promise",
       "blocks": {
@@ -706,7 +522,7 @@
           "settings": {
             "enabled": true,
             "icon_style": "shipping",
-            "title": "Free Shipping \u20b9499+"
+            "title": "Free Shipping ₹499+"
           }
         },
         "icon_photos": {
@@ -730,7 +546,7 @@
       "settings": {
         "label": "Our promise",
         "heading": "Feel loved in every interaction",
-        "text": "<p>Packed with care, sent with love, and always here for you \u2014 because jewellery should help you feel confident, beautiful, and celebrated.</p>",
+        "text": "<p>Packed with care, sent with love, and always here for you — because jewellery should help you feel confident, beautiful, and celebrated.</p>",
         "copy_alignment": "center",
         "show_promise_icon": true,
         "promise_icon": "check",
@@ -783,7 +599,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Are these product photos real?",
-            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background \u2014 not AI. Slight colour differences can still happen because of screen settings or lighting, and we\u2019re always honest about that.</p>"
+            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background — not AI. Slight colour differences can still happen because of screen settings or lighting, and we’re always honest about that.</p>"
           }
         },
         "faq_2": {
@@ -797,14 +613,14 @@
           "type": "faq_item",
           "settings": {
             "question": "What are the shipping charges?",
-            "answer": "<p>We offer FREE shipping across India on all prepaid orders above \u20b9499.</p><p>For orders below \u20b9499, a standard shipping charge will be applied at checkout.</p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase. There are no hidden charges.</p>"
+            "answer": "<p>We offer FREE shipping across India on all prepaid orders above ₹499.</p><p>For orders below ₹499, a standard shipping charge will be applied at checkout.</p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase. There are no hidden charges.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
             "question": "How long will it take to receive my order?",
-            "answer": "<p>Orders are usually processed within 1\u20132 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3\u20137 business days across India.</p><p>Once your order is shipped, tracking details will be shared via SMS and Email.</p>"
+            "answer": "<p>Orders are usually processed within 1–2 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3–7 business days across India.</p><p>Once your order is shipped, tracking details will be shared via SMS and Email.</p>"
           }
         },
         "faq_5": {
@@ -817,22 +633,22 @@
         "faq_6": {
           "type": "faq_item",
           "settings": {
-            "question": "What if I don\u2019t like the design or want a different product?",
-            "answer": "<p>We understand that choosing jewellery online can sometimes be difficult. If the design does not meet your expectations or you\u2019d prefer a different style, we\u2019re here to help.</p><p>You can request a return or exchange within 3 days of delivery, provided the jewellery is unused, unworn, and returned in its original condition with all tags and packaging intact.</p><p><strong>For Exchanges</strong></p><ul><li>You may exchange your product for another design (subject to availability).</li><li>Any price difference will be adjusted accordingly.</li><li>No shipping charges will be deducted for approved exchanges.</li></ul><p><strong>For Returns</strong></p><ul><li>If you choose a refund instead of an exchange, a flat \u20b999 shipping and handling charge will be deducted from your refund amount, even if your original order qualified for free shipping (orders above \u20b9499).</li><li>This charge covers the logistics and return handling costs involved in processing your return.</li></ul><p>To get started, contact us on WhatsApp with your Order ID, and our team will guide you through the process.</p>"
+            "question": "What if I don’t like the design or want a different product?",
+            "answer": "<p>We understand that choosing jewellery online can sometimes be difficult. If the design does not meet your expectations or you’d prefer a different style, we’re here to help.</p><p>You can request a return or exchange within 3 days of delivery, provided the jewellery is unused, unworn, and returned in its original condition with all tags and packaging intact.</p><p><strong>For Exchanges</strong></p><ul><li>You may exchange your product for another design (subject to availability).</li><li>Any price difference will be adjusted accordingly.</li><li>No shipping charges will be deducted for approved exchanges.</li></ul><p><strong>For Returns</strong></p><ul><li>If you choose a refund instead of an exchange, a flat ₹99 shipping and handling charge will be deducted from your refund amount, even if your original order qualified for free shipping (orders above ₹499).</li><li>This charge covers the logistics and return handling costs involved in processing your return.</li></ul><p>To get started, contact us on WhatsApp with your Order ID, and our team will guide you through the process.</p>"
           }
         },
         "faq_7": {
           "type": "faq_item",
           "settings": {
             "question": "What if I receive a damaged or incorrect product?",
-            "answer": "<p>If you receive a damaged, defective, or incorrect item, please contact us within 24 hours of delivery.</p><p>Kindly share clear photographs and, if possible, an uninterrupted unboxing video to help us verify the issue quickly. Once approved, we\u2019ll arrange a replacement or suitable resolution at no additional cost.</p>"
+            "answer": "<p>If you receive a damaged, defective, or incorrect item, please contact us within 24 hours of delivery.</p><p>Kindly share clear photographs and, if possible, an uninterrupted unboxing video to help us verify the issue quickly. Once approved, we’ll arrange a replacement or suitable resolution at no additional cost.</p>"
           }
         },
         "faq_8": {
           "type": "faq_item",
           "settings": {
             "question": "When will I receive my refund?",
-            "answer": "<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5\u201310 business days.</p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.</p>"
+            "answer": "<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5–10 business days.</p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.</p>"
           }
         },
         "faq_9": {
@@ -846,7 +662,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How can I contact Ashtitva for support?",
-            "answer": "<p>We\u2019re always happy to help.</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:hello@theashtitva.com\">hello@theashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products \u2014 our team is here with warmth and honesty.</p>"
+            "answer": "<p>We’re always happy to help.</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:hello@theashtitva.com\">hello@theashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products — our team is here with warmth and honesty.</p>"
           }
         }
       },
@@ -863,7 +679,7 @@
         "faq_10"
       ],
       "settings": {
-        "eyebrow": "We\u2019re here for you",
+        "eyebrow": "We’re here for you",
         "heading": "Questions, answered with care",
         "subheading": "Honest answers about our jewellery, photography, shipping, returns, and support.",
         "heading_alignment": "center",
@@ -884,11 +700,200 @@
         "color_text": "#3a4f48",
         "color_muted": "#5c6e67",
         "color_accent": "#b89a5a",
-        "color_border": "#e6dfd0",
         "padding_top_desktop": 88,
         "padding_bottom_desktop": 96,
         "padding_top_mobile": 48,
         "padding_bottom_mobile": 56
+      }
+    },
+    "store_metrics_Azz743": {
+      "type": "store-metrics",
+      "blocks": {
+        "metric_cdQwLt": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Jewellery orders yesterday",
+            "subtext": "From last day’s closing"
+          }
+        },
+        "metric_G7PVgL": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Pieces on their way",
+            "subtext": "Packed with care"
+          }
+        },
+        "metric_BVRzKc": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Orders till last closing",
+            "subtext": "Counted transparently"
+          }
+        },
+        "metric_xBGkhP": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Customers who returned",
+            "subtext": "Love that brings them back"
+          }
+        }
+      },
+      "block_order": [
+        "metric_cdQwLt",
+        "metric_G7PVgL",
+        "metric_BVRzKc",
+        "metric_xBGkhP"
+      ],
+      "disabled": true,
+      "name": "Store Metrics",
+      "settings": {
+        "label": "Honesty, every day",
+        "heading": "Trust, told in numbers",
+        "description": "After every closing day, we share a simple snapshot of Ashtitva — honest figures, no filters — so you can shop with clarity and confidence.",
+        "text_alignment": "center",
+        "metrics_alignment": "center",
+        "show_index": true,
+        "show_stat_accent": true,
+        "divider_length": "medium",
+        "full_width": false,
+        "container_width": 1200,
+        "header_max_width": 720,
+        "header_spacing": 36,
+        "columns_desktop": 4,
+        "columns_tablet": "2",
+        "column_gap": 0,
+        "card_radius": 0,
+        "card_padding_y": 40,
+        "card_padding_x": 24,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "color_background": "#fcfaf4",
+        "color_surface": "#ffffff",
+        "color_border": "#e6dfd0",
+        "color_label": "#b89a5a",
+        "color_heading": "#18302a",
+        "color_stat": "#18302a",
+        "color_text": "#3a4f48",
+        "color_accent": "#b89a5a",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "heading_weight": "400",
+        "stat_size_desktop": 48,
+        "stat_size_mobile": 36,
+        "stat_weight": "300",
+        "label_size": 11,
+        "text_size": 14,
+        "enable_count_up": true
+      }
+    },
+    "creator_reviews_marquee_LP6jgD": {
+      "type": "creator-reviews-marquee",
+      "blocks": {
+        "creator_review_yXVWTN": {
+          "type": "creator_review",
+          "settings": {
+            "creator_name": "Aditi Sharma",
+            "social_handle": "@aditi_style",
+            "creator_type": "Fashion Creator",
+            "followers": "145K",
+            "review": "I feel more confident every time I wear it — the compliments never stop.",
+            "platform": "instagram",
+            "verified": true,
+            "platform_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "creator_review_yXVWTN"
+      ],
+      "disabled": true,
+      "name": "Creator Reviews Marquee",
+      "settings": {
+        "title": "Styled with confidence",
+        "subtitle": "Real moments from creators who wear Ashtitva and feel beautiful doing it.",
+        "background_color": "#f7f3e9",
+        "card_background": "#fcfaf4",
+        "card_border_color": "#e6dfd0",
+        "title_color": "#18302a",
+        "subtitle_color": "#3a4f48",
+        "text_color": "#18302a",
+        "muted_color": "#b89a5a",
+        "accent_color": "#b89a5a",
+        "card_width": 340,
+        "card_gap": 24,
+        "desktop_card_count": 4,
+        "mobile_card_count": 13,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "animation_speed": 50,
+        "pause_on_hover": true,
+        "enable_fade_edges": true,
+        "enable_hover_effect": true
+      }
+    },
+    "customer_reviews_marquee_9Q6UDy": {
+      "type": "customer-reviews-marquee",
+      "blocks": {
+        "review_Q7dDMN": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Priya Sharma",
+            "review_text": "The quality made me feel so confident. Exactly as beautiful as the photos."
+          }
+        }
+      },
+      "block_order": [
+        "review_Q7dDMN"
+      ],
+      "disabled": true,
+      "name": "Customer Reviews Marquee",
+      "settings": {
+        "heading": "Loved by people like you",
+        "description": "Real stories from customers who chose pieces to celebrate themselves and the people they love.",
+        "background_color": "#f7f3e9",
+        "heading_color": "#18302a",
+        "description_color": "#3a4f48",
+        "pill_background": "#fcfaf4",
+        "pill_border": "#b89a5a",
+        "name_color": "#18302a",
+        "review_text_color": "#3a4f48",
+        "avatar_background": "#123c32",
+        "avatar_text_color": "#f7f3e9",
+        "gold_accent": "#b89a5a",
+        "show_gold_border": true,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "border_radius": 100,
+        "show_shadow": false,
+        "desktop_speed": 55,
+        "mobile_speed": 70,
+        "pause_on_hover": true
       }
     }
   },
