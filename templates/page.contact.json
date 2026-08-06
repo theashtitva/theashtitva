@@ -1,1 +1,176 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":36,"padding_bottom":0}},"blocks_9Vyfiz":{"type":"_blocks","blocks":{"ai_gen_block_2712150_QaNNfB":{"type":"ai_gen_block_2712150","settings":{"hero_title":"We'd Love to Hear From You","hero_subtext":"<p>Whether you have a question about our jewellery, need help with an order, or simply wish to say hello — we are here for you.<\/p>","hero_bg_color":"#fdf9f2","hero_text_color":"#0e2c20","hero_title_size_mobile":32,"hero_title_size_desktop":40,"hero_subtext_size_mobile":16,"hero_subtext_size_desktop":18,"hero_padding_mobile":70,"hero_padding_desktop":100,"details_bg_color":"#ffffff","details_padding_mobile":60,"details_padding_desktop":80,"card_bg_color":"#ffffff","card_border_color":"#f3ebd8","card_border_thickness":1,"card_border_radius":18,"card_title_color":"#0e2c20","card_text_color":"#5a4e44","card_link_color":"#c5a059","icon_size":64,"icon_bg_color":"#fdf9f2","icon_color":"#c5a059","show_phone":true,"phone_title":"Phone","show_whatsapp":true,"whatsapp_title":"WhatsApp","show_email":true,"email_title":"Email","show_hours":true,"hours_title":"Business Hours","hours_text":"Monday to Saturday\n10:00 AM - 7:00 PM IST","show_form":true,"form_title":"Send Us a Message","form_subtitle":"Share your question or request — our team typically replies within 24 hours.","form_button_label":"Send Message","form_success_message":"Thank you. Your message has been received — we will respond within 24 hours.","trust_line":"Your trust means everything to us — just like every piece of jewellery we craft.","form_background":"#ffffff","form_border_color":"#f3ebd8","form_border_radius":18,"form_title_color":"#0e2c20","form_label_color":"#c5a059","form_input_text":"#0e2c20","form_input_background":"#fdf9f2","form_input_border":"#f3ebd8","form_input_focus_border":"#c5a059","form_button_background":"#c5a059","form_button_text_color":"#ffffff","form_button_hover_background":"#c5a059","trust_text_color":"#5a4e44","form_padding_mobile":60,"form_padding_desktop":80,"social_title":"Follow Us","social_bg_color":"#fdf9f2","social_text_color":"#0e2c20","social_title_size_mobile":28,"social_title_size_desktop":32,"social_padding_mobile":60,"social_padding_desktop":80,"social_icon_size":56,"social_icon_bg_color":"#ffffff","social_icon_color":"#c5a059","social_icon_hover_bg":"#f3ebd8"},"blocks":{}}},"block_order":["ai_gen_block_2712150_QaNNfB"],"name":"Contact us","settings":{}},"blocks_Bi6Uf3":{"type":"_blocks","blocks":{"ai_gen_block_3acf5ec_CqmjzH":{"type":"ai_gen_block_3acf5ec","name":"Contact us page","settings":{"hero_title":"We'd Love to Hear From You ✨","hero_subtitle":"Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you.","hero_title_size":40,"hero_subtitle_size":18,"hero_title_color":"#0e2c20","hero_subtitle_color":"#5a4e44","show_phone":true,"phone_title":"Phone","phone_number":"+91-XXXXXXXXXX","show_whatsapp":true,"whatsapp_title":"WhatsApp","whatsapp_text":"Tap to chat instantly!","whatsapp_link":"","show_email":true,"email_title":"Email","email_address":"support@adhouse.in","show_hours":true,"hours_title":"Business Hours","business_hours":"Monday – Saturday, 10:00 AM – 7:00 PM IST","show_address":true,"address_title":"Address","address":"","show_social":true,"social_title":"Follow Us & Stay Inspired 💎","show_form":true,"form_title":"Send Us a Message","form_button_label":"Send Message","form_success_message":"Thank you! We've received your message and will respond within 24 hours.","trust_line":"We typically respond within 24 hours. Your trust means everything to us — just like every piece of jewellery we craft.","background_color":"#ffffff","background_gradient_color":"#fdf9f2","card_background":"#ffffff","card_title_color":"#0e2c20","card_text_color":"#5a4e44","link_color":"#c5a059","social_title_color":"#0e2c20","social_icon_background":"#c5a059","social_icon_color":"#ffffff","social_icon_hover_background":"#c5a059","form_background":"#ffffff","form_title_color":"#0e2c20","form_label_color":"#0e2c20","form_input_text":"#0e2c20","form_input_background":"#fdf9f2","form_input_border":"#f3ebd8","form_input_focus_border":"#c5a059","form_button_background":"#c5a059","form_button_text_color":"#ffffff","form_button_hover_background":"#c5a059","trust_text_color":"#5a4e44","card_border_radius":18,"form_border_radius":18},"blocks":{}}},"block_order":["ai_gen_block_3acf5ec_CqmjzH"],"disabled":true,"name":"Contact us","settings":{}}},"order":["main","blocks_9Vyfiz","blocks_Bi6Uf3"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "blocks_9Vyfiz": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_2712150_QaNNfB": {
+          "type": "ai_gen_block_2712150",
+          "settings": {
+            "hero_title": "We'd Love to Hear From You",
+            "hero_subtext": "<p>Whether you have a question about our jewellery, need help with an order, or simply wish to say hello — we are here for you.</p>",
+            "hero_bg_color": "#fdf9f2",
+            "hero_text_color": "#0e2c20",
+            "hero_title_size_mobile": 32,
+            "hero_title_size_desktop": 40,
+            "hero_subtext_size_mobile": 16,
+            "hero_subtext_size_desktop": 18,
+            "hero_padding_mobile": 70,
+            "hero_padding_desktop": 100,
+            "details_bg_color": "#ffffff",
+            "details_padding_mobile": 60,
+            "details_padding_desktop": 80,
+            "card_bg_color": "#ffffff",
+            "card_border_color": "#f3ebd8",
+            "card_border_thickness": 1,
+            "card_border_radius": 18,
+            "card_title_color": "#0e2c20",
+            "card_text_color": "#5a4e44",
+            "card_link_color": "#c5a059",
+            "icon_size": 64,
+            "icon_bg_color": "#fdf9f2",
+            "icon_color": "#c5a059",
+            "show_phone": true,
+            "phone_title": "Phone",
+            "show_whatsapp": true,
+            "whatsapp_title": "WhatsApp",
+            "show_email": true,
+            "email_title": "Email",
+            "show_hours": true,
+            "hours_title": "Business Hours",
+            "hours_text": "Monday to Saturday\n10:00 AM - 7:00 PM IST",
+            "show_form": true,
+            "form_title": "Send Us a Message",
+            "form_subtitle": "Share your question or request — our team typically replies within 24 hours.",
+            "form_button_label": "Send Message",
+            "form_success_message": "Thank you. Your message has been received — we will respond within 24 hours.",
+            "trust_line": "Your trust means everything to us — just like every piece of jewellery we craft.",
+            "form_background": "#ffffff",
+            "form_border_color": "#f3ebd8",
+            "form_border_radius": 18,
+            "form_title_color": "#0e2c20",
+            "form_label_color": "#c5a059",
+            "form_input_text": "#0e2c20",
+            "form_input_background": "#fdf9f2",
+            "form_input_border": "#f3ebd8",
+            "form_input_focus_border": "#c5a059",
+            "form_button_background": "#c5a059",
+            "form_button_text_color": "#ffffff",
+            "form_button_hover_background": "#c5a059",
+            "trust_text_color": "#5a4e44",
+            "form_padding_mobile": 60,
+            "form_padding_desktop": 80,
+            "social_title": "Follow Us",
+            "social_bg_color": "#fdf9f2",
+            "social_text_color": "#0e2c20",
+            "social_title_size_mobile": 28,
+            "social_title_size_desktop": 32,
+            "social_padding_mobile": 60,
+            "social_padding_desktop": 80,
+            "social_icon_size": 56,
+            "social_icon_bg_color": "#ffffff",
+            "social_icon_color": "#c5a059",
+            "social_icon_hover_bg": "#f3ebd8"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_2712150_QaNNfB"
+      ],
+      "name": "Contact us",
+      "settings": {}
+    },
+    "blocks_Bi6Uf3": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_3acf5ec_CqmjzH": {
+          "type": "ai_gen_block_3acf5ec",
+          "name": "Contact us page",
+          "settings": {
+            "hero_title": "We'd Love to Hear From You ✨",
+            "hero_subtitle": "Whether you have a question about our jewellery, need help with your order, or just want to say hello — we're always here for you.",
+            "hero_title_size": 40,
+            "hero_subtitle_size": 18,
+            "hero_title_color": "#0e2c20",
+            "hero_subtitle_color": "#5a4e44",
+            "show_phone": true,
+            "phone_title": "Phone",
+            "phone_number": "+91-XXXXXXXXXX",
+            "show_whatsapp": true,
+            "whatsapp_title": "WhatsApp",
+            "whatsapp_text": "Tap to chat instantly!",
+            "whatsapp_link": "",
+            "show_email": true,
+            "email_title": "Email",
+            "email_address": "support@adhouse.in",
+            "show_hours": true,
+            "hours_title": "Business Hours",
+            "business_hours": "Monday – Saturday, 10:00 AM – 7:00 PM IST",
+            "show_address": true,
+            "address_title": "Address",
+            "address": "",
+            "show_social": true,
+            "social_title": "Follow Us & Stay Inspired 💎",
+            "show_form": true,
+            "form_title": "Send Us a Message",
+            "form_button_label": "Send Message",
+            "form_success_message": "Thank you! We've received your message and will respond within 24 hours.",
+            "trust_line": "We typically respond within 24 hours. Your trust means everything to us — just like every piece of jewellery we craft.",
+            "background_color": "#ffffff",
+            "background_gradient_color": "#fdf9f2",
+            "card_background": "#ffffff",
+            "card_title_color": "#0e2c20",
+            "card_text_color": "#5a4e44",
+            "link_color": "#c5a059",
+            "social_title_color": "#0e2c20",
+            "social_icon_background": "#c5a059",
+            "social_icon_color": "#ffffff",
+            "social_icon_hover_background": "#c5a059",
+            "form_background": "#ffffff",
+            "form_title_color": "#0e2c20",
+            "form_label_color": "#0e2c20",
+            "form_input_text": "#0e2c20",
+            "form_input_background": "#fdf9f2",
+            "form_input_border": "#f3ebd8",
+            "form_input_focus_border": "#c5a059",
+            "form_button_background": "#c5a059",
+            "form_button_text_color": "#ffffff",
+            "form_button_hover_background": "#c5a059",
+            "trust_text_color": "#5a4e44",
+            "card_border_radius": 18,
+            "form_border_radius": 18
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_3acf5ec_CqmjzH"
+      ],
+      "disabled": true,
+      "name": "Contact us",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "blocks_9Vyfiz",
+    "blocks_Bi6Uf3"
+  ]
+}
