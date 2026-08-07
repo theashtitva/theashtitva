@@ -850,7 +850,7 @@
         "mobile_card_count": 13,
         "padding_top": 72,
         "padding_bottom": 72,
-        "animation_speed": 50,
+        "animation_speed": 20,
         "pause_on_hover": true,
         "enable_fade_edges": true,
         "enable_hover_effect": true
