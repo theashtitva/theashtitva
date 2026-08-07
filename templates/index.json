@@ -70,8 +70,7 @@
             "mobile_description_size": 14,
             "overlay_color": "#071713",
             "overlay_opacity": 20,
-            "text_shadow_enabled": true,
-            "use_theme_hero_banner": false
+            "text_shadow_enabled": true
           },
           "blocks": {}
         }
@@ -833,7 +832,6 @@
       "block_order": [
         "creator_review_yXVWTN"
       ],
-      "disabled": true,
       "name": "Creator Reviews Marquee",
       "settings": {
         "title": "Styled with confidence",
@@ -872,7 +870,6 @@
       "block_order": [
         "review_Q7dDMN"
       ],
-      "disabled": true,
       "name": "Customer Reviews Marquee",
       "settings": {
         "heading": "Loved by people like you",
