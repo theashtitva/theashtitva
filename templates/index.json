@@ -216,74 +216,41 @@
     "perfect_fit_audience_GJxzHh": {
       "type": "perfect-fit-audience",
       "blocks": {
-        "audience_bridal": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "necklace",
-            "title": "Bridal",
-            "support_text": "For your most meaningful day",
-            "icon": "bride"
-          }
-        },
         "audience_festive": {
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "earrings",
-            "title": "Festive",
+            "collection": "gold-glam",
+            "title": "Gold Glam",
             "support_text": "Celebrate with light and colour",
             "icon": "festive"
+          }
+        },
+        "audience_bridal": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "silver-elegance",
+            "title": "Silver Elegance",
+            "support_text": "For your most meaningful day",
+            "icon": "bride"
           }
         },
         "audience_guest": {
           "type": "audience",
           "settings": {
             "enabled": true,
-            "collection": "necklace",
-            "title": "Wedding Guest",
+            "collection": "rose-gold",
+            "title": "Rose Gold",
             "support_text": "Elegant enough to be remembered",
             "icon": "guest"
-          }
-        },
-        "audience_gifting": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "birthday-collection",
-            "title": "Gifting",
-            "support_text": "A piece that says I love you",
-            "icon": "gift"
-          }
-        },
-        "audience_everyday": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "rings",
-            "title": "Everyday Elegance",
-            "support_text": "Beauty for the everyday you",
-            "icon": "everyday"
-          }
-        },
-        "audience_celebrations": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "braclets",
-            "title": "Celebrations",
-            "support_text": "Moments that deserve to shine",
-            "icon": "party"
           }
         }
       },
       "block_order": [
-        "audience_bridal",
         "audience_festive",
-        "audience_guest",
-        "audience_gifting",
-        "audience_everyday",
-        "audience_celebrations"
+        "audience_bridal",
+        "audience_guest"
       ],
       "name": "Perfect Fit Audience",
       "settings": {
@@ -484,6 +451,111 @@
         "color_scheme": "scheme-2",
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "store_metrics_Azz743": {
+      "type": "store-metrics",
+      "blocks": {
+        "metric_cdQwLt": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Jewellery orders yesterday",
+            "subtext": "From last day’s closing"
+          }
+        },
+        "metric_G7PVgL": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Pieces on their way",
+            "subtext": "Packed with care"
+          }
+        },
+        "metric_BVRzKc": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Orders till last closing",
+            "subtext": "Counted transparently"
+          }
+        },
+        "metric_xBGkhP": {
+          "type": "metric",
+          "settings": {
+            "enabled": true,
+            "stat": "0",
+            "prefix": "",
+            "suffix": "",
+            "count_value": "0",
+            "count_decimals": 0,
+            "caption": "Customers who returned",
+            "subtext": "Love that brings them back"
+          }
+        }
+      },
+      "block_order": [
+        "metric_cdQwLt",
+        "metric_G7PVgL",
+        "metric_BVRzKc",
+        "metric_xBGkhP"
+      ],
+      "name": "Store Metrics",
+      "settings": {
+        "label": "Honesty, every day",
+        "heading": "Trust, told in numbers",
+        "description": "After every closing day, we share a simple snapshot of Ashtitva — honest figures, no filters — so you can shop with clarity and confidence.",
+        "text_alignment": "center",
+        "metrics_alignment": "center",
+        "show_index": true,
+        "show_stat_accent": true,
+        "divider_length": "medium",
+        "full_width": false,
+        "container_width": 1200,
+        "header_max_width": 720,
+        "header_spacing": 36,
+        "columns_desktop": 4,
+        "columns_tablet": "2",
+        "column_gap": 0,
+        "card_radius": 0,
+        "card_padding_y": 40,
+        "card_padding_x": 24,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 56,
+        "padding_bottom_mobile": 56,
+        "color_background": "#fcfaf4",
+        "color_surface": "#ffffff",
+        "color_border": "#e6dfd0",
+        "color_label": "#b89a5a",
+        "color_heading": "#18302a",
+        "color_stat": "#18302a",
+        "color_text": "#3a4f48",
+        "color_accent": "#b89a5a",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 32,
+        "heading_weight": "400",
+        "stat_size_desktop": 48,
+        "stat_size_mobile": 36,
+        "stat_weight": "300",
+        "label_size": 11,
+        "text_size": 14,
+        "enable_count_up": true
       }
     },
     "faq_home": {
@@ -708,111 +780,6 @@
         "text_size": 15,
         "label_size": 12,
         "icon_title_size": 14
-      }
-    },
-    "store_metrics_Azz743": {
-      "type": "store-metrics",
-      "blocks": {
-        "metric_cdQwLt": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Jewellery orders yesterday",
-            "subtext": "From last day’s closing"
-          }
-        },
-        "metric_G7PVgL": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Pieces on their way",
-            "subtext": "Packed with care"
-          }
-        },
-        "metric_BVRzKc": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Orders till last closing",
-            "subtext": "Counted transparently"
-          }
-        },
-        "metric_xBGkhP": {
-          "type": "metric",
-          "settings": {
-            "enabled": true,
-            "stat": "0",
-            "prefix": "",
-            "suffix": "",
-            "count_value": "0",
-            "count_decimals": 0,
-            "caption": "Customers who returned",
-            "subtext": "Love that brings them back"
-          }
-        }
-      },
-      "block_order": [
-        "metric_cdQwLt",
-        "metric_G7PVgL",
-        "metric_BVRzKc",
-        "metric_xBGkhP"
-      ],
-      "name": "Store Metrics",
-      "settings": {
-        "label": "Honesty, every day",
-        "heading": "Trust, told in numbers",
-        "description": "After every closing day, we share a simple snapshot of Ashtitva — honest figures, no filters — so you can shop with clarity and confidence.",
-        "text_alignment": "center",
-        "metrics_alignment": "center",
-        "show_index": true,
-        "show_stat_accent": true,
-        "divider_length": "medium",
-        "full_width": false,
-        "container_width": 1200,
-        "header_max_width": 720,
-        "header_spacing": 36,
-        "columns_desktop": 4,
-        "columns_tablet": "2",
-        "column_gap": 0,
-        "card_radius": 0,
-        "card_padding_y": 40,
-        "card_padding_x": 24,
-        "padding_top_desktop": 80,
-        "padding_bottom_desktop": 80,
-        "padding_top_mobile": 56,
-        "padding_bottom_mobile": 56,
-        "color_background": "#fcfaf4",
-        "color_surface": "#ffffff",
-        "color_border": "#e6dfd0",
-        "color_label": "#b89a5a",
-        "color_heading": "#18302a",
-        "color_stat": "#18302a",
-        "color_text": "#3a4f48",
-        "color_accent": "#b89a5a",
-        "heading_size_desktop": 40,
-        "heading_size_mobile": 32,
-        "heading_weight": "400",
-        "stat_size_desktop": 48,
-        "stat_size_mobile": 36,
-        "stat_weight": "300",
-        "label_size": 11,
-        "text_size": 14,
-        "enable_count_up": true
       }
     },
     "creator_reviews_marquee_LP6jgD": {
