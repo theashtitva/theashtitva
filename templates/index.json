@@ -486,116 +486,6 @@
         "padding_bottom": 0
       }
     },
-    "brand_promise_ipNWDk": {
-      "type": "brand-promise",
-      "blocks": {
-        "icon_gst": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "icon_style": "gst",
-            "title": "GST Registered"
-          }
-        },
-        "icon_whatsapp": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "icon_style": "whatsapp",
-            "title": "WhatsApp Support"
-          }
-        },
-        "icon_packaging": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "icon_style": "packaging",
-            "title": "Secure Packaging"
-          }
-        },
-        "icon_returns": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "icon_style": "returns",
-            "title": "Easy Returns"
-          }
-        },
-        "icon_shipping": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "icon_style": "shipping",
-            "title": "Free Shipping ₹499+"
-          }
-        },
-        "icon_photos": {
-          "type": "icon",
-          "settings": {
-            "enabled": true,
-            "icon_style": "photos",
-            "title": "Real Product Photos"
-          }
-        }
-      },
-      "block_order": [
-        "icon_gst",
-        "icon_whatsapp",
-        "icon_packaging",
-        "icon_returns",
-        "icon_shipping",
-        "icon_photos"
-      ],
-      "name": "Brand Promise",
-      "settings": {
-        "label": "Our promise",
-        "heading": "Feel loved in every interaction",
-        "text": "<p>Packed with care, sent with love, and always here for you — because jewellery should help you feel confident, beautiful, and celebrated.</p>",
-        "copy_alignment": "center",
-        "show_promise_icon": true,
-        "promise_icon": "check",
-        "promise_icon_size": 64,
-        "media_mode": "icons",
-        "image_alt": "Our brand promise",
-        "image_aspect": "portrait",
-        "image_fit": "cover",
-        "media_radius": 8,
-        "hover_zoom": true,
-        "enable_media_depth": false,
-        "shadow_strength": "soft",
-        "icon_size": 96,
-        "icon_gap": 28,
-        "icons_per_row_desktop": "3",
-        "icons_per_row_mobile": "2",
-        "icon_shape": "circle",
-        "icon_radius": 12,
-        "media_position": "left",
-        "full_width": false,
-        "container_width": 1200,
-        "column_gap": 48,
-        "media_max_width": 560,
-        "copy_max_width": 480,
-        "padding_top_desktop": 88,
-        "padding_bottom_desktop": 88,
-        "padding_top_mobile": 48,
-        "padding_bottom_mobile": 48,
-        "color_background": "#fcfaf4",
-        "color_surface": "#f7f3e9",
-        "color_heading": "#18302a",
-        "color_text": "#3a4f48",
-        "color_label": "#b89a5a",
-        "color_accent": "#b89a5a",
-        "color_icon_title": "#18302a",
-        "color_icon_bg": "#f7f3e9",
-        "color_promise_icon": "#b89a5a",
-        "heading_size_desktop": 40,
-        "heading_size_mobile": 28,
-        "heading_weight": "400",
-        "text_size": 15,
-        "label_size": 12,
-        "icon_title_size": 14
-      }
-    },
     "faq_home": {
       "type": "faq",
       "blocks": {
@@ -708,6 +598,116 @@
         "padding_bottom_desktop": 96,
         "padding_top_mobile": 48,
         "padding_bottom_mobile": 56
+      }
+    },
+    "brand_promise_ipNWDk": {
+      "type": "brand-promise",
+      "blocks": {
+        "icon_gst": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "gst",
+            "title": "GST Registered"
+          }
+        },
+        "icon_whatsapp": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "whatsapp",
+            "title": "WhatsApp Support"
+          }
+        },
+        "icon_packaging": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "packaging",
+            "title": "Secure Packaging"
+          }
+        },
+        "icon_returns": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "returns",
+            "title": "Easy Returns"
+          }
+        },
+        "icon_shipping": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "shipping",
+            "title": "Free Shipping ₹499+"
+          }
+        },
+        "icon_photos": {
+          "type": "icon",
+          "settings": {
+            "enabled": true,
+            "icon_style": "photos",
+            "title": "Real Product Photos"
+          }
+        }
+      },
+      "block_order": [
+        "icon_gst",
+        "icon_whatsapp",
+        "icon_packaging",
+        "icon_returns",
+        "icon_shipping",
+        "icon_photos"
+      ],
+      "name": "Brand Promise",
+      "settings": {
+        "label": "Our promise",
+        "heading": "Feel loved in every interaction",
+        "text": "<p>Packed with care, sent with love, and always here for you — because jewellery should help you feel confident, beautiful, and celebrated.</p>",
+        "copy_alignment": "center",
+        "show_promise_icon": true,
+        "promise_icon": "check",
+        "promise_icon_size": 64,
+        "media_mode": "icons",
+        "image_alt": "Our brand promise",
+        "image_aspect": "portrait",
+        "image_fit": "cover",
+        "media_radius": 8,
+        "hover_zoom": true,
+        "enable_media_depth": false,
+        "shadow_strength": "soft",
+        "icon_size": 96,
+        "icon_gap": 28,
+        "icons_per_row_desktop": "3",
+        "icons_per_row_mobile": "2",
+        "icon_shape": "circle",
+        "icon_radius": 12,
+        "media_position": "left",
+        "full_width": false,
+        "container_width": 1200,
+        "column_gap": 48,
+        "media_max_width": 560,
+        "copy_max_width": 480,
+        "padding_top_desktop": 88,
+        "padding_bottom_desktop": 88,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 48,
+        "color_background": "#fcfaf4",
+        "color_surface": "#f7f3e9",
+        "color_heading": "#18302a",
+        "color_text": "#3a4f48",
+        "color_label": "#b89a5a",
+        "color_accent": "#b89a5a",
+        "color_icon_title": "#18302a",
+        "color_icon_bg": "#f7f3e9",
+        "color_promise_icon": "#b89a5a",
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 28,
+        "heading_weight": "400",
+        "text_size": 15,
+        "label_size": 12,
+        "icon_title_size": 14
       }
     },
     "store_metrics_Azz743": {
@@ -909,9 +909,9 @@
     "ash_emotional_home",
     "featured_collection_aBabXt",
     "ash_final_cta_home",
-    "brand_promise_ipNWDk",
-    "faq_home",
     "store_metrics_Azz743",
+    "faq_home",
+    "brand_promise_ipNWDk",
     "creator_reviews_marquee_LP6jgD",
     "customer_reviews_marquee_9Q6UDy"
   ]
