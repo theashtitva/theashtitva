@@ -150,7 +150,7 @@
             "grid_gap_mobile": 15,
             "container_width": 1100,
             "horizontal_padding": 20,
-            "circular_image": false,
+            "circular_image": true,
             "card_background": "#123c32",
             "card_border_width": 0,
             "card_border_color": "#e6dfd0",
