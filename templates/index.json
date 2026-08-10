@@ -132,7 +132,9 @@
               "necklace",
               "braclets",
               "rings",
-              "earrings"
+              "earrings",
+              "best-seller",
+              "frontpage"
             ],
             "show_collection_title": true,
             "show_product_count": false,
@@ -447,7 +449,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "curated-by-srivaya",
+        "collection": "best-seller",
         "products_to_show": 8,
         "title": "Pieces you'll love, moments you'll remember.",
         "heading_size": "h2",
