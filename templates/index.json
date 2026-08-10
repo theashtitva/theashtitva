@@ -188,7 +188,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "best-sellers",
+        "collection": "best-seller",
         "products_to_show": 8,
         "title": "Find something that feels like you.",
         "heading_size": "h2",
