@@ -18,21 +18,21 @@
           "type": "link_list",
           "settings": {
             "heading": "Social Medias",
-            "menu": "social-accounts"
+            "menu": ""
           }
         },
         "link_list_jybKPL": {
           "type": "link_list",
           "settings": {
             "heading": "Policies",
-            "menu": "policies"
+            "menu": ""
           }
         },
         "link_list_K3MEMG": {
           "type": "link_list",
           "settings": {
             "heading": "Help",
-            "menu": "help"
+            "menu": ""
           }
         }
       },
@@ -42,7 +42,7 @@
         "link_list_K3MEMG"
       ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-5",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
@@ -57,5 +57,7 @@
       }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }
