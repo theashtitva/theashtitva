@@ -477,6 +477,7 @@
     },
     "ash_final_cta_home": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "Final discovery CTA",
       "settings": {
         "custom_liquid": "<div class=\"ash-final-cta\"><div class=\"ash-final-cta__inner\"><h2 class=\"ash-final-cta__heading\">Find the piece that celebrates you.</h2><div class=\"ash-final-cta__actions\"><a class=\"ash-final-cta__btn\" href=\"/collections/all\">Find your piece</a><a class=\"ash-final-cta__btn ash-final-cta__btn--secondary\" href=\"/collections/best-sellers\">Shop bestsellers</a></div></div></div>",
