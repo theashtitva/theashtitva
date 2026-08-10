@@ -130,11 +130,9 @@
           "settings": {
             "collection_list": [
               "necklace",
-              "braclets",
               "rings",
               "earrings",
-              "best-seller",
-              "frontpage"
+              "kada"
             ],
             "show_collection_title": true,
             "show_product_count": false,
