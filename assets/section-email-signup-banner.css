@@ -1,24 +1,165 @@
 .email-signup-banner .newsletter-form,
 .email-signup-banner .newsletter-form__field-wrapper {
-  display: inline-block;
+  display: block;
+  width: 100%;
+}
+
+.email-signup-banner.banner {
+  min-height: 70vh;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(184, 154, 90, 0.14), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 90% 80%, rgba(18, 60, 50, 0.12), transparent 50%),
+    linear-gradient(165deg, #fcfaf4 0%, #f7f3e9 48%, #efe8d8 100%);
+}
+
+.email-signup-banner .banner__content {
+  padding: 4rem 1.5rem;
+}
+
+.email-signup-banner__box {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 3.2rem 2.4rem 2.8rem !important;
+  border: 1px solid #e6dfd0;
+  border-radius: 4px;
+  background: #fcfaf4 !important;
+  box-shadow: 0 16px 48px rgba(42, 42, 42, 0.07);
+  text-align: center;
+}
+
+.email-signup-banner__logo {
+  margin: 0 auto 1.4rem;
+}
+
+.email-signup-banner__logo-img {
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  height: auto;
+}
+
+.email-signup-banner__eyebrow {
+  margin: 0 0 0.8rem;
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b89a5a;
+}
+
+.email-signup-banner__box .email-signup-banner__heading {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #18302a;
+}
+
+.email-signup-banner__box > * + .newsletter__subheading {
+  margin-top: 1.4rem;
+}
+
+.email-signup-banner__box .newsletter__subheading p {
+  margin: 0 auto;
+  max-width: 34rem;
+  color: #3a4f48;
+  font-size: 1.45rem;
+  line-height: 1.6;
+}
+
+.email-signup-banner .newsletter-form--waitlist {
+  max-width: 34rem;
+  margin: 2.2rem auto 0;
+  align-items: stretch;
+}
+
+.email-signup-banner .newsletter-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.email-signup-banner .newsletter-form--waitlist .newsletter-form__field-wrapper .field__input {
+  padding-right: 1.5rem;
+  background: #f7f3e9;
+  border-radius: 4px;
+}
+
+.email-signup-banner .newsletter-form__submit {
+  width: 100%;
+  margin-top: 0.4rem;
+  min-height: 4.8rem;
+  border-radius: 4px !important;
+  background: #123c32 !important;
+  color: #f7f3e9 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.email-signup-banner .newsletter-form__submit:hover {
+  background: #0b2924 !important;
+}
+
+.email-signup-banner__social {
+  margin-top: 2.4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e6dfd0;
+}
+
+.email-signup-banner__social-label {
+  margin: 0 0 1.2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5c6e67;
+}
+
+.email-signup-banner__social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.email-signup-banner__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid #e6dfd0;
+  border-radius: 4px;
+  background: #f7f3e9;
+  color: #18302a !important;
+  text-decoration: none !important;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.email-signup-banner__social-link .svg-wrapper {
+  width: 1.8rem;
+  height: 1.8rem;
+  color: #123c32;
+}
+
+.email-signup-banner__social-link:hover {
+  border-color: #b89a5a;
+  background: #fff;
+  transform: translateY(-2px);
 }
 
 @media only screen and (min-width: 750px) {
   .email-signup-banner:not(.banner--desktop-transparent) .email-signup-banner__box {
     width: 100%;
+    padding: 4rem 3.6rem 3.2rem !important;
   }
-}
 
-.email-signup-banner__box .email-signup-banner__heading {
-  margin-bottom: 0;
-}
-
-.email-signup-banner__box > * + .newsletter__subheading {
-  margin-top: 2rem;
-}
-
-.email-signup-banner__box .newsletter__subheading p {
-  margin: 0;
+  .email-signup-banner__logo-img {
+    width: 170px;
+  }
 }
 
 .email-signup-banner-background {
@@ -31,10 +172,10 @@
 
 @media screen and (max-width: 749px) {
   .email-signup-banner:not(.banner--mobile-bottom) .banner__box:not(.email-signup-banner__box--no-image) {
-    background-color: transparent;
-    --color-foreground: 255, 255, 255;
-    --color-button: 255, 255, 255;
-    --color-button-text: 0, 0, 0;
+    background-color: #fcfaf4;
+    --color-foreground: 24, 48, 42;
+    --color-button: 18, 60, 50;
+    --color-button-text: 247, 243, 233;
   }
 }
 

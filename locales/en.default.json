@@ -59,8 +59,8 @@
   },
   "newsletter": {
     "label": "Email",
-    "success": "Thanks for subscribing",
-    "button_label": "Subscribe"
+    "success": "Thanks! We’ll share new designs and coupon updates with you soon.",
+    "button_label": "Notify me"
   },
   "accessibility": {
     "skip_to_text": "Skip to content",
