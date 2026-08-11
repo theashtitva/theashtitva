@@ -18,21 +18,21 @@
           "type": "link_list",
           "settings": {
             "heading": "Social Medias",
-            "menu": ""
+            "menu": "social-media"
           }
         },
         "link_list_jybKPL": {
           "type": "link_list",
           "settings": {
             "heading": "Policies",
-            "menu": ""
+            "menu": "policies"
           }
         },
         "link_list_K3MEMG": {
           "type": "link_list",
           "settings": {
             "heading": "Help",
-            "menu": ""
+            "menu": "help"
           }
         }
       },
