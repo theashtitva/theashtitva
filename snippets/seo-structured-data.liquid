@@ -1,15 +1,18 @@
 {%- comment -%}
   Organization + WebSite + navigation JSON-LD for richer Google results.
+  Includes main menu, footer menus, and key collection sitelink candidates.
 {%- endcomment -%}
 
 {%- liquid
   assign org_description = settings.seo_default_description
   if org_description == blank
-    assign org_description = 'Find jewellery that celebrates you. Explore fashion necklaces, earrings, rings and sets with real product photos. Shop Ashtitva online across India.'
+    assign org_description = 'Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos — thoughtfully curated, delivered across India.'
   endif
 
   assign whatsapp_digits = settings.whatsapp_phone | default: '' | replace: '+', '' | replace: ' ', '' | replace: '-', ''
   assign nav_menu = linklists['main-menu']
+  assign help_menu = linklists['help']
+  assign policies_menu = linklists['policies']
 -%}
 
 <script type="application/ld+json">
@@ -94,26 +97,119 @@
   }
   </script>
 
-  {%- if nav_menu != blank and nav_menu.links.size > 0 -%}
+  {%- comment -%} Key sitelink candidates with Rubans-style snippets {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Ashtitva popular destinations",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Best Seller",
+        "description": "Shop Ashtitva bestsellers — loved necklaces, earrings, rings and sets chosen for everyday beauty and celebration-ready style.",
+        "url": {{ '/collections/best-seller' | absolute_url | json }}
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Earrings",
+        "description": "Express your individuality with Ashtitva earrings. Explore everyday, festive and statement styles with real product photography.",
+        "url": {{ '/collections/earrings' | absolute_url | json }}
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Necklaces",
+        "description": "Discover Ashtitva necklaces crafted to celebrate you — from everyday layers to festive statement pieces with real product photos.",
+        "url": {{ '/collections/necklace' | absolute_url | json }}
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Rings",
+        "description": "Find rings that feel like you. Shop Ashtitva fashion rings for gifting, celebrations and everyday wear across India.",
+        "url": {{ '/collections/rings' | absolute_url | json }}
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Categories",
+        "description": "Browse Ashtitva jewellery categories — necklaces, earrings, rings, kadas and curated collections for every celebration.",
+        "url": {{ routes.collections_url | absolute_url | json }}
+      }
+    ]
+  }
+  </script>
+
+  {%- liquid
+    assign nav_position = 0
+    assign nav_has_items = false
+    if nav_menu != blank and nav_menu.links.size > 0
+      assign nav_has_items = true
+    endif
+    if help_menu != blank and help_menu.links.size > 0
+      assign nav_has_items = true
+    endif
+    if policies_menu != blank and policies_menu.links.size > 0
+      assign nav_has_items = true
+    endif
+  -%}
+
+  {%- if nav_has_items -%}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Ashtitva main navigation",
+      "name": "Ashtitva site navigation",
       "itemListElement": [
         {%- assign nav_first = true -%}
-        {%- for link in nav_menu.links limit: 8 -%}
-          {%- if link.url != blank and link.url != '#' -%}
-            {%- unless nav_first -%},{%- endunless -%}
-            {
-              "@type": "SiteNavigationElement",
-              "position": {{ forloop.index }},
-              "name": {{ link.title | json }},
-              "url": {{ link.url | absolute_url | json }}
-            }
-            {%- assign nav_first = false -%}
-          {%- endif -%}
-        {%- endfor -%}
+        {%- if nav_menu != blank -%}
+          {%- for link in nav_menu.links limit: 8 -%}
+            {%- if link.url != blank and link.url != '#' -%}
+              {%- assign nav_position = nav_position | plus: 1 -%}
+              {%- unless nav_first -%},{%- endunless -%}
+              {
+                "@type": "SiteNavigationElement",
+                "position": {{ nav_position }},
+                "name": {{ link.title | json }},
+                "url": {{ link.url | absolute_url | json }}
+              }
+              {%- assign nav_first = false -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if help_menu != blank -%}
+          {%- for link in help_menu.links limit: 6 -%}
+            {%- if link.url != blank and link.url != '#' -%}
+              {%- assign nav_position = nav_position | plus: 1 -%}
+              {%- unless nav_first -%},{%- endunless -%}
+              {
+                "@type": "SiteNavigationElement",
+                "position": {{ nav_position }},
+                "name": {{ link.title | json }},
+                "url": {{ link.url | absolute_url | json }}
+              }
+              {%- assign nav_first = false -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if policies_menu != blank -%}
+          {%- for link in policies_menu.links limit: 6 -%}
+            {%- if link.url != blank and link.url != '#' -%}
+              {%- assign nav_position = nav_position | plus: 1 -%}
+              {%- unless nav_first -%},{%- endunless -%}
+              {
+                "@type": "SiteNavigationElement",
+                "position": {{ nav_position }},
+                "name": {{ link.title | json }},
+                "url": {{ link.url | absolute_url | json }}
+              }
+              {%- assign nav_first = false -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
       ]
     }
     </script>

@@ -1374,21 +1374,21 @@
         "type": "text",
         "id": "seo_homepage_title",
         "label": "Homepage SEO title",
-        "default": "Ashtitva: Online Shopping For Fashion Jewellery & Earrings",
-        "info": "Rubans-style format: Brand: keywords. Aim for ~50–65 characters."
+        "default": "Ashtitva | Necklaces, Earrings & Fashion Jewellery Online",
+        "info": "Brand first, then searchable categories. Aim for ~50–60 characters."
       },
       {
         "type": "textarea",
         "id": "seo_homepage_description",
         "label": "Homepage meta description",
-        "default": "Find jewellery that celebrates you. Explore fashion necklaces, earrings, rings and sets with real product photos. Shop Ashtitva online across India.",
-        "info": "Aim for ~140–155 characters. Replaces empty or “Welcome to our store” descriptions."
+        "default": "Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos — thoughtfully curated, delivered across India.",
+        "info": "Aim for ~145–160 characters. Unique brand voice helps click-through."
       },
       {
         "type": "textarea",
         "id": "seo_default_description",
         "label": "Default meta description (fallback)",
-        "default": "Find jewellery that celebrates you. Explore fashion necklaces, earrings, rings and sets with real product photos. Shop Ashtitva online across India.",
+        "default": "Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos — thoughtfully curated, delivered across India.",
         "info": "Used when a page has no SEO description."
       },
       {
