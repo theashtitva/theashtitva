@@ -53,6 +53,7 @@
   .ai-section-heading__container-{{ ai_gen_id }} {
     display: flex;
     flex-direction: column;
+    align-items: {% if block.settings.text_alignment_desktop == 'center' %}center{% elsif block.settings.text_alignment_desktop == 'right' %}flex-end{% else %}flex-start{% endif %};
     gap: {{ block.settings.gap_heading_subtext }}px;
     text-align: {{ block.settings.text_alignment_desktop }};
     width: {{ block.settings.desktop_width_percent }}%;
@@ -80,7 +81,7 @@
   }
 
   .ai-section-heading__heading-{{ ai_gen_id }} {
-    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-family: var(--font-heading-family);
     font-style: var(--font-heading-style, normal);
     font-size: {{ block.settings.heading_font_size_desktop }}px;
     font-weight: {{ block.settings.heading_font_weight }};
@@ -133,7 +134,16 @@
     font-weight: {{ block.settings.subtext_font_weight }};
     color: {{ block.settings.subtext_color }};
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.7;
+    max-width: 38rem;
+    width: 100%;
+    text-align: {{ block.settings.text_alignment_desktop }};
+    {% if block.settings.text_alignment_desktop == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% elsif block.settings.text_alignment_desktop == 'right' %}
+      margin-left: auto;
+    {% endif %}
   }
 
   @media screen and (max-width: 749px) {
@@ -144,6 +154,7 @@
 
     .ai-section-heading__container-{{ ai_gen_id }} {
       text-align: {{ block.settings.text_alignment_mobile }};
+      align-items: {% if block.settings.text_alignment_mobile == 'center' %}center{% elsif block.settings.text_alignment_mobile == 'right' %}flex-end{% else %}flex-start{% endif %};
     }
 
     .ai-section-heading__eyebrow-{{ ai_gen_id }} {
@@ -156,6 +167,17 @@
 
     .ai-section-heading__subtext-{{ ai_gen_id }} {
       font-size: {{ block.settings.subtext_font_size_mobile }}px;
+      text-align: {{ block.settings.text_alignment_mobile }};
+      {% if block.settings.text_alignment_mobile == 'center' %}
+        margin-left: auto;
+        margin-right: auto;
+      {% elsif block.settings.text_alignment_mobile == 'right' %}
+        margin-left: auto;
+        margin-right: 0;
+      {% else %}
+        margin-left: 0;
+        margin-right: auto;
+      {% endif %}
     }
 
     .ai-section-heading__heading-wrapper-{{ ai_gen_id }} {
@@ -556,7 +578,7 @@
       "type": "color",
       "id": "heading_color",
       "label": "Heading",
-      "default": "#c5a059"
+      "default": "#18302a"
     },
     {
       "type": "color",

@@ -201,13 +201,13 @@
 
 .collection .product-card-title  {
   font-size: 32px;
-  font-weight: 600;
-  color: #2d2d2d;
+  font-weight: 400;
+  color: var(--ash-heading, #18302a);
 }
 
 @media screen and (max-width: 780px) {
    .collection .product-card-title  {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 400;
   }
 }

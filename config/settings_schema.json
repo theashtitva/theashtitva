@@ -1374,21 +1374,21 @@
         "type": "text",
         "id": "seo_homepage_title",
         "label": "Homepage SEO title",
-        "default": "Online Shopping For Fashion Jewellery, Necklaces & Earrings - Srivaya",
-        "info": "Rubans-style format: keywords first, brand at the end. Aim for ~50–65 characters."
+        "default": "Ashtitva: Online Shopping For Fashion Jewellery & Earrings",
+        "info": "Rubans-style format: Brand: keywords. Aim for ~50–65 characters."
       },
       {
         "type": "textarea",
         "id": "seo_homepage_description",
         "label": "Homepage meta description",
-        "default": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+        "default": "Find jewellery that celebrates you. Explore fashion necklaces, earrings, rings and sets with real product photos. Shop Ashtitva online across India.",
         "info": "Aim for ~140–155 characters. Replaces empty or “Welcome to our store” descriptions."
       },
       {
         "type": "textarea",
         "id": "seo_default_description",
         "label": "Default meta description (fallback)",
-        "default": "Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.",
+        "default": "Find jewellery that celebrates you. Explore fashion necklaces, earrings, rings and sets with real product photos. Shop Ashtitva online across India.",
         "info": "Used when a page has no SEO description."
       },
       {
@@ -1410,22 +1410,22 @@
         "type": "text",
         "id": "whatsapp_phone",
         "label": "WhatsApp / phone number",
-        "info": "Include country code (e.g. +917067762371). Used for WhatsApp links and phone cards.",
-        "default": "+917067762371"
+        "info": "Include country code (e.g. +917777877253). Used for WhatsApp links and phone cards.",
+        "default": "+917777877253"
       },
       {
         "type": "text",
         "id": "contact_phone_display",
         "label": "Phone display text",
-        "info": "How the number appears on the Contact page (e.g. +91 70677 62371). Leave blank to use the WhatsApp number as-is.",
-        "default": "+91 70677 62371"
+        "info": "How the number appears on the Contact page (e.g. +91 77778 77253). Leave blank to use the WhatsApp number as-is.",
+        "default": "+91 77778 77253"
       },
       {
         "type": "text",
         "id": "contact_email",
         "label": "Support email",
         "info": "Used on Contact page, FAQ, and related sections.",
-        "default": "thesrivaya@gmail.com"
+        "default": "contact@ashtitva.com"
       },
       {
         "type": "header",

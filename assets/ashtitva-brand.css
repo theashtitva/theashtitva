@@ -5,6 +5,10 @@
    ========================================================= */
 
 :root {
+  /* Typography — single family via theme settings (Plus Jakarta Sans) */
+  --ash-font-display: var(--font-heading-family);
+  --ash-font-body: var(--font-body-family);
+
   /* Core palette */
   --ashtitva-green: #123c32;
   --ashtitva-green-dark: #0b2924;
@@ -14,6 +18,10 @@
   --ashtitva-gold: #b89a5a;
   --ashtitva-gold-light: #d8c38f;
   --ashtitva-text: #18302a;
+
+  /* Heading color — light surfaces use ink; dark surfaces use ivory */
+  --ash-heading: var(--ashtitva-text);
+  --ash-heading-on-dark: var(--ashtitva-ivory);
 
   /* Aliases used across theme (backward compatible) */
   --ash-ivory: var(--ashtitva-ivory);
@@ -82,6 +90,7 @@
 body {
   background-color: var(--ashtitva-ivory);
   color: var(--ashtitva-text);
+  font-family: var(--ash-font-body);
 }
 
 .global-media-settings,
@@ -266,12 +275,57 @@ button.shopify-payment-button__button--unbranded {
 
 .ash-heading {
   margin: 0;
-  font-family: var(--font-heading-family);
+  font-family: var(--ash-font-display);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--ashtitva-text);
+  color: var(--ash-heading);
   text-wrap: balance;
+}
+
+/* Global heading style — weight + tracking; color stays scheme-aware */
+h1,
+h2,
+h3,
+h4,
+h5,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: var(--ash-font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: rgb(var(--color-foreground));
+}
+
+/* Light-surface page titles that were hardcoded off-brand */
+.collection-hero__title,
+.contact .title,
+.collection .product-card-title,
+.main-page-title,
+.article-template__title {
+  color: var(--ash-heading);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* RTE content headings match brand */
+:root {
+  --rte-color-heading: var(--ash-heading);
+  --rte-color-text: var(--ashtitva-text);
+}
+
+.rte h1,
+.rte h2,
+.rte h3,
+.rte h4,
+.rte h5,
+.rte h6 {
+  font-weight: 400;
+  color: var(--ash-heading);
 }
 
 .ash-body {
@@ -283,8 +337,8 @@ button.shopify-payment-button__button--unbranded {
 
 /* —— Emotional / CTA sections —— */
 .ash-emotional {
-  background: var(--ashtitva-ivory);
-  padding: 5.6rem 1.5rem;
+  background: var(--ashtitva-ivory-soft);
+  padding: 5.6rem 1.5rem 3.2rem;
   text-align: center;
 }
 
@@ -295,12 +349,12 @@ button.shopify-payment-button__button--unbranded {
 
 .ash-emotional__heading {
   margin: 0 0 1.2rem;
-  font-family: var(--font-heading-family);
+  font-family: var(--ash-font-display);
   font-weight: 400;
   font-size: clamp(2.8rem, 4vw, 4.2rem);
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: var(--ashtitva-text);
+  color: var(--ash-heading);
   text-wrap: balance;
 }
 
@@ -333,12 +387,12 @@ button.shopify-payment-button__button--unbranded {
 
 .ash-final-cta__heading {
   margin: 0 0 2rem;
-  font-family: var(--font-heading-family);
+  font-family: var(--ash-font-display);
   font-weight: 400;
   font-size: clamp(2.6rem, 3.6vw, 3.8rem);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--ashtitva-text);
+  color: var(--ash-heading);
   text-wrap: balance;
 }
 
@@ -391,20 +445,53 @@ button.shopify-payment-button__button--unbranded {
   background-color: var(--ashtitva-ivory-soft);
 }
 
+[class*="ai-section-heading__container"] {
+  max-width: 48rem;
+  align-items: center;
+}
+
 [class*="ai-section-heading__subtext"] {
+  display: block;
+  width: 100%;
   max-width: 38rem;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   line-height: 1.7;
+  color: var(--ash-body);
 }
 
-[class*="ai-section-heading__container"] {
-  max-width: 48rem;
+/* Circular collection labels — soft, editorial */
+[class*="ai-collection-grid__content"] {
+  padding-top: 1.4rem !important;
+  align-items: center;
+}
+
+[class*="ai-collection-grid__collection-title"] {
+  display: inline-block;
+  font-family: var(--ash-font-display);
+  font-size: 1.7rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--ashtitva-text) !important;
+  line-height: 1.3;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[class*="ai-collection-grid__card"]:hover [class*="ai-collection-grid__collection-title"] {
+  color: var(--ashtitva-green) !important;
+}
+
+@media screen and (min-width: 750px) {
+  [class*="ai-collection-grid__collection-title"] {
+    font-size: 1.9rem !important;
+  }
 }
 
 @media screen and (min-width: 750px) {
   .ash-emotional {
-    padding: 8rem 2rem;
+    padding: 8rem 2rem 4rem;
   }
 
   .ash-final-cta {
@@ -421,16 +508,31 @@ button.shopify-payment-button__button--unbranded {
   }
 }
 
-/* Featured collection headings — homepage product discovery */
+/* Featured collection headings — match other homepage section headers */
+.featured-collection .collection__title,
+.collection .collection__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.featured-collection .collection__eyebrow,
+.collection .collection__eyebrow {
+  margin: 0 0 0.8rem;
+}
+
 .featured-collection .title.inline-richtext,
 .collection .title.inline-richtext {
   text-align: center;
-  font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+  font-family: var(--ash-font-display);
   font-weight: 400;
   font-size: 2.8rem;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ashtitva-text);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ash-heading);
+  margin: 0;
+  text-wrap: balance;
 }
 
 @media screen and (min-width: 750px) {
@@ -444,9 +546,10 @@ button.shopify-payment-button__button--unbranded {
 .collection .collection__description {
   text-align: center;
   color: var(--ash-body);
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 42rem;
+  margin: 1.6rem auto 0;
+  font-size: 1.5rem;
+  line-height: 1.6;
 }
 
 .featured-collection .title-wrapper,
@@ -458,5 +561,249 @@ button.shopify-payment-button__button--unbranded {
   .featured-collection .title-wrapper,
   .collection .title-wrapper {
     margin-bottom: 3.2rem;
+  }
+}
+
+/* —— Product + collection cards — match contact form panels —— */
+.custom-product-card-design,
+.custom-collection-card-design,
+.product-card-wrapper.custom-product-card-design,
+.collection-card-wrapper.custom-collection-card-design {
+  --sv-card-ink: var(--ash-heading, #18302a);
+  --sv-card-muted: var(--ash-muted, #5c6e67);
+  --sv-card-cta: var(--ashtitva-green, #123c32);
+  --sv-card-cta-hover: var(--ashtitva-green-dark, #0b2924);
+  --sv-card-gold: var(--ashtitva-gold, #b89a5a);
+  --sv-card-surface: var(--ashtitva-ivory-soft, #fcfaf4);
+  --sv-card-border: var(--ash-border, #e6dfd0);
+  --sv-card-media: var(--ashtitva-green, #123c32);
+  --sv-card-radius: 4px;
+  --sv-card-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --sv-card-shadow: 0 16px 48px rgba(42, 42, 42, 0.07);
+  --sv-card-shadow-hover: 0 18px 40px rgba(42, 42, 42, 0.08);
+  --border-radius: 4px;
+  --border-width: 1px;
+  --border-opacity: 1;
+  --image-padding: 0rem;
+  --text-alignment: left;
+}
+
+.custom-product-card-design .card,
+.custom-product-card-design .card.gradient,
+.custom-product-card-design .card[class*="color-"],
+.custom-collection-card-design .card,
+.custom-collection-card-design .card.gradient,
+.custom-collection-card-design .card[class*="color-"] {
+  background: var(--sv-card-surface) !important;
+  background-attachment: scroll !important;
+  background-image: none !important;
+  border: 1px solid var(--sv-card-border) !important;
+  border-radius: var(--sv-card-radius) !important;
+  box-shadow: var(--sv-card-shadow) !important;
+  overflow: hidden;
+  transition:
+    transform 0.45s var(--sv-card-ease),
+    box-shadow 0.45s var(--sv-card-ease),
+    border-color 0.45s var(--sv-card-ease);
+}
+
+.custom-product-card-design .card:after,
+.custom-collection-card-design .card:after,
+.custom-product-card-design .card__inner:after,
+.custom-collection-card-design .card__inner:after {
+  display: none !important;
+}
+
+.custom-product-card-design .card__inner,
+.custom-product-card-design .card__inner.gradient,
+.custom-product-card-design .card__inner[class*="color-"],
+.custom-collection-card-design .card--media .card__inner,
+.custom-collection-card-design .card--media .card__inner.gradient,
+.custom-collection-card-design .card--media .card__inner[class*="color-"] {
+  background: var(--sv-card-media) !important;
+  background-attachment: scroll !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: var(--sv-card-radius) var(--sv-card-radius) 0 0 !important;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
+.custom-collection-card-design .card--text .card__inner,
+.custom-collection-card-design .card--text .card__inner.gradient {
+  background: var(--sv-card-surface) !important;
+  background-image: none !important;
+}
+
+.custom-product-card-design .card__media,
+.custom-collection-card-design .card__media,
+.custom-product-card-design .media,
+.custom-collection-card-design .media {
+  background: var(--sv-card-media) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+.custom-product-card-design .card .card__inner .card__media,
+.custom-collection-card-design .card .card__inner .card__media {
+  border-radius: 0 !important;
+}
+
+@media (hover: hover) {
+  .custom-product-card-design:hover .card,
+  .custom-collection-card-design:hover .card {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--sv-card-gold) 40%, var(--sv-card-border)) !important;
+    box-shadow: var(--sv-card-shadow-hover) !important;
+  }
+
+  .custom-product-card-design:hover .media img,
+  .custom-collection-card-design:hover .media img {
+    transform: scale(1.03);
+  }
+}
+
+.custom-product-card-design .media img,
+.custom-collection-card-design .media img {
+  transition: transform 0.45s var(--sv-card-ease);
+  transform-origin: center;
+}
+
+.custom-product-card-design .card > .card__content,
+.custom-collection-card-design .card > .card__content {
+  margin-top: 0 !important;
+  padding: 1.8rem 1.6rem 1.8rem !important;
+  background: var(--sv-card-surface) !important;
+  text-align: left;
+}
+
+.custom-product-card-design .card__heading,
+.custom-product-card-design .card__heading.h5,
+.custom-collection-card-design .card__heading,
+.custom-collection-card-design .card__heading.h5 {
+  margin: 0 0 0.5rem;
+  font-family: var(--ash-font-display, var(--font-heading-family));
+  font-weight: 400 !important;
+  font-size: 1.45rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--sv-card-ink) !important;
+  text-align: left;
+}
+
+@media screen and (min-width: 750px) {
+  .custom-product-card-design .card__heading,
+  .custom-product-card-design .card__heading.h5,
+  .custom-collection-card-design .card__heading,
+  .custom-collection-card-design .card__heading.h5 {
+    font-size: 1.55rem;
+  }
+}
+
+.custom-product-card-design .card__heading a,
+.custom-collection-card-design .card__heading a,
+.custom-product-card-design .full-unstyled-link,
+.custom-collection-card-design .full-unstyled-link {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.custom-product-card-design .card__heading a:hover,
+.custom-collection-card-design .card__heading a:hover {
+  color: var(--sv-card-gold);
+}
+
+.custom-collection-card-design .card__caption {
+  color: var(--sv-card-muted);
+  font-size: 1.3rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.custom-collection-card-design .icon-wrap {
+  margin-left: 0.4rem;
+  color: var(--sv-card-gold);
+}
+
+.custom-product-card-design .price .price-item {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--sv-card-ink);
+}
+
+.custom-product-card-design .price--on-sale .price-item--regular {
+  color: var(--sv-card-muted);
+}
+
+.custom-product-card-design .price--on-sale .price-item--sale {
+  color: var(--sv-card-cta);
+}
+
+.custom-product-card-design .caption-with-letter-spacing {
+  color: var(--sv-card-gold);
+  letter-spacing: 0.16em;
+}
+
+.custom-product-card-design .quick-add {
+  margin-top: auto;
+  padding-top: 1.4rem;
+}
+
+.custom-product-card-design .quick-add__submit {
+  min-height: 4.6rem !important;
+  padding: 1.2rem 1.6rem !important;
+  border-radius: 4px !important;
+  background: var(--sv-card-cta) !important;
+  background-color: var(--sv-card-cta) !important;
+  color: var(--ashtitva-ivory, #f7f3e9) !important;
+  border: 1px solid var(--sv-card-cta) !important;
+  box-shadow: none !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.custom-product-card-design .quick-add__submit:before,
+.custom-product-card-design .quick-add__submit:after {
+  display: none !important;
+}
+
+.custom-product-card-design .quick-add__submit:hover:not([disabled]) {
+  background: var(--sv-card-cta-hover) !important;
+  background-color: var(--sv-card-cta-hover) !important;
+  border-color: var(--sv-card-cta-hover) !important;
+  color: var(--ashtitva-ivory, #f7f3e9) !important;
+}
+
+.custom-product-card-design .quick-add__submit:focus-visible,
+.custom-collection-card-design a:focus-visible {
+  outline: 2px solid var(--sv-card-gold);
+  outline-offset: 3px;
+}
+
+.custom-product-card-design .card__badge > .badge,
+.custom-product-card-design .card__badge > span {
+  border-radius: 4px;
+  border: 0;
+  background: color-mix(in srgb, var(--ashtitva-ivory, #f7f3e9) 92%, transparent);
+  color: var(--sv-card-ink);
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-product-card-design .card,
+  .custom-collection-card-design .card,
+  .custom-product-card-design .media img,
+  .custom-collection-card-design .media img {
+    transition: none !important;
+  }
+
+  .custom-product-card-design:hover .card,
+  .custom-collection-card-design:hover .card,
+  .custom-product-card-design:hover .media img,
+  .custom-collection-card-design:hover .media img {
+    transform: none;
   }
 }

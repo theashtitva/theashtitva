@@ -87,7 +87,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How can I contact Ashtitva for support?",
-            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:hello@theashtitva.com\">hello@theashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
+            "answer": "<p>We’re always happy to help!</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917777877253\" target=\"_blank\" rel=\"noopener\">+91 77778 77253</a></p><p><strong>Email:</strong> <a href=\"mailto:contact@ashtitva.com\">contact@ashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products, our customer support team is here to assist you.</p>"
           }
         }
       },
@@ -121,7 +121,7 @@
         "button_hover": "#a8843f",
         "color_background": "#ffffff",
         "color_surface": "#fdf9f2",
-        "color_heading": "#0e2c20",
+        "color_heading": "#18302a",
         "color_text": "#5a4e44",
         "color_muted": "#8a7d72",
         "color_accent": "#c5a059",

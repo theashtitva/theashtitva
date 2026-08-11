@@ -1,16 +1,19 @@
 {% doc %}
-  @prompt
-    Premium Contact Us section for Srivaya jewellery — mauve brand palette, elegant typography, refined cards and social links.
+  Premium Contact Us — Ashtitva. Warm, honest, modern-premium contact experience.
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
   .ai-contact-us-{{ ai_gen_id }} {
     --cu-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --cu-gold: var(--ashtitva-gold, #b89a5a);
+    --cu-forest: var(--ashtitva-green, #123c32);
+    --cu-ivory: var(--ashtitva-ivory, #f7f3e9);
+    --cu-soft: var(--ashtitva-ivory-soft, #fcfaf4);
     display: block;
     width: 100%;
     color: {{ block.settings.card_text_color }};
-    background: #ffffff;
+    background: var(--cu-ivory);
   }
 
   .ai-contact-hero-{{ ai_gen_id }} {
@@ -43,28 +46,24 @@
   }
 
   .ai-contact-hero-eyebrow-{{ ai_gen_id }} {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 20px;
-    font-family: var(--font-body-family, sans-serif);
-    font-size: 12px;
+    display: block;
+    margin: 0 0 0.8rem;
+    font-family: var(--ash-font-body, var(--font-body-family));
+    font-size: 1.2rem;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #c5a059;
+    color: var(--cu-gold);
+    line-height: 1.3;
   }
 
   .ai-contact-hero-eyebrow-{{ ai_gen_id }}::before,
   .ai-contact-hero-eyebrow-{{ ai_gen_id }}::after {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: color-mix(in srgb, #c5a059 45%, transparent);
+    display: none;
   }
 
   .ai-contact-hero-title-{{ ai_gen_id }} {
-    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-family: var(--font-heading-family);
     font-style: var(--font-heading-style, normal);
     font-size: {{ block.settings.hero_title_size_mobile }}px;
     color: {{ block.settings.hero_text_color }};
@@ -76,7 +75,7 @@
   }
 
   .ai-contact-hero-subtext-{{ ai_gen_id }} {
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-style: var(--font-body-style, normal);
     font-weight: 400;
     font-size: {{ block.settings.hero_subtext_size_mobile }}px;
@@ -92,31 +91,13 @@
   }
 
   .ai-contact-hero-rule-{{ ai_gen_id }} {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 28px auto 0;
-    color: #c5a059;
-  }
-
-  .ai-contact-hero-rule-{{ ai_gen_id }} span {
-    width: 40px;
-    height: 1px;
-    background: color-mix(in srgb, #c5a059 35%, transparent);
-  }
-
-  .ai-contact-hero-rule-{{ ai_gen_id }} svg {
-    width: 10px;
-    height: 10px;
-    opacity: 0.7;
+    display: none;
   }
 
   .ai-contact-details-{{ ai_gen_id }} {
     position: relative;
     padding: {{ block.settings.details_padding_mobile }}px 24px;
-    background:
-      linear-gradient(180deg, #ffffff 0%, #fdf9f2 35%, #fdf9f2 100%);
+    background: {{ block.settings.details_bg_color }};
     width: 100%;
   }
 
@@ -230,7 +211,7 @@
   }
 
   .ai-contact-card-title-{{ ai_gen_id }} {
-    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-family: var(--font-heading-family);
     font-style: var(--font-heading-style, normal);
     font-size: 18px;
     font-weight: 400;
@@ -241,7 +222,7 @@
   }
 
   .ai-contact-card-text-{{ ai_gen_id }} {
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-size: 16px;
     font-weight: 400;
     color: {{ block.settings.card_text_color }};
@@ -281,30 +262,26 @@
   }
 
   .ai-contact-form-eyebrow-{{ ai_gen_id }} {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin: 0 0 14px;
-    font-family: var(--font-body-family, sans-serif);
-    font-size: 12px;
+    display: block;
+    margin: 0 0 0.8rem;
+    font-family: var(--ash-font-body, var(--font-body-family));
+    font-size: 1.2rem;
     font-weight: 500;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #c5a059;
+    color: var(--cu-gold);
+    line-height: 1.3;
   }
 
   .ai-contact-form-eyebrow-{{ ai_gen_id }}::before,
   .ai-contact-form-eyebrow-{{ ai_gen_id }}::after {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: color-mix(in srgb, #c5a059 45%, transparent);
+    display: none;
   }
 
   .ai-contact-form-title-{{ ai_gen_id }} {
-    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-family: var(--ash-font-display, var(--font-heading-family));
     font-style: var(--font-heading-style, normal);
-    font-size: 32px;
+    font-size: 2.8rem;
     font-weight: 400;
     color: {{ block.settings.form_title_color }};
     margin: 0 0 12px;
@@ -315,7 +292,7 @@
 
   .ai-contact-form-subtitle-{{ ai_gen_id }} {
     margin: 0;
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-size: 16px;
     line-height: 1.7;
     color: {{ block.settings.card_text_color }};
@@ -346,7 +323,7 @@
 
   .ai-contact-form-label-{{ ai_gen_id }} {
     display: block;
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.01em;
@@ -362,7 +339,7 @@
     padding: 15px 18px;
     border: none;
     border-radius: 12px;
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-size: 16px;
     color: {{ block.settings.form_input_text }};
     background: {{ block.settings.form_input_background }};
@@ -407,7 +384,7 @@
     border: 1px solid rgba(43, 43, 43, 0.35);
     border-radius: 6px;
     box-shadow: none;
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.14em;
@@ -460,7 +437,7 @@
     margin: 24px auto 0;
     max-width: 480px;
     text-align: center;
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-size: 15px;
     line-height: 1.65;
     color: {{ block.settings.trust_text_color }};
@@ -480,7 +457,7 @@
   }
 
   .ai-contact-social-title-{{ ai_gen_id }} {
-    font-family: var(--font-heading-family, Georgia, 'Times New Roman', serif);
+    font-family: var(--font-heading-family);
     font-style: var(--font-heading-style, normal);
     font-size: {{ block.settings.social_title_size_mobile }}px;
     color: {{ block.settings.social_text_color }};
@@ -493,7 +470,7 @@
 
   .ai-contact-social-note-{{ ai_gen_id }} {
     margin: 0 0 32px;
-    font-family: var(--font-body-family, sans-serif);
+    font-family: var(--font-body-family);
     font-size: 16px;
     line-height: 1.65;
     color: {{ block.settings.card_text_color }};
@@ -653,7 +630,7 @@
 <contact-us-section-{{ ai_gen_id }} class="ai-contact-us-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
   <div class="ai-contact-hero-{{ ai_gen_id }}">
     <div class="ai-contact-hero-content-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}" data-cu-reveal>
-      <p class="ai-contact-hero-eyebrow-{{ ai_gen_id }}">Get in touch</p>
+      <p class="ai-contact-hero-eyebrow-{{ ai_gen_id }}">We’re here for you</p>
       {% if block.settings.hero_title != blank %}
         <h1 class="ai-contact-hero-title-{{ ai_gen_id }}">{{ block.settings.hero_title }}</h1>
       {% endif %}
@@ -741,7 +718,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             </div>
             <h3 class="ai-contact-card-title-{{ ai_gen_id }}">{{ block.settings.email_title }}</h3>
-            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if cu_email != blank %}{{ cu_email }}{% else %}thesrivaya@gmail.com{% endif %}</p>
+            <p class="ai-contact-card-text-{{ ai_gen_id }}">{% if cu_email != blank %}{{ cu_email }}{% else %}contact@ashtitva.com{% endif %}</p>
           {% if cu_email != blank %}</a>{% else %}</div>{% endif %}
           {% assign cu_card_index = cu_card_index | plus: 1 %}
         {% endif %}
@@ -765,7 +742,7 @@
     <div class="ai-contact-form-wrap-{{ ai_gen_id }}">
       <div class="ai-contact-form-inner-{{ ai_gen_id }} ai-contact-reveal-{{ ai_gen_id }}" data-cu-reveal>
         <div class="ai-contact-form-intro-{{ ai_gen_id }}">
-          <p class="ai-contact-form-eyebrow-{{ ai_gen_id }}">Write to us</p>
+          <p class="ai-contact-form-eyebrow-{{ ai_gen_id }}">Say hello</p>
           {% if block.settings.form_title != blank %}
             <h2 class="ai-contact-form-title-{{ ai_gen_id }}">{{ block.settings.form_title }}</h2>
           {% endif %}
@@ -879,7 +856,7 @@
       {% if block.settings.social_title != blank %}
         <h2 class="ai-contact-social-title-{{ ai_gen_id }}">{{ block.settings.social_title }}</h2>
       {% endif %}
-      <p class="ai-contact-social-note-{{ ai_gen_id }}">Join our world of craftsmanship, new drops, and quiet luxury.</p>
+      <p class="ai-contact-social-note-{{ ai_gen_id }}">Follow along and tag us — we love seeing you feel beautiful and confident.</p>
       {%- capture contact_social_class -%}ai-contact-social-icons-{{ ai_gen_id }}{%- endcapture -%}
       {%- capture contact_social_link_class -%}ai-contact-social-link-{{ ai_gen_id }}{%- endcapture -%}
       {% render 'social-icons', class: contact_social_class, link_class: contact_social_link_class %}
@@ -926,7 +903,7 @@
       "type": "inline_richtext",
       "id": "hero_title",
       "label": "Title",
-      "default": "We'd Love to Hear From You"
+      "default": "We're here for you"
     },
     {
       "type": "richtext",
@@ -944,7 +921,7 @@
       "type": "color",
       "id": "hero_text_color",
       "label": "Text color",
-      "default": "#0e2c20"
+      "default": "#18302a"
     },
     {
       "type": "range",
@@ -1076,7 +1053,7 @@
       "type": "color",
       "id": "card_title_color",
       "label": "Title color",
-      "default": "#0e2c20"
+      "default": "#18302a"
     },
     {
       "type": "color",
@@ -1253,7 +1230,7 @@
       "type": "color",
       "id": "form_title_color",
       "label": "Form title color",
-      "default": "#0e2c20"
+      "default": "#18302a"
     },
     {
       "type": "color",
@@ -1349,7 +1326,7 @@
       "type": "color",
       "id": "social_text_color",
       "label": "Text color",
-      "default": "#0e2c20"
+      "default": "#18302a"
     },
     {
       "type": "range",

@@ -3731,8 +3731,8 @@ details-disclosure > details {
   --rte-font-family: inherit;
   --rte-font-size: 1.4625rem;      /* 17px base */
   --rte-line-height: 1.8;
-  --rte-color-text: #0e2c20;
-  --rte-color-heading: #111111;
+  --rte-color-text: #18302a;
+  --rte-color-heading: #18302a;
   --rte-color-link: #0066cc;
   --rte-color-link-hover: #004499;
   --rte-color-blockquote-border: #d4d4d4;
@@ -3780,7 +3780,7 @@ details-disclosure > details {
 .rte h6 {
   font-family: var(--rte-font-family);
   color: var(--rte-color-heading);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.3;
   margin: 1.5em 0 0.5em;
   letter-spacing: -0.01em;

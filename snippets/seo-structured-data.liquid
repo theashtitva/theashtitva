@@ -1,14 +1,15 @@
 {%- comment -%}
-  Organization + WebSite JSON-LD for richer Google results.
+  Organization + WebSite + navigation JSON-LD for richer Google results.
 {%- endcomment -%}
 
 {%- liquid
   assign org_description = settings.seo_default_description
   if org_description == blank
-    assign org_description = 'Srivaya offers fashion jewellery online in India — necklaces, earrings, rings, kadas and jewellery sets with real product photography and pan-India shipping.'
+    assign org_description = 'Find jewellery that celebrates you. Explore fashion necklaces, earrings, rings and sets with real product photos. Shop Ashtitva online across India.'
   endif
 
   assign whatsapp_digits = settings.whatsapp_phone | default: '' | replace: '+', '' | replace: ' ', '' | replace: '-', ''
+  assign nav_menu = linklists['main-menu']
 -%}
 
 <script type="application/ld+json">
@@ -55,6 +56,7 @@
     "@type": "WebSite",
     "@id": {{ request.origin | append: '/#website' | json }},
     "name": {{ shop.name | json }},
+    "alternateName": "Ashtitva Jewellery",
     "url": {{ request.origin | json }},
     "description": {{ org_description | json }},
     "publisher": {
@@ -91,4 +93,29 @@
     {%- endif -%}
   }
   </script>
+
+  {%- if nav_menu != blank and nav_menu.links.size > 0 -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Ashtitva main navigation",
+      "itemListElement": [
+        {%- assign nav_first = true -%}
+        {%- for link in nav_menu.links limit: 8 -%}
+          {%- if link.url != blank and link.url != '#' -%}
+            {%- unless nav_first -%},{%- endunless -%}
+            {
+              "@type": "SiteNavigationElement",
+              "position": {{ forloop.index }},
+              "name": {{ link.title | json }},
+              "url": {{ link.url | absolute_url | json }}
+            }
+            {%- assign nav_first = false -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+    </script>
+  {%- endif -%}
 {%- endif -%}

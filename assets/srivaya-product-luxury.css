@@ -5,21 +5,21 @@
 
 .product-info-luxury {
   --sv-bg: #fdf9f2;
-  --sv-ink: #0e2c20;
-  --sv-body: #3d3d3d;
-  --sv-muted: #6b6b6b;
-  --sv-label: #c5a059;
-  --sv-line: color-mix(in srgb, #c5a059 32%, transparent);
-  --sv-line-strong: color-mix(in srgb, #c5a059 48%, transparent);
-  --sv-cta: #0e2c20;
-  --sv-cta-hover: #164a36;
-  --sv-sage: #c5a059;
+  --sv-ink: var(--ash-heading, #18302a);
+  --sv-body: #3a4f48;
+  --sv-muted: #5c6e67;
+  --sv-label: var(--ashtitva-gold, #b89a5a);
+  --sv-line: color-mix(in srgb, var(--ashtitva-gold, #b89a5a) 32%, transparent);
+  --sv-line-strong: color-mix(in srgb, var(--ashtitva-gold, #b89a5a) 48%, transparent);
+  --sv-cta: var(--ashtitva-green, #123c32);
+  --sv-cta-hover: var(--ashtitva-green-dark, #0b2924);
+  --sv-sage: var(--ashtitva-gold, #b89a5a);
   --sv-radius: 2px;
   --sv-img-radius: 10px;
   --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --sv-duration: 250ms;
-  --sv-serif: var(--font-heading-family);
-  --sv-sans: var(--font-heading-family);
+  --sv-serif: var(--ash-font-display, var(--font-heading-family));
+  --sv-sans: var(--ash-font-body, var(--font-body-family));
   --sv-content-max: 48rem;
   color: var(--sv-body);
   font-family: var(--sv-sans);
@@ -659,9 +659,9 @@
 .product-hero-shell {
   --sv-bg: #fdf9f2;
   --sv-card: #ffffff;
-  --sv-primary: #0e2c20;
+  --sv-primary: var(--ash-heading, #18302a);
   --sv-primary-hover: #164a36;
-  --sv-text: #0e2c20;
+  --sv-text: var(--ash-heading, #18302a);
   --sv-text-secondary: #5a4e44;
   --sv-border: color-mix(in srgb, #c5a059 22%, #fff);
   --sv-divider: color-mix(in srgb, #c5a059 36%, transparent);

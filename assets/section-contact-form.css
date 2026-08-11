@@ -3,7 +3,7 @@
 }
 
 .contact .title {
-  color: #0e2c20;
+  color: var(--ash-heading, #18302a);
   font-weight: 400;
   letter-spacing: -0.025em;
 }

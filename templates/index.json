@@ -162,11 +162,11 @@
             "hover_shadow_offset": 0,
             "hover_shadow_blur": 0,
             "hover_shadow_opacity": 0,
-            "collection_title_size": 14,
+            "collection_title_size": 18,
             "collection_title_color": "#18302a",
-            "title_font_weight": "500",
+            "title_font_weight": "400",
             "title_position": "center",
-            "content_padding_top": 10,
+            "content_padding_top": 15,
             "content_gap": 6,
             "product_count_size": 13,
             "product_count_color": "#5c6e67",
@@ -190,10 +190,11 @@
       "settings": {
         "collection": "home-page-4-product-collection",
         "products_to_show": 8,
+        "eyebrow": "Curated for you",
         "title": "Find something that feels like you.",
         "heading_size": "h2",
         "description": "<p>Thoughtfully curated jewellery for celebrations, gifting, self-expression and everyday beauty.</p>",
-        "show_description": true,
+        "show_description": false,
         "description_style": "subtitle",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
@@ -393,11 +394,11 @@
         "color_benefit": "#f7f3e9",
         "border_radius": 2,
         "shadow_strength": "soft",
-        "heading_size_desktop": 42,
-        "heading_size_mobile": 30,
+        "heading_size_desktop": 40,
+        "heading_size_mobile": 28,
         "description_size": 15,
         "benefit_text_size": 14,
-        "label_size": 11,
+        "label_size": 12,
         "font_weight": "400",
         "letter_spacing": -2,
         "text_alignment": "left"
@@ -408,7 +409,7 @@
       "name": "Emotional brand message",
       "settings": {
         "custom_liquid": "<div class=\"ash-emotional\"><div class=\"ash-emotional__inner\"><h2 class=\"ash-emotional__heading\">You deserve to feel beautiful.</h2><p class=\"ash-emotional__body\">Whether you're celebrating a milestone, gifting someone you love, or simply choosing something for yourself, every moment deserves to feel special.</p><p class=\"ash-emotional__line\">Loved. Confident. Beautiful. Celebrated.</p></div></div>",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -419,17 +420,18 @@
       "settings": {
         "collection": "best-seller",
         "products_to_show": 8,
+        "eyebrow": "Most loved",
         "title": "Pieces you'll love, moments you'll remember.",
         "heading_size": "h2",
         "description": "<p>Designs selected to help you celebrate yourself and the people you love.</p>",
-        "show_description": true,
+        "show_description": false,
         "description_style": "subtitle",
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -438,7 +440,7 @@
         "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 88,
+        "padding_top": 48,
         "padding_bottom": 72
       }
     },
@@ -548,13 +550,13 @@
         "color_text": "#3a4f48",
         "color_accent": "#b89a5a",
         "heading_size_desktop": 40,
-        "heading_size_mobile": 32,
+        "heading_size_mobile": 28,
         "heading_weight": "400",
         "stat_size_desktop": 48,
         "stat_size_mobile": 36,
         "stat_weight": "300",
-        "label_size": 11,
-        "text_size": 14,
+        "label_size": 12,
+        "text_size": 15,
         "enable_count_up": true
       }
     },
@@ -628,7 +630,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How can I contact Ashtitva for support?",
-            "answer": "<p>We’re always happy to help.</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917067762371\" target=\"_blank\" rel=\"noopener\">+91 70677 62371</a></p><p><strong>Email:</strong> <a href=\"mailto:hello@theashtitva.com\">hello@theashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products — our team is here with warmth and honesty.</p>"
+            "answer": "<p>We’re always happy to help.</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917777877253\" target=\"_blank\" rel=\"noopener\">+91 77778 77253</a></p><p><strong>Email:</strong> <a href=\"mailto:contact@ashtitva.com\">contact@ashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products — our team is here with warmth and honesty.</p>"
           }
         }
       },
