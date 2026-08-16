@@ -4,19 +4,19 @@
    ========================================================= */
 
 .drawer {
-  --sv-bg: #ffffff;
-  --sv-panel: #ffffff;
-  --sv-ink: #0e2c20;
-  --sv-body: #5a4e44;
-  --sv-muted: #8a7d72;
-  --sv-line: rgba(200, 164, 90, 0.28);
-  --sv-line-soft: rgba(42, 36, 28, 0.06);
-  --sv-cta: #0e2c20;
-  --sv-cta-hover: #164a36;
-  --sv-sage: #c5a059;
-  --sv-soft: #fdf9f2;
-  --sv-pale: #f3ebd8;
-  --sv-radius: 6px;
+  --sv-bg: var(--ashtitva-ivory-soft, #fcfaf4);
+  --sv-panel: var(--ashtitva-ivory-soft, #fcfaf4);
+  --sv-ink: var(--ashtitva-text, #18302a);
+  --sv-body: var(--ash-body, #3a4f48);
+  --sv-muted: var(--ash-muted, #5c6e67);
+  --sv-line: color-mix(in srgb, var(--ashtitva-gold, #b89a5a) 40%, transparent);
+  --sv-line-soft: var(--ash-border, #e6dfd0);
+  --sv-cta: var(--ashtitva-green, #123c32);
+  --sv-cta-hover: var(--ashtitva-green-dark, #0b2924);
+  --sv-sage: var(--ashtitva-gold, #b89a5a);
+  --sv-soft: var(--ashtitva-ivory, #f7f3e9);
+  --sv-pale: var(--ash-sand, #efe8d8);
+  --sv-radius: 4px;
   --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --sv-duration: 280ms;
 
@@ -637,16 +637,16 @@ cart-drawer-items {
 .cart-drawer .cart__checkout-button {
   max-width: none;
   width: 100%;
-  min-height: 5.2rem;
-  padding: 1.6rem 2rem;
+  min-height: 4.6rem;
+  padding: 1.4rem 2rem;
   border-radius: var(--sv-radius);
   background: var(--sv-cta) !important;
-  color: #fdf9f2 !important;
-  border: none !important;
+  color: var(--ashtitva-ivory, #f7f3e9) !important;
+  border: 1px solid var(--sv-cta) !important;
   box-shadow: none !important;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: background var(--sv-duration) var(--sv-ease);
 }

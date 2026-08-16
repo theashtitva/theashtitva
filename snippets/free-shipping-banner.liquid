@@ -44,16 +44,16 @@
     .free-shipping-banner {
       margin: 0 0 1.2rem;
       padding: 1.2rem 1.4rem;
-      border-radius: 8px;
-      background: rgba(200, 164, 90, 0.1);
-      border: 1px solid rgba(200, 164, 90, 0.25);
+      border-radius: 4px;
+      background: color-mix(in srgb, var(--ashtitva-gold, #b89a5a) 12%, var(--ashtitva-ivory-soft, #fcfaf4));
+      border: 1px solid color-mix(in srgb, var(--ashtitva-gold, #b89a5a) 35%, var(--ash-border, #e6dfd0));
     }
 
     .free-shipping-banner__text {
       margin: 0 0 0.8rem;
       font-size: 1.3rem;
       line-height: 1.4;
-      color: rgb(var(--color-foreground));
+      color: var(--ashtitva-text, #18302a);
     }
 
     .free-shipping-banner__text--success {
@@ -63,7 +63,7 @@
     .free-shipping-banner__bar {
       height: 6px;
       border-radius: 999px;
-      background: rgba(var(--color-foreground), 0.08);
+      background: var(--ash-border, #e6dfd0);
       overflow: hidden;
     }
 
@@ -71,12 +71,12 @@
       display: block;
       height: 100%;
       border-radius: inherit;
-      background: #c5a059;
+      background: var(--ashtitva-green, #123c32);
       transition: width 0.35s ease;
     }
 
     .free-shipping-banner__progress--complete {
-      background: #c5a059;
+      background: var(--ashtitva-gold, #b89a5a);
     }
 
     .cart-drawer__footer .free-shipping-banner {

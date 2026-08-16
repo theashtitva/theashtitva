@@ -25,13 +25,33 @@
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
-<cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
+<cart-items class="ash-checkout gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
-    <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
-        {{- 'general.continue_shopping' | t -}}
-      </a>
+    <div class="ash-checkout__intro">
+      {%- if settings.logo != blank -%}
+        {%- assign checkout_logo_width = settings.logo_width | default: 140 | at_most: 180 -%}
+        {%- assign checkout_logo_height = checkout_logo_width | divided_by: settings.logo.aspect_ratio -%}
+        <a href="{{ routes.root_url }}" class="ash-checkout__logo">
+          {{
+            settings.logo
+            | image_url: width: 360
+            | image_tag:
+              class: 'ash-checkout__logo-img',
+              alt: shop.name,
+              width: checkout_logo_width,
+              height: checkout_logo_height
+          }}
+        </a>
+      {%- else -%}
+        <p class="ash-eyebrow">{{ shop.name }}</p>
+      {%- endif -%}
+      <div class="title-wrapper-with-link">
+        <h1 class="title title--primary ash-heading">{{ 'sections.cart.title' | t }}</h1>
+        <a href="{{ routes.all_products_collection_url }}" class="underlined-link ash-checkout__continue">
+          {{- 'general.continue_shopping' | t -}}
+        </a>
+      </div>
+      <hr class="ash-gold-rule ash-checkout__rule" aria-hidden="true">
     </div>
 
     <div class="cart__warnings">
