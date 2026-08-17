@@ -24,7 +24,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Are these product photos real?",
-            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background — not AI. Slight colour differences can still happen because of screen settings or lighting, and we’re always honest about that.</p>"
+            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background, not AI. Slight colour differences can still happen because of screen settings or lighting, and we’re always honest about that.</p>"
           }
         },
         "faq_2": {
@@ -38,14 +38,14 @@
           "type": "faq_item",
           "settings": {
             "question": "What are the shipping charges?",
-            "answer": "<p>We offer FREE shipping across India on all prepaid orders above ₹499.</p><p>For orders below ₹499, a standard shipping charge will be applied at checkout.</p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase—there are no hidden charges.</p>"
+            "answer": "<p>We offer FREE shipping across India on all prepaid orders above ₹499.</p><p>For orders below ₹499, a standard shipping charge will be applied at checkout.</p><p>All applicable shipping charges will be clearly displayed during checkout before you complete your purchase. There are no hidden charges.</p>"
           }
         },
         "faq_4": {
           "type": "faq_item",
           "settings": {
             "question": "How long will it take to receive my order?",
-            "answer": "<p>Orders are usually processed within 1–2 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3–7 business days across India.</p><p>Once your order is shipped, tracking details will be shared via SMS and Email.</p>"
+            "answer": "<p>Orders are usually processed within 1 to 2 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3 to 7 business days across India.</p><p>Once your order is shipped, tracking details will be shared via SMS and Email.</p>"
           }
         },
         "faq_5": {
@@ -73,7 +73,7 @@
           "type": "faq_item",
           "settings": {
             "question": "When will I receive my refund?",
-            "answer": "<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5–10 business days.</p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.</p>"
+            "answer": "<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5 to 10 business days.</p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.</p>"
           }
         },
         "faq_9": {

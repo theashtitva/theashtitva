@@ -768,7 +768,7 @@
       <div class="sv-hero-inner sv-reveal" data-sv-reveal>
         <p class="sv-eyebrow sv-eyebrow--solo">{{ block.settings.hero_eyebrow | default: 'Ashtitva' }}</p>
         <h1 class="sv-hero-title">{{ block.settings.hero_title | default: 'Jewellery That Celebrates You' }}</h1>
-        <p class="sv-hero-text">{{ block.settings.hero_text | default: 'Jewellery that celebrates people, not just occasions — helping you feel loved, confident, and beautiful through life’s most meaningful moments.' }}</p>
+        <p class="sv-hero-text">{{ block.settings.hero_text | default: 'Jewellery that celebrates people, not just occasions, helping you feel loved, confident, and beautiful through life’s most meaningful moments.' }}</p>
       </div>
 
       <div class="sv-promise sv-reveal" data-sv-reveal>
@@ -798,14 +798,14 @@
         <aside class="sv-story-aside">
           <p class="sv-eyebrow sv-eyebrow--left">{{ block.settings.story_eyebrow | default: 'Our Story' }}</p>
           <h2 class="sv-heading">{{ block.settings.story_title | default: 'More than something you wear' }}</h2>
-          <p class="sv-story-lead">{{ block.settings.story_lead | default: 'Jewellery is something people feel — part of celebrations, memories, milestones, and self-love.' }}</p>
+          <p class="sv-story-lead">{{ block.settings.story_lead | default: 'Jewellery is something people feel: part of celebrations, memories, milestones, and the love you give yourself.' }}</p>
         </aside>
         <div class="sv-story-body">
           {% if block.settings.story_body != blank %}
             {{ block.settings.story_body }}
           {% else %}
             <p>We created Ashtitva to help people celebrate themselves and the people they love through thoughtfully curated jewellery that feels expressive, meaningful, and beautiful.</p>
-            <p>In a world filled with repetitive designs and artificial imagery, we chose a different path. We believe trust begins with authenticity — real photography, carefully curated collections, and honest presentation.</p>
+            <p>In a world filled with repetitive designs and artificial imagery, we chose a different path. We believe trust begins with authenticity: real photography, carefully curated collections, and honest presentation.</p>
             <p>Everything we create is guided by one simple belief: everyone deserves to feel loved, confident, and beautiful.</p>
           {% endif %}
         </div>
@@ -827,7 +827,7 @@
           </div>
           <div>
             <h3 class="sv-feature-title">{{ block.settings.why_1_title | default: 'Authenticity' }}</h3>
-            <p class="sv-feature-text">{{ block.settings.why_1_text | default: 'Real photography. Real products. Real experiences — so you can shop with clarity and confidence.' }}</p>
+            <p class="sv-feature-text">{{ block.settings.why_1_text | default: 'Real photography. Real products. Real experiences, so you can shop with clarity and confidence.' }}</p>
           </div>
         </div>
         <div class="sv-feature">
@@ -836,7 +836,7 @@
           </div>
           <div>
             <h3 class="sv-feature-title">{{ block.settings.why_2_title | default: 'Emotional meaning' }}</h3>
-            <p class="sv-feature-text">{{ block.settings.why_2_text | default: 'Every piece is chosen to help you celebrate love, confidence, beauty, and self-expression.' }}</p>
+            <p class="sv-feature-text">{{ block.settings.why_2_text | default: 'Every piece is chosen to help you celebrate love, confidence, beauty, and personal expression.' }}</p>
           </div>
         </div>
         <div class="sv-feature">
@@ -854,7 +854,7 @@
           </div>
           <div>
             <h3 class="sv-feature-title">{{ block.settings.why_4_title | default: 'Trust' }}</h3>
-            <p class="sv-feature-text">{{ block.settings.why_4_text | default: 'Honesty, quality, and transparent experiences that build long-term relationships — not just one-time purchases.' }}</p>
+            <p class="sv-feature-text">{{ block.settings.why_4_text | default: 'Honesty, quality, and transparent experiences that build lasting relationships, not just single purchases.' }}</p>
           </div>
         </div>
       </div>
@@ -872,7 +872,7 @@
       {% if block.settings.mission_body != blank %}
         <p class="sv-mission-body">{{ block.settings.mission_body }}</p>
       {% else %}
-        <p class="sv-mission-body">Whether it is a wedding, a celebration, a meaningful gift, or simply choosing yourself — we hope every piece becomes part of your story.</p>
+        <p class="sv-mission-body">Whether it is a wedding, a celebration, a meaningful gift, or simply choosing yourself, we hope every piece becomes part of your story.</p>
       {% endif %}
     </div>
   </section>
@@ -886,7 +886,7 @@
         {% else %}
           <p class="sv-founder-quote">Celebrate Love. Inspire Confidence. Create Beautiful Moments.</p>
         {% endif %}
-        <p class="sv-founder-attr">{{ block.settings.founder_attr | default: 'We don’t simply sell jewellery — we help people celebrate themselves.' }}</p>
+        <p class="sv-founder-attr">{{ block.settings.founder_attr | default: 'We don’t simply sell jewellery. We help people celebrate themselves.' }}</p>
       </div>
     </div>
   </section>
@@ -899,7 +899,7 @@
         {% if block.settings.reassure_text != blank %}
           {{ block.settings.reassure_text }}
         {% else %}
-          Every Ashtitva product image is a real studio photograph of the actual jewellery. If you still have questions about quality, finish, or colour, message us on WhatsApp — we’re here with warmth and honesty.
+          Every Ashtitva product image is a real studio photograph of the actual jewellery. If you still have questions about quality, finish, or colour, message us on WhatsApp. We’re here with warmth and honesty.
         {% endif %}
       </p>
       {%- liquid
@@ -925,7 +925,7 @@
     <div class="sv-close-inner sv-reveal" data-sv-reveal>
       <p class="sv-eyebrow">{{ block.settings.cta_eyebrow | default: 'Explore the collection' }}</p>
       <h2 class="sv-heading">{{ block.settings.cta_title | default: 'Find the piece that celebrates you.' }}</h2>
-      <p class="sv-close-text">{{ block.settings.cta_text | default: 'Thoughtfully curated jewellery made for life’s beautiful moments — and the everyday ones, too.' }}</p>
+      <p class="sv-close-text">{{ block.settings.cta_text | default: 'Thoughtfully curated jewellery made for life’s beautiful moments, and the everyday ones, too.' }}</p>
       <a class="sv-cta-btn" href="{{ block.settings.cta_link | default: '/collections/all' }}">
         {{ block.settings.cta_label | default: 'Find your piece' }}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -934,7 +934,7 @@
       {%- capture about_social_class -%}sv-socials{%- endcapture -%}
       {%- capture about_social_link_class -%}sv-social{%- endcapture -%}
       {% render 'social-icons', class: about_social_class, link_class: about_social_link_class %}
-      <p class="sv-social-note">{{ block.settings.social_text | default: 'Follow along and tag us — we love seeing you shine.' }}</p>
+      <p class="sv-social-note">{{ block.settings.social_text | default: 'Follow along and tag us. We love seeing you shine.' }}</p>
     </div>
   </section>
 </about-srivaya-{{ ai_gen_id }}>
@@ -1008,7 +1008,7 @@
     { "type": "header", "content": "Hero" },
     { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "Ashtitva" },
     { "type": "text", "id": "hero_title", "label": "Headline", "default": "Jewellery That Celebrates You" },
-    { "type": "textarea", "id": "hero_text", "label": "Subtext", "default": "Jewellery that celebrates people, not just occasions — helping you feel loved, confident, and beautiful through life's most meaningful moments." },
+    { "type": "textarea", "id": "hero_text", "label": "Subtext", "default": "Jewellery that celebrates people, not just occasions, helping you feel loved, confident, and beautiful through life's most meaningful moments." },
 
     { "type": "header", "content": "Brand promise strip" },
     { "type": "text", "id": "promise_1_word", "label": "Promise 1 word", "default": "Loved" },
@@ -1023,50 +1023,50 @@
     { "type": "header", "content": "Our Story" },
     { "type": "text", "id": "story_eyebrow", "label": "Eyebrow", "default": "Our Story" },
     { "type": "text", "id": "story_title", "label": "Title", "default": "More than something you wear" },
-    { "type": "textarea", "id": "story_lead", "label": "Lead line", "default": "Jewellery is something people feel — part of celebrations, memories, milestones, and self-love." },
-    { "type": "richtext", "id": "story_body", "label": "Body", "default": "<p>We created Ashtitva to help people celebrate themselves and the people they love through thoughtfully curated jewellery that feels expressive, meaningful, and beautiful.</p><p>In a world filled with repetitive designs and artificial imagery, we chose a different path. We believe trust begins with authenticity — real photography, carefully curated collections, and honest presentation.</p><p>Everything we create is guided by one simple belief: everyone deserves to feel loved, confident, and beautiful.</p>" },
+    { "type": "textarea", "id": "story_lead", "label": "Lead line", "default": "Jewellery is something people feel: part of celebrations, memories, milestones, and the love you give yourself." },
+    { "type": "richtext", "id": "story_body", "label": "Body", "default": "<p>We created Ashtitva to help people celebrate themselves and the people they love through thoughtfully curated jewellery that feels expressive, meaningful, and beautiful.</p><p>In a world filled with repetitive designs and artificial imagery, we chose a different path. We believe trust begins with authenticity: real photography, carefully curated collections, and honest presentation.</p><p>Everything we create is guided by one simple belief: everyone deserves to feel loved, confident, and beautiful.</p>" },
 
     { "type": "header", "content": "Why Ashtitva" },
     { "type": "text", "id": "why_eyebrow", "label": "Eyebrow", "default": "Why Ashtitva" },
     { "type": "text", "id": "why_title", "label": "Title", "default": "What makes us different" },
     { "type": "textarea", "id": "why_intro", "label": "Intro", "default": "Emotionally meaningful jewellery with thoughtfully curated designs and authentic photography you can truly trust." },
     { "type": "text", "id": "why_1_title", "label": "Feature 1 title", "default": "Authenticity" },
-    { "type": "text", "id": "why_1_text", "label": "Feature 1 text", "default": "Real photography. Real products. Real experiences — so you can shop with clarity and confidence." },
+    { "type": "text", "id": "why_1_text", "label": "Feature 1 text", "default": "Real photography. Real products. Real experiences, so you can shop with clarity and confidence." },
     { "type": "text", "id": "why_2_title", "label": "Feature 2 title", "default": "Emotional meaning" },
-    { "type": "text", "id": "why_2_text", "label": "Feature 2 text", "default": "Every piece is chosen to help you celebrate love, confidence, beauty, and self-expression." },
+    { "type": "text", "id": "why_2_text", "label": "Feature 2 text", "default": "Every piece is chosen to help you celebrate love, confidence, beauty, and personal expression." },
     { "type": "text", "id": "why_3_title", "label": "Feature 3 title", "default": "Thoughtful curation" },
     { "type": "text", "id": "why_3_text", "label": "Feature 3 text", "default": "Carefully curated designs for weddings, festivals, gifting, everyday styling, and moments that matter." },
     { "type": "text", "id": "why_4_title", "label": "Feature 4 title", "default": "Trust" },
-    { "type": "text", "id": "why_4_text", "label": "Feature 4 text", "default": "Honesty, quality, and transparent experiences that build long-term relationships — not just one-time purchases." },
+    { "type": "text", "id": "why_4_text", "label": "Feature 4 text", "default": "Honesty, quality, and transparent experiences that build lasting relationships, not just single purchases." },
 
     { "type": "header", "content": "Mission" },
     { "type": "text", "id": "mission_title", "label": "Eyebrow", "default": "Our Mission" },
     { "type": "textarea", "id": "mission_quote", "label": "Quote", "default": "We thoughtfully curate jewellery and present it authentically to help people celebrate themselves and the people they love with confidence, beauty, and joy." },
-    { "type": "textarea", "id": "mission_body", "label": "Supporting text", "default": "Our vision is to become the most loved modern jewellery brand that celebrates confidence, self-expression, and life's meaningful moments." },
+    { "type": "textarea", "id": "mission_body", "label": "Supporting text", "default": "Our vision is to become the most loved modern jewellery brand that celebrates confidence, personal expression, and life's meaningful moments." },
 
     { "type": "header", "content": "Brand mantra" },
     { "type": "text", "id": "founder_title", "label": "Label", "default": "Our belief" },
     { "type": "textarea", "id": "founder_quote", "label": "Mantra", "default": "Celebrate Love. Inspire Confidence. Create Beautiful Moments." },
-    { "type": "text", "id": "founder_attr", "label": "Supporting line", "default": "We don't simply sell jewellery — we help people celebrate themselves." },
+    { "type": "text", "id": "founder_attr", "label": "Supporting line", "default": "We don't simply sell jewellery. We help people celebrate themselves." },
 
     { "type": "header", "content": "Authenticity / WhatsApp" },
     { "type": "text", "id": "reassure_eyebrow", "label": "Eyebrow", "default": "Authenticity you can trust" },
     { "type": "text", "id": "reassure_title", "label": "Title", "default": "Real photography. Honest presentation." },
-    { "type": "textarea", "id": "reassure_text", "label": "Message", "default": "Every Ashtitva product image is a real studio photograph of the actual jewellery. If you still have questions about quality, finish, or colour, message us on WhatsApp — we're here with warmth and honesty." },
+    { "type": "textarea", "id": "reassure_text", "label": "Message", "default": "Every Ashtitva product image is a real studio photograph of the actual jewellery. If you still have questions about quality, finish, or colour, message us on WhatsApp. We're here with warmth and honesty." },
     { "type": "text", "id": "reassure_btn", "label": "WhatsApp button label", "default": "Chat on WhatsApp" },
     { "type": "paragraph", "content": "WhatsApp number comes from Theme settings → Contact & WhatsApp." },
 
     { "type": "header", "content": "Closing CTA" },
     { "type": "text", "id": "cta_eyebrow", "label": "Eyebrow", "default": "Explore the collection" },
     { "type": "text", "id": "cta_title", "label": "Title", "default": "Find the piece that celebrates you." },
-    { "type": "textarea", "id": "cta_text", "label": "Text", "default": "Thoughtfully curated jewellery made for life's beautiful moments — and the everyday ones, too." },
+    { "type": "textarea", "id": "cta_text", "label": "Text", "default": "Thoughtfully curated jewellery made for life's beautiful moments, and the everyday ones, too." },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Find your piece" },
     { "type": "url", "id": "cta_link", "label": "Button link" },
     { "type": "color", "id": "cta_button_bg", "label": "Button background", "default": "#123c32" },
     { "type": "color", "id": "cta_button_text", "label": "Button text", "default": "#f7f3e9" },
     { "type": "color", "id": "cta_button_hover", "label": "Button hover", "default": "#0b2924" },
-    { "type": "textarea", "id": "social_text", "label": "Social note", "default": "Follow along and tag us — we love seeing you shine." },
-    { "type": "paragraph", "content": "Social profile links are managed in Theme settings → Social media. Update them once to apply site-wide." }
+    { "type": "textarea", "id": "social_text", "label": "Social note", "default": "Follow along and tag us. We love seeing you shine." },
+    { "type": "paragraph", "content": "Social profile links are managed in Theme settings → Social media. Update them once to apply across the site." }
   ],
   "presets": [
     { "name": "About Us" }

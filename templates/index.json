@@ -193,7 +193,7 @@
         "eyebrow": "Curated for you",
         "title": "Find something that feels like you.",
         "heading_size": "h2",
-        "description": "<p>Thoughtfully curated jewellery for celebrations, gifting, self-expression and everyday beauty.</p>",
+        "description": "<p>Thoughtfully curated jewellery for celebrations, gifting, personal expression and everyday beauty.</p>",
         "show_description": false,
         "description_style": "subtitle",
         "columns_desktop": 4,
@@ -314,7 +314,7 @@
           "settings": {
             "enabled": true,
             "icon": "diamond",
-            "title": "True-to-life details"
+            "title": "Lifelike details"
           }
         },
         "benefit_KLLeg8": {
@@ -521,7 +521,7 @@
       "settings": {
         "label": "Honesty, every day",
         "heading": "Trust, told in numbers",
-        "description": "After every closing day, we share a simple snapshot of Ashtitva — honest figures, no filters — so you can shop with clarity and confidence.",
+        "description": "After every closing day, we share a simple snapshot of Ashtitva with honest figures and no filters, so you can shop with clarity and confidence.",
         "text_alignment": "center",
         "metrics_alignment": "center",
         "show_index": true,
@@ -567,7 +567,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Are these product photos real?",
-            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background — not AI. Slight colour differences can still happen because of screen settings or lighting, and we’re always honest about that.</p>"
+            "answer": "<p>Yes. Every product image is a real studio photograph of the actual jewellery on a dark green background, not AI. Slight colour differences can still happen because of screen settings or lighting, and we’re always honest about that.</p>"
           }
         },
         "faq_2": {
@@ -588,7 +588,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How long will it take to receive my order?",
-            "answer": "<p>Orders are usually processed within 1–2 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3–7 business days across India.</p><p>Once your order is shipped, tracking details will be shared via SMS and Email.</p>"
+            "answer": "<p>Orders are usually processed within 1 to 2 business days. Delivery timelines may vary depending on your location, but most orders are delivered within 3 to 7 business days across India.</p><p>Once your order is shipped, tracking details will be shared via SMS and Email.</p>"
           }
         },
         "faq_5": {
@@ -616,7 +616,7 @@
           "type": "faq_item",
           "settings": {
             "question": "When will I receive my refund?",
-            "answer": "<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5–10 business days.</p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.</p>"
+            "answer": "<p>Once your returned product is received and approved after inspection, your refund will be processed to the original payment method within 5 to 10 business days.</p><p>The time taken for the amount to reflect in your account may vary depending on your bank or payment provider.</p>"
           }
         },
         "faq_9": {
@@ -630,7 +630,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How can I contact Ashtitva for support?",
-            "answer": "<p>We’re always happy to help.</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917777877253\" target=\"_blank\" rel=\"noopener\">+91 77778 77253</a></p><p><strong>Email:</strong> <a href=\"mailto:contact@ashtitva.com\">contact@ashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products — our team is here with warmth and honesty.</p>"
+            "answer": "<p>We’re always happy to help.</p><p><strong>WhatsApp:</strong> <a href=\"https://wa.me/917777877253\" target=\"_blank\" rel=\"noopener\">+91 77778 77253</a></p><p><strong>Email:</strong> <a href=\"mailto:contact@ashtitva.com\">contact@ashtitva.com</a></p><p>Whether you have questions about your order, shipping, returns, exchanges, payments, or our products. Our team is here with warmth and honesty.</p>"
           }
         }
       },
@@ -738,7 +738,7 @@
       "settings": {
         "label": "Our promise",
         "heading": "Feel loved in every interaction",
-        "text": "<p>Packed with care, sent with love, and always here for you — because jewellery should help you feel confident, beautiful, and celebrated.</p>",
+        "text": "<p>Packed with care, sent with love, and always here for you, because jewellery should help you feel confident, beautiful, and celebrated.</p>",
         "copy_alignment": "center",
         "show_promise_icon": true,
         "promise_icon": "check",
@@ -794,7 +794,7 @@
             "social_handle": "@aditi_style",
             "creator_type": "Fashion Creator",
             "followers": "145K",
-            "review": "I feel more confident every time I wear it — the compliments never stop.",
+            "review": "I feel more confident every time I wear it. The compliments never stop.",
             "platform": "instagram",
             "verified": true,
             "platform_url": ""

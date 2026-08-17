@@ -562,7 +562,7 @@
               endcase
 
               if photo != blank
-                assign photo_alt = name | default: 'Creator photo' | append: ' — creator review'
+                assign photo_alt = name | default: 'Creator photo' | append: ' creator review'
               endif
               if avatar != blank
                 assign avatar_alt = name | default: 'Creator' | append: ' profile photo'

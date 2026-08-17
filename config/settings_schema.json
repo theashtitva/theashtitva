@@ -1375,20 +1375,20 @@
         "id": "seo_homepage_title",
         "label": "Homepage SEO title",
         "default": "Ashtitva | Necklaces, Earrings & Fashion Jewellery Online",
-        "info": "Brand first, then searchable categories. Aim for ~50–60 characters."
+        "info": "Brand first, then searchable categories. Aim for ~50 to 60 characters."
       },
       {
         "type": "textarea",
         "id": "seo_homepage_description",
         "label": "Homepage meta description",
-        "default": "Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos — thoughtfully curated, delivered across India.",
-        "info": "Aim for ~145–160 characters. Unique brand voice helps click-through."
+        "default": "Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos, thoughtfully curated and delivered across India.",
+        "info": "Aim for ~145 to 160 characters. Unique brand voice helps click-through."
       },
       {
         "type": "textarea",
         "id": "seo_default_description",
         "label": "Default meta description (fallback)",
-        "default": "Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos — thoughtfully curated, delivered across India.",
+        "default": "Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos, thoughtfully curated and delivered across India.",
         "info": "Used when a page has no SEO description."
       },
       {
@@ -1404,7 +1404,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Used site-wide for Contact page, About, FAQ, Track Order, brand promise, and SEO. Edit once here."
+        "content": "Used across the site for Contact page, About, FAQ, Track Order, brand promise, and SEO. Edit once here."
       },
       {
         "type": "text",
@@ -1549,7 +1549,7 @@
       },
       {
         "type": "paragraph",
-        "content": "This shows a progress message in the cart. To actually charge ₹99 at checkout when the order is under ₹499, set price-based shipping rates in Shopify Admin → Settings → Shipping and delivery."
+        "content": "This shows a progress message in the cart. To actually charge ₹99 at checkout when the order is under ₹499, set price based shipping rates in Shopify Admin → Settings → Shipping and delivery."
       },
       {
         "type": "checkbox",

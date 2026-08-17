@@ -6,7 +6,7 @@
 {%- liquid
   assign org_description = settings.seo_default_description
   if org_description == blank
-    assign org_description = 'Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos — thoughtfully curated, delivered across India.'
+    assign org_description = 'Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos, thoughtfully curated and delivered across India.'
   endif
 
   assign whatsapp_digits = settings.whatsapp_phone | default: '' | replace: '+', '' | replace: ' ', '' | replace: '-', ''
@@ -108,7 +108,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Best Seller",
-        "description": "Shop Ashtitva bestsellers — loved necklaces, earrings, rings and sets chosen for everyday beauty and celebration-ready style.",
+        "description": "Shop Ashtitva bestsellers: loved necklaces, earrings, rings and sets chosen for everyday beauty and style ready for celebration.",
         "url": {{ '/collections/best-seller' | absolute_url | json }}
       },
       {
@@ -122,7 +122,7 @@
         "@type": "ListItem",
         "position": 3,
         "name": "Necklaces",
-        "description": "Discover Ashtitva necklaces crafted to celebrate you — from everyday layers to festive statement pieces with real product photos.",
+        "description": "Discover Ashtitva necklaces crafted to celebrate you, from everyday layers to festive statement pieces with real product photos.",
         "url": {{ '/collections/necklace' | absolute_url | json }}
       },
       {
@@ -136,7 +136,7 @@
         "@type": "ListItem",
         "position": 5,
         "name": "Categories",
-        "description": "Browse Ashtitva jewellery categories — necklaces, earrings, rings, kadas and curated collections for every celebration.",
+        "description": "Browse Ashtitva jewellery categories: necklaces, earrings, rings, kadas and curated collections for every celebration.",
         "url": {{ routes.collections_url | absolute_url | json }}
       }
     ]
