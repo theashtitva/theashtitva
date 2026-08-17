@@ -69,7 +69,7 @@
             "mobile_description_color": "#f7f3e9",
             "mobile_description_size": 14,
             "overlay_color": "#071713",
-            "overlay_opacity": 20,
+            "overlay_opacity": 70,
             "text_shadow_enabled": true
           },
           "blocks": {}
