@@ -85,6 +85,19 @@
     color: var(--rpt-desc);
     overflow-x: clip;
     overflow-y: visible;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  /* Visible highlight on dark green — global ::selection uses light-scheme foreground */
+  #rpt-{{ sid }} ::selection {
+    background-color: color-mix(in srgb, var(--rpt-accent) 55%, transparent);
+    color: var(--rpt-heading);
+  }
+
+  #rpt-{{ sid }} ::-moz-selection {
+    background-color: color-mix(in srgb, var(--rpt-accent) 55%, transparent);
+    color: var(--rpt-heading);
   }
 
   #rpt-{{ sid }}.rpt--on-dark .rpt__benefit {
@@ -123,11 +136,21 @@
     align-items: stretch;
   }
 
-  /* —— Content —— */
+  /* —— Text column (keeps copy above/away from image hit area) —— */
+  #rpt-{{ sid }} .rpt__text {
+    display: contents;
+  }
+
   #rpt-{{ sid }} .rpt__content {
-    max-width: var(--rpt-content-max);
+    order: 1;
     width: 100%;
+    max-width: var(--rpt-content-max);
     text-align: var(--rpt-text-align);
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    -webkit-user-select: text !important;
+    user-select: text !important;
     {% if section.settings.text_alignment == 'center' %}
       margin-left: auto;
       margin-right: auto;
@@ -137,14 +160,30 @@
   }
 
   #rpt-{{ sid }} .rpt__benefits-wrap {
-    max-width: var(--rpt-content-max);
+    order: 3;
     width: 100%;
+    max-width: var(--rpt-content-max);
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    -webkit-user-select: text !important;
+    user-select: text !important;
     {% if section.settings.text_alignment == 'center' %}
       margin-left: auto;
       margin-right: auto;
     {% elsif section.settings.text_alignment == 'right' %}
       margin-left: auto;
     {% endif %}
+  }
+
+  #rpt-{{ sid }} .rpt__label,
+  #rpt-{{ sid }} .rpt__heading,
+  #rpt-{{ sid }} .rpt__description,
+  #rpt-{{ sid }} .rpt__benefit-title {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    -webkit-touch-callout: default;
+    cursor: text;
   }
 
   #rpt-{{ sid }} .rpt__label-row {
@@ -243,14 +282,17 @@
     line-height: 1.4;
   }
 
-  /* —— Media: stacked photo cards (fan) —— */
   #rpt-{{ sid }} .rpt__media {
     position: relative;
+    z-index: 0;
+    order: 2;
     width: 100%;
     max-width: 100%;
     padding: 1.15rem 0.35rem 1.35rem;
     box-sizing: border-box;
     overflow: hidden;
+    /* Do not let the image column steal drag/selection from copy */
+    pointer-events: none;
   }
 
   #rpt-{{ sid }} .rpt__stack {
@@ -258,6 +300,7 @@
     width: 86%;
     max-width: 22rem;
     margin: 0 auto;
+    pointer-events: auto;
     {% case section.settings.image_aspect %}
       {% when 'portrait' %}
         aspect-ratio: 4 / 5;
@@ -292,6 +335,14 @@
     object-fit: cover;
     object-position: center;
     display: block;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  /* Decorative stack cards must not steal clicks/selection from copy */
+  #rpt-{{ sid }} .rpt__card--back,
+  #rpt-{{ sid }} .rpt__card--mid {
+    pointer-events: none;
   }
 
   #rpt-{{ sid }} .rpt__card--front img {
@@ -616,31 +667,40 @@
       align-items: center;
       {% if layout_reverse %}
         grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-        grid-template-areas:
-          "media content"
-          "media benefits";
+        grid-template-areas: "media text";
       {% else %}
-        grid-template-areas:
-          "content media"
-          "benefits media";
+        grid-template-areas: "text media";
       {% endif %}
     }
 
-    #rpt-{{ sid }} .rpt__content {
-      grid-area: content;
-      align-self: end;
+    #rpt-{{ sid }} .rpt__text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      grid-area: text;
+      align-self: center;
+      max-width: var(--rpt-content-max);
+      width: 100%;
+      min-width: 0;
+      position: relative;
+      z-index: 2;
+      pointer-events: auto;
+      -webkit-user-select: text !important;
+      user-select: text !important;
     }
 
+    #rpt-{{ sid }} .rpt__content,
     #rpt-{{ sid }} .rpt__benefits-wrap {
-      grid-area: benefits;
-      align-self: start;
+      order: unset;
+      max-width: none;
     }
 
     #rpt-{{ sid }} .rpt__media {
       grid-area: media;
+      order: unset;
       align-self: center;
       padding: 2rem 1.75rem 2.25rem;
-      overflow: visible;
+      overflow: hidden;
     }
 
     #rpt-{{ sid }} .rpt__heading {
@@ -782,6 +842,7 @@
 >
   <div class="rpt__inner">
     <div class="rpt__grid">
+      <div class="rpt__text">
       {%- comment -%} Content: label, heading, description {%- endcomment -%}
       <div class="rpt__content">
         {%- if section.settings.label != blank -%}
@@ -802,6 +863,65 @@
             {{ section.settings.description | escape | newline_to_br }}
           </div>
         {%- endif -%}
+      </div>
+
+      {%- comment -%} Benefits (mobile order after media via CSS order) {%- endcomment -%}
+      {%- assign has_benefits = false -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'benefit' and block.settings.enabled and block.settings.title != blank -%}
+          {%- assign has_benefits = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if has_benefits -%}
+      <div class="rpt__benefits-wrap">
+        <ul class="rpt__benefits" aria-label="{{ section.settings.benefits_aria_label | escape }}">
+          {%- assign benefit_index = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'benefit' and block.settings.enabled -%}
+              {%- if block.settings.title != blank -%}
+                <li
+                  class="rpt__benefit rpt-anim"
+                  data-rpt-anim
+                  style="--rpt-stagger: {{ benefit_index }};"
+                  {{ block.shopify_attributes }}
+                >
+                  <span class="rpt__benefit-icon" aria-hidden="true">
+                    {%- case block.settings.icon -%}
+                      {%- when 'camera' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                      {%- when 'diamond' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 21 21 9.5 16.5 3h-9L3 9.5z"/><path d="M3 9.5h18M8.2 3.4 12 9.5l3.8-6.1"/></svg>
+                      {%- when 'shield' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                      {%- when 'sparkle' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></svg>
+                      {%- when 'heart' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+                      {%- when 'trophy' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 4h2a2 2 0 0 1 2 2v1a4 4 0 0 1-4 4h0M7 4H5a2 2 0 0 0-2 2v1a4 4 0 0 0 4 4h0"/></svg>
+                      {%- when 'check' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>
+                      {%- when 'eye' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                      {%- when 'star' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.9L22 9.2l-5 4.8 1.5 7L12 17.8 5.5 21l1.5-7-5-4.8 7.1-0.3z"/></svg>
+                      {%- when 'leaf' -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 5.5 2 8a7 7 0 0 1-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                      {%- else -%}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>
+                    {%- endcase -%}
+                  </span>
+                  <p class="rpt__benefit-title">{{ block.settings.title | escape }}</p>
+                </li>
+                {%- assign benefit_index = benefit_index | plus: 1 -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
       </div>
 
       {%- comment -%} Stacked photo cards {%- endcomment -%}
@@ -920,63 +1040,6 @@
         </div>
       </div>
 
-      {%- comment -%} Benefits: after media in DOM for correct mobile order {%- endcomment -%}
-      {%- assign has_benefits = false -%}
-      {%- for block in section.blocks -%}
-        {%- if block.type == 'benefit' and block.settings.enabled and block.settings.title != blank -%}
-          {%- assign has_benefits = true -%}
-          {%- break -%}
-        {%- endif -%}
-      {%- endfor -%}
-
-      {%- if has_benefits -%}
-      <div class="rpt__benefits-wrap">
-        <ul class="rpt__benefits" aria-label="{{ section.settings.benefits_aria_label | escape }}">
-          {%- assign benefit_index = 0 -%}
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'benefit' and block.settings.enabled -%}
-              {%- if block.settings.title != blank -%}
-                <li
-                  class="rpt__benefit rpt-anim"
-                  data-rpt-anim
-                  style="--rpt-stagger: {{ benefit_index }};"
-                  {{ block.shopify_attributes }}
-                >
-                  <span class="rpt__benefit-icon" aria-hidden="true">
-                    {%- case block.settings.icon -%}
-                      {%- when 'camera' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                      {%- when 'diamond' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M12 21 8 9l4-6 4 6z"/></svg>
-                      {%- when 'shield' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                      {%- when 'sparkle' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></svg>
-                      {%- when 'heart' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-                      {%- when 'trophy' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 4h2a2 2 0 0 1 2 2v1a4 4 0 0 1-4 4h0M7 4H5a2 2 0 0 0-2 2v1a4 4 0 0 0 4 4h0"/></svg>
-                      {%- when 'check' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>
-                      {%- when 'eye' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
-                      {%- when 'star' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.9 6.9L22 9.2l-5 4.8 1.5 7L12 17.8 5.5 21l1.5-7-5-4.8 7.1-0.3z"/></svg>
-                      {%- when 'leaf' -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 5.5 2 8a7 7 0 0 1-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-                      {%- else -%}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>
-                    {%- endcase -%}
-                  </span>
-                  <p class="rpt__benefit-title">{{ block.settings.title | escape }}</p>
-                </li>
-                {%- assign benefit_index = benefit_index | plus: 1 -%}
-              {%- endif -%}
-            {%- endif -%}
-          {%- endfor -%}
-        </ul>
-      </div>
-      {%- endif -%}
     </div>
   </div>
 </section>
@@ -1528,7 +1591,7 @@
           "settings": {
             "enabled": true,
             "icon": "diamond",
-            "title": "True Product Detail"
+            "title": "True colour and detail"
           }
         },
         {
