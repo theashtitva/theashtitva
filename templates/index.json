@@ -517,6 +517,7 @@
         "metric_BVRzKc",
         "metric_xBGkhP"
       ],
+      "disabled": true,
       "name": "Store Metrics",
       "settings": {
         "label": "Honesty, every day",
