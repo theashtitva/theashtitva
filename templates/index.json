@@ -68,12 +68,12 @@
             "desktop_description_size": 16,
             "mobile_description_color": "#f7f3e9",
             "mobile_description_size": 14,
+            "desktop_overlay_color": "#071713",
+            "desktop_overlay_opacity": 30,
+            "mobile_overlay_color": "#071713",
+            "mobile_overlay_opacity": 60,
             "overlay_color": "#071713",
             "overlay_opacity": 70,
-            "desktop_overlay_color": "#071713",
-            "desktop_overlay_opacity": 55,
-            "mobile_overlay_color": "#071713",
-            "mobile_overlay_opacity": 65,
             "text_shadow_enabled": true
           },
           "blocks": {}
