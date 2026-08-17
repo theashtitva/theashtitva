@@ -17,12 +17,24 @@
 {% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
+{%- liquid
+  assign desktop_overlay_color = block.settings.desktop_overlay_color | default: block.settings.overlay_color | default: '#071713'
+  assign mobile_overlay_color = block.settings.mobile_overlay_color | default: block.settings.overlay_color | default: '#071713'
+  assign desktop_overlay_opacity = block.settings.desktop_overlay_opacity | default: block.settings.overlay_opacity | default: 45
+  assign mobile_overlay_opacity = block.settings.mobile_overlay_opacity | default: block.settings.overlay_opacity | default: 55
+  assign desktop_overlay_alpha = desktop_overlay_opacity | times: 0.01
+  assign mobile_overlay_alpha = mobile_overlay_opacity | times: 0.01
+  assign desktop_overlay_rgba = desktop_overlay_color | color_modify: 'alpha', desktop_overlay_alpha
+  assign mobile_overlay_rgba = mobile_overlay_color | color_modify: 'alpha', mobile_overlay_alpha
+-%}
+
 {% style %}
   .ai-hero-{{ ai_gen_id }} {
     position: relative;
     width: 100%;
     overflow: hidden;
     display: block;
+    isolation: isolate;
   }
 
   .ai-hero-background-{{ ai_gen_id }} {
@@ -37,19 +49,21 @@
   }
 
   .ai-hero-overlay-{{ ai_gen_id }} {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    {% liquid
-      assign mobile_overlay_color = block.settings.mobile_overlay_color | default: block.settings.overlay_color | default: '#000000'
-      assign mobile_overlay_opacity = block.settings.mobile_overlay_opacity | default: block.settings.overlay_opacity | default: 30
-      assign mobile_overlay_alpha = mobile_overlay_opacity | divided_by: 100.0
-      assign mobile_r = mobile_overlay_color | color_extract: 'red'
-      assign mobile_g = mobile_overlay_color | color_extract: 'green'
-      assign mobile_b = mobile_overlay_color | color_extract: 'blue'
-    %}
-    background-color: rgba({{ mobile_r }}, {{ mobile_g }}, {{ mobile_b }}, {{ mobile_overlay_alpha }});
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    display: block !important;
+  }
+
+  .ai-hero-overlay-desktop-{{ ai_gen_id }} {
+    display: none !important;
+  }
+
+  .ai-hero-overlay-mobile-{{ ai_gen_id }} {
+    display: block !important;
   }
 
   .ai-hero-content-wrapper-{{ ai_gen_id }} {
@@ -171,16 +185,12 @@
       {% endif %}
     }
 
-    .ai-hero-overlay-{{ ai_gen_id }} {
-      {% liquid
-        assign desktop_overlay_color = block.settings.desktop_overlay_color | default: block.settings.overlay_color | default: '#000000'
-        assign desktop_overlay_opacity = block.settings.desktop_overlay_opacity | default: block.settings.overlay_opacity | default: 30
-        assign desktop_overlay_alpha = desktop_overlay_opacity | divided_by: 100.0
-        assign desktop_r = desktop_overlay_color | color_extract: 'red'
-        assign desktop_g = desktop_overlay_color | color_extract: 'green'
-        assign desktop_b = desktop_overlay_color | color_extract: 'blue'
-      %}
-      background-color: rgba({{ desktop_r }}, {{ desktop_g }}, {{ desktop_b }}, {{ desktop_overlay_alpha }});
+    .ai-hero-overlay-desktop-{{ ai_gen_id }} {
+      display: block !important;
+    }
+
+    .ai-hero-overlay-mobile-{{ ai_gen_id }} {
+      display: none !important;
     }
 
     .ai-hero-background-desktop-{{ ai_gen_id }} {
@@ -315,7 +325,11 @@
   }
 {% endstyle %}
 
-<div class="ai-hero-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+<div
+  class="ai-hero-{{ ai_gen_id }}"
+  style="--ai-hero-overlay-mobile: {{ mobile_overlay_rgba }}; --ai-hero-overlay-desktop: {{ desktop_overlay_rgba }};"
+  {{ block.shopify_attributes }}
+>
   {%- liquid
     assign hero_desktop = block.settings.desktop_image
     assign hero_mobile = block.settings.mobile_image
@@ -386,7 +400,16 @@
     {% endif %}
   {% endif %}
 
-  <div class="ai-hero-overlay-{{ ai_gen_id }}"></div>
+  <div
+    class="ai-hero-overlay-{{ ai_gen_id }} ai-hero-overlay-mobile-{{ ai_gen_id }}"
+    style="background-color: {{ mobile_overlay_rgba }} !important;"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="ai-hero-overlay-{{ ai_gen_id }} ai-hero-overlay-desktop-{{ ai_gen_id }}"
+    style="background-color: {{ desktop_overlay_rgba }} !important;"
+    aria-hidden="true"
+  ></div>
 
   <div class="ai-hero-content-wrapper-{{ ai_gen_id }}">
     <div class="ai-hero-content-{{ ai_gen_id }}">
