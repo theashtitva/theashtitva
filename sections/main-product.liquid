@@ -699,7 +699,8 @@
           </a>
 
           {%- comment -%} ===== PRODUCT METAFIELDS (Luxury UI) ===== {%- endcomment -%}
-          {%- assign mf_descriptions = product.metafields.custom.product_descriptions.value -%}
+          {%- assign mf_description_meta = product.metafields.custom.product_description -%}
+          {%- assign mf_descriptions = mf_description_meta.value -%}
           {%- assign mf_details = product.metafields.custom.product_details.value -%}
           {%- assign mf_perfect_for = product.metafields.custom.product_perfect_for.value -%}
           {%- assign mf_paired_with = product.metafields.custom.product_best_paired_with.value -%}
@@ -711,11 +712,15 @@
               {%- if mf_descriptions != blank -%}
                 <article class="sv-section">
                   <h2 class="sv-section__label">Description</h2>
-                  {%- for item in mf_descriptions -%}
-                    {%- if item != blank -%}
-                      <p class="sv-section__text">{{ item }}</p>
-                    {%- endif -%}
-                  {%- endfor -%}
+                  {%- if mf_description_meta.type contains 'list.' -%}
+                    {%- for item in mf_descriptions -%}
+                      {%- if item != blank -%}
+                        <p class="sv-section__text">{{ item }}</p>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- else -%}
+                    <div class="sv-section__text rte">{{ mf_descriptions }}</div>
+                  {%- endif -%}
                 </article>
               {%- endif -%}
 
