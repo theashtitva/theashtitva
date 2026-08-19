@@ -706,6 +706,44 @@
           {%- assign mf_paired_with = product.metafields.custom.product_best_paired_with.value -%}
           {%- assign mf_in_box = product.metafields.custom.product_what_is_in_the_box.value -%}
           {%- assign mf_care = product.metafields.custom.care_instructions.value -%}
+          {%- liquid
+            assign jewellery_care = shop.metaobjects.jewellery_care_instruction['jewellery-care-instruction-om5qow0d']
+            if jewellery_care == blank
+              assign jewellery_care = shop.metaobjects.jewellery_care_instruction.values | first
+            endif
+
+            assign care_raw = ''
+            if jewellery_care != blank
+              assign care_raw = jewellery_care.care_instructions.value
+              if care_raw == blank
+                assign care_raw = jewellery_care.care_instructions
+              endif
+            endif
+
+            if care_raw != blank
+              assign parsed_care = care_raw | parse_json
+              if parsed_care != blank
+                assign mf_care = parsed_care
+              else
+                assign mf_care = care_raw
+              endif
+            endif
+
+            assign jewellery_care_found = false
+            if jewellery_care != blank
+              assign jewellery_care_found = true
+            endif
+          -%}
+          <script>
+            console.log('[Ashtitva Jewellery Care Instruction #OM5QOW0D]', {
+              found: {{ jewellery_care_found | json }},
+              id: {{ jewellery_care.system.id | json }},
+              handle: {{ jewellery_care.system.handle | json }},
+              type: {{ jewellery_care.system.type | json }},
+              care_instructions: {{ jewellery_care.care_instructions.value | json }},
+              parsedCare: {{ mf_care | json }}
+            });
+          </script>
 
           {%- if mf_descriptions != blank or mf_perfect_for != blank or mf_paired_with != blank -%}
             <div class="sv-info quick-add-hidden">
