@@ -763,6 +763,16 @@ h5,
   letter-spacing: 0.08em;
   text-transform: uppercase;
   width: 100%;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-product-card-design .quick-add__submit {
+    min-height: 4rem !important;
+    padding: 0.9rem 0.6rem !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.04em !important;
+  }
 }
 
 .custom-product-card-design .quick-add__submit:before,

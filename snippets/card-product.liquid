@@ -220,24 +220,34 @@
   }
 
   .custom-product-card-design .quick-add__submit {
-    min-height: 4.6rem !important;
-    padding: 1.2rem 1.6rem !important;
-    border-radius: 4px !important;
-    background: var(--sv-card-cta) !important;
-    background-color: var(--sv-card-cta) !important;
-    color: var(--ashtitva-ivory, #f7f3e9) !important;
-    border: 1px solid var(--sv-card-cta) !important;
-    box-shadow: none !important;
-    font-size: 1.2rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    width: 100%;
-    transition:
-      background-color 280ms var(--sv-card-ease),
-      border-color 280ms var(--sv-card-ease),
-      color 280ms var(--sv-card-ease) !important;
+  min-height: 4.6rem !important;
+  padding: 1.2rem 1.6rem !important;
+  border-radius: 4px !important;
+  background: var(--sv-card-cta) !important;
+  background-color: var(--sv-card-cta) !important;
+  color: var(--ashtitva-ivory, #f7f3e9) !important;
+  border: 1px solid var(--sv-card-cta) !important;
+  box-shadow: none !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 100%;
+  white-space: nowrap;
+  transition:
+    background-color 280ms var(--sv-card-ease),
+    border-color 280ms var(--sv-card-ease),
+    color 280ms var(--sv-card-ease) !important;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-product-card-design .quick-add__submit {
+    min-height: 4rem !important;
+    padding: 0.9rem 0.6rem !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.04em !important;
   }
+}
 
   .custom-product-card-design .quick-add__submit:before,
   .custom-product-card-design .quick-add__submit:after {

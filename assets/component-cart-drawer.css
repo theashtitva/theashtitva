@@ -121,7 +121,22 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--sv-muted);
+  color: var(--ashtitva-gold, #b89a5a);
+}
+
+.cart-drawer__empty-content .cart-drawer__eyebrow {
+  margin-top: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.cart-drawer__empty-art {
+  width: 12rem;
+  height: 12rem;
+  margin-bottom: 1.2rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--ashtitva-ivory, #f7f3e9) 80%, var(--ashtitva-gold, #b89a5a) 8%);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ashtitva-gold, #b89a5a) 35%, transparent);
+  overflow: hidden;
 }
 
 .drawer__heading {
@@ -195,12 +210,6 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   flex-direction: column;
   align-items: center;
   text-align: center;
-}
-
-.cart-drawer__empty-art {
-  width: 12rem;
-  height: 12rem;
-  margin-bottom: 2rem;
 }
 
 .cart-drawer__empty-img {

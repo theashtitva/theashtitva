@@ -4367,6 +4367,17 @@ button.shopify-payment-button__button--unbranded,
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .quick-add__submit.button,
+  .quick-add__submit.button--secondary {
+    min-height: 4rem;
+    padding: 0.9rem 0.6rem;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
 }
 
 .quick-add__submit:before,
