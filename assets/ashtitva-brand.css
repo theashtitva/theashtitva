@@ -237,16 +237,16 @@ button.shopify-payment-button__button--unbranded {
   color: var(--ashtitva-gold-light) !important;
 }
 
-.footer a,
-.footer .link,
+.footer a:not(.list-social__link),
+.footer .link:not(.list-social__link),
 .footer .list-menu__item--link,
 .footer .footer-block__details-content a {
   color: var(--ashtitva-ivory) !important;
   transition: color var(--sv-btn-duration) var(--sv-btn-ease);
 }
 
-.footer a:hover,
-.footer .link:hover,
+.footer a:not(.list-social__link):hover,
+.footer .link:not(.list-social__link):hover,
 .footer .list-menu__item--link:hover {
   color: var(--ashtitva-gold-light) !important;
 }
@@ -255,12 +255,53 @@ button.shopify-payment-button__button--unbranded {
   border-top-color: color-mix(in srgb, var(--ashtitva-ivory) 14%, transparent) !important;
 }
 
+.footer .list-social {
+  --social-icon-size: 2.4rem;
+  --social-hit-size: 4.8rem;
+  gap: 1rem;
+}
+
 .footer .list-social__link {
   color: var(--ashtitva-ivory) !important;
+  border: 1px solid var(--ashtitva-ivory);
+  border-radius: 50%;
+  background: transparent;
+  transition:
+    color var(--sv-btn-duration) var(--sv-btn-ease),
+    border-color var(--sv-btn-duration) var(--sv-btn-ease),
+    background var(--sv-btn-duration) var(--sv-btn-ease);
+}
+
+.footer .list-social__link .svg-wrapper,
+.footer .list-social__link svg,
+.footer .list-social__link .icon,
+.footer .list-social__link path {
+  color: var(--ashtitva-ivory) !important;
+  fill: var(--ashtitva-ivory) !important;
 }
 
 .footer .list-social__link:hover {
   color: var(--ashtitva-gold-light) !important;
+  border-color: var(--ashtitva-gold-light);
+  background: color-mix(in srgb, var(--ashtitva-gold) 18%, transparent);
+}
+
+.footer .list-social__link:hover .svg-wrapper,
+.footer .list-social__link:hover svg,
+.footer .list-social__link:hover .icon,
+.footer .list-social__link:hover path {
+  color: var(--ashtitva-gold-light) !important;
+  fill: var(--ashtitva-gold-light) !important;
+}
+
+.footer .list-social__link:hover .icon,
+.footer .list-social__link:hover .svg-wrapper svg {
+  transform: scale(1.05);
+}
+
+.footer .list-social__link:focus-visible {
+  outline: 2px solid var(--ashtitva-gold-light);
+  outline-offset: 3px;
 }
 
 /* —— Typography helpers —— */
