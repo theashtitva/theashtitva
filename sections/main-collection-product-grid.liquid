@@ -22,6 +22,10 @@
   <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{%- if section.settings.enable_infinite_scroll -%}
+  <script src="{{ 'infinite-scroll.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -33,6 +37,24 @@
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+  }
+
+  infinite-scroll {
+    display: block;
+    width: 100%;
+    min-height: 1px;
+    padding: 2.4rem 0 0;
+    text-align: center;
+  }
+
+  infinite-scroll .loading__spinner {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0 auto;
+  }
+
+  infinite-scroll .loading__spinner.hidden {
+    display: none;
   }
 {%- endstyle -%}
 
@@ -176,7 +198,18 @@
             </ul>
 
             {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
+              {%- if section.settings.enable_infinite_scroll -%}
+                {%- if paginate.next -%}
+                  <infinite-scroll data-next-url="{{ paginate.next.url }}">
+                    {% render 'loading-spinner' %}
+                    <noscript>
+                      {% render 'pagination', paginate: paginate, anchor: '' %}
+                    </noscript>
+                  </infinite-scroll>
+                {%- endif -%}
+              {%- else -%}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              {%- endif -%}
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -201,6 +234,13 @@
       "step": 4,
       "default": 16,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_infinite_scroll",
+      "default": true,
+      "label": "Infinite scroll",
+      "info": "Load more products as you scroll instead of showing page numbers"
     },
     {
       "type": "range",
