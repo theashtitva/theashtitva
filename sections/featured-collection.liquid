@@ -202,10 +202,19 @@
       {%- endif -%}
     </slider-component>
 
-    {%- if section.settings.show_view_all and more_in_collection -%}
+    {%- if section.settings.show_view_all -%}
+      {%- liquid
+        if section.settings.view_all_url != blank
+          assign view_all_href = section.settings.view_all_url
+        elsif section.settings.collection.url != blank
+          assign view_all_href = section.settings.collection.url
+        else
+          assign view_all_href = routes.all_products_collection_url
+        endif
+      -%}
       <div class="center collection__view-all{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <a
-          href="{{ section.settings.collection.url }}"
+          href="{{ view_all_href }}"
           class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
           aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title | escape }}"
         >
@@ -348,6 +357,12 @@
       "default": true,
       "label": "t:sections.featured-collection.settings.show_view_all.label",
       "info": "t:sections.featured-collection.settings.show_view_all.info"
+    },
+    {
+      "type": "url",
+      "id": "view_all_url",
+      "label": "View all link",
+      "info": "Defaults to the selected collection. Use /collections/all to show every product."
     },
     {
       "type": "select",
