@@ -20,13 +20,6 @@
     "faq": {
       "type": "faq",
       "blocks": {
-        "faq_brand": {
-          "type": "faq_item",
-          "settings": {
-            "question": "Astitva aur Ashtitva same brand hai kya?",
-            "answer": "<p>Haan. Official spelling <strong>Ashtitva</strong> hai, aur website <strong>ashtitva.com</strong> hai. Log aksar <strong>Astitva</strong>, Astitva jewellery, ya Astitva.com search karte hain — sab same brand hai.</p><p>Yahan Silver Elegance, Gold Glam, Rose Gold, Luxe Picks aur Rare Find collections milti hain, real product photos ke saath.</p>"
-          }
-        },
         "faq_1": {
           "type": "faq_item",
           "settings": {
@@ -99,7 +92,6 @@
         }
       },
       "block_order": [
-        "faq_brand",
         "faq_1",
         "faq_2",
         "faq_3",
@@ -114,7 +106,7 @@
       "settings": {
         "eyebrow": "We’re here for you",
         "heading": "Questions, answered with care",
-        "subheading": "Honest answers about Ashtitva (Astitva), our jewellery, photography, shipping, returns, and support.",
+        "subheading": "Honest answers about our jewellery, photography, shipping, returns, and support.",
         "heading_alignment": "center",
         "heading_size_desktop": 40,
         "heading_size_mobile": 28,

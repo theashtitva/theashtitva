@@ -1368,27 +1368,27 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Homepage title and description shown in Google. Include Ashtitva + Astitva and light Hinglish so misspelled / Hindi-English searches still find you. Also set the same text under Shopify Admin → Online Store → Preferences, put Silver Elegance / Gold Glam / Rose Gold / Luxe Picks / Rare Find in the main menu, then request indexing in Google Search Console. Google awards sitelinks over time — they cannot be forced."
+        "content": "Homepage title and description shown in Google. Use the brand spelling Ashtitva only in titles and on-page text. Misspellings are handled in hidden structured data, not on the storefront. Also set the same title/description under Shopify Admin → Online Store → Preferences, put Silver Elegance / Gold Glam / Rose Gold / Luxe Picks / Rare Find in the main menu, then request indexing in Google Search Console."
       },
       {
         "type": "text",
         "id": "seo_homepage_title",
         "label": "Homepage SEO title",
         "default": "Ashtitva: Online Shopping For Fashion Jewellery & Sets",
-        "info": "Brand first (Rubans-style). Aim for ~50 to 60 characters."
+        "info": "Brand name Ashtitva only. Aim for ~50 to 60 characters."
       },
       {
         "type": "textarea",
         "id": "seo_homepage_description",
         "label": "Homepage meta description",
-        "default": "Ashtitva (Astitva) pe jewellery shop karo — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.",
-        "info": "Aim for ~145 to 160 characters. Keep Ashtitva + Astitva and natural Hinglish."
+        "default": "Shop Ashtitva jewellery online — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.",
+        "info": "Aim for ~145 to 160 characters. Visible titles and on-page copy should say Ashtitva only."
       },
       {
         "type": "textarea",
         "id": "seo_default_description",
         "label": "Default meta description (fallback)",
-        "default": "Ashtitva (Astitva) pe jewellery shop karo — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.",
+        "default": "Shop Ashtitva jewellery online — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.",
         "info": "Used when a page has no SEO description."
       },
       {

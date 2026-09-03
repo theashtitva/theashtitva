@@ -6,7 +6,7 @@
 {%- liquid
   assign org_description = settings.seo_default_description
   if org_description == blank
-    assign org_description = 'Ashtitva (Astitva) pe jewellery shop karo — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.'
+    assign org_description = 'Shop Ashtitva jewellery online — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.'
   endif
 
   assign whatsapp_digits = settings.whatsapp_phone | default: '' | replace: '+', '' | replace: ' ', '' | replace: '-', ''
@@ -41,13 +41,7 @@
   "@id": {{ request.origin | append: '/#organization' | json }},
   "name": "Ashtitva",
   "legalName": "Ashtitva",
-  "alternateName": [
-    "Astitva",
-    "Astitva Jewellery",
-    "Ashtitva Jewellery",
-    "The Ashtitva",
-    "ashtitva.com"
-  ],
+  "alternateName": {% render 'seo-brand-aliases' %},
   "url": {{ request.origin | json }},
   "description": {{ org_description | json }},
   "knowsLanguage": ["en", "hi", "hi-Latn"],
@@ -91,12 +85,7 @@
     "@type": "WebSite",
     "@id": {{ request.origin | append: '/#website' | json }},
     "name": "Ashtitva",
-    "alternateName": [
-      "Astitva",
-      "Astitva Jewellery",
-      "Ashtitva Jewellery",
-      "ashtitva.com"
-    ],
+    "alternateName": {% render 'seo-brand-aliases' %},
     "url": {{ request.origin | json }},
     "description": {{ org_description | json }},
     "inLanguage": ["en-IN", "hi-Latn"],
@@ -119,7 +108,7 @@
     "@context": "https://schema.org",
     "@type": "JewelryStore",
     "name": "Ashtitva",
-    "alternateName": ["Astitva", "Astitva Jewellery", "Ashtitva Jewellery"],
+    "alternateName": {% render 'seo-brand-aliases' %},
     "url": {{ request.origin | json }},
     "description": {{ org_description | json }},
     "image": {% if settings.logo %}{{ settings.logo | image_url: width: 1200 | prepend: 'https:' | json }}{% else %}{{ request.origin | json }}{% endif %},
@@ -147,35 +136,35 @@
         "@type": "SiteNavigationElement",
         "position": 1,
         "name": "Silver Elegance",
-        "description": "Silver Elegance at Ashtitva (Astitva) — chandi look necklace, earrings aur sets. Real photos, everyday elegance, India delivery.",
+        "description": "Shop Silver Elegance at Ashtitva — chandi look necklace, earrings aur sets. Real photos, everyday elegance, India delivery.",
         "url": {{ url_silver | json }}
       },
       {
         "@type": "SiteNavigationElement",
         "position": 2,
         "name": "Gold Glam",
-        "description": "Gold Glam at Ashtitva (Astitva) — gold look jewellery for festive aur party. Necklace, earrings, sets. Real photos, behtareen designs.",
+        "description": "Shop Gold Glam at Ashtitva — gold look jewellery for festive aur party. Necklace, earrings, sets. Real photos, behtareen designs.",
         "url": {{ url_gold | json }}
       },
       {
         "@type": "SiteNavigationElement",
         "position": 3,
         "name": "Rose Gold",
-        "description": "Rose Gold at Ashtitva (Astitva) — soft rose gold necklace, earrings aur sets. Stylish look, real photos, gift ke liye perfect.",
+        "description": "Shop Rose Gold at Ashtitva — soft rose gold necklace, earrings aur sets. Stylish look, real photos, gift ke liye perfect.",
         "url": {{ url_rose | json }}
       },
       {
         "@type": "SiteNavigationElement",
         "position": 4,
         "name": "Luxe Picks",
-        "description": "Luxe Picks at Ashtitva (Astitva) — statement jewellery for special days. Premium look, real photos, India shipping.",
+        "description": "Shop Luxe Picks at Ashtitva — statement jewellery for special days. Premium look, real photos, India shipping.",
         "url": {{ url_luxe | json }}
       },
       {
         "@type": "SiteNavigationElement",
         "position": 5,
         "name": "Rare Find",
-        "description": "Rare Find at Ashtitva (Astitva) — unique jewellery you won’t see everywhere. Limited styles, real photos, alag design.",
+        "description": "Shop Rare Find at Ashtitva — unique jewellery you won’t see everywhere. Limited styles, real photos, alag design.",
         "url": {{ url_rare | json }}
       }
     ]
