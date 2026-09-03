@@ -15,6 +15,12 @@
 {% endcomment %}
 
 {%- if media.media_type == 'image' -%}
+  {%- liquid
+    assign product_media_alt = media.alt | strip
+    if product_media_alt == blank
+      assign product_media_alt = product.title | default: shop.name | append: ' jewellery | Ashtitva'
+    endif
+  -%}
   <img
     class="global-media-settings global-media-settings--no-shadow{% if variant_image %} product__media-item--variant{% endif %}"
     srcset="
@@ -30,7 +36,7 @@
     "
     sizes="(min-width: 750px) calc(100vw - 22rem), 1100px"
     src="{{ media.preview_image | image_url: width: 1445 }}"
-    alt="{{ media.alt | escape }}"
+    alt="{{ product_media_alt | escape }}"
     loading="lazy"
     width="1100"
     height="{{ 1100 | divided_by: media.preview_image.aspect_ratio | ceil }}"

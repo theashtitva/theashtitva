@@ -18,7 +18,15 @@
       </h1>
 
       {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
+        {%- capture seo_banner_copy -%}
+          {%- render 'seo-collection-copy', collection: collection, field: 'description' -%}
+        {%- endcapture -%}
+        {%- assign seo_banner_copy = seo_banner_copy | strip -%}
+        {%- if collection.description != blank -%}
+          <div class="collection-hero__description rte">{{ collection.description }}</div>
+        {%- elsif seo_banner_copy != blank -%}
+          <div class="collection-hero__description rte"><p>{{ seo_banner_copy | escape }}</p></div>
+        {%- endif -%}
       {%- endif -%}
     </div>
 
@@ -57,7 +65,7 @@
     {
       "type": "checkbox",
       "id": "show_collection_description",
-      "default": true,
+      "default": false,
       "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
     },
     {

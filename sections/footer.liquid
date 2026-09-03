@@ -170,6 +170,31 @@
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
                       {%- endif -%}
                     </div>
+                  {%- when 'shop_collections' -%}
+                    {%- liquid
+                      assign shop_links = 'silver-elegance|Silver Elegance,gold-glam|Gold Glam,rose-gold|Rose Gold,luxe-picks|Luxe Picks,rare-finds|Rare Find' | split: ','
+                    -%}
+                    <ul class="footer-block__details-content list-unstyled">
+                      {%- for shop_link in shop_links -%}
+                        {%- assign shop_parts = shop_link | split: '|' -%}
+                        {%- assign shop_handle = shop_parts[0] -%}
+                        {%- assign shop_label = shop_parts[1] -%}
+                        {%- assign shop_col = collections[shop_handle] -%}
+                        {%- if shop_col != blank -%}
+                          {%- assign shop_href = shop_col.url -%}
+                        {%- else -%}
+                          {%- assign shop_href = '/collections/' | append: shop_handle -%}
+                        {%- endif -%}
+                        <li>
+                          <a
+                            href="{{ shop_href }}"
+                            class="link link--text list-menu__item list-menu__item--link{% if request.path contains shop_handle %} list-menu__item--active{% endif %}"
+                          >
+                            {{ shop_label | escape }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
                 {%- endcase -%}
               </div>
             {%- endfor -%}
@@ -359,6 +384,22 @@
           "id": "menu",
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label"
+        }
+      ]
+    },
+    {
+      "type": "shop_collections",
+      "name": "Shop collections (SEO)",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Shop",
+          "label": "Heading"
+        },
+        {
+          "type": "paragraph",
+          "content": "Always links Silver Elegance, Gold Glam, Rose Gold, Luxe Picks, and Rare Find — helps Google sitelinks."
         }
       ]
     },

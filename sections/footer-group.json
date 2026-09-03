@@ -14,6 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "shop_collections_seo": {
+          "type": "shop_collections",
+          "settings": {
+            "heading": "Shop"
+          }
+        },
         "link_list_bYhNHM": {
           "type": "link_list",
           "settings": {
@@ -37,6 +43,7 @@
         }
       },
       "block_order": [
+        "shop_collections_seo",
         "link_list_bYhNHM",
         "link_list_jybKPL",
         "link_list_K3MEMG"

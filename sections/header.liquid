@@ -52,6 +52,17 @@
     flex-wrap: wrap;
   }
 
+  @media screen and (min-width: 990px) {
+    .header__inline-menu .list-menu--inline {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
   summary.list-menu__item {
     padding-right: 2.7rem;
   }
@@ -102,6 +113,7 @@
 {%- endstyle -%}
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'header-overflow-menu.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   for block in section.blocks

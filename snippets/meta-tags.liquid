@@ -8,7 +8,7 @@
     if settings.seo_default_description != blank
       assign og_description = settings.seo_default_description
     else
-      assign og_description = 'Shop fashion jewellery online at Srivaya. Explore necklaces, earrings, rings, kadas and jewellery sets with real product photos. Free shipping on orders above ₹499 across India.'
+      assign og_description = 'Ashtitva (Astitva) pe jewellery shop karo — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.'
     endif
   endif
 
@@ -34,7 +34,8 @@
 <meta property="og:title" content="{{ og_title | escape }}">
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description | escape }}">
-<meta property="og:locale" content="{{ request.locale.iso_code | replace: '-', '_' }}">
+<meta property="og:locale" content="en_IN">
+<meta property="og:locale:alternate" content="hi_IN">
 
 {%- if og_image -%}
   <meta property="og:image" content="http:{{ og_image | image_url: width: 1200 }}">

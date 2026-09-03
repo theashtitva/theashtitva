@@ -1,0 +1,20 @@
+{%- comment -%}
+  Unique sitelink titles + meta snippets for key collections.
+  Render with field: 'title' or 'description'.
+{%- endcomment -%}
+{%- liquid
+  assign field = field | default: 'description'
+  assign handle = collection.handle | default: ''
+-%}
+{%- case handle -%}
+  {%- when 'silver-elegance' -%}
+    {%- if field == 'title' -%}Silver Elegance{%- else -%}Silver Elegance at Ashtitva (Astitva) — chandi look necklace, earrings aur sets. Real photos, everyday elegance, India delivery.{%- endif -%}
+  {%- when 'gold-glam' -%}
+    {%- if field == 'title' -%}Gold Glam{%- else -%}Gold Glam at Ashtitva (Astitva) — gold look jewellery for festive aur party. Necklace, earrings, sets. Real photos, behtareen designs.{%- endif -%}
+  {%- when 'rose-gold' -%}
+    {%- if field == 'title' -%}Rose Gold{%- else -%}Rose Gold at Ashtitva (Astitva) — soft rose gold necklace, earrings aur sets. Stylish look, real photos, gift ke liye perfect.{%- endif -%}
+  {%- when 'luxe-picks' -%}
+    {%- if field == 'title' -%}Luxe Picks{%- else -%}Luxe Picks at Ashtitva (Astitva) — statement jewellery for special days. Premium look, real photos, India shipping.{%- endif -%}
+  {%- when 'rare-finds' -%}
+    {%- if field == 'title' -%}Rare Find{%- else -%}Rare Find at Ashtitva (Astitva) — unique jewellery you won’t see everywhere. Limited styles, real photos, alag design.{%- endif -%}
+{%- endcase -%}

@@ -329,6 +329,16 @@
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
             <div class="media media--transparent media--hover-effect">
+              {%- liquid
+                assign card_img_alt = card_product.featured_media.alt | strip
+                if card_img_alt == blank
+                  assign card_img_alt = card_product.title | append: ' jewellery | Ashtitva'
+                endif
+                assign card_img_alt_2 = card_product.media[1].alt | strip
+                if card_img_alt_2 == blank
+                  assign card_img_alt_2 = card_product.title | append: ' jewellery | Ashtitva'
+                endif
+              -%}
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
                 srcset="
@@ -342,7 +352,7 @@
                 "
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                alt="{{ card_product.featured_media.alt | escape }}"
+                alt="{{ card_img_alt | escape }}"
                 class="motion-reduce"
                 {% unless lazy_load == false %}
                   loading="lazy"
@@ -365,7 +375,7 @@
                   "
                   src="{{ card_product.media[1] | image_url: width: 533 }}"
                   sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                  alt="{{ card_product.media[1].alt | escape }}"
+                  alt="{{ card_img_alt_2 | escape }}"
                   class="motion-reduce"
                   loading="lazy"
                   width="{{ card_product.media[1].width }}"
@@ -753,7 +763,7 @@
                                 "
                                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                                alt="{{ card_product.featured_media.alt | escape }}"
+                                alt="{% if card_product.featured_media.alt != blank %}{{ card_product.featured_media.alt | escape }}{% else %}{{ card_product.title | escape }} jewellery | Ashtitva{% endif %}"
                                 class="motion-reduce"
                                 {% unless lazy_load == false %}
                                   loading="lazy"

@@ -222,53 +222,75 @@
     "perfect_fit_audience_GJxzHh": {
       "type": "perfect-fit-audience",
       "blocks": {
-        "audience_festive": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "gold-glam",
-            "title": "Gold Glam",
-            "support_text": "Celebrate with light and colour",
-            "icon": "festive"
-          }
-        },
-        "audience_bridal": {
+        "audience_silver": {
           "type": "audience",
           "settings": {
             "enabled": true,
             "collection": "silver-elegance",
             "title": "Silver Elegance",
-            "support_text": "For your most meaningful day",
-            "icon": "bride"
+            "support_text": "Chandi look for everyday shine",
+            "icon": "everyday"
           }
         },
-        "audience_guest": {
+        "audience_gold": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "gold-glam",
+            "title": "Gold Glam",
+            "support_text": "Festive light and colour",
+            "icon": "festive"
+          }
+        },
+        "audience_rose": {
           "type": "audience",
           "settings": {
             "enabled": true,
             "collection": "rose-gold",
             "title": "Rose Gold",
-            "support_text": "Elegant enough to be remembered",
+            "support_text": "Soft, romantic finishes",
             "icon": "guest"
+          }
+        },
+        "audience_luxe": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "luxe-picks",
+            "title": "Luxe Picks",
+            "support_text": "Statement pieces for special days",
+            "icon": "sparkle"
+          }
+        },
+        "audience_rare": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "rare-finds",
+            "title": "Rare Find",
+            "support_text": "Unique styles, limited looks",
+            "icon": "gift"
           }
         }
       },
       "block_order": [
-        "audience_festive",
-        "audience_bridal",
-        "audience_guest"
+        "audience_silver",
+        "audience_gold",
+        "audience_rose",
+        "audience_luxe",
+        "audience_rare"
       ],
       "name": "Perfect Fit Audience",
       "settings": {
         "layout_style": "editorial",
-        "heading": "Celebrate Every Moment",
-        "highlight_text": "Shop by moment",
-        "subtext": "Jewellery chosen for the moments you'll remember.",
+        "heading": "Shop Ashtitva",
+        "highlight_text": "Start here",
+        "subtext": "Silver Elegance, Gold Glam, Rose Gold, Luxe Picks aur Rare Find — searching Astitva? Yahin ashtitva.com.",
         "heading_alignment": "center",
         "heading_max_width": 720,
         "full_width": false,
         "container_width": 1200,
-        "columns_desktop": 3,
+        "columns_desktop": 5,
         "columns_tablet": 3,
         "columns_mobile": 2,
         "item_gap": 16,
@@ -570,6 +592,13 @@
     "faq_home": {
       "type": "faq",
       "blocks": {
+        "faq_brand": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Astitva aur Ashtitva same brand hai kya?",
+            "answer": "<p>Haan. Official spelling <strong>Ashtitva</strong> hai, aur website <strong>ashtitva.com</strong> hai. Log aksar <strong>Astitva</strong>, Astitva jewellery, ya Astitva.com search karte hain — sab same brand hai.</p><p>Yahan Silver Elegance, Gold Glam, Rose Gold, Luxe Picks aur Rare Find collections milti hain, real product photos ke saath.</p>"
+          }
+        },
         "faq_1": {
           "type": "faq_item",
           "settings": {
@@ -642,6 +671,7 @@
         }
       },
       "block_order": [
+        "faq_brand",
         "faq_1",
         "faq_2",
         "faq_3",
@@ -656,7 +686,7 @@
       "settings": {
         "eyebrow": "We’re here for you",
         "heading": "Questions, answered with care",
-        "subheading": "Honest answers about our jewellery, photography, shipping, returns, and support.",
+        "subheading": "Honest answers about Ashtitva (Astitva), our jewellery, photography, shipping, returns, and support.",
         "heading_alignment": "center",
         "heading_size_desktop": 40,
         "heading_size_mobile": 28,

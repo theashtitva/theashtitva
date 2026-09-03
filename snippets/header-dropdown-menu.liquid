@@ -5,9 +5,10 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
-<nav class="header__inline-menu">
-  <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
+<header-overflow-menu class="header__inline-menu">
+  <nav>
+    <ul class="list-menu list-menu--inline" role="list" data-overflow-list>
+      {%- for link in section.settings.menu.links -%}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
@@ -99,5 +100,23 @@
         {%- endif -%}
       </li>
     {%- endfor -%}
-  </ul>
-</nav>
+    <li class="header__overflow-more" data-overflow-more hidden>
+      <header-menu>
+        <details id="Details-HeaderMenu-More">
+          <summary id="HeaderMenu-More" class="header__menu-item list-menu__item link focus-inset">
+            <span>{{ 'sections.header.more' | t }}</span>
+            {{- 'icon-caret.svg' | inline_asset_content -}}
+          </summary>
+          <ul
+            id="HeaderMenu-MenuList-More"
+            class="header__submenu header__submenu--overflow list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+            role="list"
+            tabindex="-1"
+            data-overflow-more-list
+          ></ul>
+        </details>
+      </header-menu>
+    </li>
+    </ul>
+  </nav>
+</header-overflow-menu>

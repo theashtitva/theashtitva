@@ -1,13 +1,13 @@
 {%- comment -%}
-  Builds SEO title + description with brand fallbacks.
+  Builds SEO title + description with brand, misspelling, and Hinglish fallbacks.
   Sets seo_og_title / seo_og_description for meta-tags.
 {%- endcomment -%}
 
 {%- liquid
   assign seo_title = page_title | strip
   assign seo_description = page_description | strip
-  assign default_home_title = 'Ashtitva | Necklaces, Earrings & Fashion Jewellery Online'
-  assign default_description = 'Find the piece that celebrates you. Shop Ashtitva fashion necklaces, earrings, rings and sets with real product photos, thoughtfully curated and delivered across India.'
+  assign default_home_title = 'Ashtitva: Online Shopping For Fashion Jewellery & Sets'
+  assign default_description = 'Ashtitva (Astitva) pe jewellery shop karo — necklace, earrings, rings aur sets. Real photos, behtareen designs, gift aur festive looks. India delivery.'
 
   if settings.seo_homepage_title != blank
     assign default_home_title = settings.seo_homepage_title
@@ -42,45 +42,58 @@
     endif
   endif
 
+  if request.page_type == 'collection'
+    capture sitelink_title
+      render 'seo-collection-copy', collection: collection, field: 'title'
+    endcapture
+    capture sitelink_description
+      render 'seo-collection-copy', collection: collection, field: 'description'
+    endcapture
+    assign sitelink_title = sitelink_title | strip
+    assign sitelink_description = sitelink_description | strip
+
+    if sitelink_title != blank
+      assign seo_title = sitelink_title
+    endif
+    if sitelink_description != blank
+      assign seo_description = sitelink_description
+      assign description_is_weak = false
+    endif
+  endif
+
   if description_is_weak
     if request.page_type == 'product' and product.description != blank
       assign seo_description = product.description | strip_html | strip | truncate: 155
     elsif request.page_type == 'collection'
       case collection.handle
         when 'best-seller'
-          assign seo_description = 'Shop Ashtitva bestsellers: loved necklaces, earrings, rings and sets chosen for everyday beauty and style ready for celebration.'
+          assign seo_description = 'Ashtitva bestsellers — most-loved necklace, earrings, rings aur sets. Real photos, behtareen designs. Searching Astitva bestsellers? Yahin ashtitva.com.'
         when 'earrings'
-          assign seo_description = 'Express your individuality with Ashtitva earrings. Explore everyday, festive and statement styles with real product photography.'
+          assign seo_description = 'Earrings online at Ashtitva (Astitva) — daily, party aur festive styles. Real photos, stylish designs, India delivery.'
         when 'necklace'
-          assign seo_description = 'Discover Ashtitva necklaces crafted to celebrate you, from everyday layers to festive statement pieces with real product photos.'
+          assign seo_description = 'Necklace aur necklace set online at Ashtitva (Astitva). Daily wear se festive tak — real photos, behtareen designs.'
         when 'rings'
-          assign seo_description = 'Find rings that feel like you. Shop Ashtitva fashion rings for gifting, celebrations and everyday wear across India.'
+          assign seo_description = 'Rings for daily wear, gifting aur celebration at Ashtitva (Astitva). Real photos, stylish designs, India delivery.'
         when 'kada'
-          assign seo_description = 'Shop Ashtitva kadas and bracelets designed for comfort, presence and celebration, with real photos, shipping across India.'
-        when 'gold-glam'
-          assign seo_description = 'Explore Ashtitva Gold Glam jewellery: radiant necklaces, earrings and sets that bring warmth and polish to every look.'
-        when 'silver-elegance'
-          assign seo_description = 'Shop Ashtitva Silver Elegance pieces: refined jewellery for everyday beauty, gifting and quiet celebration.'
-        when 'rose-gold'
-          assign seo_description = 'Discover Ashtitva rose gold jewellery: soft, romantic finishes for necklaces, earrings and sets that feel personal.'
+          assign seo_description = 'Kada aur bracelet designs at Ashtitva (Astitva) for everyday aur festive wear. Comfortable, stylish, real photos.'
         else
           if collection.description != blank
             assign seo_description = collection.description | strip_html | strip | truncate: 155
           else
-            assign seo_description = 'Shop the ' | append: collection.title | append: ' collection at Ashtitva: fashion jewellery with real product photos, made to celebrate you.'
+            assign seo_description = 'Shop ' | append: collection.title | append: ' at Ashtitva (Astitva) — fashion jewellery with real photos. Necklace, earrings, rings aur sets. India delivery.'
           endif
       endcase
     elsif request.page_type == 'list-collections'
       assign seo_title = 'Categories | Ashtitva Fashion Jewellery'
-      assign seo_description = 'Browse Ashtitva jewellery categories: necklaces, earrings, rings, kadas and curated collections for every celebration.'
+      assign seo_description = 'Browse Ashtitva (Astitva) jewellery — Silver Elegance, Gold Glam, Rose Gold, Luxe Picks, Rare Find, necklace, earrings aur more.'
     elsif request.page_type == 'page'
       case page.handle
         when 'about-us'
-          assign seo_description = 'We are an amalgamation of thoughtful design and authentic photography. Learn why Ashtitva jewellery is made to celebrate you.'
+          assign seo_description = 'Ashtitva (often searched as Astitva) — jewellery that celebrates you. Real photos, thoughtful curation. Official store: ashtitva.com.'
         when 'contact'
-          assign seo_description = 'Talk to Ashtitva on WhatsApp, phone or email. We are here to help you find the piece that feels like you.'
+          assign seo_description = 'Contact Ashtitva (Astitva) on WhatsApp, phone or email. Hum help karenge aapka piece find karne mein. ashtitva.com support.'
         when 'faq'
-          assign seo_description = 'Answers on shipping, returns, product care and ordering at Ashtitva, so you can shop fashion jewellery with confidence.'
+          assign seo_description = 'Ashtitva FAQ — shipping, returns, COD, photos aur ordering. Astitva spelling se search kiya? Same brand, ashtitva.com.'
         else
           if page.content != blank
             assign seo_description = page.content | strip_html | strip | truncate: 155

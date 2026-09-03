@@ -180,6 +180,104 @@ button.shopify-payment-button__button--unbranded {
   min-height: 6.4rem;
 }
 
+@media screen and (min-width: 990px) {
+  .header--middle-left {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 1.6rem;
+  }
+
+  .header__heading,
+  .header__heading-link,
+  .header__icons {
+    flex-shrink: 0;
+  }
+
+  .header--middle-left .header__heading-link {
+    margin-left: 0;
+  }
+
+  .header__inline-menu {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header__inline-menu > nav {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header__inline-menu .list-menu--inline {
+    justify-content: center;
+  }
+
+  .header__inline-menu .list-menu--inline > li {
+    flex-shrink: 0;
+  }
+
+  .header__inline-menu > nav > .list-menu--inline > li > .header__menu-item,
+  .header__inline-menu > nav > .list-menu--inline > li > header-menu > details > summary.header__menu-item {
+    padding: 1rem 0.9rem;
+    font-size: 1.45rem;
+    white-space: nowrap;
+  }
+
+  .header__inline-menu > nav > .list-menu--inline > li > header-menu > details > summary.header__menu-item {
+    padding-right: 2.4rem;
+  }
+
+  .header__overflow-more .header__submenu--overflow {
+    left: auto;
+    right: 0;
+    min-width: 22rem;
+    max-height: min(70vh, 48rem);
+    overflow-y: auto;
+  }
+
+  .header__submenu--overflow > li,
+  .header__submenu--overflow header-menu,
+  .header__submenu--overflow details {
+    display: block;
+    width: 100%;
+  }
+
+  .header__submenu--overflow .header__menu-item,
+  .header__submenu--overflow .list-menu__item {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .header__submenu--overflow details > .header__submenu,
+  .header__submenu--overflow .mega-menu__content {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+    inset: auto;
+    max-height: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  .header__submenu--overflow .mega-menu__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    grid-template-columns: none;
+  }
+
+  .header__submenu--overflow .js details > .header__submenu,
+  .js .header__submenu--overflow details > .header__submenu {
+    opacity: 1;
+  }
+}
+
 .header__heading-link,
 .header__heading-link .h2,
 .header__heading {
