@@ -69,7 +69,7 @@
             "mobile_description_color": "#f7f3e9",
             "mobile_description_size": 14,
             "desktop_overlay_color": "#071713",
-            "desktop_overlay_opacity": 30,
+            "desktop_overlay_opacity": 0,
             "mobile_overlay_color": "#071713",
             "mobile_overlay_opacity": 0,
             "overlay_color": "#071713",
