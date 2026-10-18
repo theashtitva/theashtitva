@@ -20,6 +20,20 @@
             "heading": "Shop"
           }
         },
+        "link_list_UWiq66": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Prices",
+            "menu": "price"
+          }
+        },
+        "link_list_AABYNB": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Occasions",
+            "menu": "occasions"
+          }
+        },
         "link_list_bYhNHM": {
           "type": "link_list",
           "settings": {
@@ -44,6 +58,8 @@
       },
       "block_order": [
         "shop_collections_seo",
+        "link_list_UWiq66",
+        "link_list_AABYNB",
         "link_list_bYhNHM",
         "link_list_jybKPL",
         "link_list_K3MEMG"
