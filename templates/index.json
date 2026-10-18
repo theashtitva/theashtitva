@@ -446,7 +446,7 @@
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "best-seller",
-        "products_to_show": 8,
+        "products_to_show": 12,
         "eyebrow": "Most loved",
         "title": "Pieces you'll love, moments you'll remember.",
         "heading_size": "h2",
