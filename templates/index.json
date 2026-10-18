@@ -525,6 +525,79 @@
         "padding_bottom_mobile": 40
       }
     },
+    "perfect_fit_audience_XPHde6": {
+      "type": "perfect-fit-audience",
+      "blocks": {
+        "audience_94PY9H": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "",
+            "title": "",
+            "support_text": "",
+            "icon": "gift"
+          }
+        },
+        "audience_aLVfHw": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "jewellery-under-499",
+            "title": "",
+            "support_text": "",
+            "icon": "gift"
+          }
+        }
+      },
+      "block_order": [
+        "audience_94PY9H",
+        "audience_aLVfHw"
+      ],
+      "name": "Perfect Fit Audience",
+      "settings": {
+        "layout_style": "editorial",
+        "heading": "Celebrate Every Moment",
+        "highlight_text": "Shop by moment",
+        "subtext": "Jewellery styled for every celebration, from your wedding day to everyday elegance.",
+        "heading_alignment": "center",
+        "heading_max_width": 720,
+        "full_width": false,
+        "container_width": 1200,
+        "columns_desktop": 5,
+        "columns_tablet": 3,
+        "columns_mobile": 2,
+        "item_gap": 16,
+        "item_radius": 14,
+        "item_padding_y": 22,
+        "item_padding_x": 14,
+        "icon_style": "framed",
+        "enable_hover": true,
+        "use_default_pattern": false,
+        "pattern_size": 180,
+        "color_background": "#FFFFFF",
+        "color_surface": "#FFFFFF",
+        "color_heading": "#18302a",
+        "color_text": "#5C5660",
+        "color_accent": "#C5A059",
+        "color_highlight_bg": "#C5A059",
+        "color_highlight_text": "#FFFFFF",
+        "color_icon": "#8A6A4A",
+        "color_icon_bg": "#FBF8F4",
+        "color_label": "#202336",
+        "heading_size_desktop": 38,
+        "heading_size_mobile": 24,
+        "heading_weight": 600,
+        "subtext_size": 15,
+        "label_size_desktop": 15,
+        "label_size_mobile": 12,
+        "icon_size_desktop": 64,
+        "icon_size_mobile": 48,
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
     "featured_collection_aBabXt": {
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
@@ -990,6 +1063,7 @@
     "real_photography_trust_Nif7jn",
     "ash_emotional_home",
     "perfect_fit_audience_VUiqLw",
+    "perfect_fit_audience_XPHde6",
     "featured_collection_aBabXt",
     "ash_final_cta_home",
     "store_metrics_Azz743",
