@@ -453,10 +453,21 @@
             "support_text": "",
             "icon": "gift"
           }
+        },
+        "audience_z67w7Y": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "cocktail-party-jewellery",
+            "title": "",
+            "support_text": "",
+            "icon": "gift"
+          }
         }
       },
       "block_order": [
-        "audience_L7cjk7"
+        "audience_L7cjk7",
+        "audience_z67w7Y"
       ],
       "name": "Perfect Fit Audience",
       "settings": {
@@ -468,7 +479,7 @@
         "heading_max_width": 720,
         "full_width": false,
         "container_width": 1200,
-        "columns_desktop": 5,
+        "columns_desktop": 3,
         "columns_tablet": 3,
         "columns_mobile": 2,
         "item_gap": 16,
