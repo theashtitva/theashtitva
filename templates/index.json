@@ -454,6 +454,16 @@
             "icon": "gift"
           }
         },
+        "audience_DYTNch": {
+          "type": "audience",
+          "settings": {
+            "enabled": true,
+            "collection": "sangeet-bridal-look",
+            "title": "",
+            "support_text": "",
+            "icon": "gift"
+          }
+        },
         "audience_z67w7Y": {
           "type": "audience",
           "settings": {
@@ -467,6 +477,7 @@
       },
       "block_order": [
         "audience_L7cjk7",
+        "audience_DYTNch",
         "audience_z67w7Y"
       ],
       "name": "Perfect Fit Audience",
