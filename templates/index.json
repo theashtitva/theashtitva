@@ -441,6 +441,68 @@
         "padding_bottom": 0
       }
     },
+    "blocks_hC8PWq": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_5826ff4_r8TVMN": {
+          "type": "ai_gen_block_5826ff4",
+          "settings": {
+            "collection_list": [
+              "jewellery-under-499",
+              "jewellery-under-999",
+              "jewellery-under-1499",
+              "jewellery-under-1999"
+            ],
+            "show_collection_title": true,
+            "show_product_count": false,
+            "show_description": false,
+            "heading": "Shop by price",
+            "heading_size": 36,
+            "heading_color": "#18302a",
+            "heading_alignment": "center",
+            "heading_spacing": 40,
+            "min_card_width": 280,
+            "min_card_width_mobile": 140,
+            "grid_gap": 25,
+            "grid_gap_mobile": 15,
+            "container_width": 1200,
+            "horizontal_padding": 20,
+            "circular_image": true,
+            "card_background": "#fdf9f2",
+            "card_border_width": 1,
+            "card_border_color": "#e5e5e5",
+            "image_border_radius": 18,
+            "image_aspect_ratio": 100,
+            "image_zoom_scale": 1.1,
+            "shadow_offset": 4,
+            "shadow_blur": 10,
+            "shadow_opacity": 0.1,
+            "hover_lift": 4,
+            "hover_shadow_offset": 10,
+            "hover_shadow_blur": 20,
+            "hover_shadow_opacity": 0.2,
+            "collection_title_size": 18,
+            "collection_title_color": "#18302a",
+            "title_font_weight": "600",
+            "title_position": "left",
+            "content_padding_top": 15,
+            "content_gap": 8,
+            "product_count_size": 14,
+            "product_count_color": "#a46959",
+            "description_size": 14,
+            "description_color": "#5a4e44",
+            "section_padding_top": 50,
+            "section_padding_bottom": 50
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_5826ff4_r8TVMN"
+      ],
+      "name": "Collection grid",
+      "settings": {}
+    },
     "perfect_fit_audience_VUiqLw": {
       "type": "perfect-fit-audience",
       "blocks": {
@@ -501,88 +563,15 @@
         "enable_hover": true,
         "use_default_pattern": false,
         "pattern_size": 180,
-        "color_background": "#FFFFFF",
-        "color_surface": "#FFFFFF",
+        "color_background": "#ffffff",
+        "color_surface": "#ffffff",
         "color_heading": "#18302a",
-        "color_text": "#5C5660",
-        "color_accent": "#C5A059",
-        "color_highlight_bg": "#C5A059",
-        "color_highlight_text": "#FFFFFF",
-        "color_icon": "#8A6A4A",
-        "color_icon_bg": "#FBF8F4",
-        "color_label": "#202336",
-        "heading_size_desktop": 38,
-        "heading_size_mobile": 24,
-        "heading_weight": 600,
-        "subtext_size": 15,
-        "label_size_desktop": 15,
-        "label_size_mobile": 12,
-        "icon_size_desktop": 64,
-        "icon_size_mobile": 48,
-        "padding_top_desktop": 64,
-        "padding_bottom_desktop": 64,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
-      }
-    },
-    "perfect_fit_audience_XPHde6": {
-      "type": "perfect-fit-audience",
-      "blocks": {
-        "audience_94PY9H": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "",
-            "title": "",
-            "support_text": "",
-            "icon": "gift"
-          }
-        },
-        "audience_aLVfHw": {
-          "type": "audience",
-          "settings": {
-            "enabled": true,
-            "collection": "jewellery-under-499",
-            "title": "",
-            "support_text": "",
-            "icon": "gift"
-          }
-        }
-      },
-      "block_order": [
-        "audience_94PY9H",
-        "audience_aLVfHw"
-      ],
-      "name": "Perfect Fit Audience",
-      "settings": {
-        "layout_style": "editorial",
-        "heading": "Celebrate Every Moment",
-        "highlight_text": "Shop by moment",
-        "subtext": "Jewellery styled for every celebration, from your wedding day to everyday elegance.",
-        "heading_alignment": "center",
-        "heading_max_width": 720,
-        "full_width": false,
-        "container_width": 1200,
-        "columns_desktop": 5,
-        "columns_tablet": 3,
-        "columns_mobile": 2,
-        "item_gap": 16,
-        "item_radius": 14,
-        "item_padding_y": 22,
-        "item_padding_x": 14,
-        "icon_style": "framed",
-        "enable_hover": true,
-        "use_default_pattern": false,
-        "pattern_size": 180,
-        "color_background": "#FFFFFF",
-        "color_surface": "#FFFFFF",
-        "color_heading": "#18302a",
-        "color_text": "#5C5660",
-        "color_accent": "#C5A059",
-        "color_highlight_bg": "#C5A059",
-        "color_highlight_text": "#FFFFFF",
-        "color_icon": "#8A6A4A",
-        "color_icon_bg": "#FBF8F4",
+        "color_text": "#5c5660",
+        "color_accent": "#c5a059",
+        "color_highlight_bg": "#c5a059",
+        "color_highlight_text": "#ffffff",
+        "color_icon": "#8a6a4a",
+        "color_icon_bg": "#fbf8f4",
         "color_label": "#202336",
         "heading_size_desktop": 38,
         "heading_size_mobile": 24,
@@ -1062,8 +1051,8 @@
     "perfect_fit_audience_GJxzHh",
     "real_photography_trust_Nif7jn",
     "ash_emotional_home",
+    "blocks_hC8PWq",
     "perfect_fit_audience_VUiqLw",
-    "perfect_fit_audience_XPHde6",
     "featured_collection_aBabXt",
     "ash_final_cta_home",
     "store_metrics_Azz743",
