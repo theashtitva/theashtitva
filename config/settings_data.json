@@ -128,7 +128,7 @@
     "contact_email": "contact@ashtitva.com",
     "track_package_enable": true,
     "track_package_label": "Track Order",
-    "track_package_message": "Hi! I would like to track my order. Please share your order details (order number and registered phone or email) so we can update you on your order status.",
+    "track_package_message": "Hi Ashtitva! Please share tracking for my order. Mobile number:",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,

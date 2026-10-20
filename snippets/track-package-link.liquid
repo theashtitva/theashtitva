@@ -14,7 +14,7 @@
     assign track_phone = settings.whatsapp_phone | replace: ' ', '' | replace: '-', '' | replace: '+', '' | replace: '(', '' | replace: ')', ''
     assign track_message = settings.track_package_message
     if track_message == blank
-      assign track_message = 'Hi! I would like to track my order. Please share your order details (order number and registered phone or email) so we can update you on your order status.'
+      assign track_message = 'Hi Ashtitva! Please share tracking for my order. Mobile number:'
     endif
     assign track_label = settings.track_package_label
     if track_label == blank

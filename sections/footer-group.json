@@ -14,55 +14,56 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "shop_collections_seo": {
-          "type": "shop_collections",
-          "settings": {
-            "heading": "Shop"
-          }
-        },
-        "link_list_UWiq66": {
+        "footer_shop": {
           "type": "link_list",
           "settings": {
-            "heading": "Prices",
-            "menu": "price"
+            "heading": "Shop",
+            "menu": "footer-shop"
           }
         },
-        "link_list_AABYNB": {
+        "footer_finishes": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Finishes",
+            "menu": "footer-finishes"
+          }
+        },
+        "footer_occasions": {
           "type": "link_list",
           "settings": {
             "heading": "Occasions",
             "menu": "occasions"
           }
         },
-        "link_list_bYhNHM": {
+        "footer_price": {
           "type": "link_list",
           "settings": {
-            "heading": "Social Medias",
-            "menu": "social-media"
+            "heading": "Price",
+            "menu": "price"
           }
         },
-        "link_list_jybKPL": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Policies",
-            "menu": "policies"
-          }
-        },
-        "link_list_K3MEMG": {
+        "footer_help": {
           "type": "link_list",
           "settings": {
             "heading": "Help",
             "menu": "help"
           }
+        },
+        "footer_trust": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Trust",
+            "menu": "trust"
+          }
         }
       },
       "block_order": [
-        "shop_collections_seo",
-        "link_list_UWiq66",
-        "link_list_AABYNB",
-        "link_list_bYhNHM",
-        "link_list_jybKPL",
-        "link_list_K3MEMG"
+        "footer_shop",
+        "footer_finishes",
+        "footer_occasions",
+        "footer_price",
+        "footer_help",
+        "footer_trust"
       ],
       "settings": {
         "color_scheme": "scheme-5",
@@ -73,7 +74,7 @@
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": false,
-        "show_policy": false,
+        "show_policy": true,
         "margin_top": 0,
         "padding_top": 72,
         "padding_bottom": 72

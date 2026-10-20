@@ -90,7 +90,7 @@
                     {%- liquid
                       assign show_track_package = false
                       if settings.track_package_enable and settings.whatsapp_phone != blank
-                        if block.settings.menu.handle == 'help' or block.settings.heading == 'Help'
+                        if block.settings.menu.handle == 'trust' or block.settings.heading == 'Trust'
                           assign show_track_package = true
                         endif
                       endif
