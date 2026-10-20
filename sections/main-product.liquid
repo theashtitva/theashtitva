@@ -157,6 +157,8 @@
                     {%- endform -%}
                   </div>
                 </div>
+              {%- when 'delivery_trust' -%}
+                {% render 'pdp-delivery-trust', block: block %}
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -1040,6 +1042,17 @@
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
       "limit": 1
+    },
+    {
+      "type": "delivery_trust",
+      "name": "Delivery & trust",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Locked delivery and prepaid trust copy. Place directly under price, above Add to cart. Copy cannot be edited here."
+        }
+      ]
     },
     {
       "type": "sku",

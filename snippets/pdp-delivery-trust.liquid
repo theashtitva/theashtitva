@@ -1,0 +1,54 @@
+{% comment %}
+  Locked PDP delivery + prepaid trust block (DAY6-01).
+  Copy is fixed — do not make merchant-editable.
+{% endcomment %}
+<div class="pdp-delivery-trust" {{ block.shopify_attributes }}>
+  <div class="pdp-delivery-trust__group">
+    <p class="pdp-delivery-trust__heading">Ships prepaid across India</p>
+    <ul class="pdp-delivery-trust__list list-unstyled">
+      <li class="pdp-delivery-trust__item">
+        <span class="pdp-delivery-trust__icon" aria-hidden="true">
+          {{- 'icon-truck.svg' | inline_asset_content -}}
+        </span>
+        <span>Free shipping on prepaid orders above ₹499</span>
+      </li>
+      <li class="pdp-delivery-trust__item">
+        <span class="pdp-delivery-trust__icon" aria-hidden="true">
+          {{- 'icon-box.svg' | inline_asset_content -}}
+        </span>
+        <span>Processed in 1–2 business days</span>
+      </li>
+      <li class="pdp-delivery-trust__item">
+        <span class="pdp-delivery-trust__icon" aria-hidden="true">
+          {{- 'icon-map-pin.svg' | inline_asset_content -}}
+        </span>
+        <span>Most deliveries in 3–7 business days</span>
+      </li>
+      <li class="pdp-delivery-trust__item">
+        <span class="pdp-delivery-trust__icon" aria-hidden="true">
+          {{- 'icon-unavailable.svg' | inline_asset_content -}}
+        </span>
+        <span>Cash on Delivery is not available</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="pdp-delivery-trust__group">
+    <p class="pdp-delivery-trust__heading">Shop with clarity</p>
+    <ul class="pdp-delivery-trust__list list-unstyled">
+      <li class="pdp-delivery-trust__item">
+        <span class="pdp-delivery-trust__icon" aria-hidden="true">
+          {{- 'icon-eye.svg' | inline_asset_content -}}
+        </span>
+        <span>Real product photos (no AI images)</span>
+      </li>
+      <li class="pdp-delivery-trust__item">
+        <span class="pdp-delivery-trust__icon" aria-hidden="true">
+          {{- 'icon-return.svg' | inline_asset_content -}}
+        </span>
+        <span>Easy returns within 3 days if unused, via WhatsApp</span>
+      </li>
+    </ul>
+    <p class="pdp-delivery-trust__meta">GST registered · Made in India · Skin friendly</p>
+  </div>
+</div>

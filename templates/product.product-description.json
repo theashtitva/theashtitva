@@ -31,6 +31,10 @@
           "type": "price",
           "settings": {}
         },
+        "delivery_trust": {
+          "type": "delivery_trust",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -65,6 +69,7 @@
         "title",
         "rating",
         "price",
+        "delivery_trust",
         "variant_picker",
         "quantity_selector",
         "share",
