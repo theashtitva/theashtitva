@@ -29,6 +29,27 @@
     font-weight: 600;
   }
 
+  .ai-collection-grid__subtitle-{{ ai_gen_id }} {
+    margin: 1rem auto 0;
+    max-width: 42rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: {{ block.settings.subtitle_color }};
+  }
+
+  {% if block.settings.heading_alignment == 'left' %}
+    .ai-collection-grid__subtitle-{{ ai_gen_id }} {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  {% elsif block.settings.heading_alignment == 'right' %}
+    .ai-collection-grid__subtitle-{{ ai_gen_id }} {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  {% endif %}
+
   .ai-collection-grid__grid-{{ ai_gen_id }} {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax({{ block.settings.min_card_width }}px, 1fr));
@@ -179,6 +200,9 @@
     {% if block.settings.heading != blank %}
       <div class="ai-collection-grid__header-{{ ai_gen_id }}">
         <h2 class="ai-collection-grid__title-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+        {% if block.settings.subtitle != blank %}
+          <p class="ai-collection-grid__subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle | escape }}</p>
+        {% endif %}
       </div>
     {% endif %}
 
@@ -284,6 +308,12 @@
       "default": "Shop by collection"
     },
     {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Start where you feel comfortable. Real studio photos on every piece."
+    },
+    {
       "type": "range",
       "id": "heading_size",
       "min": 20,
@@ -298,6 +328,12 @@
       "id": "heading_color",
       "label": "Heading color",
       "default": "#18302a"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#5c6e67"
     },
     {
       "type": "select",

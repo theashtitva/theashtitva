@@ -457,8 +457,10 @@
             "show_product_count": false,
             "show_description": false,
             "heading": "Shop by price",
+            "subtitle": "Start where you feel comfortable. Real studio photos on every piece.",
             "heading_size": 36,
             "heading_color": "#18302a",
+            "subtitle_color": "#5c6e67",
             "heading_alignment": "center",
             "heading_spacing": 40,
             "min_card_width": 240,
@@ -511,9 +513,9 @@
           "settings": {
             "enabled": true,
             "collection": "wedding-guest-jewellery",
-            "title": "",
-            "support_text": "",
-            "icon": "gift"
+            "title": "Wedding Guest",
+            "support_text": "Easy elegance for someone else's big day",
+            "icon": "guest"
           }
         },
         "audience_DYTNch": {
@@ -521,9 +523,9 @@
           "settings": {
             "enabled": true,
             "collection": "sangeet-bridal-look",
-            "title": "",
-            "support_text": "",
-            "icon": "gift"
+            "title": "Sangeet & Bridal Look",
+            "support_text": "Heirloom presence for bridal functions",
+            "icon": "bride"
           }
         },
         "audience_z67w7Y": {
@@ -531,9 +533,9 @@
           "settings": {
             "enabled": true,
             "collection": "cocktail-party-jewellery",
-            "title": "",
-            "support_text": "",
-            "icon": "gift"
+            "title": "Cocktail & Party",
+            "support_text": "Statement sparkle for evenings out",
+            "icon": "party"
           }
         }
       },
@@ -545,9 +547,9 @@
       "name": "Perfect Fit Audience",
       "settings": {
         "layout_style": "editorial",
-        "heading": "Celebrate Every Moment",
-        "highlight_text": "Shop by Occassion",
-        "subtext": "Jewellery styled for every occasion, from your wedding day to everyday elegance.",
+        "heading": "Find your moment",
+        "highlight_text": "Shop by Occasion",
+        "subtext": "Pieces chosen for weddings, celebrations and nights that ask for a little more sparkle.",
         "heading_alignment": "center",
         "heading_max_width": 720,
         "full_width": false,
