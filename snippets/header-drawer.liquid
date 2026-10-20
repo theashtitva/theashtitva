@@ -165,6 +165,29 @@
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">
+            {%- liquid
+              assign ash_wa_phone = settings.whatsapp_phone | default: '+917777877253' | replace: ' ', '' | replace: '-', '' | replace: '+', '' | replace: '(', '' | replace: ')', ''
+              assign ash_wa_text = 'Hi Ashtitva! I need help choosing jewellery.' | url_encode
+              assign ash_wa_url = 'https://wa.me/' | append: ash_wa_phone | append: '?text=' | append: ash_wa_text
+            -%}
+            <a
+              href="{{ ash_wa_url }}"
+              class="menu-drawer__account menu-drawer__whatsapp link focus-inset medium-hide large-up-hide"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="svg-wrapper">
+                {{- 'icon-whatsapp.svg' | inline_asset_content -}}
+              </span>
+              <span class="menu-drawer__account-text">
+                <span class="menu-drawer__account-label">WhatsApp</span>
+                <span class="menu-drawer__account-hint">Help choosing jewellery</span>
+              </span>
+              <span class="menu-drawer__account-arrow" aria-hidden="true">
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              </span>
+            </a>
+
             {%- if shop.customer_accounts_enabled -%}
               <a
                 href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
@@ -244,7 +267,7 @@
             -%}
             {%- if has_social -%}
               <div class="menu-drawer__social">
-                <p class="menu-drawer__social-label">Follow Srivaya</p>
+                <p class="menu-drawer__social-label">Follow Ashtitva</p>
                 {% render 'social-icons' %}
               </div>
             {%- endif -%}

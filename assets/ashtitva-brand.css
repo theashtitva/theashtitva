@@ -312,6 +312,15 @@ button.shopify-payment-button__button--unbranded {
   min-height: 4.4rem;
 }
 
+.header__icon--whatsapp .svg-wrapper {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.header__icon--whatsapp:hover {
+  color: #1faa5a !important;
+}
+
 .header-wrapper--border-bottom {
   border-bottom: 1px solid color-mix(in srgb, var(--ashtitva-text) 8%, transparent);
 }
