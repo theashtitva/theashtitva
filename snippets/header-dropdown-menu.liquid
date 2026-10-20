@@ -24,7 +24,6 @@
                 >
                   {{- link.title | escape -}}
                 </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
               </summary>
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }}"
@@ -52,7 +51,6 @@
                           class="header__menu-item link link--text list-menu__item focus-inset caption-large"
                         >
                           <span>{{ childlink.title | escape }}</span>
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
                         </summary>
                         <ul
                           id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
@@ -105,7 +103,6 @@
         <details id="Details-HeaderMenu-More">
           <summary id="HeaderMenu-More" class="header__menu-item list-menu__item link focus-inset">
             <span>{{ 'sections.header.more' | t }}</span>
-            {{- 'icon-caret.svg' | inline_asset_content -}}
           </summary>
           <ul
             id="HeaderMenu-MenuList-More"
