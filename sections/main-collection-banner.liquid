@@ -17,21 +17,21 @@
 
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-    <div class="collection-hero__text-wrapper">
-      {%- if show_breadcrumbs -%}
-        <nav class="collection-breadcrumbs" aria-label="Breadcrumb">
-          <ol class="collection-breadcrumbs__list">
-            <li class="collection-breadcrumbs__item">
-              <a href="{{ routes.root_url }}">Home</a>
-            </li>
-            <li class="collection-breadcrumbs__sep" aria-hidden="true">/</li>
-            <li class="collection-breadcrumbs__item collection-breadcrumbs__item--current" aria-current="page">
-              {{ collection.title | escape }}
-            </li>
-          </ol>
-        </nav>
-      {%- endif -%}
+    {%- if show_breadcrumbs -%}
+      <nav class="collection-breadcrumbs" aria-label="Breadcrumb">
+        <ol class="collection-breadcrumbs__list">
+          <li class="collection-breadcrumbs__item">
+            <a href="{{ routes.root_url }}">Home</a>
+          </li>
+          <li class="collection-breadcrumbs__sep" aria-hidden="true">/</li>
+          <li class="collection-breadcrumbs__item collection-breadcrumbs__item--current" aria-current="page">
+            {{ collection.title | escape }}
+          </li>
+        </ol>
+      </nav>
+    {%- endif -%}
 
+    <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title">
         {{- collection.title | escape -}}
       </h1>

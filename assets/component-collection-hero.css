@@ -5,7 +5,9 @@
 .collection-hero__inner {
   display: flex;
   flex-direction: column;
-  padding-top: 0.2rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding-top: 2.2rem;
   padding-bottom: 0.4rem;
 }
 
@@ -42,21 +44,23 @@
   }
 
   .collection-hero__inner {
-    align-items: center;
     flex-direction: row;
+    align-items: center;
+    padding-top: 2.8rem;
     padding-bottom: 0;
   }
 
   .collection-hero__text-wrapper {
-    padding: 2.6rem 0 0.6rem;
+    padding: 2.2rem 0 0.6rem;
   }
 }
 
-/* Breadcrumbs — Home / Collection title */
+/* Breadcrumbs sit on full page-width left edge (not inside centered title) */
 .collection-breadcrumbs {
-  align-self: stretch;
+  flex: 0 0 100%;
   width: 100%;
-  margin: 0 0 1rem;
+  max-width: 100%;
+  margin: 0;
   text-align: left;
 }
 
@@ -278,14 +282,9 @@
   margin: 0;
 }
 
-.collection-hero--with-image .collection-breadcrumbs__list,
 .collection-hero--with-image .collection-hero__rule {
   margin-left: 0;
   margin-right: auto;
-}
-
-.collection-hero--with-image .collection-breadcrumbs__list {
-  justify-content: flex-start;
 }
 
 .collection-hero--with-image .collection-hero__title,
