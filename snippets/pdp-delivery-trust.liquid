@@ -1,54 +1,48 @@
 {% comment %}
-  Locked PDP delivery + prepaid trust block (DAY6-01).
-  Copy is fixed — do not make merchant-editable.
+  Locked PDP delivery + prepaid trust (DAY6-01).
+  part: 'shipping' | 'clarity' | blank (both)
+  Variation: fact tiles (big value + short note)
 {% endcomment %}
-<div class="pdp-delivery-trust" {{ block.shopify_attributes }}>
-  <div class="pdp-delivery-trust__group">
-    <p class="pdp-delivery-trust__heading">Ships prepaid across India</p>
-    <ul class="pdp-delivery-trust__list list-unstyled">
-      <li class="pdp-delivery-trust__item">
-        <span class="pdp-delivery-trust__icon" aria-hidden="true">
-          {{- 'icon-truck.svg' | inline_asset_content -}}
-        </span>
-        <span>Free shipping on prepaid orders above ₹499</span>
-      </li>
-      <li class="pdp-delivery-trust__item">
-        <span class="pdp-delivery-trust__icon" aria-hidden="true">
-          {{- 'icon-box.svg' | inline_asset_content -}}
-        </span>
-        <span>Processed in 1–2 business days</span>
-      </li>
-      <li class="pdp-delivery-trust__item">
-        <span class="pdp-delivery-trust__icon" aria-hidden="true">
-          {{- 'icon-map-pin.svg' | inline_asset_content -}}
-        </span>
-        <span>Most deliveries in 3–7 business days</span>
-      </li>
-      <li class="pdp-delivery-trust__item">
-        <span class="pdp-delivery-trust__icon" aria-hidden="true">
-          {{- 'icon-unavailable.svg' | inline_asset_content -}}
-        </span>
-        <span>Cash on Delivery is not available</span>
-      </li>
-    </ul>
+{%- liquid
+  assign trust_part = part | default: 'both'
+-%}
+{%- if trust_part == 'shipping' or trust_part == 'both' -%}
+  <div class="pdp-trust pdp-trust--shipping" {{ block.shopify_attributes }}>
+    <p class="pdp-trust__title">Ships prepaid across India</p>
+    <div class="pdp-trust__tiles">
+      <div class="pdp-trust__tile">
+        <p class="pdp-trust__value">Free shipping</p>
+        <p class="pdp-trust__note">Prepaid orders above ₹499</p>
+      </div>
+      <div class="pdp-trust__tile">
+        <p class="pdp-trust__value">1–2 days</p>
+        <p class="pdp-trust__note">Processed on business days</p>
+      </div>
+      <div class="pdp-trust__tile">
+        <p class="pdp-trust__value">3–7 days</p>
+        <p class="pdp-trust__note">Most deliveries across India</p>
+      </div>
+      <div class="pdp-trust__tile">
+        <p class="pdp-trust__value">No COD</p>
+        <p class="pdp-trust__note">Cash on Delivery is not available</p>
+      </div>
+    </div>
   </div>
+{%- endif -%}
 
-  <div class="pdp-delivery-trust__group">
-    <p class="pdp-delivery-trust__heading">Shop with clarity</p>
-    <ul class="pdp-delivery-trust__list list-unstyled">
-      <li class="pdp-delivery-trust__item">
-        <span class="pdp-delivery-trust__icon" aria-hidden="true">
-          {{- 'icon-eye.svg' | inline_asset_content -}}
-        </span>
-        <span>Real product photos (no AI images)</span>
-      </li>
-      <li class="pdp-delivery-trust__item">
-        <span class="pdp-delivery-trust__icon" aria-hidden="true">
-          {{- 'icon-return.svg' | inline_asset_content -}}
-        </span>
-        <span>Easy returns within 3 days if unused, via WhatsApp</span>
-      </li>
-    </ul>
-    <p class="pdp-delivery-trust__meta">GST registered · Made in India · Skin friendly</p>
+{%- if trust_part == 'clarity' or trust_part == 'both' -%}
+  <div class="pdp-trust pdp-trust--clarity"{% if trust_part == 'clarity' %} {{ block.shopify_attributes }}{% endif %}>
+    <p class="pdp-trust__title">Shop with clarity</p>
+    <div class="pdp-trust__tiles pdp-trust__tiles--two">
+      <div class="pdp-trust__tile">
+        <p class="pdp-trust__value">Real photos</p>
+        <p class="pdp-trust__note">Product photos only · no AI images</p>
+      </div>
+      <div class="pdp-trust__tile">
+        <p class="pdp-trust__value">3-day returns</p>
+        <p class="pdp-trust__note">Unused pieces · via WhatsApp</p>
+      </div>
+    </div>
+    <p class="pdp-trust__meta">GST registered · Made in India · Skin friendly</p>
   </div>
-</div>
+{%- endif -%}

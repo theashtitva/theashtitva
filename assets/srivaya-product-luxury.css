@@ -135,71 +135,86 @@
   background: #b8b0a8;
 }
 
-/* Locked delivery + prepaid trust (DAY6-01) */
-.pdp-delivery-trust {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-  margin: 0.4rem 0 0.2rem;
-  padding: 1.4rem 0;
-  border-top: 1px solid var(--ash-border, #e6dfd0);
-  border-bottom: 1px solid var(--ash-border, #e6dfd0);
-}
-
-.pdp-delivery-trust__group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.pdp-delivery-trust__heading {
+/* Locked delivery + prepaid trust (DAY6-01) — fact tiles */
+.pdp-trust {
   margin: 0;
-  font-family: var(--font-heading-family);
-  font-size: 1.1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Match product-info sibling rhythm (1.8rem) — no extra padding, no borders */
+.product-info-luxury .pdp-trust--shipping,
+.product-hero-luxury .product-info-luxury .pdp-trust--shipping {
+  margin-top: 1.8rem !important;
+  margin-bottom: 0;
+  padding: 0;
+  border: 0;
+}
+
+.product-info-luxury .pdp-trust--clarity,
+.product-hero-luxury .product-info-luxury .pdp-trust--clarity {
+  margin-top: 2.4rem !important;
+  padding: 0;
+  border: 0;
+}
+
+.pdp-trust__title {
+  margin: 0 0 1.2rem;
+  font-family: var(--sv-sans, var(--font-body-family));
+  font-size: 1.15rem;
   font-weight: 450;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--ash-ink, #18302a);
+  color: var(--sv-label, var(--ashtitva-gold, #b89a5a));
+  line-height: 1.3;
 }
 
-.pdp-delivery-trust__list {
+.pdp-trust__tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 1.8rem;
+  align-items: start;
+}
+
+.pdp-trust__tile {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  margin: 0;
+  gap: 0.35rem;
+  min-height: 0;
   padding: 0;
+  background: transparent;
+  border: 0;
 }
 
-.pdp-delivery-trust__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.7rem;
+.pdp-trust__value {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--sv-ink, #18302a);
+}
+
+.pdp-trust__note {
+  margin: 0;
+  font-size: 1.25rem;
   line-height: 1.45;
-  color: var(--ash-body, #3a4f48);
+  color: var(--sv-muted, #5c6e67);
 }
 
-.pdp-delivery-trust__icon {
-  display: inline-flex;
-  flex-shrink: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: 0.1rem;
-  color: var(--ashtitva-gold, #b89a5a);
-}
-
-.pdp-delivery-trust__icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.pdp-delivery-trust__meta {
-  margin: 0.15rem 0 0;
+.pdp-trust__meta {
+  margin: 1.2rem 0 0;
   font-size: 1.2rem;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--ash-muted, #5c6e67);
+  color: var(--sv-muted, #5c6e67);
+}
+
+@media screen and (max-width: 749px) {
+  .pdp-trust__tiles {
+    gap: 1.2rem 1.2rem;
+  }
 }
 
 /* Quantity — underline stepper (shared with cart via base.css) */

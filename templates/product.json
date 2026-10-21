@@ -58,6 +58,10 @@
             "custom_liquid": ""
           }
         },
+        "clarity_trust": {
+          "type": "clarity_trust",
+          "settings": {}
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -73,6 +77,7 @@
         "share",
         "buy_buttons",
         "custom_liquid_zCJtxn",
+        "clarity_trust",
         "description"
       ],
       "settings": {

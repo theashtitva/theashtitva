@@ -59,6 +59,10 @@
             "show_gift_card_recipient": false
           }
         },
+        "clarity_trust": {
+          "type": "clarity_trust",
+          "settings": {}
+        },
         "description": {
           "type": "description",
           "settings": {}
@@ -74,6 +78,7 @@
         "quantity_selector",
         "share",
         "buy_buttons",
+        "clarity_trust",
         "description"
       ],
       "settings": {
