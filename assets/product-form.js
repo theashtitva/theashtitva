@@ -124,13 +124,54 @@ if (!customElements.get('product-form')) {
         }
       }
 
+      setAvailabilityUi(available) {
+        const sectionId = this.dataset.sectionId;
+        if (!sectionId) return;
+
+        const buyNow = document.getElementById(`ProductBuyNow-${sectionId}`);
+        const restock = document.getElementById(`ProductRestock-${sectionId}`);
+        const stickySubmit = document.getElementById(`PdpStickySubmit-${sectionId}`);
+        const stickyRestock = document.getElementById(`PdpStickyRestock-${sectionId}`);
+
+        const show = (el) => {
+          if (!el) return;
+          el.classList.remove('is-hidden', 'hidden');
+          el.hidden = false;
+          el.removeAttribute('aria-hidden');
+          el.removeAttribute('tabindex');
+        };
+        const hide = (el) => {
+          if (!el) return;
+          el.classList.add('is-hidden');
+          el.hidden = true;
+          el.setAttribute('aria-hidden', 'true');
+          el.setAttribute('tabindex', '-1');
+        };
+
+        if (available) {
+          show(buyNow);
+          hide(restock);
+          show(stickySubmit);
+          if (stickySubmit) stickySubmit.disabled = false;
+          hide(stickyRestock);
+        } else {
+          hide(buyNow);
+          show(restock);
+          hide(stickySubmit);
+          if (stickySubmit) stickySubmit.disabled = true;
+          show(stickyRestock);
+        }
+      }
+
       toggleSubmitButton(disable = true, text) {
         if (disable) {
           this.submitButton.setAttribute('disabled', 'disabled');
           if (text) this.submitButtonText.textContent = text;
+          this.setAvailabilityUi(false);
         } else {
           this.submitButton.removeAttribute('disabled');
           this.submitButtonText.textContent = window.variantStrings.addToCart;
+          this.setAvailabilityUi(true);
         }
       }
 

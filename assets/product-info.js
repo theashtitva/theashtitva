@@ -192,13 +192,21 @@ if (!customElements.get('product-info')) {
           updateSourceFromDestination('Volume');
           updateSourceFromDestination('Price-Per-Item', ({ classList }) => classList.contains('hidden'));
 
+          const stickyPriceSource = html.getElementById(`PdpStickyPrice-${this.sectionId}`);
+          const stickyPriceDest = document.getElementById(`PdpStickyPrice-${this.dataset.section}`);
+          if (stickyPriceSource && stickyPriceDest) {
+            stickyPriceDest.innerHTML = stickyPriceSource.innerHTML;
+          }
+
           this.updateQuantityRules(this.sectionId, html);
           this.querySelector(`#Quantity-Rules-${this.dataset.section}`)?.classList.remove('hidden');
           this.querySelector(`#Volume-Note-${this.dataset.section}`)?.classList.remove('hidden');
 
+          const submitDisabled =
+            html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true;
           this.productForm?.toggleSubmitButton(
-            html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true,
-            window.variantStrings.soldOut
+            submitDisabled,
+            submitDisabled ? window.variantStrings.soldOut : window.variantStrings.addToCart
           );
 
           publish(PUB_SUB_EVENTS.variantChange, {

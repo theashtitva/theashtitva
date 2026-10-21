@@ -22,12 +22,31 @@
       if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
         assign show_dynamic_checkout = true
       endif
+
+      assign check_against_inventory = true
+      if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+        assign check_against_inventory = false
+      endif
+      assign quantity_rule_soldout = false
+      if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+        assign quantity_rule_soldout = true
+      endif
+
+      assign variant_available = true
+      if product.selected_or_first_available_variant == null or product.selected_or_first_available_variant.available == false or quantity_rule_soldout
+        assign variant_available = false
+      endif
+
+      assign restock_phone = settings.whatsapp_phone | default: '+917777877253' | replace: ' ', '' | replace: '-', '' | replace: '+', '' | replace: '(', '' | replace: ')', ''
+      assign restock_message = 'Hi! Please notify me when ' | append: product.title | append: ' is back.'
+      assign restock_message_encoded = restock_message | url_encode
+      assign restock_url = 'https://wa.me/' | append: restock_phone | append: '?text=' | append: restock_message_encoded
     -%}
 
     <product-form
       class="product-form"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
-      data-section-id="{{ section.id }}"
+      data-section-id="{{ section_id }}"
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <span class="svg-wrapper">
@@ -47,12 +66,9 @@
           type="hidden"
           name="id"
           value="{{ product.selected_or_first_available_variant.id }}"
-          {% if product.selected_or_first_available_variant.available == false
-            or quantity_rule_soldout
-            or product.selected_or_first_available_variant == null
-          %}
+          {% unless variant_available %}
             disabled
-          {% endif %}
+          {% endunless %}
           class="product-variant-id"
         >
 
@@ -60,43 +76,54 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
-        <div class="product-form__buttons">
-          {%- liquid
-            assign check_against_inventory = true
-            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
-              assign check_against_inventory = false
-            endif
-            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
-              assign quantity_rule_soldout = true
-            endif
-          -%}
+        <div class="product-form__buttons" id="ProductBuyButtons-{{ section_id }}">
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
             class="product-form__submit button button--full-width button--secondary"
-            {% if product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-              or product.selected_or_first_available_variant == null
-            %}
+            {% unless variant_available %}
               disabled
-            {% endif %}
+            {% endunless %}
           >
             <span>
               {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
-              {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
+              {%- elsif variant_available == false -%}
+                Sold out
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                Add to cart
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
           </button>
+
           {%- if show_dynamic_checkout -%}
-            {{ form | payment_button }}
+            <div
+              id="ProductBuyNow-{{ section_id }}"
+              class="product-form__buy-now{% unless variant_available %} is-hidden{% endunless %}"
+              {% unless variant_available %}
+                hidden
+                aria-hidden="true"
+              {% endunless %}
+            >
+              {{ form | payment_button }}
+            </div>
           {%- endif -%}
         </div>
+
+        <p
+          id="ProductRestock-{{ section_id }}"
+          class="product-form__restock{% if variant_available %} is-hidden{% endif %}"
+          {% if variant_available %}
+            hidden
+            aria-hidden="true"
+          {% endif %}
+        >
+          <a href="{{ restock_url }}" target="_blank" rel="noopener noreferrer">
+            Message us on WhatsApp for restock details
+          </a>
+        </p>
       {%- endform -%}
     </product-form>
   {%- else -%}
@@ -108,7 +135,7 @@
           class="product-form__submit button button--full-width button--secondary"
           disabled
         >
-          {{ 'products.product.sold_out' | t }}
+          Sold out
         </button>
       </div>
     </div>

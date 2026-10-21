@@ -11,6 +11,7 @@
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'srivaya-product-luxury.css' | asset_url | stylesheet_tag }}
+  {{ 'pdp-sticky-atc.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -42,6 +43,7 @@
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'pdp-sticky-atc.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -992,6 +994,8 @@
       {{ product | structured_data }}
     </script>
   </div>
+
+  {% render 'pdp-sticky-atc', product: product, section_id: section.id, product_form_id: product_form_id %}
 </product-info>
 
 {% schema %}
