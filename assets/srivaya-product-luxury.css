@@ -801,14 +801,16 @@
   --sv-ease: cubic-bezier(0.22, 1, 0.36, 1);
   max-width: 140rem;
   width: 100%;
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .page-width.product-hero-shell {
   max-width: 140rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -1112,7 +1114,7 @@
   }
 
   .product-hero-luxury .thumbnail-slider {
-    margin-top: 1.4rem;
+    margin-top: 1.2rem;
   }
 
   .product-hero-luxury .thumbnail-slider .thumbnail-list.slider {
@@ -1138,6 +1140,71 @@
   }
 
   .product-hero-luxury .product__info-wrapper {
+    margin-top: 1.4rem;
+  }
+
+  /* Even, tighter rhythm for text below gallery */
+  .product-info-luxury > * + *,
+  .product-hero-luxury .product-info-luxury > * + * {
+    margin-top: 1.2rem;
+  }
+
+  .product-info-luxury .product__title h1,
+  .product-info-luxury .product__title .h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+    margin: 0 0 0.7rem;
+  }
+
+  .product-hero-luxury .product-info-luxury .sv-price-block {
+    margin-top: 0.85rem;
+  }
+
+  .product-info-luxury .sv-price-block {
+    gap: 0.55rem;
+  }
+
+  .product-info-luxury .pdp-trust--shipping,
+  .product-hero-luxury .product-info-luxury .pdp-trust--shipping {
+    margin-top: 1.2rem !important;
+  }
+
+  .pdp-trust__title {
+    margin: 0 0 0.85rem;
+  }
+
+  .pdp-trust__tiles {
+    gap: 1rem 1.2rem;
+  }
+
+  .product-hero-luxury .product-info-luxury .product-form__quantity {
+    margin-top: 1.2rem;
+  }
+
+  .product-info-luxury .product-form__quantity .quantity__label {
+    margin-bottom: 0.65rem;
+  }
+
+  .product-info-luxury .share-button,
+  .product-info-luxury .product-form {
+    margin-top: 0;
+  }
+
+  .product-info-luxury .product-form__buttons {
+    gap: 0.85rem;
+  }
+
+  .product-info-luxury .product-form__restock {
+    margin-top: 0.85rem;
+    text-align: left;
+  }
+
+  .product-info-luxury .pdp-trust--clarity,
+  .product-hero-luxury .product-info-luxury .pdp-trust--clarity {
+    margin-top: 1.8rem !important;
+  }
+
+  .product-hero-luxury .product-info-luxury .sv-info {
     margin-top: 2rem;
   }
 }
