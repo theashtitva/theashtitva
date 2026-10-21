@@ -1,0 +1,35 @@
+{% comment %}
+  PDP stylist WhatsApp CTA + product-type fit notes.
+{% endcomment %}
+{%- liquid
+  assign stylist_phone = '917777877253'
+  assign product_abs_url = request.origin | append: product.url
+  assign stylist_message = 'Hi Ashtitva! I have a question about ' | append: product.title | append: ' (' | append: product_abs_url | append: ').'
+  assign stylist_message_encoded = stylist_message | url_encode
+  assign stylist_url = 'https://wa.me/' | append: stylist_phone | append: '?text=' | append: stylist_message_encoded
+
+  assign ptype = product.type | downcase | strip
+  assign fit_note = ''
+  if ptype == 'ring' or ptype == 'rings'
+    assign fit_note = 'Most Ashtitva rings are adjustable. If you need help with fit, WhatsApp us a photo of your finger with a coin for scale.'
+  elsif ptype == 'kada' or ptype == 'kadas'
+    assign fit_note = 'Many kadas are openable/adjustable for comfortable wear. Check Product Details for openable vs fixed.'
+  elsif ptype == 'necklace set' or ptype == 'necklace sets' or ptype contains 'necklace set'
+    assign fit_note = 'Necklace length is adjustable on most styles. See Product Details for closure type.'
+  endif
+-%}
+
+<div class="pdp-stylist">
+  <a
+    class="pdp-stylist__cta"
+    href="{{ stylist_url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Ask a stylist on WhatsApp
+  </a>
+
+  {%- if fit_note != blank -%}
+    <p class="pdp-stylist__fit">{{ fit_note }}</p>
+  {%- endif -%}
+</div>
