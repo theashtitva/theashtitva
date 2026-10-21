@@ -3,5 +3,11 @@
 }
 
 .related-products__heading {
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .related-products__heading {
+    margin: 0 0 1.4rem;
+  }
 }

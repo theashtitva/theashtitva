@@ -1244,7 +1244,21 @@
 
 .product-hero-luxury .product-info-luxury .sv-acc {
   margin-top: 0;
-  margin-bottom: 3.2rem;
+  margin-bottom: 1.2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .product-hero-luxury .product-info-luxury .sv-acc {
+    margin-bottom: 0.4rem;
+  }
+
+  .product-hero-surface {
+    padding-bottom: 16px !important;
+  }
+
+  .related-products__heading {
+    margin: 0 0 1.6rem;
+  }
 }
 
 /* Entrance choreography */
