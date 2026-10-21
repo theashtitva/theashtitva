@@ -247,45 +247,39 @@
   color: var(--sv-body, #3a4f48);
 }
 
-/* Stylist WhatsApp CTA + fit notes */
+/* Stylist WhatsApp — quiet link, not a third button */
 .pdp-stylist {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  margin-top: 1.2rem;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 1rem;
 }
 
 .pdp-stylist__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 4.8rem;
-  padding: 1.2rem 1.6rem;
-  border: 1px solid color-mix(in srgb, var(--sv-cta, #123c32) 35%, transparent);
-  border-radius: 6px;
-  background: transparent;
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
   color: var(--sv-cta, #123c32);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: border-color var(--sv-duration, 250ms) var(--sv-ease, ease),
-    background var(--sv-duration, 250ms) var(--sv-ease, ease);
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-transform: none;
 }
 
 .pdp-stylist__cta:hover {
-  border-color: var(--sv-cta, #123c32);
-  background: color-mix(in srgb, var(--sv-cta, #123c32) 6%, transparent);
-  color: var(--sv-cta, #123c32);
+  color: var(--sv-cta-hover, #0b2924);
 }
 
 .pdp-stylist__fit {
   margin: 0;
-  font-size: 1.25rem;
+  max-width: 36em;
+  font-size: 1.2rem;
   line-height: 1.5;
   color: var(--sv-muted, #5c6e67);
   text-align: left;
