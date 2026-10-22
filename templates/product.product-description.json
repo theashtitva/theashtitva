@@ -97,6 +97,17 @@
         "padding_bottom": 60
       }
     },
+    "soldout-alternates": {
+      "type": "soldout-alternates",
+      "settings": {
+        "heading": "Similar in stock",
+        "products_to_show": 3,
+        "image_ratio": "portrait",
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 8
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -118,6 +129,7 @@
   },
   "order": [
     "main",
+    "soldout-alternates",
     "related-products"
   ]
 }
