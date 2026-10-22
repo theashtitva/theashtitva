@@ -1,6 +1,8 @@
 {%- comment -%}
   Builds SEO title + description with brand, misspelling, and Hinglish fallbacks.
   Sets seo_og_title / seo_og_description for meta-tags.
+  DAY8-02 — Product title: {{ product.title }} | Ashtitva (no duplicate Ashtitva).
+  Product description: first 150 chars of body; exact fallback if empty.
 {%- endcomment -%}
 
 {%- liquid
@@ -61,10 +63,30 @@
     endif
   endif
 
+  if request.page_type == 'product'
+    assign product_title_stripped = product.title | strip
+    if page_title != blank and page_title != product.title
+      assign seo_title = page_title | strip
+    else
+      assign title_tail = product_title_stripped | slice: -8, 8 | downcase
+      if title_tail == 'ashtitva'
+        assign seo_title = product_title_stripped
+      else
+        assign seo_title = product_title_stripped | append: ' | Ashtitva'
+      endif
+    endif
+
+    assign product_desc_plain = product.description | strip_html | strip_newlines | strip
+    if product_desc_plain != blank
+      assign seo_description = product_desc_plain | truncate: 150, ''
+    else
+      assign seo_description = 'Shop ' | append: product.title | append: ' at Ashtitva. Real product photos, American Diamond jewellery, prepaid shipping across India.'
+    endif
+    assign description_is_weak = false
+  endif
+
   if description_is_weak
-    if request.page_type == 'product' and product.description != blank
-      assign seo_description = product.description | strip_html | strip | truncate: 155
-    elsif request.page_type == 'collection'
+    if request.page_type == 'collection'
       case collection.handle
         when 'best-seller'
           assign seo_description = 'Shop Ashtitva bestsellers — most-loved necklace, earrings, rings aur sets. Real photos, behtareen designs. India delivery.'
@@ -118,7 +140,7 @@
   {{ seo_title | escape }}
   {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
   {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-  {%- if request.page_type != 'index' -%}
+  {%- if request.page_type != 'index' and request.page_type != 'product' -%}
     {%- unless seo_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
   {%- endif -%}
 </title>
